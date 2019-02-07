@@ -1,0 +1,903 @@
+/*
+* @description: 主样式表
+* @author: youranreus
+*/
+*{
+  font-family: PingFang SC, Hiragino Sans GB, Helvetica Neue, Helvetica, Microsoft YaHei, Arial, sans-serif;
+}
+html{
+}
+body{
+  padding:0px;
+  margin:0;
+  background: white;
+}
+a:link{
+  text-decoration: none;
+  color:#07f;
+}
+html::before{
+  content:'';
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  width:100%;
+}
+
+.clear,.clear::before,.clear::after{
+  display: block;
+  clear:both;
+}
+.clear::before,.clear::after{
+  content:'';
+}
+::selection {
+  background-color: #D6EDFF;
+}
+html::-webkit-scrollbar-track-piece {
+	background: whitesmoke;
+  transition: .3s ease all;
+}
+
+html::-webkit-scrollbar {
+	width: 1vw;
+	height: 1vw;
+  transition: .3s ease all;
+}
+
+html::-webkit-scrollbar-thumb {
+	height: 20vh;
+	border-radius: 1vw;
+	background-color: lightgray;
+  transition: .3s ease all;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+	background-color: gray;
+  transition: .3s ease all;
+}
+#gototop {
+  position: fixed;
+  right:40;
+  bottom: 40;
+  z-index: 999;
+}
+#gototop img{
+  width:70px;
+  height:70px;
+  box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+  border-radius: 10000rem;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   #header
+   ========================================================================== */
+
+
+#header{
+  border-radius: 30px;
+  background:#787878;
+  box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+  padding: 1px;
+  width: 800px;
+  margin: 50px auto;
+}
+
+#header-container{
+  margin:50px;
+}
+#header-container>*{
+  margin:0;
+}
+#header-container h2{
+  font-size: 5rem;
+  color:white;
+  font-weight: 200;
+  margin-bottom:10px;
+}
+#header-container div span{
+  color:hsla(0,0%,100%,.6);
+  font-weight: 200;
+  font-size: 1.3rem;
+  float:left;
+}
+#header-container div nav{
+  margin:0;
+  float:right;
+  text-align: right;
+}
+#header-container div nav a{
+  color:hsla(0,0%,100%,.6);
+  font-weight: 200;
+  font-size: 1.3rem;
+  margin-left: 20px;
+  display:inline-block;
+}
+#header-container div nav a:hover{
+  color:white;
+}
+.nav-focus{
+  color:white!important;
+}
+.nav-focus:after{
+  content:'';
+  display:block;
+  margin-top:5px;
+  height:3px;
+  margin-left:2px;
+  width:70%;
+  background:white;
+  border-radius: 100000000rem;
+  animation:nav-width 0.5s;
+  -moz-animation:nav-width 0.5s; /* Firefox */
+  -webkit-animation:nav-width 0.5s; /* Safari and Chrome */
+  -o-animation:nav-width 0.5s; /* Opera */
+}
+
+/* ==========================================================================
+   #首页
+   ========================================================================== */
+
+#zp{
+  margin:50px auto;
+  width:800px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+  padding:1px;
+}
+#zp-content{
+  margin:49px;
+}
+#zp-content p{
+  line-height: 1.7;
+  font-size: 1.2rem;
+  color:RGB(182,177,150);
+}
+#zp-content p span{
+  color:RGB(87,103,104);
+}
+/* ==========================================================================
+   #/blog/
+   ========================================================================== */
+
+#article{
+  margin:50px auto;
+  width:800px;
+}
+.article-item{
+  margin-bottom:1.5rem;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+  padding: 30px;
+}
+.article-item h2{
+  margin-top:0;
+  margin-bottom:5px;
+  line-height: 1.1;
+  font-weight: 600;
+  border-bottom:2px solid RGB(182,177,150);
+  padding-bottom: 2px;
+}
+.article-item h2 a{
+  color:RGB(182,177,150);
+  font-size: 2rem;
+  transition: .3s ease all;
+}
+.article-item span{
+  color:RGB(93,130,138);
+  line-height: 1.7;
+}
+.article-item span a{
+  font-size: 0.7rem;
+  margin-right:10px;
+  padding: 2px 5px;
+  background: RGB(93,130,138);
+  border-radius: 30px;
+  color: white;
+}
+.next,.prev{
+  background: RGB(93,130,138);
+  padding:6px 6px;
+  color:white!important;
+  border-radius: 1000rem;
+  text-decoration: none;
+}
+.next{
+  float:right;
+}
+.prev{
+  float: left;
+}
+/* ==========================================================================
+   #独立页面
+   ========================================================================== */
+
+#page{
+  margin:50px auto;
+  width:800px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+  padding:1px;
+}
+#page-content{
+  margin:49px;
+}
+#page-content-title{
+  font-size: 2.3rem;
+  font-weight: 200;
+  text-align: center;
+  color:RGB(182,177,150)!important;
+}
+
+#page-content-title img{
+  height: 2.3rem;
+  position: relative;
+  top: 0.2rem;
+}
+#page-content-article h1,#page-content-article h2,#page-content-article h3,#page-content-article h4{
+  color:RGB(48,71,88);
+}
+#page-content-article h1::before,#page-content-article h2::before,#page-content-article h3::before,#page-content-article h4::before{
+  content: ' ';
+  display: inline-block;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  top:0.2rem;
+  left:-0.2rem;
+  background-size: contain;
+  background-image: url('https://cdn.exia.xyz/img/title_pen.png');
+}
+
+#page-content-article p{
+  line-height: 1.75rem;
+  font-size: 0.975rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+#page-content-article ul, #page-content-article ol,#page-content-article table, #page-content-article pre {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: -1rem;
+    text-align: justify;
+}
+#page-content-article li{
+    margin: 10px auto;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+#page-content-article blockquote {
+  position: relative;
+  display: block;
+  padding: 45px 0px 25px 0px !important;
+  margin: 0;
+  font-size: 16px;
+  line-height: 26px;
+  border-left: none;
+  background: #f5f5f5;
+  text-align: justify;
+  border-radius: 15px;
+}
+#page-content-article blockquote p{
+  font-size: 16px;
+  margin: 0px;
+  padding: 0px 25px 0px 25px;
+  color:#878c93;
+}
+#page-content-article blockquote:before {
+  position: absolute;
+  top:3;
+  left: 7;
+  content: '';
+  background: url(https://cdn.exia.xyz/img/dot.svg) left top no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 40px;
+}
+/* ==========================================================================
+   #独立页面
+   ========================================================================== */
+
+#post{
+  margin:50px auto;
+  width:800px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+  padding:1px;
+}
+#post-content{
+  margin:49px;
+}
+#post-content-title{
+  font-size: 2.3rem;
+  font-weight: 200;
+  text-align: center;
+  color:RGB(182,177,150)!important;
+}
+
+#post-content-article h1,#post-content-article h2,#post-content-article h3,#post-content-article h4{
+  color:RGB(48,71,88);
+}
+#post-content-article h1::before,#post-content-article h2::before,#post-content-article h3::before,#post-content-article h4::before{
+  content: ' ';
+  display: inline-block;
+  position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
+  top:0.2rem;
+  left:-0.2rem;
+  background-size: contain;
+  background-image: url('https://cdn.exia.xyz/img/title_pen.png');
+}
+#post-content p img {
+   display: block;
+   margin: 20px auto;
+   text-align: center;
+   border-radius: 15px;
+   width: 100% \9;
+   max-width: 90%;
+   max-height: 500px;
+   height: auto;
+}
+.bq{
+  position: relative;
+  display: inline-block!important;
+  margin:0!important;
+  top: 10px;
+  height:30px!important;
+}
+#post-content-article p {
+    clear: both;
+    margin-top: 15px;
+    line-height: 1.72222;
+    text-align: justify;
+}
+#post-content-article p, #post-content-article li {
+    font-size: 17px;
+    letter-spacing: .6px;
+}
+
+#post-content-article li{
+    margin: 10px auto;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+#post-content-article blockquote {
+  position: relative;
+  display: block;
+  padding: 45px 0px 25px 0px !important;
+  margin: 0;
+  font-size: 16px;
+  line-height: 26px;
+  border-left: none;
+  background: #f5f5f5;
+  text-align: justify;
+  border-radius: 15px;
+}
+#post-content-article blockquote p{
+  font-size: 16px;
+  margin: 0px;
+  padding: 0px 25px 0px 25px;
+  color:#878c93;
+}
+#post-content-article blockquote:before {
+  position: absolute;
+  top:3;
+  left: 7;
+  content: '';
+  background: url(https://cdn.exia.xyz/img/dot.svg) left top no-repeat;
+  background-size: contain;
+  width: 36px;
+  height: 40px;
+}
+/* ==========================================================================
+   #comments
+   ========================================================================== */
+ #comments{
+  width: 800px;
+  margin: 20px auto;
+ }
+
+ #comments h3 {
+	font-size: 18px;
+}
+input[type="text"],input[type="email"],input[type="url"],input[type="password"],textarea {
+    padding: 5px;
+    border: 1px solid #E9E9E9;
+    width: 100%;
+    border-radius: 2px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline:none;
+
+}
+.submit {
+    border: 1px solid #E9E9E9;
+    border-radius: 2px;
+    padding: 5px 10px;;
+    background: white;
+}
+.comment-list,.comment-list ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.comment-list li {
+    padding: 20px 34px;
+    margin-top: 10px;
+    background: white;
+    border-radius: 30px;
+}
+.comment-list li.comment-level-odd {
+    /* background: #F6F6F3; */
+    padding:14px;
+	border-radius:0;
+    border-left:2px solid RGBA(87,90,93,0.5);
+}
+.comment-list li.comment-level-even {
+    /* background: #FFF; */
+}
+.comment-list li.comment-by-author {
+    /* background: #F9F9F9; */
+}
+.comment-list li .comment-reply {
+    text-align: right;
+    font-size: .92857em;
+}
+.comment-list li .comment-reply a{
+    color:#07f;
+    padding: 1px 6px;
+    border: 1px solid #07F;
+    border-radius: 1000000rem;
+}
+.comment-list li .comment-reply a:hover{
+    color:white;
+    background: #07f;
+    transition: .3s ease all;
+}
+.comment-meta a {
+    color: #999;
+    font-size: .92857em;
+}
+.comment-author {
+    display: block;
+    margin-bottom: 3px;
+    color: #444;
+}
+.comment-author a{
+    color: #444;
+}
+.comment-author .avatar {
+    float: left;
+    margin-right: 10px;
+    border-radius: 32px;
+}
+.comment-author cite {
+    font-weight: bold;
+    font-style: normal;
+}
+.comment-list .respond {
+    margin-top: 15px;
+    border-top: 1px solid #EEE;
+}
+.respond .cancel-comment-reply {
+    float: right;
+    margin-top: 15px;
+    font-size: .92857em;
+}
+.comment-content p{
+  margin:8px 0;
+}
+#comment-form{
+  background: white;
+  border-radius: 30px;
+  margin-top:30px;
+  padding:34px;
+}
+#comment-form label {
+    display: block;
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+#comment-form .required:after {
+    content: " *";
+    color: #C00;
+}
+.avatar{
+  display: none;
+}
+/* ==========================================================================
+   #links
+   ========================================================================== */
+ #links{
+  width: 800px;
+  margin: 20px auto;
+  background: RGB(255,255,255);
+  box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+  padding: 1px;
+  border-radius: 30px;
+ }
+ #links h2{
+   text-align: center;
+   font-size: 2.5rem;
+   font-weight: 200;
+   color:RGB(182,177,150);
+   margin:0;
+ }
+ #links h2::before{
+   content: ' ';
+   display: inline-block;
+   position: relative;
+   width: 3rem;
+   height: 3rem;
+   top:0.6rem;
+   left:-0.2rem;
+   background-size: contain;
+   background-image: url('https://cdn.exia.xyz/img/friends.svg');
+ }
+ #links-content{
+   margin:49px;
+   color:white;
+ }
+ .friends{
+  width:100%;
+  margin-top:30px;
+  text-align: center;
+}
+.friends li{
+  display: inline-block;
+  list-style-type: none;
+  width:40%;
+  margin:10px;
+  border-radius: 15px;
+}
+.friends li a{
+  padding:10px;
+  font-size: 16px;
+  color:#787878;
+  -webkit-transition:all .24s ease;
+  border-radius: 30px;
+}
+.friends li a:hover{
+  color:white;
+  background: #787878;
+}
+
+/* ==========================================================================
+   #页脚
+   ========================================================================== */
+#footer{
+ width: 800px;
+ margin: 20px auto;
+ background: RGB(113,114,122);
+ box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+ padding: 1px;
+ border-radius: 30px;
+}
+#footer-content{
+  margin:10px 49px;
+  color:white;
+}
+#footer-content-left{
+  float:left;
+}
+#footer-content-right{
+  float:right;
+  position: relative;
+}
+#footer-content-right p{
+  position: relative;
+}
+#footer-content-left p {
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+#footer-content-right img{
+  height:50px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 500px){
+  #pjax-container{
+    width:100%;
+  }
+  #header{
+    width:95%;
+    margin:10px auto;
+  }
+  #header-container{
+    margin:20px;
+  }
+  #header-container h2 {
+    font-size: 2rem;
+  }
+  #header-container div span{
+    width:100%;
+    font-size: 1.1rem;
+    float:none;
+  }
+  #header-container div nav{
+    margin-top: 15px;
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  #header-container div nav a{
+    font-size: 1.1rem;
+    margin:5px;
+  }
+  .nav-focus:after{
+    margin-left:0px;
+    width:70%;
+  }
+  #zp,#footer,#links,#page,#post,#article,#comments{
+    width:95%;
+    margin:20px auto;
+  }
+
+  #zp-content,#footer-content,#links-content,#page-content,#post-content{
+    margin: 24px;
+  }
+  #article-content{
+    margin:0;
+  }
+  #zp-content p {
+    font-size: 1rem;
+  }
+  .comment-list li {
+    padding: 24px;
+  }
+  #comment-form {
+    padding: 24px;
+}
+  #footer-content-left p{
+    font-size: 1.1rem;
+  }
+  #footer-content-right img{
+    height:35px;
+  }
+  #footer-content-right,#footer-content-left{
+    float:none;
+  }
+  #links h2{
+    font-size: 1.8rem;
+  }
+  #gototop {
+    right:20;
+    bottom: 20;
+  }
+  #gototop img{
+    width:50px;
+    height:50px;
+  }
+  .article-item h2 a{
+    font-size: 1.5rem;
+  }
+  #links h2::before{
+    top:0.8rem;
+  }
+  #article h1{
+    font-size: 1.5rem;
+  }
+  #article h1::before{
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 0.45rem;
+  }
+  #post-content-title{
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 786px){
+  #pjax-container{
+    width:100%;
+  }
+  #header{
+    width:75%;
+    margin:10px auto;
+  }
+  #header-container{
+    margin:20px;
+  }
+  #header-container h2 {
+    font-size: 2rem;
+  }
+  #header-container div span{
+    width:100%;
+    font-size: 1.1rem;
+    float:none;
+  }
+  #header-container div nav{
+    margin-top: 15px;
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  #header-container div nav a{
+    font-size: 1.1rem;
+    margin:5px;
+  }
+  .nav-focus:after{
+    margin-left:0px;
+    width:70%;
+  }
+  #zp,#footer,#links,#page,#post,#article,#comments{
+    width:75%;
+    margin:20px auto;
+  }
+
+  #zp-content,#footer-content,#links-content,#page-content,#post-content{
+    margin: 24px;
+  }
+  #article-content{
+    margin:0;
+  }
+  #zp-content p {
+    font-size: 1rem;
+  }
+  .comment-list li {
+    padding: 24px;
+  }
+  #comment-form {
+    padding: 24px;
+}
+  #footer-content-left p{
+    font-size: 1.1rem;
+  }
+  #footer-content-right img{
+    height:35px;
+  }
+  #footer-content-right,#footer-content-left{
+    float:none;
+  }
+  #links h2{
+    font-size: 1.8rem;
+  }
+  #gototop {
+    right:20;
+    bottom: 20;
+  }
+  #gototop img{
+    width:50px;
+    height:50px;
+  }
+  .article-item h2 a{
+    font-size: 1.5rem;
+  }
+  #links h2::before{
+    top:0.8rem;
+  }
+  #article h1{
+    font-size: 1.5rem;
+  }
+  #article h1::before{
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 0.45rem;
+  }
+  #post-content-title{
+    font-size: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   #动画
+   ========================================================================== */
+
+   @keyframes nav-width
+   {
+     0%   {width:0%}
+     100% {width:70%}
+   }
+
+   @-moz-keyframes nav-width /* Firefox */
+   {
+     0%   {width:0%}
+     100% {width:70%}
+   }
+
+   @-webkit-keyframes nav-width /* Safari 和 Chrome */
+   {
+     0%   {width:0%}
+     100% {width:70%}
+   }
+
+   @-o-keyframes nav-width /* Opera */
+   {
+     0%   {width:0%}
+     100% {width:70%}
+   }
+   /* 出现 */
+   @keyframes opacity-show
+   {
+     0%   {opacity:0}
+     100% {opacity:1}
+   }
+
+   @-moz-keyframes opacity-show /* Firefox */
+   {
+     0%   {opacity:0}
+     100% {opacity:1}
+   }
+
+   @-webkit-keyframes opacity-show /* Safari 和 Chrome */
+   {
+     0%   {opacity:0}
+     100% {opacity:1}
+   }
+
+   @-o-keyframes opacity-show /* Opera */
+   {
+     0%   {opacity:0}
+     100% {opacity:1}
+   }
+   /* 消失 */
+   @keyframes opacity-disappear
+   {
+     0%   {opacity:1}
+     100% {opacity:0}
+   }
+
+   @-moz-keyframes opacity-disappear /* Firefox */
+   {
+     0%   {opacity:1}
+     100% {opacity:0}
+   }
+
+   @-webkit-keyframes opacity-disappear /* Safari 和 Chrome */
+   {
+     0%   {opacity:1}
+     100% {opacity:0}
+   }
+
+   @-o-keyframes opacity-disappear /* Opera */
+   {
+     0%   {opacity:1}
+     100% {opacity:0}
+   }
+
+   #post-content a{
+     position: relative;
+     color:#07f;
+   }
+   #post-content a::after {
+       content: "";
+       position: absolute;
+       left: 100%;
+       bottom: -2px;
+       width: 0;
+       border-bottom: 1px solid #07F;
+       transition: width 0.3s, left 0.3s;
+   }
+   #post-content a:hover::after {
+       left: 0;
+       width: 100%;
+       transition: width 0.3s;
+   }
+   .opacity-show{
+     animation:opacity-show 1s;
+     -moz-animation:opacity-show 1s; /* Firefox */
+     -webkit-animation:opacity-show 1s; /* Safari and Chrome */
+     -o-animation:opacity-show 1s; /* Opera */
+   }
+   .opacity-disappear{
+     animation:opacity-disappear 1s;
+     -moz-animation:opacity-disappear 1s; /* Firefox */
+     -webkit-animation:opacity-disappear 1s; /* Safari and Chrome */
+     -o-animation:opacity-disappear 1s; /* Opera */
+   }
