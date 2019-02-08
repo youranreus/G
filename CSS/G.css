@@ -183,8 +183,6 @@ html::-webkit-scrollbar-thumb:hover {
   margin-bottom:5px;
   line-height: 1.1;
   font-weight: 600;
-  border-bottom:2px solid RGB(182,177,150);
-  padding-bottom: 2px;
 }
 .article-item h2 a{
   color:RGB(182,177,150);
@@ -611,7 +609,99 @@ input[type="text"],input[type="email"],input[type="url"],input[type="password"],
   margin-right: 20px;
 }
 
-@media screen and (max-width: 500px){
+@media screen and (max-width: 1024px){
+  #pjax-container{
+    width:100%;
+  }
+  #header{
+    width:65%;
+    margin:10px auto;
+  }
+  #header-container{
+    margin:20px;
+  }
+  #header-container h2 {
+    font-size: 2rem;
+  }
+  #header-container div span{
+    width:100%;
+    font-size: 1.1rem;
+    float:none;
+  }
+  #header-container div nav{
+    margin-top: 15px;
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  #header-container div nav a{
+    font-size: 1.1rem;
+    margin:5px;
+  }
+  .nav-focus:after{
+    margin-left:0px;
+    width:70%;
+  }
+  #zp,#footer,#links,#page,#post,#article,#comments{
+    width:65%;
+    margin:20px auto;
+  }
+
+  #zp-content,#footer-content,#links-content,#page-content,#post-content{
+    margin: 24px;
+  }
+  #article-content{
+    margin:0;
+  }
+  #zp-content p {
+    font-size: 1rem;
+  }
+  .comment-list li {
+    padding: 24px;
+  }
+  #comment-form {
+    padding: 24px;
+}
+  #footer-content-left p{
+    font-size: 1.1rem;
+  }
+  #footer-content-right img{
+    height:35px;
+  }
+  #footer-content-right,#footer-content-left{
+    float:none;
+  }
+  #links h2{
+    font-size: 1.8rem;
+  }
+  #gototop {
+    right:20;
+    bottom: 20;
+  }
+  #gototop img{
+    width:50px;
+    height:50px;
+  }
+  .article-item h2 a{
+    font-size: 1.5rem;
+  }
+  #links h2::before{
+    top:0.8rem;
+  }
+  #article h1{
+    font-size: 1.5rem;
+  }
+  #article h1::before{
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 0.45rem;
+  }
+  #post-content-title{
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px){
   #pjax-container{
     width:100%;
   }
@@ -701,99 +791,15 @@ input[type="text"],input[type="email"],input[type="url"],input[type="password"],
   #post-content-title{
     font-size: 1.5rem;
   }
+  .article-item{
+    padding: 20px;
+  }
+  .article-item p{
+    margin: 5px 0px;
+  }
 }
 
-@media screen and (max-width: 786px){
-  #pjax-container{
-    width:100%;
-  }
-  #header{
-    width:75%;
-    margin:10px auto;
-  }
-  #header-container{
-    margin:20px;
-  }
-  #header-container h2 {
-    font-size: 2rem;
-  }
-  #header-container div span{
-    width:100%;
-    font-size: 1.1rem;
-    float:none;
-  }
-  #header-container div nav{
-    margin-top: 15px;
-    float: none;
-    text-align: center;
-    width: 100%;
-  }
-  #header-container div nav a{
-    font-size: 1.1rem;
-    margin:5px;
-  }
-  .nav-focus:after{
-    margin-left:0px;
-    width:70%;
-  }
-  #zp,#footer,#links,#page,#post,#article,#comments{
-    width:75%;
-    margin:20px auto;
-  }
 
-  #zp-content,#footer-content,#links-content,#page-content,#post-content{
-    margin: 24px;
-  }
-  #article-content{
-    margin:0;
-  }
-  #zp-content p {
-    font-size: 1rem;
-  }
-  .comment-list li {
-    padding: 24px;
-  }
-  #comment-form {
-    padding: 24px;
-}
-  #footer-content-left p{
-    font-size: 1.1rem;
-  }
-  #footer-content-right img{
-    height:35px;
-  }
-  #footer-content-right,#footer-content-left{
-    float:none;
-  }
-  #links h2{
-    font-size: 1.8rem;
-  }
-  #gototop {
-    right:20;
-    bottom: 20;
-  }
-  #gototop img{
-    width:50px;
-    height:50px;
-  }
-  .article-item h2 a{
-    font-size: 1.5rem;
-  }
-  #links h2::before{
-    top:0.8rem;
-  }
-  #article h1{
-    font-size: 1.5rem;
-  }
-  #article h1::before{
-    width: 2.5rem;
-    height: 2.5rem;
-    top: 0.45rem;
-  }
-  #post-content-title{
-    font-size: 1.5rem;
-  }
-}
 
 /* ==========================================================================
    #动画
