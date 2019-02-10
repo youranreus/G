@@ -3,7 +3,10 @@
 * @author: youranreus
 */
 *{
-  font-family: PingFang SC, Hiragino Sans GB, Helvetica Neue, Helvetica, Microsoft YaHei, Arial, sans-serif;
+  *{
+  font-family: 'Josefin Sans Light', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "'Hiragino Sans GB", STHeiti, "Microsoft Yahei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", Arial, Verdana, sans-serif;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
+}
 }
 html{
 }
@@ -172,41 +175,62 @@ html::-webkit-scrollbar-thumb:hover {
   width:800px;
 }
 .article-item{
-  margin-bottom:1.5rem;
   background: white;
   border-radius: 30px;
   box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
   padding: 30px;
+  width: 320px;
+  margin: 10px;
+  float: left;
 }
 .article-item h2{
   margin-top:0;
   margin-bottom:5px;
   line-height: 1.1;
   font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .article-item h2 a{
-  color:RGB(182,177,150);
+  color: black;
   font-size: 2rem;
   transition: .3s ease all;
 }
-.article-item span{
+.article-item p{
   color:RGB(93,130,138);
   line-height: 1.7;
+  margin:0;
+  margin-top:10px;
 }
-.article-item span a{
-  font-size: 0.7rem;
-  margin-right:10px;
-  padding: 2px 5px;
-  background: RGB(93,130,138);
-  border-radius: 30px;
-  color: white;
+#article-author{
+  float:left;
+}
+#article-date{
+  float:right;
 }
 .next,.prev{
-  background: RGB(93,130,138);
-  padding:6px 6px;
-  color:white!important;
-  border-radius: 1000rem;
-  text-decoration: none;
+  padding: .5rem 1.6rem;
+  border-radius: 100rem;
+  display: inline-block;
+  opacity: 1;
+  font-size: .875rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: #333;
+  border: .0625rem solid #333 !important;
+  margin:10px;
+  margin-top:30px;
+  -webkit-transition: .3s ease all;
+  -moz-transition: .3s ease all;
+  -ms-transition: .3s ease all;
+  -o-transition: .3s ease all;
+  transition: .3s ease all;
+  background: #fff;
+}
+.next:hover,.prev:hover{
+  background: #333 !important;
+  color: #fff !important;
 }
 .next{
   float:right;
@@ -304,7 +328,7 @@ html::-webkit-scrollbar-thumb:hover {
   height: 40px;
 }
 /* ==========================================================================
-   #独立页面
+   #文章
    ========================================================================== */
 
 #post{
@@ -361,6 +385,7 @@ html::-webkit-scrollbar-thumb:hover {
     margin-top: 15px;
     line-height: 1.72222;
     text-align: justify;
+    color:#606975;
 }
 #post-content-article p, #post-content-article li {
     font-size: 17px;
@@ -400,6 +425,11 @@ html::-webkit-scrollbar-thumb:hover {
   background-size: contain;
   width: 36px;
   height: 40px;
+}
+hr{
+  margin: 1.5em 0;
+  border: 0;
+  border-top: 2px solid #eee;
 }
 /* ==========================================================================
    #comments
@@ -791,12 +821,19 @@ input[type="text"],input[type="email"],input[type="url"],input[type="password"],
   #post-content-title{
     font-size: 1.5rem;
   }
-  .article-item{
+  .article-item {
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
     padding: 20px;
-  }
+    width: 80%;
+    margin: 20px auto;
+    float: none;
+}
   .article-item p{
     margin: 5px 0px;
   }
+  
 }
 
 

@@ -1,6 +1,6 @@
 <?php
 /**
- * 优雅のTYPECHO主题
+ * 大气
  *
  *
  * @package G
@@ -11,13 +11,12 @@
 
  $this->need('header.php');
  ?>
-<div id="article">
+<div id="article" class="clear">
   <div id="article-content">
  <?php while($this->next()): ?>
-    <div id="article-<?php $this->cid();?>" class="article-item">
+    <div id="article-<?php $this->cid();?>" class="article-item hoverup">
     	<h2 id="article-<?php $this->cid();?>-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
-      <p><?php $this->excerpt(50); ?></p>
-      <span><?php $this->category(''); ?><?php $this->date('F j, Y'); ?></span>
+      <p class="clear"><span id="article-author"><?php $this->author(); ?></span><span id="article-date"><?php $this->date('F j, Y'); ?></span></p>
     </div>
 <?php endwhile; ?>
 <div id="pages" class="clear">
