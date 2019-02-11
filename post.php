@@ -2,11 +2,23 @@
 <?php $this->need('header.php'); ?>
 
 <div id="post">
+	<div id="post-header" style="background-image:url(<?php  $this->fields->imgurl(); ?>);">
+		<div id="post-header-mask">
+			<div id="post-header-content">
+				<h2 id="post-content-title"><?php $this->title();?></h2>
+				<span id="post-content-meta"><?php $this->date('F j, Y'); ?> · <?php $this->category(' · '); ?> </span>
+			</div>
+		</div>
+	</div>
 	<div id="post-content">
-		<h2 id="post-content-title"><?php $this->title();?></h2>
 		<div id="post-content-article">
 			<?php $this->content();?>
 		</div>
+	</div>
+
+	<div id="post-footer" class="clear">
+		<div id="post-tags"><p>标签：<?php $this->tags(',', true, 'none'); ?></p></div>
+		<div id="post-lastEdit"><p>最后编辑于：<?php echo date('Y/m/d h:i' , $this->modified); ?></p></div>
 	</div>
 </div>
 	<?php $this->need('comments.php'); ?>

@@ -6,6 +6,7 @@
 
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/prism.css'); ?>" rel="stylesheet" />
+	<link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">
 	<style>
 		html::before{
 			  background: url(<?php $this->options->bkimg(); ?>) center 0 no-repeat;
@@ -37,7 +38,7 @@
 					<span><?php $this->options->description() ?></span>
 					<nav>
 						<a href="<?php Helper::options()->siteUrl()?>" <?php if ($this->is('index')) : ?> class="nav-focus"<?php endif; ?>>首页</a>
-						<!--<a href="<?php Helper::options()->siteUrl()?>blog" <?php if ($this->is('archive') or $this->is('post')) : ?> class="nav-focus"<?php endif; ?>>文章</a>-->
+						<a href="<?php Helper::options()->siteUrl()?>blog" <?php if ($this->is('archive') or $this->is('post')) : ?> class="nav-focus"<?php endif; ?>>文章</a>
 						<a href="<?php Helper::options()->siteUrl()?>links.html" <?php if ($this->is('page','links')) : ?> class="nav-focus"<?php endif; ?>>友人帐</a>
 						<a href="<?php Helper::options()->siteUrl()?>about.html" <?php if ($this->is('page','About')) : ?> class="nav-focus"<?php endif; ?>>关于</a>
 					</nav>
