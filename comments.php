@@ -31,7 +31,10 @@ echo $commentClass;
                 <span><?php $comments->author(); ?></span>
             </div>
             <div class="comment-content">
-                <?php $comments->content(); ?>
+              <?php
+                $cos = preg_replace('#\@\((.*?)\)#','<img src="/C/themes/G/IMG/bq/$1.png" class="bq">',$comments->content);
+                echo $cos;
+              ?>
             </div>
             <div class="comment-meta">
                 <span><?php $comments->date('Y-m-d H:i'); ?></span>
@@ -60,7 +63,8 @@ echo $commentClass;
     			<input type="email" name="mail" id="mail" class="text" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> placeholder="E-mail"  />
     			<input type="url" name="url" id="url" class="text" placeholder="<?php _e('http://'); ?>" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
             <?php endif; ?>
-                <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="Write here."><?php $this->remember('text'); ?></textarea>
+                <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="开始你的表演"><?php $this->remember('text'); ?></textarea>
+                <?php  $this->need('owo.php'); ?>
                 <button type="submit" class="submit"><?php _e('🚀发射'); ?></button>
     	</form>
         <?php endif; ?>

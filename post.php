@@ -12,7 +12,9 @@
 	</div>
 	<div id="post-content">
 		<div id="post-content-article">
-			<?php $this->content();?>
+			<?php
+			emotionContent($this->content,$this->options->themeUrl);
+			 ?>
 		</div>
 	</div>
 

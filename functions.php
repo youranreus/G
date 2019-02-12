@@ -70,3 +70,15 @@ function getBuildTime($builtTime) {
         echo '';
     }
 }
+
+/**
+* 解析表情
+*
+* @access public
+* @param mixed
+* @return
+*/
+function emotionContent($content,$url){
+  $cos = preg_replace('#\@\((.*?)\)#','<img src="'. $url .'/IMG/bq/$1.png" class="bq">',$content);
+  echo $cos;
+}

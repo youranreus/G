@@ -4,7 +4,7 @@
 * @author: youranreus
 */
 
-* {
+*{
 	font-family: 'Josefin Sans Light', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "'Hiragino Sans GB", STHeiti, "Microsoft Yahei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", Arial, Verdana, sans-serif;
 	text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 	-webkit-appearance:none;
@@ -41,24 +41,35 @@ html::before {
 ::selection {
 	background-color: #D6EDFF;
 }
-html::-webkit-scrollbar-track-piece {
-	background: whitesmoke;
-	transition: .3s ease all;
-}
 html::-webkit-scrollbar {
-	width: 1vw;
-	height: 1vw;
-	transition: .3s ease all;
+	height:8px;
+	width:8px
 }
 html::-webkit-scrollbar-thumb {
-	height: 20vh;
-	border-radius: 1vw;
-	background-color: lightgray;
-	transition: .3s ease all;
+	-webkit-box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1),inset 0 -1px 0 rgba(0,0,0,0.07);
+	background-clip:padding-box;
+	background-color:gray;
+	min-height:40px;
+	padding-top:100px;
+	border-radius:4px
 }
-html::-webkit-scrollbar-thumb:hover {
-	background-color: gray;
-	transition: .3s ease all;
+html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active {
+	background-color:#b3b3b3
+}
+html::-webkit-scrollbar,html *::-webkit-scrollbar {
+	height:8px;
+	width:8px
+}
+html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
+	-webkit-box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1),inset 0 -1px 0 rgba(0,0,0,0.07);
+	background-clip:padding-box;
+	background-color:#696969;
+	min-height:40px;
+	padding-top:100px;
+	border-radius:4px
+}
+html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *::-webkit-scrollbar-thumb:hover,html *::-webkit-scrollbar-thumb:active {
+	background-color:#959595
 }
 #gototop {
 	position: fixed;
@@ -71,6 +82,9 @@ html::-webkit-scrollbar-thumb:hover {
 	height: 70px;
 	opacity: 0.9;
 	cursor: pointer;
+}
+.OwO{
+	text-align: left;
 }
 /* ========================================================================== #header ==========================================================================*/
 	#header {
@@ -351,19 +365,16 @@ html::-webkit-scrollbar-thumb:hover {
 	margin-left: 50px;
 	margin-bottom: 10px;
 	color: white;
-	text-shadow: 2px 5px 9px rgba(0,0,0,0.2);
 }
 #post-content-meta {
 	position: relative;
 	font-size: 0.9rem;
-	margin-left: 50px;
+	margin-left: 55px;
 	color: white;
 	top: -15px;
-	text-shadow: 2px 5px 9px rgba(0,0,0,0.2);
 }
 #post-content-meta a {
 	color: white;
-	text-shadow: 2px 5px 9px rgba(0,0,0,0.2);
 }
 #post-content {
 	margin: 49px;
@@ -400,8 +411,9 @@ html::-webkit-scrollbar-thumb:hover {
 	position: relative;
 	display: inline-block!important;
 	margin: 0!important;
-	top: 10px;
+	top: 8px;
 	height: 30px!important;
+	border-radius: 0!important;
 }
 #post-content-article p {
 	clear: both;
@@ -448,6 +460,16 @@ html::-webkit-scrollbar-thumb:hover {
 	width: 36px;
 	height: 40px;
 }
+code:not([class*="language-"]) {
+    padding: 2px 8px;
+    margin: 0 4px;
+    word-wrap: break-word;
+    color: #555;
+    background: #eee;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
 hr {
 	margin: 1.5em 0;
 	border: 0;
@@ -596,7 +618,12 @@ ol.comment-list li.comment-parent {
 }
 ol.comment-list p {
 	margin:0;
-	word-break:break-all
+	word-break:break-all;
+	clear: both;
+  margin-top: 15px;
+  line-height:2;
+  text-align: justify;
+  color: #606975;
 }
 ol.comment-list li {
 	list-style:none
