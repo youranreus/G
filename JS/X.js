@@ -65,16 +65,14 @@ Smilies = {
     }
 }
 
-$(function(){
-	$(".OwO-logo").click(
-		function(){
-			if($("#OwO-container").css("display")=='none'){
-				 $("#OwO-container").slideDown();
-			}else{
-				 $("#OwO-container").slideUp();
-			 }
-	});
-});
+
+function OwO_show(){
+	if($("#OwO-container").css("display")=='none'){
+		 $("#OwO-container").slideDown();
+	}else{
+		 $("#OwO-container").slideUp();
+	 }
+}
 
 
 console.info(

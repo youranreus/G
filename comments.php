@@ -65,7 +65,7 @@ echo $commentClass;
             <?php endif; ?>
                 <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="开始你的表演"><?php $this->remember('text'); ?></textarea>
                 <div class="clear">
-                  <div class="OwO-logo">
+                  <div class="OwO-logo" onclick="OwO_show()">
                    <span>(OωO)</span>
                   </div>
                   <button type="submit" class="submit"><?php _e('🚀发射'); ?></button>
