@@ -8,6 +8,11 @@ function themeConfig($form) {
     $form->addInput($beian);
     $builtTime = new Typecho_Widget_Helper_Form_Element_Text('builtTime', NULL, NULL, _t('运行时间') , _t('格式YYYY-MM-DD'));
     $form->addInput($builtTime);
+    $enableIndexPage = new Typecho_Widget_Helper_Form_Element_Radio('enableIndexPage', array(
+        '1' => _t('cool') ,
+        '0' => _t('nope')
+    ) , '0', _t('是否使用独立页面做首页') , _t('默认为关闭'));
+    $form->addInput($enableIndexPage);
     $enableUpyun = new Typecho_Widget_Helper_Form_Element_Radio('enableUpyun', array(
         '1' => _t('我是盟友') ,
         '0' => _t('啥东西，不要')
