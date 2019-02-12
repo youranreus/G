@@ -12,16 +12,16 @@ $this -> need('header.php');
 	    <div class="friends">
 
 					<?php Links_Plugin::output("
-					<a href='{url}' target='_blank'>
-						<li class='clear hoverup'>
-								<img src='{image}' alt='{name}'/>
+
+						<li class='clear'>
+								<a href='{url}' target='_blank'><img src='{image}' alt='{name}'/></a>
 								<div class='link-item-content'>
 									<h3>{name}</h3>
 									<span>{sort}</span>
 									<p>{description}</p>
 								</div>
 						</li>
-					</a>
+
 					", 0); ?>
 
 					<?php $this->content();?>

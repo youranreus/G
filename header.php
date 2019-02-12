@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/prism.css'); ?>" rel="stylesheet" />
 	<link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">
+	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<style>
 		html::before{
 			  background: url(<?php $this->options->bkimg(); ?>) center 0 no-repeat;
@@ -28,7 +29,7 @@
 
 </head>
 
-<body>
+<body ontouchstart>
 	<!-- 头部/pjax -->
 	<div id="pjax-container">
 		<div id="header">
