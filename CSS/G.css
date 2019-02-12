@@ -83,8 +83,30 @@ html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *:
 	opacity: 0.9;
 	cursor: pointer;
 }
-.OwO{
+.OwO-logo{
 	text-align: left;
+	color: #666;
+	cursor: pointer;
+	font-size: 0.9rem;
+	display: inline-block;
+	float: left;
+	-webkit-transition: .3s ease all;
+	-moz-transition: .3s ease all;
+	-ms-transition: .3s ease all;
+	-o-transition: .3s ease all;
+	transition: .3s ease all;
+}
+.OwO-logo:hover {
+	-webkit-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	transform: scale(1.05);
+}
+#OwO-container{
+	display: none;
+	padding: 0px;
+	padding-top:10px;
 }
 /* ========================================================================== #header ==========================================================================*/
 	#header {
@@ -589,11 +611,9 @@ ruby>rt {
 }
 #comment-form button {
 	font-size:14px;
-	position:absolute;
 	outline:0;
 	padding:6px 20px;
-	right:40px;
-	bottom:20px;
+	float: right;
 	border-radius:20px;
 	background:0 0;
 	border:1px solid #5f5f5f;
@@ -1207,9 +1227,9 @@ ol.comment-list ol {
 	-webkit-box-shadow: 0 22px 43px rgba(0,0,0,0.15);
 	-moz-box-shadow: 0 22px 43px rgba(0,0,0,0.15);
 	box-shadow: 0 22px 43px rgba(0,0,0,0.15);
-	-webkit-transform: translateY(-4px) scale(1.05);
-	-moz-transform: translateY(-4px) scale(1.05);
-	-ms-transform: translateY(-4px) scale(1.05);
-	-o-transform: translateY(-4px) scale(1.05);
-	transform: translateY(-4px) scale(1.05);
+	-webkit-transform: translateY(-4px) scale(1.02);
+	-moz-transform: translateY(-4px) scale(1.02);
+	-ms-transform: translateY(-4px) scale(1.02);
+	-o-transform: translateY(-4px) scale(1.02);
+	transform: translateY(-4px) scale(1.02);
 }

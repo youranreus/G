@@ -5,7 +5,7 @@
 * @author      youranreus
 */
 ?>
-<div class="OwO" id="qaq">
+<div class="OwO OwO-open" id="qaq">
    <div class="OwO-body" id="OwO-body">
     <ul id="OwO-pp" class="OwO-items OwO-items-emoticon OwO-items-show" style="max-height: 197px;">
      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan)');"><img src="/C/themes/X/IMG/bq/chaiquan.png" /></li>
@@ -74,8 +74,5 @@
      <li class="OwO-item" onclick="Smilies.grin('@(yingyue)');"><img src="/C/themes/X/IMG/bq/yingyue.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(dengpao)');"><img src="/C/themes/X/IMG/bq/dengpao.png" /></li>
     </ul>
-   </div>
-   <div class="OwO-logo" onclick="$('#qaq').toggleClass('OwO-open');">
-    <span>(OωO)</span>
    </div>
   </div>

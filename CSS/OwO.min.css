@@ -45,18 +45,13 @@
 }
 .OwO .OwO-logo:hover span {
 	display:inline-block;
-
 }
 .OwO .OwO-body {
-	display:none;
-	position:absolute;
-	width:400px;
-	background:#fff;
-	border:1px solid #ddd;
-	z-index:1;
-	top:21px;
-	border-radius:0 4px 4px 4px;
-	-webkit-overflow-scrolling: touch;
+	display: none;
+  z-index: 1;
+  top: 45px;
+  border-radius: 0 4px 4px 4px;
+  -webkit-overflow-scrolling: touch;
 }
 .OwO .OwO-body .OwO-items {
 	-webkit-user-select:none;

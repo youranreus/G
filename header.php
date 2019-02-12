@@ -2,6 +2,10 @@
 <head>
 	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, width=device-width"/>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<!-- DNS预解析 -->
+	<link rel="dns-prefetch" href="//cdn.bootcss.com">
+	<link rel="dns-prefetch" href="//i.loli.net">
+
 	<title><?php $this->archiveTitle(' &raquo; ', '', ' | '); ?><?php $this->options->title(); ?></title>
 
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>" rel="stylesheet" />

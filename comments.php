@@ -56,7 +56,7 @@ echo $commentClass;
     <div class="comments-header" id="<?php $this->respondId(); ?>" >
         <?php if($this->allow('comment')): ?>
 
-        <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
+        <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form" class="clear">
           <h3 class="comment-title">🎯回复  <?php $comments->cancelReply('/ 取消回复'); ?></h3>
             <?php if(!$this->user->hasLogin()): ?>
     			<input type="text" name="author" id="author" class="text" value="<?php $this->remember('author'); ?>" required placeholder="Name" />
@@ -64,8 +64,15 @@ echo $commentClass;
     			<input type="url" name="url" id="url" class="text" placeholder="<?php _e('http://'); ?>" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
             <?php endif; ?>
                 <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="开始你的表演"><?php $this->remember('text'); ?></textarea>
-                <?php  $this->need('owo.php'); ?>
-                <button type="submit" class="submit"><?php _e('🚀发射'); ?></button>
+                <div class="clear">
+                  <div class="OwO-logo">
+                   <span>(OωO)</span>
+                  </div>
+                  <button type="submit" class="submit"><?php _e('🚀发射'); ?></button>
+                </div>
+
+                <div id="OwO-container"><?php  $this->need('owo.php'); ?></div>
+
     	</form>
         <?php endif; ?>
     </div>
