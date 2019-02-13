@@ -25,6 +25,7 @@ function themeConfig($form) {
     $form->addInput($enableOpac);
 }
 
+require_once 'Parsedown.php';
 
 /**
 * 网站运行时间
@@ -103,6 +104,28 @@ if(!in_array($cid,$views)){
     echo $row['views'];
 }
 
+/**
+* 通过id获取原始文章内容
+*
+* @access public
+* @param mixed
+* @return
+*/
+
+function GetOriginalContent($id){
+  $db = Typecho_Db::get();
+  $result = $db->fetchAll($db->select()->from('table.contents')
+    ->where('status = ?','publish')
+    ->where('type = ?', 'post')
+    ->where('cid = ?',$id)
+  );
+  foreach($result as $val){
+    $val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
+    $content = $val['text'];
+    return $content;
+  }
+}
+
 
 /**
 * 通过id获取文章信息
@@ -148,10 +171,13 @@ function GetPostById($id){
 */
 function emotionContent($content,$url)
 {
+    //HyperDown解析
+    $Parsedown = new Parsedown();
+    $content =  $Parsedown->text($content);
     //表情解析
     $fcontent = preg_replace('#\@\((.*?)\)#','<img src="'. $url .'/IMG/bq/$1.png" class="bq">',$content);
 
-    //同博客内文章传送
+    //同博客内文章传送解析
     $arts=[];
     preg_match_all("/\[art\](.*?)\[\/art\]/sm",$fcontent, $arts);
     $art_num = count($arts[0]) - 1;
@@ -163,6 +189,7 @@ function emotionContent($content,$url)
 
       $fcontent = preg_replace('/(\\[art\\])('.$postid.')(\\[\\/art\\])/is',$art_info,$fcontent);
     }
-
+    
+    //输出最终结果
     echo $fcontent;
 }

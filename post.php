@@ -6,14 +6,16 @@
 		<div id="post-header-mask">
 			<div id="post-header-content">
 				<h2 id="post-content-title"><?php $this->title();?></h2>
-				<span id="post-content-meta"><?php $this->date('F j, Y'); ?> · <?php $this->category(' · '); ?> · <?php get_post_view($this); ?></span>
+				<span id="post-content-meta"><?php $this->date('F j, Y'); ?> · <?php $this->category(' · '); ?> · <?php get_post_view($this); ?>次阅读</span>
 			</div>
 		</div>
 	</div>
 	<div id="post-content">
 		<div id="post-content-article">
 			<?php
-			emotionContent($this->content,$this->options->themeUrl);
+			$content = GetOriginalContent($this->cid);
+
+			emotionContent($content,$this->options->themeUrl);
 			 ?>
 		</div>
 	</div>
