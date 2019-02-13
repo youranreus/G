@@ -26,15 +26,11 @@ function themeConfig($form) {
 }
 
 
-
-date_default_timezone_set('Asia/Shanghai');
-
-
 /**
 * 网站运行时间
 *
 * @access public
-* @param mixed $arg1 用户自定义建站时间
+* @param mixed $arg1
 * @return array 返回类型
 */
 function getBuildTime($builtTime) {
@@ -71,14 +67,102 @@ function getBuildTime($builtTime) {
     }
 }
 
+
 /**
-* 解析表情
+* 文章阅读次数
 *
 * @access public
 * @param mixed
 * @return
 */
-function emotionContent($content,$url){
-  $cos = preg_replace('#\@\((.*?)\)#','<img src="'. $url .'/IMG/bq/$1.png" class="bq">',$content);
-  echo $cos;
+function get_post_view($archive)
+{
+    $cid    = $archive->cid;
+    $db     = Typecho_Db::get();
+    $prefix = $db->getPrefix();
+    if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
+        $db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
+        echo 0;
+        return;
+    }
+    $row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
+    if ($archive->is('single')) {
+ $views = Typecho_Cookie::get('extend_contents_views');
+        if(empty($views)){
+            $views = array();
+        }else{
+            $views = explode(',', $views);
+        }
+if(!in_array($cid,$views)){
+       $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
+            array_push($views, $cid);
+            $views = implode(',', $views);
+            Typecho_Cookie::set('extend_contents_views', $views); //记录查看cookie
+        }
+    }
+    echo $row['views'];
+}
+
+
+/**
+* 通过id获取文章信息
+*
+* @access public
+* @param mixed
+* @return
+*/
+
+function GetPostById($id){
+
+		$db = Typecho_Db::get();
+		$result = $db->fetchAll($db->select()->from('table.contents')
+			->where('status = ?','publish')
+			->where('type = ?', 'post')
+			->where('cid = ?',$id)
+		);
+		if($result){
+			$i=1;
+			foreach($result as $val){
+				$val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
+				$post_title = htmlspecialchars($val['title']);
+				$post_permalink = $val['permalink'];
+        $post_date = $val['created'];
+        $post_date = date('Y-m-d',$post_date);
+				return '<div class="ArtinArt">
+                  <h4><a href="'.$post_permalink.'">'.$post_title.'</a></h4>
+                  <p class="clear"><span style="float:left">ID:'.$id.'</span><span style="float:right">'.$post_date.'</span></p>
+                </div>';
+			}
+		}
+    else{
+      return '<span>id无效QAQ</span>';
+    }
+}
+
+/**
+* 文章内容解析（短代码，表情）
+*
+* @access public
+* @param mixed
+* @return
+*/
+function emotionContent($content,$url)
+{
+    //表情解析
+    $fcontent = preg_replace('#\@\((.*?)\)#','<img src="'. $url .'/IMG/bq/$1.png" class="bq">',$content);
+
+    //同博客内文章传送
+    $arts=[];
+    preg_match_all("/\[art\](.*?)\[\/art\]/sm",$fcontent, $arts);
+    $art_num = count($arts[0]) - 1;
+    for($art_count = 0;$art_num>=$art_count;$art_count++)
+    {
+      $postid = ltrim($arts[0][$art_count],"[art]");
+      $postid = rtrim($postid,"[/art]");
+      $art_info = GetPostById($postid);
+
+      $fcontent = preg_replace('/(\\[art\\])('.$postid.')(\\[\\/art\\])/is',$art_info,$fcontent);
+    }
+
+    echo $fcontent;
 }

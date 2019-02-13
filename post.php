@@ -6,7 +6,7 @@
 		<div id="post-header-mask">
 			<div id="post-header-content">
 				<h2 id="post-content-title"><?php $this->title();?></h2>
-				<span id="post-content-meta"><?php $this->date('F j, Y'); ?> · <?php $this->category(' · '); ?> </span>
+				<span id="post-content-meta"><?php $this->date('F j, Y'); ?> · <?php $this->category(' · '); ?> · <?php get_post_view($this); ?></span>
 			</div>
 		</div>
 	</div>
