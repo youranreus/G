@@ -9,6 +9,7 @@
 	<title><?php $this->archiveTitle(' &raquo; ', '', ' | '); ?><?php $this->options->title(); ?></title>
 
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/shortcode.G.css'); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/OwO.min.css'); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/prism.css'); ?>" rel="stylesheet" />
 	<link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">

@@ -1,0 +1,84 @@
+/*
+* @description: 短代码样式表
+* @author: youranreus
+*/
+
+
+.ArtinArt{
+	padding: 20px;
+	background: #eee;
+	border-radius: 30px;
+	max-width: 300px;
+	margin: 10px auto;
+}
+.ArtinArt h4{
+	margin:0;
+	border: none;
+}
+.ArtinArt h4 a::after{
+	display: none;
+}
+.ArtinArt p {
+	margin-top:5px!important;
+	margin-bottom: 0;
+	color:hsla(0,0%,100%,.6);
+}
+
+.post-download{
+
+}
+.post-download a{
+  border: 1px solid #666;
+  padding: 0.7rem 2rem;
+  display: inline-block;
+  max-width: 150px;
+  border-radius: 100000000rem;
+  text-align: center;
+  color:#333!important;
+  text-overflow: ellipsis;
+  white-space: nowrap !important;
+  overflow: hidden;
+
+  -webkit-transition: .3s ease all;
+  -moz-transition: .3s ease all;
+  -ms-transition: .3s ease all;
+  -o-transition: .3s ease all;
+  transition: .3s ease all;
+}
+.post-download a span::before{
+  font-size: 1rem;
+  content: ' ';
+  display: inline-block;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  top: 0.2rem;
+  left: -0.4rem;
+  background-size: contain;
+  background-image: url(https://i.loli.net/2019/02/15/5c66d1a1484bd.png);
+  -webkit-transition: .3s ease all;
+  -moz-transition: .3s ease all;
+  -ms-transition: .3s ease all;
+  -o-transition: .3s ease all;
+  transition: .3s ease all;
+}
+.post-download a:hover span::before{
+  font-size: 1rem;
+  content: ' ';
+  display: inline-block;
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  top: 0.2rem;
+  left: -0.4rem;
+  background-size: contain;
+  background-image: url(https://i.loli.net/2019/02/15/5c66d1a148f1d.png);
+}
+
+.post-download a::after{
+  display: none;
+}
+.post-download a:hover{
+  background:#666;
+  color:white!important;
+}

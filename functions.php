@@ -25,7 +25,8 @@ function themeConfig($form) {
     $form->addInput($enableOpac);
 }
 
-require_once 'Parsedown.php';
+require_once __DIR__ . '/lib/Parsedown.php';
+require_once __DIR__ . '/lib/shortcode.php';
 
 /**
 * 网站运行时间
@@ -189,7 +190,11 @@ function emotionContent($content,$url)
 
       $fcontent = preg_replace('/(\\[art\\])('.$postid.')(\\[\\/art\\])/is',$art_info,$fcontent);
     }
-    
+
+    //感谢Maicong大佬的短代码解析QwQ
+    $fcontent = do_shortcode($fcontent);
+
+
     //输出最终结果
     echo $fcontent;
 }

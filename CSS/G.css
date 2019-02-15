@@ -1,9 +1,14 @@
+/**
+ * @name: G.css
+ * @description: 主题G主要样式表
+ * @author: youranreus(youranreus@qq.com)
+ * @update: 2019-02-15
+ */
 
-/*
-* @description: 主样式表
-* @author: youranreus
-*/
 
+ /**
+  * 基本样式
+  */
 *{
 	font-family: 'Josefin Sans Light', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "'Hiragino Sans GB", STHeiti, "Microsoft Yahei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", Arial, Verdana, sans-serif;
 	text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
@@ -71,6 +76,10 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *::-webkit-scrollbar-thumb:hover,html *::-webkit-scrollbar-thumb:active {
 	background-color:#959595
 }
+
+/**
+ * 小部件
+ */
 #gototop {
 	position: fixed;
 	right: 40;
@@ -108,8 +117,12 @@ html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *:
 	padding: 0px;
 	padding-top:10px;
 }
-/* ========================================================================== #header ==========================================================================*/
-	#header {
+
+/**
+ * 头部
+ */
+
+#header {
 	border-radius: 30px;
 	background: #787878;
 	box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
@@ -169,7 +182,11 @@ html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *:
 	-o-animation: nav-width 0.5s;
 	/* Opera*/
 }
-/* ========================================================================== #首页 ==========================================================================*/
+
+/**
+ * welcome.php
+ */
+
 	#zp {
 	margin: 50px auto;
 	width: 800px;
@@ -189,8 +206,12 @@ html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *:
 #zp-content p span {
 	color: RGB(87,103,104);
 }
-/* ========================================================================== #/blog/ ==========================================================================*/
-	#article {
+
+/**
+ * 文章展示页
+ */
+
+#article {
 	margin: 50px auto;
 	width: 800px;
 }
@@ -258,8 +279,12 @@ html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *:
 .prev {
 	float: left;
 }
-/* ========================================================================== #独立页面 ==========================================================================*/
-	#page {
+
+/**
+ * page
+ */
+
+#page {
 	margin: 50px auto;
 	width: 800px;
 	background: white;
@@ -342,8 +367,12 @@ html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *:
 	width: 36px;
 	height: 40px;
 }
-/* ========================================================================== #文章 ==========================================================================*/
-	#post {
+
+/**
+ * post
+ */
+
+#post {
 	margin: 50px auto;
 	width: 800px;
 	background: white;
@@ -536,28 +565,12 @@ ruby>rt {
 #post-tags a:hover {
 	background: rgba(153,153,153,0.1);
 }
-.ArtinArt{
-	padding: 20px;
-	background: #eee;
-	border-radius: 30px;
-	max-width: 300px;
-	margin: 10px auto;
-}
-.ArtinArt h4{
-	margin:0;
-	border: none;
-}
-.ArtinArt h4 a::after{
-	display: none;
-}
-.ArtinArt p {
-	margin-top:5px!important;
-	margin-bottom: 0;
-	color:hsla(0,0%,100%,.6);
-}
 
-/* ========================================================================== #comments ==========================================================================*/
-	#comments {
+/**
+ * comments
+ */
+
+#comments {
 	width: 800px;
 	margin: 20px auto;
 }
@@ -692,23 +705,6 @@ ol.comment-list ol {
 .comment-author span a {
 	color:#666;
 }
-.device-info {
-	float:right;
-	margin-right:15px
-}
-.device-info span {
-	margin:0 10px;
-	margin-right: .3125rem;
-	padding: .25rem .5rem;
-	border-radius: .1875rem;
-	border: 1px solid rgba(153,153,153,0.1);
-	color: #666;
-	text-decoration: none;
-	font-size: .75rem;
-	font-weight: 500;
-}
-.device-info span:first-child {
-	}
 .comment-content {
 	margin: 20px 0px;
 	color: #313131;
@@ -734,8 +730,12 @@ ol.comment-list ol {
 .comment-by-author {
 	position:relative
 }
-/* ========================================================================== #links ==========================================================================*/
-	#links {
+
+/**
+ * links
+ */
+
+#links {
 	width: 800px;
 	margin: 20px auto;
 	background: RGB(255,255,255);
@@ -825,8 +825,12 @@ ol.comment-list ol {
 	font-size: 0.875rem;
 	color:#333;
 }
-/* ========================================================================== #页脚 ==========================================================================*/
-	#footer {
+
+/**
+ * footer
+ */
+
+#footer {
 	width: 800px;
 	margin: 20px auto;
 	background: RGB(113,114,122);
@@ -856,6 +860,12 @@ ol.comment-list ol {
 	height: 50px;
 	margin-right: 20px;
 }
+
+
+/**
+ * 1024px
+ */
+
 @media screen and (max-width: 1024px) {
 	#pjax-container {
 	width: 100%;
@@ -949,6 +959,10 @@ ol.comment-list ol {
 	font-size: 1.5rem;
 }
 }
+
+/**
+ * 768px
+ */
 @media screen and (max-width: 768px) {
 	#pjax-container {
 	width: 100%;
@@ -1084,8 +1098,13 @@ ol.comment-list ol {
 	font-size: 1.3rem;
 }
 }
-/* ========================================================================== #动画 ==========================================================================*/
-	@keyframes nav-width {
+
+
+/**
+ * 动画
+ */
+
+@keyframes nav-width {
 	0% {
 	width: 0%
 }
