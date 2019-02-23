@@ -16,6 +16,7 @@
  <?php while($this->next()): ?>
     <div id="article-<?php $this->cid();?>" class="article-item hoverup">
     	<h2 id="article-<?php $this->cid();?>-title"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
+      <?php if ($this->options->enableOneRow == 0): ?><em><?php $this->excerpt(50);?></em><?php endif; ?>
       <p class="clear"><span id="article-author"><?php $this->author(); ?></span><span id="article-date"><?php $this->date('F j, Y'); ?></span></p>
     </div>
 <?php endwhile; ?>

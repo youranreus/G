@@ -4,6 +4,8 @@ function themeConfig($form) {
     echo "<h2 style='color:RGB(182,177,150)'>主题G配置界面：</h2>";
     $bkimg = new Typecho_Widget_Helper_Form_Element_Text('bkimg', NULL, NULL, _t('背景图片') , _t('想要啥背景？'));
     $form->addInput($bkimg);
+    $bkcolor = new Typecho_Widget_Helper_Form_Element_Text('bkcolor', NULL, NULL, _t('背景颜色') , _t('如果没有想要的背景就换成纯色吧'));
+    $form->addInput($bkcolor);
     $beian = new Typecho_Widget_Helper_Form_Element_Text('beian', NULL, NULL, _t('备案号') , _t('没备案当我没说'));
     $form->addInput($beian);
     $builtTime = new Typecho_Widget_Helper_Form_Element_Text('builtTime', NULL, NULL, _t('运行时间') , _t('格式YYYY-MM-DD'));
@@ -23,6 +25,12 @@ function themeConfig($form) {
         '0' => _t('不要，快瞎了')
     ) , '0', _t('半透明开关') , _t('默认为打开'));
     $form->addInput($enableOpac);
+
+    $enableOneRow = new Typecho_Widget_Helper_Form_Element_Radio('enableOneRow', array(
+        '1' => _t('开启') ,
+        '0' => _t('关闭')
+    ) , '0', _t('开启文章页双排显示') , _t('默认为打开'));
+    $form->addInput($enableOneRow);
 }
 
 require_once __DIR__ . '/lib/Parsedown.php';

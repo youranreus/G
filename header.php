@@ -15,9 +15,64 @@
 	<link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">
 	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<style>
-		html::before{
-			  background: url(<?php $this->options->bkimg(); ?>) center 0 no-repeat;
+
+		<?php if ($this->options->enableOneRow == 0): ?>
+		.article-item {
+	    background: white;
+	    border-radius: 30px;
+	    box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+	    padding: 30px;
+	    margin: 20px 0;
 		}
+		.article-item h2{
+	    margin-bottom: 20px;
+		}
+		@media screen and (max-width: 768px) {
+
+			.article-item {
+		    background: white;
+		    border-radius: 30px;
+		    box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+		    padding: 20px;
+		    width: 87%;
+		    margin: 20px auto;
+		    float: none;
+			}
+
+		}
+		<?php else: ?>
+		.article-item {
+	    background: white;
+	    border-radius: 30px;
+	    box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+	    padding: 30px;
+	    width: 320px;
+	    margin: 10px;
+	    float: left;
+		}
+		@media screen and (max-width: 768px) {
+
+			.article-item {
+		    background: white;
+		    border-radius: 30px;
+		    box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+		    padding: 20px;
+		    width: 87%;
+		    margin: 20px auto;
+		    float: none;
+			}
+
+		}
+		<?php endif; ?>
+		html::after{
+			background-color: <?php $this->options->bkcolor(); ?>;
+			z-index: -2;
+		}
+		html::before{
+			  background-image: url(<?php $this->options->bkimg(); ?>);
+		}
+
+
 		<?php if ($this->options->enableOpac): ?>
 		#zp,#links,#page,#post,#article,#comments{
 		 opacity: 0.9;
