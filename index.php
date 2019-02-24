@@ -5,7 +5,7 @@
  *
  * @package G
  * @author YOURAN
- * @version 1.0.0
+ * @version 1.0.3
  * @link https://gundam.exia.xyz/
  */
 
