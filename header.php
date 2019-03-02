@@ -40,6 +40,19 @@
 			}
 
 		}
+		@media screen and (max-width: 1024px) {
+
+			.article-item {
+		    background: white;
+		    border-radius: 30px;
+		    box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+		    padding: 20px;
+		    width: 90%;
+		    margin: 20px auto;
+		    float: none;
+			}
+
+		}
 		<?php else: ?>
 		.article-item {
 	    background: white;

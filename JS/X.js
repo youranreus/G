@@ -26,7 +26,7 @@ var mobileHover = function () {
 
 
 //pjax 刷新
-$(document).pjax('a[target!=_blank],a[no-pjax]', {
+$(document).pjax('a:not(a[target="_blank"], a[no-pjax])', {
     container: '#pjax-container',
     fragment: '#pjax-container',
     timeout: 8000

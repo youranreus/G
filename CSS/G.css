@@ -15,7 +15,8 @@
 	-webkit-appearance:none;
 }
 html {
-	}
+
+}
 body {
 	padding: 0px;
 	margin: 0;
@@ -59,6 +60,10 @@ html::-webkit-scrollbar {
 	height:8px;
 	width:8px
 }
+
+::-webkit-scrollbar-track-piece{
+
+}
 html::-webkit-scrollbar-thumb {
 	-webkit-box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1),inset 0 -1px 0 rgba(0,0,0,0.07);
 	background-clip:padding-box;
@@ -72,7 +77,7 @@ html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active {
 }
 html::-webkit-scrollbar,html *::-webkit-scrollbar {
 	height:8px;
-	width:8px
+	width:8px;
 }
 html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	-webkit-box-shadow:inset 1px 1px 0 rgba(0,0,0,0.1),inset 0 -1px 0 rgba(0,0,0,0.07);
@@ -82,9 +87,7 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	padding-top:100px;
 	border-radius:4px
 }
-html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *::-webkit-scrollbar-thumb:hover,html *::-webkit-scrollbar-thumb:active {
-	background-color:#959595
-}
+
 
 /**
  * 小部件
@@ -469,7 +472,7 @@ html::-webkit-scrollbar-thumb:hover,html::-webkit-scrollbar-thumb:active,html *:
 #post-content-article h4 {
 	font-size: 1.3rem;
 }
-#post-content p img {
+#post-content img {
 	display: block;
 	margin: 20px auto;
 	text-align: center;
