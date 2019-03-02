@@ -22,7 +22,7 @@
 
 	<div id="post-footer" class="clear">
 		<div id="post-tags"><p>标签：<?php $this->tags(',', true, 'none'); ?></p></div>
-		<div id="post-lastEdit"><p>最后编辑于：<?php echo date('Y/m/d h:i' , $this->modified); ?></p></div>
+		<div id="post-lastEdit"><p>最后编辑于：<?php echo date('Y/m/d H:i' , $this->modified); ?></p></div>
 	</div>
 </div>
 	<?php $this->need('comments.php'); ?>
