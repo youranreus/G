@@ -2,6 +2,8 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
     echo "<h2 style='color:RGB(182,177,150)'>主题G配置界面：</h2>";
+    $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('图标') , _t(''));
+    $form->addInput($favicon);
     $bkimg = new Typecho_Widget_Helper_Form_Element_Text('bkimg', NULL, NULL, _t('背景图片') , _t('想要啥背景？'));
     $form->addInput($bkimg);
     $bkcolor = new Typecho_Widget_Helper_Form_Element_Text('bkcolor', NULL, NULL, _t('背景颜色') , _t('如果没有想要的背景就换成纯色吧'));
@@ -10,6 +12,8 @@ function themeConfig($form) {
     $form->addInput($beian);
     $builtTime = new Typecho_Widget_Helper_Form_Element_Text('builtTime', NULL, NULL, _t('运行时间') , _t('格式YYYY-MM-DD'));
     $form->addInput($builtTime);
+    $animateTime = new Typecho_Widget_Helper_Form_Element_Text('animateTime', NULL, NULL, _t('动画过渡时间') , _t('格式 1s'));
+    $form->addInput($animateTime);
     $enableIndexPage = new Typecho_Widget_Helper_Form_Element_Radio('enableIndexPage', array(
         '1' => _t('cool') ,
         '0' => _t('nope')

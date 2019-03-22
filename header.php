@@ -76,6 +76,8 @@
 			}
 
 		}
+
+
 		<?php endif; ?>
 		html::after{
 			background-color: <?php $this->options->bkcolor(); ?>;
@@ -92,12 +94,53 @@
 	 	}
 		<?php endif; ?>
 
+		<?php if ($this->options->animateTime): ?>
+
+		.opacity-show {
+			animation: opacity-show <?php $this->options->animateTime(); ?>;
+			-moz-animation: opacity-show <?php $this->options->animateTime(); ?>;
+			/* Firefox*/
+			-webkit-animation: opacity-show <?php $this->options->animateTime(); ?>;
+			/* Safari and Chrome*/
+			-o-animation: opacity-show <?php $this->options->animateTime(); ?>;
+			/* Opera*/
+		}
+		.opacity-disappear {
+			animation: opacity-disappear <?php $this->options->animateTime(); ?>;
+			-moz-animation: opacity-disappear <?php $this->options->animateTime(); ?>;
+			/* Firefox*/
+			-webkit-animation: opacity-disappear <?php $this->options->animateTime(); ?>;
+			/* Safari and Chrome*/
+			-o-animation: opacity-disappear <?php $this->options->animateTime(); ?>;
+			/* Opera*/
+		}
+		<?php else: ?>
+		.opacity-show {
+			animation: opacity-show 1s;
+			-moz-animation: opacity-show 1s;
+			/* Firefox*/
+			-webkit-animation: opacity-show 1s;
+			/* Safari and Chrome*/
+			-o-animation: opacity-show 1s;
+			/* Opera*/
+		}
+		.opacity-disappear {
+			animation: opacity-disappear 1s;
+			-moz-animation: opacity-disappear 1s;
+			/* Firefox*/
+			-webkit-animation: opacity-disappear 1s;
+			/* Safari and Chrome*/
+			-o-animation: opacity-disappear 1s;
+			/* Opera*/
+		}
+		<?php endif; ?>
+
 	</style>
 
-	<link rel="icon" type="image/png" href="/favicon.ico">
-	<link href="/favicon.ico" rel="icon">
+	<link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">
+	<link href="<?php $this->options->favicon(); ?>" rel="icon">
 	<link rel='dns-prefetch' href='//s.w.org'>
-	<link rel="apple-touch-icon-precomposed" href="/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" href="<?php $this->options->favicon(); ?>">
 	<?php $this->header(); ?>
 
 

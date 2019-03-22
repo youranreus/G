@@ -25,6 +25,8 @@ var mobileHover = function () {
 };
 
 
+
+
 //pjax 刷新
 $(document).pjax('a:not(a[target="_blank"], a[no-pjax])', {
     container: '#pjax-container',
@@ -48,6 +50,7 @@ function() {
 				return '<a data-fancybox="gallery" no-pjax data-type="image" href="' + $(this).attr("src") + '" class="light-link"></a>';
 		 })
 	});
+
 }).on('pjax:click',function() {$('body,html').animate({scrollTop:0},200);});
 
 Smilies = {

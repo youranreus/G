@@ -22,9 +22,12 @@ body {
 	margin: 0;
 	background: white;
 }
-a:link {
+a:link{
 	text-decoration: none;
 	color: #07f;
+}
+a:visited{
+	color:#07f;
 }
 html::before{
 	content: '';
@@ -46,11 +49,11 @@ html::after{
 	width:100%;
 	height:100%;
 }
-.clear,.clear::before,.clear::after {
+.clear,.page-navigator,.clear::before,.page-navigator::before,.clear::after,.page-navigator::after{
 	display: block;
 	clear: both;
 }
-.clear::before,.clear::after {
+.clear::before,.clear::after,.page-navigator::after,.page-navigator::before{
 	content: '';
 }
 ::selection {
@@ -282,7 +285,7 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	font-size: .875rem;
 	line-height: 1.5;
 	font-weight: 500;
-	color: #333;
+	color: #333!important;
 	border: .0625rem solid #333 !important;
 	margin: 10px;
 	margin-top: 30px;
@@ -295,6 +298,9 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 }
 .next:hover,.prev:hover {
 	background: #333 !important;
+	color: #fff !important;
+}
+.next:hover a,.prev:hover a{
 	color: #fff !important;
 }
 .next {
@@ -605,10 +611,23 @@ ruby>rt {
 	width: 800px;
 	margin: 20px auto;
 }
-#comments {
-	-webkit-animation:fade-in-top .3s .6s backwards;
-	animation:fade-in-top .3s .6s backwards
+.page-navigator {
+	display:block;
+	margin-left: -40px;
 }
+.page-navigator li{
+	display: none;
+}
+.page-navigator li.prev, .page-navigator li.next{
+	list-style:none;
+	display:inline-block;
+	margin:5px 0
+}
+.page-navigator li a{
+	color: #333;
+	text-decoration: none;
+}
+
 .comment-title a,[title=Logout] {
 	border:none;
 	color:#dc143c;
@@ -1272,24 +1291,7 @@ ol.comment-list ol {
 	width: 100%;
 	transition: width 0.3s;
 }
-.opacity-show {
-	animation: opacity-show 1s;
-	-moz-animation: opacity-show 1s;
-	/* Firefox*/
-	-webkit-animation: opacity-show 1s;
-	/* Safari and Chrome*/
-	-o-animation: opacity-show 1s;
-	/* Opera*/
-}
-.opacity-disappear {
-	animation: opacity-disappear 1s;
-	-moz-animation: opacity-disappear 1s;
-	/* Firefox*/
-	-webkit-animation: opacity-disappear 1s;
-	/* Safari and Chrome*/
-	-o-animation: opacity-disappear 1s;
-	/* Opera*/
-}
+
 .hoverup {
 	-webkit-transition: .3s ease all;
 	-moz-transition: .3s ease all;

@@ -1,5 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('header.php'); ?>
+<?php
+	$this->need('header.php');
+?>
 
 <div id="post">
 	<div id="post-header" style="background-image:url(<?php  $this->fields->imgurl(); ?>);">
