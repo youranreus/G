@@ -149,6 +149,7 @@
 <body ontouchstart>
 	<!-- 头部/pjax -->
 	<div id="pjax-container">
+		<?php $this->header('commentReply=1'); ?>
 		<div id="header">
 			<div id="header-container">
 				<h2><?php $this->options->title(); ?></h2>
