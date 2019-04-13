@@ -1,7 +1,11 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+$GLOBALS['theme_url'] = $this->options->themeUrl;
+
+?>
 
 
-<?php function threadedComments($comments, $options) {
+<?php
+function threadedComments($comments, $options) {
     $commentClass = '';
     if ($comments->authorId) {
         if ($comments->authorId == $comments->ownerId) {
@@ -30,16 +34,16 @@ echo $commentClass;
                 <?php $comments->gravatar('40', ''); ?>
                 <span><?php $comments->author(); ?></span>
             </div>
+            <div class="comment-meta">
+                <span><?php $comments->date('Y-m-d H:i'); ?></span>
+            </div>
             <div class="comment-content">
               <?php
-                $cos = preg_replace('#\@\((.*?)\)#','<img src="/C/themes/G/IMG/bq/$1.png" class="bq">',$comments->content);
+                $cos = preg_replace('#\@\((.*?)\)#','<img src="'.$GLOBALS['theme_url'].'/IMG/bq/$1.png" class="bq">',$comments->content);
                 echo $cos;
               ?>
             </div>
-            <div class="comment-meta">
-                <span><?php $comments->date('Y-m-d H:i'); ?></span>
-                <span class="comment-reply"><?php $comments->reply(); ?></span>
-            </div>
+            <span class="comment-reply"><?php $comments->reply(); ?></span>
         </div>
     </div>
 <?php if ($comments->children) { ?>
@@ -56,24 +60,30 @@ echo $commentClass;
     <div class="comments-header" id="<?php $this->respondId(); ?>" >
         <?php if($this->allow('comment')): ?>
 
-        <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form" class="clear">
-          <h3 class="comment-title">🎯回复  <?php $comments->cancelReply('/ 取消回复'); ?></h3>
-            <?php if(!$this->user->hasLogin()): ?>
-    			<input type="text" name="author" id="author" class="text" value="<?php $this->remember('author'); ?>" required placeholder="Name" />
-    			<input type="email" name="mail" id="mail" class="text" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> placeholder="E-mail"  />
-    			<input type="url" name="url" id="url" class="text" placeholder="<?php _e('http://'); ?>" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
-            <?php endif; ?>
-                <textarea name="text" id="textarea" class="OwO-textarea textarea" required placeholder="开始你的表演"><?php $this->remember('text'); ?></textarea>
-                <div class="clear">
-                  <div class="OwO-logo" onclick="OwO_show()">
-                   <span>(OωO)</span>
-                  </div>
-                  <button type="submit" class="submit"><?php _e('🚀发射'); ?></button>
-                </div>
-
-                <div id="OwO-container"><?php  $this->need('owo.php'); ?></div>
-
-    	</form>
+          <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form">
+                        <div class="cancel-comment-reply clear">
+                            <?php $comments->cancelReply(); ?>
+                        </div>
+                          <?php if($this->user->hasLogin()): ?>
+                              <h2 id="response" class="widget-title text-left"><?php _e('添加新评论'); ?></h2>
+                          <?php else: ?>
+                            <h2 id="response" class="widget-title text-left"><?php _e('添加新评论'); ?></h2>
+                              <input type="text" name="author" id="author" placeholder="称呼" value="<?php $this->remember('author'); ?>" />
+                              <input type="email" name="mail" id="mail" placeholder="电子邮件" value="<?php $this->remember('mail'); ?>" />
+                              <input type="text" name="url" id="url" placeholder="网站"  value="<?php $this->remember('url'); ?>" />
+                          <?php endif; ?>
+                          <p>
+                              <input name="_" type="hidden" id="comment_" value="<?php echo Helper::security()->getToken(str_replace(array('?_pjax=%23pjax-container', '&_pjax=%23pjax-container'), '', Typecho_Request::getInstance()->getRequestUrl()));?>"/>
+                              <textarea rows="5" name="text" id="textarea" placeholder="在这里输入你的评论..." style="resize:none;"><?php $this->remember('text'); ?></textarea>
+                          </p>
+                          <div class="clear">
+                            <div class="OwO-logo" onclick="OwO_show()">
+                              <span>(OwO)</span>
+                            </div>
+                            <button type="submit" class="submit"><?php _e('发射'); ?></button>
+                          </div>
+                          <div id="OwO-container"><?php  $this->need('owo.php'); ?></div>
+                      </form>
         <?php endif; ?>
     </div>
 
@@ -81,5 +91,5 @@ echo $commentClass;
         <?php $comments->listComments(); ?>
         <?php $comments->pageNav('<上一页', '下一页>'); ?>
     <?php endif; ?>
-    
+
 </div>

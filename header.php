@@ -79,9 +79,8 @@
 
 
 		<?php endif; ?>
-		html::after{
+		html{
 			background-color: <?php $this->options->bkcolor(); ?>;
-			z-index: -2;
 		}
 		html::before{
 			  background-image: url(<?php $this->options->bkimg(); ?>);

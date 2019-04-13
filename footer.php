@@ -16,8 +16,8 @@
 
 	<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
-	<script src="<?php $this->options->themeUrl('JS/X.js'); ?>"></script>
-	<script type="text/javascript" src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
+ 	<script src="<?php $this->options->themeUrl('JS/X.js'); ?>"></script>
+	<script src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
 	<script src="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.js"></script>
 	<script>
 		$(document).ready(function(){
@@ -31,7 +31,6 @@
 				 })
 			})
 		})
-
  </script>
 </div>
 <a id="gototop"><img src="https://i.loli.net/2019/02/11/5c617e353eb56.png"></a>
