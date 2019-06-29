@@ -15,8 +15,7 @@
 	<div id="post-content">
 		<div id="post-content-article">
 			<?php
-			$content = GetOriginalContent($this->cid);
-
+			$content = $this->content;
 			emotionContent($content,$this->options->themeUrl);
 			 ?>
 		</div>

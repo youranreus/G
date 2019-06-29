@@ -48,12 +48,20 @@ function() {
 				return '<a data-fancybox="gallery" no-pjax data-type="image" href="' + $(this).attr("src") + '" class="light-link"></a>';
 		 })
 	});
-
 }).on('pjax:click',function() {
-	$('body,html').animate({scrollTop:0},200);
-}
+	var hash = window.location.hash;
+	if(hash == "comments")
+	{
+		$("html,body").animate({scrollTop:$("#content").offset().top},200);
+	}
+	else
+	{
+		$('body,html').animate({scrollTop:0},200);
+	}
 
+}
 );
+
 
 Smilies = {
     dom: function(id) {

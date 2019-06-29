@@ -258,7 +258,7 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.article-item h2 a {
+.article-item h2 span {
 	color: black;
 	font-size: 2rem;
 	position:relative;
@@ -1250,6 +1250,10 @@ ol.comment-list .comment-child{
 }
 .link-item-content h3 {
 	font-size: 1.3rem;
+}
+input#url, input#mail, input#author {
+    width: 100%;
+    margin-top: 10px;
 }
 }
 

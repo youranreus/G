@@ -1,0 +1,13 @@
+/**
+ * @name: S.css
+ * @description: 主题G 设置 主要样式表
+ * @author: youranreus(youranreus@qq.com)
+ * @update: 2019-06-19
+ */
+
+ /**
+  * 清除自带样式
+  */
+.typecho-option-tabs,.typecho-page-title{
+  display: none!important;
+}
