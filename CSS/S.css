@@ -8,6 +8,80 @@
  /**
   * 清除自带样式
   */
-.typecho-option-tabs,.typecho-page-title{
+.typecho-option-tabs,.typecho-page-title,.typecho-foot{
   display: none!important;
+}
+.typecho-option{
+  padding:20px;
+  background: rgb(250,250,250);
+  border:1px solid #d6d7d9;
+  border-radius: 15px;
+}
+.main{
+  background: white;
+  position: relative;
+}
+form{
+  margin-bottom:100px;
+  position: relative;
+  z-index:2;
+}
+#art-box{
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff no-repeat center;
+  background-size: cover;
+  position: relative;
+  margin-top: 3rem;
+}
+#ab-content{
+  padding: 2rem 2rem;
+    text-align: center;
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}
+#ab-mask{
+  background: rgba(0,0,0,0.25);
+    position: relative;
+    z-index: 10;
+    display: table;
+    vertical-align: middle;
+    width: 100%;
+    height: 15.5rem;
+}
+
+#ab-content p{
+  font-size: 4rem;
+  text-align: center;
+  color:white;
+}
+#ab-content p a{
+  font-weight: 400;
+  color:white;
+}
+input.text{
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: .5em .6em;
+  border: 0;
+  outline:none;
+  background: rgba(250,250,250,1);
+  border-bottom: 2px solid #444;
+  color: #43454A;
+}
+@media screen and (max-width: 768px) {
+  #ab-mask{
+      width: 100%;
+      height: 7rem;
+  }
+
+  #ab-content p{
+    font-size: 2rem;
+    text-align: center;
+    color:white;
+  }
 }

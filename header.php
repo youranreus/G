@@ -14,7 +14,6 @@
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/prism.css'); ?>" rel="stylesheet" />
 	<link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">
 	<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 	<style>
 
 		<?php if ($this->options->enableOneRow == 0): ?>
@@ -94,6 +93,12 @@
 	 	}
 		<?php endif; ?>
 
+		<?php if ($this->options->enableRDD == 0): ?>
+		#header-logo{
+			display: none;
+		}
+		<?php endif; ?>
+
 		<?php if ($this->options->animateTime): ?>
 
 		.opacity-show {
@@ -150,6 +155,7 @@
 	<!-- 头部/pjax -->
 	<div id="pjax-container">
 		<div id="header">
+			<img id="header-logo" src="https://i.loli.net/2019/06/29/5d17880508ea946510.png"></img>
 			<div id="header-container">
 				<h2><?php $this->options->title(); ?></h2>
 				<div class="clear">

@@ -1,7 +1,15 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
-    echo "<h2 style='color:RGB(182,177,150)'>主题G配置面板：</h2>";
+    echo "<link rel='stylesheet' href='".__TYPECHO_THEME_DIR__."/G/CSS/S.css'/>";
+    echo "
+    <div id='art-box' style='background-image: url(".__TYPECHO_THEME_DIR__."/G/IMG/setting.png)'>
+       <div id='ab-mask'>
+         <div id=ab-content>
+           <p>主题设置</p>
+         </div>
+       </div>
+     </div>";
     $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('图标') , _t(''));
     $form->addInput($favicon);
     $bkimg = new Typecho_Widget_Helper_Form_Element_Text('bkimg', NULL, NULL, _t('背景图片') , _t('想要啥背景？'));
@@ -14,6 +22,8 @@ function themeConfig($form) {
     $form->addInput($builtTime);
     $animateTime = new Typecho_Widget_Helper_Form_Element_Text('animateTime', NULL, NULL, _t('动画过渡时间') , _t('格式 1s'));
     $form->addInput($animateTime);
+    $feedIMG = new Typecho_Widget_Helper_Form_Element_Text('feedIMG', NULL, NULL, _t('打赏二维码图片') , _t('http://...'));
+    $form->addInput($feedIMG);
 
     $enableIndexPage = new Typecho_Widget_Helper_Form_Element_Radio('enableIndexPage', array(
         '1' => _t('cool') ,
@@ -36,9 +46,14 @@ function themeConfig($form) {
         '0' => _t('关闭')
     ) , '0', _t('开启文章页双排显示') , _t('默认为打开'));
     $form->addInput($enableOneRow);
+
+    $enableRDD = new Typecho_Widget_Helper_Form_Element_Radio('enableRDD', array(
+        '1' => _t('我是博士') ,
+        '0' => _t('???')
+    ) , '0', _t('开启罗德岛纪念图标') , _t('默认为关闭'));
+    $form->addInput($enableRDD);
 }
 
-require_once __DIR__ . '/lib/Parsedown.php';
 require_once __DIR__ . '/lib/shortcode.php';
 
 
@@ -47,40 +62,18 @@ require_once __DIR__ . '/lib/shortcode.php';
 *
 * @access public
 * @param mixed $arg1
-* @return array 返回类型
 */
 function getBuildTime($builtTime) {
-    $site_create_time = strtotime($builtTime . ' 00:00:00');
-    $time = time() - $site_create_time;
-    if (is_numeric($time)) {
-        $value = array(
-            "years" => 0,
-            "days" => 0,
-            "hours" => 0,
-            "minutes" => 0,
-            "seconds" => 0,
-        );
-        if ($time >= 31556926) {
-            $value["years"] = floor($time / 31556926);
-            $time = ($time % 31556926);
-        }
-        if ($time >= 86400) {
-            $value["days"] = floor($time / 86400);
-            $time = ($time % 86400);
-        }
-        if ($time >= 3600) {
-            $value["hours"] = floor($time / 3600);
-            $time = ($time % 3600);
-        }
-        if ($time >= 60) {
-            $value["minutes"] = floor($time / 60);
-            $time = ($time % 60);
-        }
-        $value["seconds"] = floor($time);
-        echo '<span class="btime">' . $value['years'] . '年' . $value['days'] . '天</span>';
-    } else {
-        echo '';
-    }
+  $day1 = strtotime($builtTime);
+  $day2 = strtotime(date('Y-m-d'));
+
+  if ($day1 < $day2) {
+    $tmp = $day2;
+    $day2 = $day1;
+    $day1 = $tmp;
+  }
+  $days = ($day1 - $day2) / 86400;
+  echo '<span class="btime">'  . $days. '天</span>';
 }
 
 
@@ -176,6 +169,8 @@ function GetPostById($id){
       return '<span>id无效QAQ</span>';
     }
 }
+
+
 
 /**
 * 文章内容解析（短代码，表情）

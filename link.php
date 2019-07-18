@@ -1,6 +1,6 @@
 <?php
 /**
-* LINK
+* 友情链接
 *
 * @package custom
 */
@@ -10,7 +10,7 @@ $this -> need('header.php');
 		<div id="links-content">
 			<h2>ともだち</h2>
 	    <div class="friends">
-
+				<?php if (isset($this->options->plugins['activated']['Links'])) : ?>
 					<?php Links_Plugin::output("
 					<li class='clear'>
 						<a href='{url}' target='_blank'><img src='{image}' alt='{name}'/></a>
@@ -21,6 +21,7 @@ $this -> need('header.php');
 						</div>
 					</li>
 					", 0); ?>
+				<?php endif ?>
 
 				<?php $this->content();?>
 

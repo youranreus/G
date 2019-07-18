@@ -5,6 +5,18 @@
 		<div id="footer-content-left">
 			<p>©<?php $this->options->title(); ?> | <?php getBuildTime($this->options->builtTime); ?></p>
 			<p><?php $this->options->beian(); ?></p>
+			<nav id="nav-2">
+				<a href="<?php Helper::options()->siteUrl()?>">首页</a>
+				<?php if ($this->options->enableIndexPage): ?>
+						<a href="<?php Helper::options()->siteUrl()?>blog">文章</a>
+				<?php endif; ?>
+				<a href="<?php Helper::options()->siteUrl()?>links.html">友人帐</a>
+				<a href="<?php Helper::options()->siteUrl()?>archive.html">归档</a>
+				<a href="<?php Helper::options()->siteUrl()?>about.html">关于</a>
+				<?php if (isset($this->options->plugins['activated']['ExSearch'])) : ?>
+				<a class="search-form-input">搜索</a>
+				<?php endif ?>
+			</nav>
 		</div>
 		<div id="footer-content-right">
 			<p><?php if ($this->options->enableUpyun): ?>
@@ -12,6 +24,8 @@
       <?php endif; ?>
 			 <img src="https://i.loli.net/2019/02/11/5c6187e663b3a.png"/></p>
 		</div>
+
+
 	</div>
 
 	<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
@@ -20,6 +34,7 @@
 	<script src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
 	<script src="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.js"></script>
 	<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+	<?php $this->footer(); ?>
 	<script>
 		$(document).ready(
 			function(){
@@ -28,6 +43,10 @@
 							if($(this).is(".bq"))
 							{
 								 return '';
+							}
+							if($(this).is("#feedme-content img"))
+							{
+								return '';
 							}
 						return '<a data-fancybox="gallery" no-pjax data-type="image" href="' + $(this).attr("src") + '" class="light-link"></a>';
 				 })
@@ -56,7 +75,9 @@
 			 * 发送前的处理
 			 */
 			function beforeSendComment() {
-				toastr.info('发射中..');
+				$("#comment-loading").fadeIn();
+				$(".submit").fadeOut();
+				$("#OwO-container").slideUp();
 			}
 
 			/**
@@ -122,7 +143,8 @@
 											}
 									}
 									afterSendComment(true);
-									toastr.success('评论成功');
+									$("#comment-loading").fadeOut();
+									$(".submit").fadeIn();
 
 							}
 					});
@@ -134,6 +156,7 @@ $(document).on('pjax:complete', function() {
 	ajaxc();
 })
 	</script>
+
 </div>
 <a id="gototop"><img src="https://i.loli.net/2019/02/11/5c617e353eb56.png"></a>
 </body>

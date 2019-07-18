@@ -5,7 +5,7 @@
  *
  * @package G
  * @author YOURAN
- * @version 1.0.3
+ * @version 1.2
  * @link https://gundam.exia.xyz/
  */
 
@@ -26,6 +26,7 @@
   <?php $this->pageLink('更多 >','next'); ?>
   <?php $this->pageLink('< 返回','prev'); ?>
 </div>
+
   </div>
 </div>
 

@@ -21,6 +21,13 @@
 		</div>
 	</div>
 
+	<?php if ($this->options->feedIMG): ?>
+	<p align='center'><a id="feedme" onclick="feedme_show()">喝杯水</a></p>
+	<div id="feedme-content">
+		<img src="<?php $this->options->feedIMG(); ?>"></img>
+	</div>
+<?php endif; ?>
+
 	<div id="post-footer" class="clear">
 		<div id="post-tags"><p>标签：<?php $this->tags(',', true, 'none'); ?></p></div>
 		<div id="post-lastEdit"><p>最后编辑于：<?php echo date('Y/m/d H:i' , $this->modified); ?></p></div>
