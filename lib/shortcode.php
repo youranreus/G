@@ -64,3 +64,32 @@ function shortcode_button_dl( $atts, $content = '' ) {
     return '<div class="post-download"><a href="//' .  $args['href'] . '" target="' . $args['target'] . '"><span>' . $content . '</span></a></div>';
 }
 add_shortcode( 'dl' , 'shortcode_button_dl' );
+
+
+function shortcode_notice( $atts, $content = '' ) {
+    return "<div class='post-content-notice'>".$content."</div>";
+}
+add_shortcode( 'notice' , 'shortcode_notice' );
+
+
+function shortcode_warn( $atts, $content = '' ) {
+    return "<div class='post-content-warn'>".$content."</div>";
+}
+add_shortcode( 'warn' , 'shortcode_warn' );
+
+
+function shortcode_tag( $atts, $content = '' ) {
+    $args = shortcode_atts( array(
+        'type' => 'blue'
+    ), $atts );
+    return "<span class='post-content-tag tag-".$args["type"]."'>".$content."</span>";
+}
+add_shortcode( 'tag' , 'shortcode_tag' );
+
+// function shortcode_fold( $atts, $content = '' ) {
+//     $args = shortcode_atts( array(
+//         'title' => '折叠内容'
+//     ), $atts );
+//     return "<div class='post-content-fold'><span>".$args["title"]."</span><div class='post-content-fold-content'><p>".$content."</p></div></div>";
+// }
+// add_shortcode( 'fold' , 'shortcode_fold' );
