@@ -198,11 +198,11 @@ function ajaxc(){
 										}
 								}
 								afterSendComment(true);
-								$("#comment-loading").fadeOut();
-								$(".submit").fadeIn();
 
 						}
 				});
+				$("#comment-loading").fadeOut();
+				$(".submit").fadeIn();
 				return false;
 		});
 }
