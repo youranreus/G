@@ -2,17 +2,8 @@
  * @file X.js
  * @author youranreus
  */
-console.info("%c LiuMingye blog ", 'color:#fadfa3;background:#030307;padding:5px 0;');
 console.info("%c Theme by youranreus ", 'color:#fadfa3;background:#030307;padding:5px 0;');
 console.info("%c Powered by Typecho ", 'color:#fadfa3;background:#030307;padding:5px 0;');
-// 百度统计
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?3367835d5a1385976ef18b99da135996";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();
 //返回顶部
 $(document).ready(function() {
     $(window).scroll(function() {
