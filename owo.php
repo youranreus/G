@@ -42,7 +42,7 @@
      <li class="OwO-item" onclick="Smilies.grin('@(yamiedie)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>yamiedie.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(weiqu)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>weiqu.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(jingya)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>jingya.png" /></li>
-     <li class="OwO-item" onclick="Smilies.grin('@(shuaijiao)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>shuijiao.png" /></li>
+     <li class="OwO-item" onclick="Smilies.grin('@(shuijiao)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>shuijiao.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(xiaoniao)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>xiaoniao.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(wabi)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>wabi.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(tu)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>tu.png" /></li>
