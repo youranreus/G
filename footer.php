@@ -36,6 +36,7 @@
 	<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
  	<script src="<?php $this->options->themeUrl('JS/X.js'); ?>"></script>
 	<script src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
+	<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.js"></script>
 	<?php $this->footer(); ?>
 
@@ -45,5 +46,21 @@
 	</script>
 
 </div>
-<a id="gototop"><img src="https://i.loli.net/2019/02/11/5c617e353eb56.png"></a>
+
+
+<?php if (isset($this->options->plugins['activated']['ExSearch'])) : ?>
+	<div id="m_search">
+		<span><a><i class="i m_search search-form-input"></i></a></span>
+	</div>
+<?php endif ?>
+
+
+<div id="m_top">
+	<span><a onclick="gototop();"><i class="i gototop"></i></a></span>
+</div>
+
+<div id="m_menu">
+	<span><a onclick="sideMenu_toggle();"><i class="i m_menu"></i></a></span>
+</div>
+<?php  $this->need('sliderbar.php'); ?>
 </body>
