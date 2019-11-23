@@ -27,12 +27,12 @@
       </div>
     </div>
   </div>
-  <div class="sliderbar-content-menu">
+  <!-- <div class="sliderbar-content-menu">
     <div class="Sliderbar-content clear">
       <h2>控制面板</h2>
 
     </div>
-  </div>
+  </div> -->
 </div>
 
 <div id="sliderbar-cover" onclick="sideMenu_toggle();"></div>
