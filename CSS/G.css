@@ -1367,6 +1367,7 @@ ruby>rt {
 	padding-top:0;
 	padding-left:20px;
 	text-align: left;
+	max-width: 50%;
 }
 .link-item-content h3 {
 	margin: 0;
