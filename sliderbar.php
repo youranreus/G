@@ -1,4 +1,4 @@
-<div id="sliderbar">
+<div id="sliderbar" class="move_left">
   <div class="sliderbar-content-menu">
     <div class="Sliderbar-content clear">
       <div class="Sliderbar-content-switch clear">

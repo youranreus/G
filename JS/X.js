@@ -122,23 +122,11 @@ function OwO_show(){
 
 //侧栏菜单开关
 function sideMenu_toggle(){
-
-	if($("#pjax-container").css("opacity") == 1)
-	{
-		$("#pjax-container").css("opacity","0.1");
-		$("#sliderbar").removeClass("move_left");
-		$("#sliderbar").addClass("move_right");
-		$("#sliderbar-cover").toggle();
-		$("#m_search").toggle();
-	}
-	else {
-		$("#pjax-container").css("opacity","1");
-		$("#sliderbar").removeClass("move_right");
-		$("#sliderbar").addClass("move_left");
-		$("#sliderbar-cover").toggle();
-		$("#m_search").toggle();
-	}
-
+	$("#sliderbar").toggleClass("move_left");
+	$("#sliderbar").toggleClass("move_right");
+	$("#sliderbar-cover").toggle();
+	$("#m_search").toggle();
+	$("#pjax-container").toggleClass("main_display");
 }
 
 

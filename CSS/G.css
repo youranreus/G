@@ -921,6 +921,9 @@ ruby>rt {
 	padding:20px 0;
 	font-weight: 600;
 }
+.main_display{
+	opacity: 0.6!important;
+}
 
  /**
   * comments
