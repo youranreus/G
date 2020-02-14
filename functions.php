@@ -20,10 +20,14 @@ function themeConfig($form) {
     $form->addInput($beian);
     $builtTime = new Typecho_Widget_Helper_Form_Element_Text('builtTime', NULL, NULL, _t('运行时间') , _t('格式YYYY-MM-DD'));
     $form->addInput($builtTime);
+    $titleColor = new Typecho_Widget_Helper_Form_Element_Text('titleColor', NULL, NULL, _t('文章标题颜色') , _t('#FFFFFF(滑稽)'));
+    $form->addInput($titleColor);
     $animateTime = new Typecho_Widget_Helper_Form_Element_Text('animateTime', NULL, NULL, _t('动画过渡时间') , _t('格式 1s'));
     $form->addInput($animateTime);
     $feedIMG = new Typecho_Widget_Helper_Form_Element_Text('feedIMG', NULL, NULL, _t('打赏二维码图片') , _t('http://...'));
     $form->addInput($feedIMG);
+    $defaultPostIMG = new Typecho_Widget_Helper_Form_Element_Text('defaultPostIMG', NULL, NULL, _t('没有设置文章头图的就用这里的图片啦') , _t('http://...'));
+    $form->addInput($defaultPostIMG);
 
     $enableIndexPage = new Typecho_Widget_Helper_Form_Element_Radio('enableIndexPage', array(
         '1' => _t('cool') ,
@@ -46,11 +50,12 @@ function themeConfig($form) {
     ) , '0', _t('半透明开关') , _t('默认为打开'));
     $form->addInput($enableOpac);
 
-    $enableOneRow = new Typecho_Widget_Helper_Form_Element_Radio('enableOneRow', array(
-        '1' => _t('开启') ,
-        '0' => _t('关闭')
-    ) , '0', _t('开启文章页双排显示') , _t('默认为打开'));
-    $form->addInput($enableOneRow);
+    $IndexStyle = new Typecho_Widget_Helper_Form_Element_Radio('IndexStyle', array(
+        '2' => _t('大图') ,
+        '1' => _t('单列') ,
+        '0' => _t('双列')
+    ) , '0', _t('首页样式') , _t('默认为双列'));
+    $form->addInput($IndexStyle);
 
     $enableRDD = new Typecho_Widget_Helper_Form_Element_Radio('enableRDD', array(
         '1' => _t('我是博士') ,
@@ -69,16 +74,7 @@ require_once __DIR__ . '/lib/shortcode.php';
 * @param mixed $arg1
 */
 function getBuildTime($builtTime) {
-  $day1 = strtotime($builtTime);
-  $day2 = strtotime(date('Y-m-d'));
-
-  if ($day1 < $day2) {
-    $tmp = $day2;
-    $day2 = $day1;
-    $day1 = $tmp;
-  }
-  $days = ($day1 - $day2) / 86400;
-  echo '<span class="btime">'  . $days. '天</span>';
+  echo $builtTime;
 }
 
 
@@ -116,7 +112,6 @@ if(!in_array($cid,$views)){
     }
     echo $row['views'];
 }
-
 
 
 /**

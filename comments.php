@@ -89,7 +89,7 @@ echo $commentClass;
               <div id="OwO-container"><?php  $this->need('owo.php'); ?></div>
           </form>
         <?php endif; ?>
-    </div>
+		    </div>
 
     <?php if ($comments->have()): ?>
         <?php $comments->listComments(); ?>

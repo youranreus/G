@@ -3,7 +3,7 @@
 <div id="footer">
 	<div id="footer-content" class="clear">
 		<div id="footer-content-left">
-			<p>©<?php $this->options->title(); ?> | <?php getBuildTime($this->options->builtTime); ?></p>
+			<p>©<?php $this->options->title(); ?> | <span id="site_runtime"></span></p>
 			<p><?php $this->options->beian(); ?></p>
 			<nav id="nav-2">
 				<a href="<?php Helper::options()->siteUrl()?>">首页</a>
@@ -43,6 +43,7 @@
 	<script>
 		ajaxc();
 		PreFancybox();
+		show_site_runtime("<?php getBuildTime($this->options->builtTime);?>");
 	</script>
 
 </div>

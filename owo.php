@@ -8,6 +8,24 @@
 <div class="OwO OwO-open" id="qaq">
    <div class="OwO-body" id="OwO-body">
     <ul id="OwO-pp" class="OwO-items OwO-items-emoticon OwO-items-show" style="max-height: 197px;">
+      <li class="OwO-item" onclick="Smilies.grin('@(huaji_han)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>huaji_han.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(huaji_mj)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>huaji_mj.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(huaji_djy)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>huaji_djy.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(huaji_pc)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>huaji_pc.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(huaji_shang)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>huaji_shang.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(huaji_xiao)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>huaji_xiao.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(toukan)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>toukan.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(biexiao)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>biexiao.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(hemenjiu)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>hemenjiu.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chigua2)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chigua2.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chaoquan_love)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaoquan_love.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_red_1)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquan_red_1.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_melon)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquan_melon.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_mask)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquan_mask.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_hufen)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquan_hufen.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_han)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquan_han.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_gh)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquan_gh.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_3)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquan_3.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquan.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(chaiquanbugaoxin)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquanbugaoxin.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(chaiquanzaijian)');"><img src="<?php $this->options->themeUrl('IMG/bq/'); ?>chaiquanzaijian.png" /></li>

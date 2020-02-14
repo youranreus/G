@@ -180,6 +180,22 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 .ins-search-container {
   z-index: 1000!important;
 }
+div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-toolbar > .toolbar span{
+	color: #bbb;
+  font-size: .8em;
+  padding: 0 .5em;
+	outline:none;
+	cursor: pointer;
+  background: rgba(255,255,255,0)!important;
+  background: rgba(224, 224, 224, 0)!important;
+  box-shadow:none!important;
+  border-radius: 0!important;
+	-webkit-transition: .3s ease all;
+	-moz-transition: .3s ease all;
+	-ms-transition: .3s ease all;
+	-o-transition: .3s ease all;
+	transition: .3s ease all;
+}
 /**
  * 头部
  */
@@ -300,15 +316,6 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	margin: 50px auto;
 	width: 800px;
 }
-/* .article-item {
-	background: white;
-	border-radius: 30px;
-	box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
-	padding: 30px;
-	width: 320px;
-	margin: 10px;
-	float: left;
-} */
 .article-item h2 {
 	margin-top: 0;
 	margin-bottom: 5px;
@@ -374,6 +381,94 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	float: left;
 }
 
+.card-item{
+  float: left;
+  width: 100%;
+	margin-bottom:2rem
+}
+.card-item article{
+  color: #fff;
+	background: rgb(138, 160, 255);
+	background: -moz-linear-gradient(128deg, rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);
+	background: -webkit-linear-gradient(128deg, rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);
+	background: -o-linear-gradient(128deg, rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);
+	background: -ms-linear-gradient(128deg, rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);
+	background: linear-gradient(218deg, rgb(138, 160, 255) 30%, rgb(90, 140, 250) 70%);
+  position: relative;
+  z-index: 0;
+  padding: 40px 38px 45px;
+  height: 150px;
+  border-radius: 24px;
+  overflow: hidden;
+  word-break: break-all;
+  transition: all 0.5s ease;
+}
+.card-item article:hover {
+  transform: translateY(-5px);
+}
+
+.card-item article h2{
+	position: absolute;
+	bottom:38px;
+  color:white;
+  margin: 0;
+  font-size: 1.725rem;
+	width:100%;
+  /* text-shadow: 0 0 5px rgba(0,0,0,0.5); */
+}
+.card-cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+	transition: all 0.2s;
+	filter:brightness(90%);
+}
+.card-link{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.article-title{
+	max-width: 90%;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.article-category{
+  position: absolute;
+	display: inline-block;
+  z-index: 2;
+}
+.article-category-link,.article-date{
+  color:white;
+  border-radius: 20px;
+  padding: 4px 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+	cursor: default;
+}
+
+.card-item article:hover .article-category-link{
+	color: #000;
+  background-color: #fff;
+	text-shadow: none;
+}
+.card-item article:hover .article-date{
+	color: #000;
+  background-color: #fff;
+	text-shadow: none;
+}
 /**
  * page
  */
@@ -402,6 +497,14 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 }
 #page-content-article h1,#page-content-article h2,#page-content-article h3,#page-content-article h4 {
 	color: RGB(48,71,88);
+	-webkit-transition: .3s ease all;
+	-moz-transition: .3s ease all;
+	-ms-transition: .3s ease all;
+	-o-transition: .3s ease all;
+	transition: .3s ease all;
+}
+#page-content-article h1:hover,#page-content-article h2:hover,#page-content-article h3:hover,#page-content-article h4:hover {
+	letter-spacing: 0.5rem;
 }
 #page-content-article h1::before,#page-content-article h2::before,#page-content-article h3::before,#page-content-article h4::before {
 	content: ' ';
@@ -524,11 +627,21 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 #post-content {
 	margin: 49px;
 	padding: 1px;
+	cursor: default;
 }
 #post-content-article h1,#post-content-article h2,#post-content-article h3,#post-content-article h4 {
 	color: RGB(48,71,88);
-	border-bottom: 1px solid #eaecef;
+	border-bottom: 1.5px solid #eaecef;
 	padding-bottom: .3em;
+	-webkit-transition: .3s ease all;
+	-moz-transition: .3s ease all;
+	-ms-transition: .3s ease all;
+	-o-transition: .3s ease all;
+	transition: .3s ease all;
+}
+#post-content-article h1:hover,#post-content-article h2:hover,#post-content-article h3:hover,#post-content-article h4:hover {
+	letter-spacing: 0.2rem;
+	border-bottom: 1.5px solid RGB(48,71,88);
 }
 #post-content-article h1 {
 	font-size: 1.6rem;
@@ -563,7 +676,8 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	position: relative;
 	display: inline!important;
 	border-radius: 0!important;
-	margin-bottom: -0.25rem!important;
+	margin-bottom: -9px!important;
+	margin-top: 0px!important;
   min-height: 1.875rem!important;
   height: 1em!important;
 }
@@ -615,7 +729,9 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 .aplayer{
 	box-shadow: none!important;
 }
-
+.dplayer-video-wrap{
+	max-height:300px;
+}
 
 #feedme{
 	display: inline-block;
@@ -701,7 +817,56 @@ ruby>rt {
 #post-tags a:hover {
 	background: rgba(153,153,153,0.1);
 }
+#post-related-posts{
+	width:800px;
+	margin: 0 auto;
+	white-space: nowrap;
 
+}
+#post-related-posts span{
+	display: inline-block;
+	padding:10px;
+	width:auto;
+	font-size:20px;
+	font-weight: 600;
+	background:rgba(255,255,255,1);
+	border-radius: 10px;
+	margin-bottom:10px;
+}
+#post-related-posts-continer::-webkit-scrollbar-thumb{
+	background: hsla(0,0%,100%,.6);
+	-webkit-box-shadow:none;
+}
+#post-related-posts-continer::-webkit-scrollbar-thumb:hover{
+	background: rgba(0,0,0,0.8);
+	-webkit-box-shadow:none;
+}
+#post-related-posts-continer::-webkit-scrollbar-track
+{
+    background:rgba(255,255,255,0);
+}
+#post-related-posts-continer{
+	white-space: nowrap;
+	overflow-x: auto; /*添加横向滚动条*/
+	overflow-y: hidden;
+}
+.relatet-post-item{
+	position: relative;
+	display: inline-block;
+	background:rgba(255,255,255,1);
+	height:80px;
+	width:230px;
+	padding:10px;
+	margin-right:25px;
+	border-radius: 10px;
+}
+.relatet-post-item:last-child{
+	margin:0;
+}
+.relatet-post-item h4{
+	margin:5px 0;
+	font-size:20px;
+}
 /**
  * 侧边栏
  */
@@ -1067,8 +1232,95 @@ ruby>rt {
 }
 #links-content {
 	margin: 49px;
-	color: white;
 }
+#links-post h1,#links-post h2,#links-post h3,#links-post h4 {
+	color: RGB(48,71,88);
+	border-bottom: 1.5px solid #eaecef;
+	padding-bottom: .3em;
+	-webkit-transition: .3s ease all;
+	-moz-transition: .3s ease all;
+	-ms-transition: .3s ease all;
+	-o-transition: .3s ease all;
+	transition: .3s ease all;
+}
+
+
+#links-post h1 {
+	font-size: 1.6rem;
+}
+#links-post h2 {
+	font-size: 1.5rem;
+}
+#links-post h3 {
+	font-size: 1.4rem;
+}
+#links-post h4 {
+	font-size: 1.3rem;
+}
+#links-post img {
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border-radius: 15px;
+	width: 100% \9;
+	max-width: 90%;
+	max-height: 500px;
+	height: auto;
+}
+#links-post em{
+	color:RGB(0,77,181);
+	margin-right: 5px;
+}
+#links-post strong{
+	color:RGB(204,53,54);
+}
+#links-post p {
+	clear: both;
+	margin-top: 15px;
+	line-height: 1.72222;
+	text-align: justify;
+	color: #606975;
+}
+#links-post p:not(.aplayer-lrc-contents p), #links-post li {
+	font-size: 17px;
+	letter-spacing: .6px;
+}
+#links-post li {
+	margin: 10px auto;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+#links-post blockquote {
+	position: relative;
+	display: block;
+	padding: 45px 0px 25px 0px !important;
+	margin: 0;
+	font-size: 16px;
+	line-height: 26px;
+	border-left: none;
+	background: #f5f5f5;
+	text-align: justify;
+	border-radius: 15px;
+}
+#links-post blockquote p {
+	font-size: 16px;
+	margin: 0px;
+	padding: 0px 25px 0px 25px;
+	color: #878c93;
+}
+#links-post blockquote:before {
+	position: absolute;
+	top: 3;
+	left: 7;
+	content: '';
+	background: url(../IMG/dot.svg) left top no-repeat;
+	background-size: contain;
+	width: 36px;
+	height: 40px;
+}
+
+
 .friends {
 	width: 100%;
 	margin-top: 30px;
@@ -1080,7 +1332,6 @@ ruby>rt {
 	width: 40%;
 	margin: 10px;
 	border-radius: 15px;
-	border: 1px solid #eee;
 }
 .friends li {
 	position: relative;
@@ -1088,36 +1339,46 @@ ruby>rt {
 	list-style-type: none;
 	width: 40%;
 	margin: 10px;
-	border-radius: 15px;
-	border: 1px solid #eee;
-	height: 100px;
+	margin-bottom:20px;
+	height: 60px;
+	border-radius: 0;
+	padding-left:10px;
+	border-left: 2px solid #eee;
+}
+.friends li a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 .friends li img {
-	height: 100px;
-	width: 100px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	border-bottom-left-radius: 15px;
-	border-top-left-radius: 15px;
+	height: 60px;
+	width: 60px;
+	border-radius: 100rem;
 	float: left;
 }
 .link-item-content {
-	float: right;
+	float: left;
 	padding: 10px;
-	text-align: right;
+	padding-top:0;
+	padding-left:20px;
+	text-align: left;
 }
 .link-item-content h3 {
 	margin: 0;
 	margin-bottom: 5px;
-	font-size: 1.5rem;
+	font-size: 16px;
 	color: #2e2e2e!important;
 }
 .link-item-content span {
 	margin: 0;
 	margin-bottom: 5px;
 	color: #333!important;
-	font-size: 0.875rem;
+	font-size: 13px;
 }
 .link-item-content span::before {
 	content: '#';
@@ -1126,8 +1387,11 @@ ruby>rt {
 .link-item-content p {
 	margin: 0;
 	margin-bottom: 5px;
-	font-size: 0.875rem;
+	font-size: 13px;
 	color:#333;
+	overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
 }
 
 
@@ -1261,6 +1525,12 @@ ruby>rt {
 #footer-content-left p {
 	line-height: 1.7;
 	font-size: 1.2rem;
+}
+#site_runtime{
+	display: inline-block;
+}
+#site_runtime span{
+	font-size:1rem;
 }
 #footer-content-right img {
 	height: 50px;
@@ -1417,6 +1687,17 @@ ruby>rt {
 #nav-2 a{
 	margin-right:5px;
 }
+.card-item article{
+	height:140px;
+	padding: 20px 19px 22.5px;
+}
+.card-item article h2{
+	bottom:19;
+	font-size: 1.25rem;
+}
+.article-category-link,.article-date{
+	font-size:0.975rem;
+}
 #footer-search input.text {
 	width:100px;
 }
@@ -1512,10 +1793,10 @@ ruby>rt {
 .friends li {
 	width: 100%;
 	margin: 0;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 .link-item-content h3 {
-	font-size: 1.3rem;
+	font-size: 16px;
 }
 input#url, input#mail, input#author {
     width: 100%;

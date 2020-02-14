@@ -4,7 +4,7 @@
 ?>
 
 <div id="post">
-	<div id="post-header" style="background-image:url(<?php  $this->fields->imgurl(); ?>);">
+	<div id="post-header" style="background-image:url(<?php  $imgurl = $this->fields->imgurl;if(isset($imgurl)){echo $imgurl;}else{$this->options->defaultPostIMG();}?>)">
 		<div id="post-header-mask">
 			<div id="post-header-content">
 				<h2 id="post-content-title"><?php $this->title();?></h2>
@@ -26,13 +26,15 @@
 	<div id="feedme-content">
 		<img src="<?php $this->options->feedIMG(); ?>"></img>
 	</div>
-<?php endif; ?>
+	<?php endif; ?>
 
 	<div id="post-footer" class="clear">
 		<div id="post-tags"><p>标签：<?php $this->tags(',', true, 'none'); ?></p></div>
 		<div id="post-lastEdit"><p>最后编辑于：<?php echo date('Y/m/d H:i' , $this->modified); ?></p></div>
 	</div>
 </div>
+
+
 	<?php $this->need('comments.php'); ?>
 
 	<?php $this->need('footer.php'); ?>

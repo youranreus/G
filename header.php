@@ -15,7 +15,7 @@
 	<link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">
 	<link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
 	<style>
-		<?php if ($this->options->enableOneRow == 0): ?>
+		<?php if ($this->options->IndexStyle == 1): ?>
 		.article-item {
 	    background: white;
 	    border-radius: 30px;
@@ -52,7 +52,7 @@
 			}
 
 		}
-		<?php else: ?>
+		<?php elseif ($this->options->IndexStyle == 0): ?>
 		.article-item {
 	    background: white;
 	    border-radius: 30px;
@@ -75,9 +75,8 @@
 			}
 
 		}
-
-
 		<?php endif; ?>
+
 		html{
 			background-color: <?php $this->options->bkcolor(); ?>;
 		}
@@ -87,7 +86,7 @@
 
 
 		<?php if ($this->options->enableOpac): ?>
-		#zp,#links,#page,#post,#article,#comments{
+		#zp,#links,#page,#post,#article,#comments,#post-related-posts{
 		 opacity: 0.9;
 	 	}
 		<?php endif; ?>
@@ -139,6 +138,21 @@
 		}
 		<?php endif; ?>
 
+		<?php if ($this->options->titleColor): ?>
+		#post-content-article h1,#post-content-article h2,#post-content-article h3,#post-content-article h4 {
+			color: <?php $this->options->titleColor(); ?>;
+			border-bottom: none;
+		}
+		#post-content-article h1:hover,#post-content-article h2:hover,#post-content-article h3:hover,#post-content-article h4:hover {
+			letter-spacing: 0.2rem;
+			border-bottom: none;
+		}
+		<?php else: ?>
+		#post-content-article h1,#post-content-article h2,#post-content-article h3,#post-content-article h4 {
+			color: RGB(48,71,88);
+		}
+
+		<?php endif; ?>
 	</style>
 
 	<link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">

@@ -38,7 +38,15 @@ function pjax_complete(){
 		Prism.highlightAll(true,null);
 	}
 	//Meting重启
-	loadMeting();
+	var isFunction =false;
+	try{
+  isFunction = typeof(eval('loadMeting'))=="function";
+	}catch(e){}
+		if(isFunction) {
+  	loadMeting();
+	}else{}
+
+
 	//显示主页面
 	$("#M").addClass("opacity-show");
 	PreFancybox();
@@ -61,6 +69,22 @@ function PreFancybox(){
 	});
 }
 
+function show_site_runtime(bdate){
+	window.setTimeout("show_site_runtime('" +bdate + "')",1000);
+	X=new Date(bdate);
+	Y=new Date();
+	T=(Y.getTime()-X.getTime());
+	i=24*60*60*1000;
+	d=T/i;
+	D=Math.floor(d);
+	h=(d-D)*24;
+	H=Math.floor(h);
+	m=(h-H)*60;
+	M=Math.floor(m);
+	s=(m-M)*60
+	S=Math.floor(s);
+	site_runtime.innerHTML= D + "<span>天</span>" + H + "<span>小时</span>" + M + "<span>分</span>" + S + "<span>秒</span>"
+}
 
 
 
@@ -266,10 +290,5 @@ function ajaxc(){
 				return false;
 		});
 }
-
-console.info("%c Powered by Typecho ", 'color:#fadfa3;background:#030307;padding:5px 0;');
-
-console.info(
-  " %c made with ❤ by youranreus ",
-  'color: #fadfa3; background: #030307; padding:5px 0;'
-)
+console.info(" %c Powered by Typecho ", 'color:#fadfa3;background:#030307;padding:5px 0;');
+console.info(" %c made with ❤ by youranreus ",'color: #fadfa3; background: #030307; padding:5px 0;')
