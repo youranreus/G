@@ -14,6 +14,10 @@
 			</div>
 		</div>
 
-
-
+		<?php
+			$enableComment = $this->fields->enableComment;
+			if ($enableComment == 1):
+		?>
+		<?php $this->need('comments.php'); ?>
+	<?php endif; ?>
 	<?php $this->need('footer.php'); ?>

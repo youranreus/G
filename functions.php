@@ -28,6 +28,8 @@ function themeConfig($form) {
     $form->addInput($feedIMG);
     $defaultPostIMG = new Typecho_Widget_Helper_Form_Element_Text('defaultPostIMG', NULL, NULL, _t('没有设置文章头图的就用这里的图片啦') , _t('http://...'));
     $form->addInput($defaultPostIMG);
+    $Links = new Typecho_Widget_Helper_Form_Element_Textarea('Links', NULL, NULL, _t('友情链接'), _t('按照格式输入链接信息，格式：<br><strong>链接名称,链接地址,链接描述,链接分类</strong><br>不同信息之间用英文逗号“,”分隔，例如：<br><strong>季悠然,https://gundam.exia.xyz/,寻找有趣的灵魂,好朋友,https://xxx.xxx.com/avatar.jpg</strong><br>多个链接换行即可，一行一个'));
+    $form->addInput($Links);
 
     $enableIndexPage = new Typecho_Widget_Helper_Form_Element_Radio('enableIndexPage', array(
         '1' => _t('cool') ,
@@ -147,6 +149,67 @@ function GetPostById($id){
     else{
       return '<span>id无效QAQ</span>';
     }
+}
+
+
+/**
+* 时间友好化
+*
+* @access public
+* @param mixed
+* @return
+*/
+function formatTime($time)
+{
+    $text = '';
+    $time = intval($time);
+    $ctime = time();
+    $t = $ctime - $time; //时间差
+    if ($t < 0) {
+        return date('Y-m-d', $time);
+    }
+    ;
+    $y = date('Y', $ctime) - date('Y', $time);//是否跨年
+    switch ($t) {
+        case $t == 0:
+            $text = '刚刚';
+            break;
+        case $t < 60://一分钟内
+            $text = $t . '秒前';
+            break;
+        case $t < 3600://一小时内
+            $text = floor($t / 60) . '分钟前';
+            break;
+        case $t < 86400://一天内
+            $text = floor($t / 3600) . '小时前'; // 一天内
+            break;
+        case $t < 2592000://30天内
+            if($time > strtotime(date('Ymd',strtotime("-1 day")))) {
+                $text = '昨天';
+            } elseif($time > strtotime(date('Ymd',strtotime("-2 days")))) {
+                $text = '前天';
+            } else {
+                $text = floor($t / 86400) . '天前';
+            }
+            break;
+        case $t < 31536000 && $y == 0://一年内 不跨年
+            $m = date('m', $ctime) - date('m', $time) -1;
+
+            if($m == 0) {
+                $text = floor($t / 86400) . '天前';
+            } else {
+                $text = $m . '个月前';
+            }
+            break;
+        case $t < 31536000 && $y > 0://一年内 跨年
+            $text = (11 - date('m', $time) + date('m', $ctime)) . '个月前';
+            break;
+        default:
+            $text = (date('Y', $ctime) - date('Y', $time)) . '年前';
+            break;
+    }
+
+    return $text;
 }
 
 /**
@@ -338,4 +401,32 @@ CountChineseCharacters();
 </script>
 <?php
     }
+}
+
+
+/**
+* 免插件实现友情链接功能
+* @author OFFODD<https://www.offodd.com/59.html>
+* @access public
+* @param mixed
+* @return
+*/
+function Links($sorts = NULL) {
+    $options = Typecho_Widget::widget('Widget_Options');
+    $link = NULL;
+    if ($options->Links) {
+        $list = explode("\r\n", $options->Links);
+        foreach ($list as $val) {
+            list($name, $url, $description, $sort,$img) = explode(",", $val);
+            if ($sorts) {
+                $arr = explode(",", $sorts);
+                if ($sort && in_array($sort, $arr)) {
+                    $link .= $url ? '<li class="clear"><a href="'.$url.'" target="_blank"></a><img src="'.$img.'" alt="'.$name.'"/><div class="link-item-content"><h3>'.$name.'</h3><span>'.$sort.'</span><p>'.$description.'</p></div></li>' : '<li class="clear"><a href="'.$url.'" target="_blank"></a><img src="'.$img.'" alt="'.$name.'"/><div class="link-item-content"><h3>'.$name.'</h3><span>'.$sort.'</span><p>'.$description.'</p></div></li>';
+                }
+            } else {
+                $link .= $url ? '<li class="clear"><a href="'.$url.'" target="_blank"></a><img src="'.$img.'" alt="'.$name.'"/><div class="link-item-content"><h3>'.$name.'</h3><span>'.$sort.'</span><p>'.$description.'</p></div></li>' : '<li class="clear"><a href="'.$url.'" target="_blank"></a><img src="'.$img.'" alt="'.$name.'"/><div class="link-item-content"><h3>'.$name.'</h3><span>'.$sort.'</span><p>'.$description.'</p></div></li>';
+            }
+        }
+    }
+    echo $link ? $link : '<li>暂无链接</li>';
 }

@@ -21,18 +21,22 @@
 				<?php if ($this->options->enableIndexPage): ?>
 						<a href="<?php Helper::options()->siteUrl()?>blog" onclick="sideMenu_toggle()">文章</a>
 				<?php endif; ?>
-				<a href="<?php Helper::options()->siteUrl()?>links.html" onclick="sideMenu_toggle()">友人帐</a>
-				<a href="<?php Helper::options()->siteUrl()?>archive.html" onclick="sideMenu_toggle()">归档</a>
-				<a href="<?php Helper::options()->siteUrl()?>about.html" onclick="sideMenu_toggle()">关于</a>
+        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+        <?php while($pages->next()): ?>
+        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" onclick="sideMenu_toggle()"><?php $pages->title(); ?></a>
+        <?php endwhile; ?>
       </div>
     </div>
   </div>
+
+
   <!-- <div class="sliderbar-content-menu">
     <div class="Sliderbar-content clear">
       <h2>控制面板</h2>
 
     </div>
   </div> -->
+
 </div>
 
 <div id="sliderbar-cover" onclick="sideMenu_toggle();"></div>

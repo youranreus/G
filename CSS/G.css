@@ -5,18 +5,22 @@
  * @update: 2019-02-15
  */
 
-
+ @font-face {
+   font-family: 'poppin';
+   src : url('poppin.ttf');
+ }
  /**
   * 基本样式
   */
 *{
-	font-family: 'Josefin Sans Light', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "'Hiragino Sans GB", STHeiti, "Microsoft Yahei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", Arial, Verdana, sans-serif;
+	font-family: 'poppin','Josefin Sans Light', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "'Hiragino Sans GB", STHeiti, "Microsoft Yahei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", Arial, Verdana, sans-serif;
 	text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 	-webkit-appearance:none;
 }
 html {
 
 }
+
 body {
 	padding: 0px;
 	margin: 0;
@@ -681,20 +685,24 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
   min-height: 1.875rem!important;
   height: 1em!important;
 }
-#post-content-article p {
+#post-content-article p{
 	clear: both;
 	margin-top: 15px;
 	line-height: 1.72222;
 	text-align: justify;
 	color: #606975;
 }
-#post-content-article p:not(.aplayer-lrc-contents p), #post-content-article li {
+#post-content-article p, #post-content-article li {
 	font-size: 17px;
 	letter-spacing: .6px;
+}
+.aplayer .aplayer-lrc p{
+  font-size: 12px!important;
 }
 #post-content-article li {
 	margin: 10px auto;
 	padding: 0;
+  color: #606975;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: subpixel-antialiased;
 }
@@ -805,17 +813,20 @@ ruby>rt {
 	float: right;
 }
 #post-tags a {
-	margin-right: .3125rem;
-	padding: .25rem .5rem;
-	border-radius: .1875rem;
-	border: 1px solid rgba(153,153,153,0.1);
-	color: #666;
-	text-decoration: none;
-	font-size: .75rem;
-	font-weight: 500;
+  margin-right: .5rem;
+  margin-top: .5rem;
+  padding: .25rem .5rem;
+  border-radius: 1rem;
+  border:1.5px solid #f5f5f5;
+  color: #777;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 400;
+  -webkit-transition: .3s cubic-bezier(.25,.46,.45,.94) all;
+  transition: .3s cubic-bezier(.25,.46,.45,.94) all;
 }
 #post-tags a:hover {
-	background: rgba(153,153,153,0.1);
+  background: #f5f5f5;
 }
 #post-related-posts{
 	width:800px;
@@ -925,6 +936,26 @@ ruby>rt {
 	opacity: 0.6!important;
 }
 
+/**
+ * night mode
+ */
+.night{
+	background:#2c2a2a !important;
+	color:#f0f0f0!important;
+}
+.night_title{
+	color:#f0f0f0;
+	border-bottom: none;
+}
+.night_comments{
+	background: #424040;
+}
+.night_comments p{
+	color:#f0f0f0;
+}
+.night_textarea{
+	background: rgba(250,250,250,0);
+}
  /**
   * comments
   */
@@ -974,57 +1005,56 @@ ruby>rt {
  	text-align: left;
  }
  #comments a,#comments a:link,#comments a:visited {
-     color: #07F;
-     text-decoration: none;
-     cursor: pointer;
-     text-transform: capitalize;
+   color: #07F;
+   text-decoration: none;
+   cursor: pointer;
  }
 
  #comments .comment-meta span {
-     color: #999;
-     font-size: .92857em
+   color: #999;
+   font-size: .92857em
  }
 
  #comments .comment-author {
-     display: block;
-     margin-bottom: 3px;
-     color: #444
+   display: block;
+   margin-bottom: 3px;
+   color: #444
  }
 
  #comments .comment-author .avatar {
-     float: left;
-     margin: 1px 10px 0 0;
-     border-radius: 50px;
-     width: 50px;
-     height: 50px;
+   float: left;
+   margin: 1px 10px 0 0;
+   border-radius: 50px;
+   width: 50px;
+   height: 50px;
  }
 
  #comments .comment-author cite {
-     line-height: 1.2
+   line-height: 1.2
  }
 
  #comments .comment-awaiting-moderation {
-     float: right;
-     margin-top: -20px;
-     color: #777;
-     font-style: normal
+   float: right;
+   margin-top: -20px;
+   color: #777;
+   font-style: normal
  }
 
  #comments .comment-list .respond {
-     margin: 15px 0;
-     border-top: 1px solid #ddd
+   margin: 15px 0;
+   border-top: 1px solid #ddd
  }
 
  #comments .comment-body .respond {
-     margin: 0 0 25px;
-     border: 0
+   margin: 0 0 25px;
+   border: 0
  }
 
  .cancel-comment-reply {
-     float: right;
-     margin-top: 15px;
-     font-size: .92857em;
- 		display: inline-block;
+   float: right;
+   margin-top: 15px;
+   font-size: .92857em;
+	 display: inline-block;
  }
 
  #comment-form {
@@ -1122,6 +1152,10 @@ ruby>rt {
      overflow: hidden;
      margin-right: 50px;
      color: #333;
+     font-weight: 100;
+ }
+ .comment-content img{
+   max-width: 80%;
  }
 
  #comments .page-navigator {

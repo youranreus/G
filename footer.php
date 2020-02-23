@@ -10,9 +10,10 @@
 				<?php if ($this->options->enableIndexPage): ?>
 						<a href="<?php Helper::options()->siteUrl()?>blog">文章</a>
 				<?php endif; ?>
-				<a href="<?php Helper::options()->siteUrl()?>links.html">友人帐</a>
-				<a href="<?php Helper::options()->siteUrl()?>archive.html">归档</a>
-				<a href="<?php Helper::options()->siteUrl()?>about.html">关于</a>
+				<?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+        <?php while($pages->next()): ?>
+        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+        <?php endwhile; ?>
 				<?php if (isset($this->options->plugins['activated']['ExSearch'])) : ?>
 				<a class="search-form-input">搜索</a>
 				<?php endif ?>

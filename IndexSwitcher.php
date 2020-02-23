@@ -28,7 +28,7 @@
          <div class="article-meta">
            <div class="article-category">
              <a class="article-category-link"><?php $this->category(',',false); ?></a>
-             <a class="article-date"><?php $this->date(); ?></a>
+             <a class="article-date"><?php echo formatTime($this->modified);?></a>
            </div>
          </div>
 
