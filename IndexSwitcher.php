@@ -5,6 +5,7 @@
 * @author      youranreus
 */
 ?>
+
 <?php if ($this->options->IndexStyle == 1 or $this->options->IndexStyle == 0): ?>
 
   <?php while($this->next()): ?>
@@ -28,7 +29,7 @@
          <div class="article-meta">
            <div class="article-category">
              <a class="article-category-link"><?php $this->category(',',false); ?></a>
-             <a class="article-date"><?php echo formatTime($this->modified);?></a>
+             <a class="article-date"><?php echo formatTime($this->created);?></a>
            </div>
          </div>
 

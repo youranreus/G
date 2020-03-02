@@ -16,7 +16,7 @@
 
     <?php  $this->need('IndexSwitcher.php'); ?>
 
-    <div id="pages" class="clear">
+    <div id="pages" class="clear changePage">
       <?php $this->pageLink('更多 >','next'); ?>
       <?php $this->pageLink('< 返回','prev'); ?>
     </div>

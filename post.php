@@ -30,7 +30,7 @@
 
 	<div id="post-footer" class="clear">
 		<div id="post-tags"><p><?php $this->tags('', true, 'none'); ?></p></div>
-		<div id="post-lastEdit"><p>最后编辑于：<?php echo date('Y-m-d' , $this->modified); ?></p></div>
+		<div id="post-lastEdit"><p>最后编辑于<?php echo formatTime($this->modified);?></p></div>
 	</div>
 </div>
 
