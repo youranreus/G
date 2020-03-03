@@ -28,6 +28,8 @@ function themeConfig($form) {
     $form->addInput($feedIMG);
     $defaultPostIMG = new Typecho_Widget_Helper_Form_Element_Text('defaultPostIMG', NULL, NULL, _t('没有设置文章头图的就用这里的图片啦') , _t('http://...'));
     $form->addInput($defaultPostIMG);
+    $headerLOGO = new Typecho_Widget_Helper_Form_Element_Text('headerLOGO', NULL, NULL, _t('头部logo') , _t('如果留空则不显示'));
+    $form->addInput($headerLOGO);
     $Links = new Typecho_Widget_Helper_Form_Element_Textarea('Links', NULL, NULL, _t('友情链接'), _t('按照格式输入链接信息，格式：<br><strong>链接名称,链接地址,链接描述,链接分类</strong><br>不同信息之间用英文逗号“,”分隔，例如：<br><strong>季悠然,https://gundam.exia.xyz/,寻找有趣的灵魂,好朋友,https://xxx.xxx.com/avatar.jpg</strong><br>多个链接换行即可，一行一个'));
     $form->addInput($Links);
 
@@ -59,11 +61,10 @@ function themeConfig($form) {
     ) , '0', _t('首页样式') , _t('默认为双列'));
     $form->addInput($IndexStyle);
 
-    $enableRDD = new Typecho_Widget_Helper_Form_Element_Radio('enableRDD', array(
-        '1' => _t('我是博士') ,
-        '0' => _t('???')
-    ) , '0', _t('开启罗德岛纪念图标') , _t('默认为关闭'));
-    $form->addInput($enableRDD);
+
+
+    $CustomCSS = new Typecho_Widget_Helper_Form_Element_Textarea('CustomCSS', NULL, NULL, _t('自定义CSS'), _t('#logo{...}'));
+    $form->addInput($CustomCSS);
 }
 
 require_once __DIR__ . '/lib/shortcode.php';

@@ -15,6 +15,7 @@
 	<!-- <link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/yue.css'); ?>" rel="stylesheet" /> -->
 	<link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">
 	<link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+
 	<style>
 		<?php if ($this->options->IndexStyle == 1): ?>
 		.article-item {
@@ -92,11 +93,6 @@
 	 	}
 		<?php endif; ?>
 
-		<?php if ($this->options->enableRDD == 0): ?>
-		#header-logo{
-			display: none;
-		}
-		<?php endif; ?>
 
 		<?php if ($this->options->animateTime): ?>
 
@@ -154,6 +150,9 @@
 		}
 
 		<?php endif; ?>
+
+		<?php echo $this->options->CustomCSS;?>
+
 	</style>
 
 	<link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">
@@ -167,7 +166,9 @@
 	<!-- 头部/pjax -->
 	<div id="pjax-container">
 		<div id="header">
-			<img id="header-logo" src="https://i.loli.net/2019/06/29/5d17880508ea946510.png"></img>
+			<?php if($this->options->headerLOGO): ?>
+			<img id="header-logo" src="<?php echo $this->options->headerLOGO;?>"></img>
+			<?php endif; ?>
 			<div id="header-container">
 				<h2><?php $this->options->title(); ?></h2>
 				<div class="clear">

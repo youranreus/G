@@ -12,6 +12,7 @@ var mobileHover = function () {
     });
 };
 
+
 //pjax 刷新
 $(document).pjax('a:not(a[target="_blank"], a[no-pjax])', {
 		container: '#pjax-container',
@@ -44,6 +45,14 @@ function pjax_complete(){
 	}catch(e){}
 		if(isFunction) {
   	loadMeting();
+	}else{}
+
+	var isFunction =false;
+	try{
+  isFunction = typeof(eval('loadDPlayer'))=="function";
+	}catch(e){}
+		if(isFunction) {
+  	loadDPlayer();
 	}else{}
 
 
@@ -111,6 +120,9 @@ Smilies = {
         myField.selectionStart || myField.selectionStart == "0" ? (startPos = myField.selectionStart, endPos = myField.selectionEnd, cursorPos = startPos, myField.value = myField.value.substring(0, startPos) + tag + myField.value.substring(endPos, myField.value.length), cursorPos += tag.length, myField.focus(), myField.selectionStart = cursorPos, myField.selectionEnd = cursorPos) : (myField.value += tag, myField.focus());
     }
 }
+
+
+
 //OwO开关
 function OwO_show(){
 	if($("#OwO-container").css("display")=='none'){
