@@ -737,10 +737,9 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 .aplayer{
 	box-shadow: none!important;
 }
-.dplayer-video-wrap{
-	max-height:300px;
+.dplayer{
+  height:394px;
 }
-
 #feedme{
 	display: inline-block;
 	margin:10px auto;
