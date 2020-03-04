@@ -15,6 +15,7 @@
 	<!-- <link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/yue.css'); ?>" rel="stylesheet" /> -->
 	<link href="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.css" rel="stylesheet">
 	<link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
+	<script src="<?php $this->options->themeUrl('JS/DPlayer.min.js'); ?>"></script>
 
 	<style>
 		<?php if ($this->options->IndexStyle == 1): ?>
@@ -135,26 +136,19 @@
 		}
 		<?php endif; ?>
 
-		<?php if ($this->options->titleColor): ?>
-		#post-content-article h1,#post-content-article h2,#post-content-article h3,#post-content-article h4 {
-			color: <?php $this->options->titleColor(); ?>;
-			border-bottom: none;
-		}
-		#post-content-article h1:hover,#post-content-article h2:hover,#post-content-article h3:hover,#post-content-article h4:hover {
-			letter-spacing: 0.2rem;
-			border-bottom: none;
-		}
-		<?php else: ?>
+		<?php if ($this->options->headerbkcolor): ?>
+			#header,#footer{background: <?php echo $this->options->headerbkcolor; ?>}
+		<?php endif; ?>
+
 		#post-content-article h1,#post-content-article h2,#post-content-article h3,#post-content-article h4 {
 			color: RGB(48,71,88);
 		}
 
-		<?php endif; ?>
-
 		<?php echo $this->options->CustomCSS;?>
-
 	</style>
-
+	<script>
+		<?php echo $this->options->CustomJSh;?>
+	</script>
 	<link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">
 	<link href="<?php $this->options->favicon(); ?>" rel="icon">
 	<link rel='dns-prefetch' href='//s.w.org'>
@@ -179,7 +173,7 @@
 								<a href="<?php Helper::options()->siteUrl()?>blog" <?php if ($this->is('archive') or $this->is('post')) : ?> class="nav-focus"<?php endif; ?>>文章</a>
       			<?php endif; ?>
 						<a href="<?php Helper::options()->siteUrl()?>links.html" <?php if ($this->is('page','links')) : ?> class="nav-focus"<?php endif; ?>>友人帐</a>
-						<a href="<?php Helper::options()->siteUrl()?>about.html" <?php if ($this->is('page','About')) : ?> class="nav-focus"<?php endif; ?>>关于</a>
+						<a href="<?php Helper::options()->siteUrl()?>about.html" <?php if ($this->is('page','about') or $this->is('page','About')) : ?> class="nav-focus"<?php endif; ?>>关于</a>
 					</nav>
 				</div>
 			</div>

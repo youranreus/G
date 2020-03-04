@@ -740,6 +740,11 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 .dplayer{
   height:394px;
 }
+.bilibili{
+  height: 500px;
+  width: 100%;
+  margin:10px 0px;
+}
 #feedme{
 	display: inline-block;
 	margin:10px auto;
@@ -1551,6 +1556,7 @@ white-space: nowrap;
 }
 #footer-content-left {
 	float: left;
+  width:70%;
 }
 #footer-content-right {
 	float: right;
@@ -1562,6 +1568,11 @@ white-space: nowrap;
 #footer-content-left p {
 	line-height: 1.7;
 	font-size: 1.2rem;
+}
+#footer-content-left p a{
+	line-height: 1.7;
+	font-size: 1.2rem;
+  color:white!important;
 }
 #site_runtime{
 	display: inline-block;
@@ -1576,6 +1587,12 @@ white-space: nowrap;
 #nav-2{
 	margin: 0px 0px 24px 0;
 	position: relative;
+  overflow-x: scroll;
+  white-space: nowrap;
+  max-width: 100%;
+}
+#nav-2::-webkit-scrollbar-thumb {
+background   : hsla(0,0%,100%,.6);
 }
 #nav-2 a{
 	display: inline-block;
@@ -1771,7 +1788,19 @@ white-space: nowrap;
 #post-footer {
 	padding: 25px;
 }
-
+.bilibili{
+  height: 200px;
+  width: 100%;
+}
+.dplayer{
+  height:190px;
+}
+#nav-2{
+  max-width: 100%;
+}
+#nav-2::-webkit-scrollbar{
+  display: none;
+}
 #zp-content p {
 	font-size: 1rem;
 }

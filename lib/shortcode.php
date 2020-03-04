@@ -14,12 +14,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 require_once __DIR__ . '/shortcode.main.php';
 
-// // 项目面板
-// function shortcode_panel_task( $atts, $content = '' ) {
-//     return '<div class="tip mc-panel p-task clearfix">' . $content . '</div>';
-// }
-// add_shortcode( 'task' , 'shortcode_panel_task' );
-
 //文章跳转
 function shortcode_jump_button( $atts, $content= ''){
 
@@ -86,10 +80,29 @@ function shortcode_tag( $atts, $content = '' ) {
 }
 add_shortcode( 'tag' , 'shortcode_tag' );
 
-// function shortcode_fold( $atts, $content = '' ) {
-//     $args = shortcode_atts( array(
-//         'title' => '折叠内容'
-//     ), $atts );
-//     return "<div class='post-content-fold'><span>".$args["title"]."</span><div class='post-content-fold-content'><p>".$content."</p></div></div>";
-// }
-// add_shortcode( 'fold' , 'shortcode_fold' );
+function shortcode_dplayer( $atts, $content = '' ) {
+    $args = shortcode_atts( array(
+        'id'=>''
+    ), $atts );
+    return "
+    <div id='dplayer-".$args["id"]."' class='dp'></div>
+    <script>
+    var dp". $args["id"] ." = new DPlayer({
+    container: document.getElementById('dplayer-".$args["id"]."'),
+    video: {
+        url: '".$content."',
+      },
+    });
+
+    </script>
+    ";
+}
+add_shortcode( 'dplayer' , 'shortcode_dplayer' );
+
+function shortcode_bili( $atts, $content = '' ) {
+    $args = shortcode_atts( array(
+        '' => ''
+    ), $atts );
+    return '<iframe class="bilibili" src="//player.bilibili.com/player.html?aid='.$content.'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>';
+}
+add_shortcode( 'bili' , 'shortcode_bili' );

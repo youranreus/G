@@ -4,7 +4,7 @@
 	<div id="footer-content" class="clear">
 		<div id="footer-content-left">
 			<p>©<?php $this->options->title(); ?> | <span id="site_runtime"></span></p>
-			<p><?php $this->options->beian(); ?></p>
+			<p><a href="http://beian.miit.gov.cn/"><?php $this->options->beian(); ?></a></p>
 			<nav id="nav-2">
 				<a href="<?php Helper::options()->siteUrl()?>">首页</a>
 				<?php if ($this->options->enableIndexPage): ?>
@@ -39,12 +39,14 @@
 	<script src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
 	<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.js"></script>
+
 	<?php $this->footer(); ?>
 
 	<script>
 		ajaxc();
 		PreFancybox();
 		show_site_runtime("<?php getBuildTime($this->options->builtTime);?>");
+		<?php echo $this->options->CustomJSf;?>
 	</script>
 
 </div>

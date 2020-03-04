@@ -27,6 +27,7 @@ function pjax_click(){
         try {aplayers[i].destroy()} catch(e){}
     }
 	}
+
 }
 
 function pjax_send(){
@@ -46,15 +47,6 @@ function pjax_complete(){
 		if(isFunction) {
   	loadMeting();
 	}else{}
-
-	var isFunction =false;
-	try{
-  isFunction = typeof(eval('loadDPlayer'))=="function";
-	}catch(e){}
-		if(isFunction) {
-  	loadDPlayer();
-	}else{}
-
 
 	//显示主页面
 	$("#M").addClass("opacity-show");
