@@ -16,6 +16,7 @@
 	font-family: 'poppin','Josefin Sans Light', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "'Hiragino Sans GB", STHeiti, "Microsoft Yahei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", Arial, Verdana, sans-serif;
 	text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 	-webkit-appearance:none;
+  -webkit-tap-highlight-color: transparent;
 }
 html {
 
@@ -567,6 +568,16 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	background-size: contain;
 	width: 36px;
 	height: 40px;
+}
+#page-content-article img {
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border-radius: 15px;
+	width: 100% \9;
+	max-width: 90%;
+	max-height: 500px;
+	height: auto;
 }
 
 /**
@@ -1795,10 +1806,23 @@ background   : hsla(0,0%,100%,.6);
 .dplayer{
   height:190px;
 }
+#page-content-title{
+  font-size: 1.3rem;
+}
+#page-content-title img {
+  height: 1.3rem;
+}
+#footer-content-left{
+  width:100%;
+}
+#footer-time{
+  overflow-x: scroll;
+  white-space: nowrap;
+}
 #nav-2{
   max-width: 100%;
 }
-#nav-2::-webkit-scrollbar{
+#nav-2::-webkit-scrollbar,#footer-time::-webkit-scrollbar{
   display: none;
 }
 #zp-content p {
@@ -1827,14 +1851,18 @@ background   : hsla(0,0%,100%,.6);
 	float: none;
 }
 #links h2,#archives-content h2{
-	font-size: 1.8rem;
+	font-size: 1.3rem;
 }
 
 .article-item h2 a {
 	font-size: 1.5rem;
 }
 #links h2::before,#archives h2:before{
-	top: 0.8rem;
+	top: 0.4rem;
+}
+#links h2::before {
+  width: 1.8rem;
+  height: 1.8rem;
 }
 #article h1 {
 	font-size: 1.5rem;

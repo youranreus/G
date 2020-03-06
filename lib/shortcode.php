@@ -87,11 +87,12 @@ function shortcode_dplayer( $atts, $content = '' ) {
     return "
     <div id='dplayer-".$args["id"]."' class='dp'></div>
     <script>
+
     var dp". $args["id"] ." = new DPlayer({
     container: document.getElementById('dplayer-".$args["id"]."'),
     video: {
-        url: '".$content."',
-      },
+        url: '".$content."'
+      }
     });
 
     </script>

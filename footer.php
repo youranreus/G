@@ -3,7 +3,7 @@
 <div id="footer">
 	<div id="footer-content" class="clear">
 		<div id="footer-content-left">
-			<p>©<?php $this->options->title(); ?> | <span id="site_runtime"></span></p>
+			<p id="footer-time">©<?php $this->options->title(); ?> | <span id="site_runtime"></span></p>
 			<p><a href="http://beian.miit.gov.cn/"><?php $this->options->beian(); ?></a></p>
 			<nav id="nav-2">
 				<a href="<?php Helper::options()->siteUrl()?>">首页</a>
