@@ -82,19 +82,22 @@ add_shortcode( 'tag' , 'shortcode_tag' );
 
 function shortcode_dplayer( $atts, $content = '' ) {
     $args = shortcode_atts( array(
-        'id'=>''
+        'id'=>'',
+        'pic'=>'',
+        'url'=>''
     ), $atts );
     return "
     <div id='dplayer-".$args["id"]."' class='dp'></div>
     <script>
-
-    var dp". $args["id"] ." = new DPlayer({
+    var dplayer". $args["id"] ." = new DPlayer({
     container: document.getElementById('dplayer-".$args["id"]."'),
+    preload:'auto',
+    autoplay: false,
     video: {
-        url: '".$content."'
+        url: '".$args["url"]."',
+        pic: '".$args["pic"]."'
       }
     });
-
     </script>
     ";
 }

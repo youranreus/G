@@ -12,21 +12,26 @@
 	margin: 10px auto;
 }
 .ArtinArt h4{
-	margin:0;
-	border: none;
+	font-size: 1.5rem!important;
+	margin:0!important;
+	border: none!important;
+}
+.ArtinArt h4:hover{
+	letter-spacing: normal!important;
+	border: none!important;
 }
 .ArtinArt h4 a::after{
 	display: none;
 }
+.ArtinArt h4 a:hover{
+	color:#07f!important;
+	background: rgba(255,255,255,0)!important;
+}
 .ArtinArt p {
 	margin-top:5px!important;
-	margin-bottom: 0;
-	color:hsla(0,0%,100%,.6);
+	margin-bottom: 0!important;
 }
 
-.post-download{
-
-}
 .post-download a{
   border: 1px solid #666;
   padding: 0.7rem 2rem;

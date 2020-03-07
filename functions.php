@@ -218,6 +218,19 @@ function formatTime($time)
 }
 
 /**
+* 图片计数
+*
+* @access public
+* @param mixed
+* @return
+*/
+function imgNum($content){
+  $output = preg_match_all('#<img(.*?) src="([^"]*/)?(([^"/]*)\.[^"]*)"(.*?)>#', $content,$s);
+  $cnt = count( $s[1] );
+  return $cnt;
+}
+
+/**
 * 评论锚点修复
 *
 * @access public
