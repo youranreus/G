@@ -3,6 +3,7 @@
 ## 介绍
 
 这是一个偏向二次元的简洁风Typecho主题。追求阅读的舒适，所以字比较大。
+
 插一嘴：主题的交流群在这里674232327，有问题有想法的可以进来探讨。
 
 ![首页](https://cdn.exia.xyz/img/blog/G_index.png)
@@ -25,13 +26,13 @@
 
 ## 预览
 
-[季悠然](https://gundam.exia.xyz)
+[季悠然の主题](https://demo.imouto.tech)
 
 
 
 ## 配置
 
-[G主题文档](http://g.imouto.tech)
+[G主题文档](https://g.imouto.tech)
 
 
 
