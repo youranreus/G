@@ -16,7 +16,7 @@
 		<div id="post-content-article">
 			<?php
 			$content = $this->content;
-			emotionContent($content,$this->options->themeUrl);
+			emotionContent($content);
 			 ?>
 		</div>
 	</div>

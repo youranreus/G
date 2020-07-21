@@ -8,6 +8,7 @@
 
 	<title><?php $this->archiveTitle(' &raquo; ', '', ' | '); ?><?php $this->options->title(); ?></title>
 
+	<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/shortcode.G.css'); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/OwO.min.css'); ?>" rel="stylesheet" />
@@ -59,21 +60,27 @@
 	    background: white;
 	    border-radius: 30px;
 	    box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
-	    padding: 30px;
-	    width: 320px;
-	    margin: 10px;
+	    width: 45%;
+	    margin: 2.5%;
 	    float: left;
 		}
+		.article-item-content{
+			margin:30px;
+		}
+
 		@media screen and (max-width: 768px) {
 
 			.article-item {
 		    background: white;
 		    border-radius: 30px;
 		    box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
-		    padding: 20px;
-		    width: 87%;
+		    width: 100%;
+				padding: 1px;
 		    margin: 20px auto;
 		    float: none;
+			}
+			.article-item-content{
+				margin:20px;
 			}
 
 		}

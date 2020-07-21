@@ -7,7 +7,7 @@
 
  @font-face {
    font-family: 'poppin';
-   src : url('poppin.ttf');
+   src : url('https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/CSS/poppin.ttf');
  }
  /**
   * 基本样式
@@ -140,19 +140,19 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	background-size: 100%;
 }
 .gototop{
-	background: url(../IMG/up.svg)no-repeat center;
+	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/up.svg)no-repeat center;
 	background-size: 100%;
 }
 .m_menu{
-	background: url(../IMG/menu.svg)no-repeat center;
+	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/menu.svg)no-repeat center;
 	background-size: 100%;
 }
 .m_search{
-	background: url(../IMG/search.svg)no-repeat center;
+	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/search.svg)no-repeat center;
 	background-size: 100%;
 }
 .down{
-	background: url(../IMG/down.svg)no-repeat center;
+	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/down.svg)no-repeat center;
 	background-size: 100%;
 	width: 35px;
 	height: 35px;
@@ -232,14 +232,14 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	margin: 0;
 }
 #header-container h2 {
-	font-size: 5rem;
+	font-size: 2rem;
 	color: white;
 	font-weight: 200;
 	margin-bottom: 10px;
 }
 #header-container div span {
 	color: hsla(0,0%,100%,.6);
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	float: left;
 }
 #header-container div nav{
@@ -250,7 +250,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 #header-container div nav a{
 	color: hsla(0,0%,100%,.6);
 	font-weight: 400;
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	margin-left: 20px;
 	display: inline-block;
 }
@@ -333,7 +333,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 }
 .article-item h2 span {
 	color: black!important;
-	font-size: 2rem;
+	font-size: 1.3rem;
 	position:relative;
 	transition: .3s ease all;
 }
@@ -402,7 +402,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
   position: relative;
   z-index: 0;
   padding: 40px 38px 45px;
-  height: 150px;
+  height: 110px;
   border-radius: 24px;
   overflow: hidden;
   word-break: break-all;
@@ -417,7 +417,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	bottom:38px;
   color:white;
   margin: 0;
-  font-size: 1.725rem;
+  font-size: 1.325rem;
 	width:100%;
   /* text-shadow: 0 0 5px rgba(0,0,0,0.5); */
 }
@@ -464,21 +464,6 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	cursor: default;
 }
 
-.card-item article:hover .article-category-link{
-	color: #000;
-  background-color: #fff;
-	text-shadow: none;
-}
-.card-item article:hover .article-date{
-	color: #000;
-  background-color: #fff;
-	text-shadow: none;
-}
-.card-item article:hover .article-picnum{
-	color: #000;
-  background-color: #fff;
-	text-shadow: none;
-}
 /**
  * page
  */
@@ -569,7 +554,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	top: 3;
 	left: 7;
 	content: '';
-	background: url(../IMG/dot.svg) left top no-repeat;
+	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/dot.svg) left top no-repeat;
 	background-size: contain;
 	width: 36px;
 	height: 40px;
@@ -596,13 +581,14 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	border-radius: 30px;
 	box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
 	position: relative;
+  font: 400 18px/1.75 "Open Sans","PingFang SC","Hiragino Sans GB","Microsoft Yahei","WenQuanYi Micro Hei","Segoe UI Emoji","Segoe UI Symbol",Helvetica,Arial,-apple-system,system-ui,sans-serif;
 }
 #post-header {
 	position: relative;
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 15rem;
+	height: 17.5rem;
 	zoom: 1;
 	background-color: #fff;
 	background-repeat: no-repeat;
@@ -624,7 +610,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	display: table;
 	vertical-align: middle;
 	width: 100%;
-	height: 15rem;
+	height: 17.5rem;
 	border-top-left-radius: 30px;
 	border-top-right-radius: 30px;
 }
@@ -679,11 +665,8 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	border-radius: 15px;
-	width: 100% \9;
-	max-width: 90%;
-	max-height: 500px;
-	height: auto;
+	border-radius: 0px;
+	max-width: 100%;
 }
 #post-content-article em{
 	color:RGB(0,77,181);
@@ -701,12 +684,19 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
   min-height: 1.875rem!important;
   height: 1em!important;
 }
+.imageinfo{
+  color: #999;
+  font-size: 0.975rem;
+  text-align: center;
+  display: block;
+  margin-top: -10px;
+}
 #post-content-article p{
 	clear: both;
 	margin-top: 15px;
 	line-height: 1.72222;
 	text-align: justify;
-	color: #606975;
+	color: rgba(0,0,0,.86);
 }
 #post-content-article p, #post-content-article li {
 	font-size: 17px;
@@ -743,18 +733,20 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	top: 3;
 	left: 7;
 	content: '';
-	background: url(../IMG/dot.svg) left top no-repeat;
+	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/dot.svg) left top no-repeat;
 	background-size: contain;
 	width: 36px;
 	height: 40px;
 }
 #post-content a ,#page-content a,#links-post a{
 	color: #07f;
-  display:block;
   overflow:hidden;
   word-break:keep-all;
   white-space:nowrap;
   text-overflow:ellipsis;
+}
+code[class*="language-"] span, pre[class*="language-"] span{
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace!important;
 }
 .aplayer{
 	box-shadow: none!important;
@@ -770,16 +762,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
   width: 100%;
   margin:10px 0px;
 }
-#post-content img {
-	display: block;
-	margin: 20px auto;
-	text-align: center;
-	border-radius: 15px;
-	width: 100% \9;
-	max-width: 90%;
-	max-height: 500px;
-	height: auto;
-}
+
 #feedme{
 	display: inline-block;
 	margin:10px auto;
@@ -1304,7 +1287,7 @@ ruby>rt {
 	top: 0.6rem;
 	left: -0.2rem;
 	background-size: contain;
-	background-image: url('../IMG/friends.svg');
+	background-image: url('https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/friends.svg');
 }
 #links-content {
 	margin: 49px;
@@ -1390,7 +1373,7 @@ ruby>rt {
 	top: 3;
 	left: 7;
 	content: '';
-	background: url(../IMG/dot.svg) left top no-repeat;
+	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/dot.svg) left top no-repeat;
 	background-size: contain;
 	width: 36px;
 	height: 40px;
@@ -1503,7 +1486,7 @@ white-space: nowrap;
   top: 0.4rem;
   left: -0.7rem;
 	background-size: contain;
-	background-image: url('../IMG/archive.svg');
+	background-image: url('https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/archive.svg');
 }
 #tag-cloud{
   width:100%;
@@ -1775,7 +1758,7 @@ background   : hsla(0,0%,100%,.6);
 }
 
 .article-item h2 span {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .card-item article{
 	height:140px;
@@ -1810,10 +1793,10 @@ background   : hsla(0,0%,100%,.6);
 	margin-left: 25px;
 }
 #post-header {
-	height: 10rem;
+	height: 11rem;
 }
 #post-header-mask {
-	height: 10rem;
+	height: 11rem;
 }
 #post-content-meta {
 	top: -7px;
@@ -1910,7 +1893,7 @@ background   : hsla(0,0%,100%,.6);
 	height: 2.5rem;
 	top: 0.45rem;
 }
-.article-item {
+/* .article-item {
 	background: white;
 	border-radius: 30px;
 	box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
@@ -1918,7 +1901,7 @@ background   : hsla(0,0%,100%,.6);
 	width: 87%;
 	margin: 20px auto;
 	float: none;
-}
+} */
 .article-item p {
 	margin: 5px 0px;
 }

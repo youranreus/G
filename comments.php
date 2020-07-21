@@ -41,7 +41,7 @@ echo $commentClass;
             </div>
             <div class="comment-content">
               <?php
-                $cos = preg_replace('#\@\((.*?)\)#','<img src="'.$GLOBALS['theme_url'].'/IMG/bq/$1.png" class="bq">',$comments->content);
+                $cos = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/$1.png" class="bq">',$comments->content);
                 echo $cos;
               ?>
             </div>
@@ -64,7 +64,7 @@ echo $commentClass;
 
         <?php if($this->allow('comment')): ?>
           <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form">
-            <img id="comment-loading" src="<?php $this->options->themeUrl('IMG/loading.gif'); ?>"></img>
+            <img id="comment-loading" src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/loading.gif"></img>
             <div class="cancel-comment-reply clear">
                 <?php $comments->cancelReply(); ?>
             </div>

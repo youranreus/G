@@ -61,13 +61,13 @@ add_shortcode( 'dl' , 'shortcode_button_dl' );
 
 
 function shortcode_notice( $atts, $content = '' ) {
-    return "<div class='post-content-notice'>".$content."</div>";
+    return "<div class='post-content-notice'><div class='post-content-content'>".$content."</div></div>";
 }
 add_shortcode( 'notice' , 'shortcode_notice' );
 
 
 function shortcode_warn( $atts, $content = '' ) {
-    return "<div class='post-content-warn'>".$content."</div>";
+    return "<div class='post-content-warn'><div class='post-content-content'>".$content."</div></div>";
 }
 add_shortcode( 'warn' , 'shortcode_warn' );
 

@@ -69,8 +69,8 @@ function themeConfig($form) {
     if(isset($_POST['type']))
     {
     if($_POST["type"]=="备份模板数据"){
-    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Yodubf'))){
-    $update = $db->update('table.options')->rows(array('value'=>$ysj))->where('name = ?', 'theme:Yodubf');
+    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf'))){
+    $update = $db->update('table.options')->rows(array('value'=>$ysj))->where('name = ?', 'theme:Gbf');
     $updateRows= $db->query($update);
     echo '<div class="tongzhi">备份已更新，请等待自动刷新！如果等不到请点击';
     ?>
@@ -79,8 +79,7 @@ function themeConfig($form) {
     <?php
     }else{
     if($ysj){
-         $insert = $db->insert('table.options')
-        ->rows(array('name' => 'theme:Yodubf','user' => '0','value' => $ysj));
+         $insert = $db->insert('table.options')->rows(array('name' => 'theme:Gbf','user' => '0','value' => $ysj));
          $insertId = $db->query($insert);
     echo '<div class="tongzhi">备份完成，请等待自动刷新！如果等不到请点击';
     ?>
@@ -91,10 +90,10 @@ function themeConfig($form) {
     }
             }
     if($_POST["type"]=="还原模板数据"){
-    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Yodubf'))){
-    $sjdub=$db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Yodubf'));
+    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf'))){
+    $sjdub=$db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf'));
     $bsj = $sjdub['value'];
-    $update = $db->update('table.options')->rows(array('value'=>$bsj))->where('name = ?', 'theme:Yodu');
+    $update = $db->update('table.options')->rows(array('value'=>$bsj))->where('name = ?', 'theme:G');
     $updateRows= $db->query($update);
     echo '<div class="tongzhi">检测到模板备份数据，恢复完成，请等待自动刷新！如果等不到请点击';
     ?>
@@ -106,8 +105,8 @@ function themeConfig($form) {
     }
     }
     if($_POST["type"]=="删除备份数据"){
-    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Yodubf'))){
-    $delete = $db->delete('table.options')->where ('name = ?', 'theme:Yodubf');
+    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf'))){
+    $delete = $db->delete('table.options')->where ('name = ?', 'theme:Gbf');
     $deletedRows = $db->query($delete);
     echo '<div class="tongzhi">删除成功，请等待自动刷新，如果等不到请点击';
     ?>
@@ -119,7 +118,7 @@ function themeConfig($form) {
     }
     }
     }
-    echo '<div id="backup"><form class="protected Data-backup" action="?yodubf" method="post"><h4>数据备份</h4>
+    echo '<div id="backup"><form class="protected Data-backup" action="?Gbf" method="post"><h4>数据备份</h4>
     <input type="submit" name="type" class="btn btn-s" value="备份模板数据" />&nbsp;&nbsp;<input type="submit" name="type" class="btn btn-s" value="还原模板数据" />&nbsp;&nbsp;<input type="submit" name="type" class="btn btn-s" value="删除备份数据" /></form></div>';
 }
 
@@ -360,13 +359,13 @@ function Comment_hash_fix($archive){
 * @param mixed
 * @return
 */
-function emotionContent($content,$url)
+function emotionContent($content)
 {
     // //HyperDown解析
     // $Parsedown = new Parsedown();
     // $content =  $Parsedown->text($content);
     //表情解析
-    $fcontent = preg_replace('#\@\((.*?)\)#','<img src="'. $url .'/IMG/bq/$1.png" class="bq">',$content);
+    $fcontent = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/$1.png" class="bq">',$content);
 
     //感谢Maicong大佬的短代码解析QwQ
     $fcontent = do_shortcode($fcontent);
@@ -379,9 +378,9 @@ function emotionContent($content,$url)
 /**
 * 泽泽大佬的字数统计
 */
-Typecho_Plugin::factory('admin/write-post.php')->bottom = array('myyodu', 'one');
-Typecho_Plugin::factory('admin/write-page.php')->bottom = array('myyodu', 'one');
-class myyodu {
+Typecho_Plugin::factory('admin/write-post.php')->bottom = array('myG', 'one');
+Typecho_Plugin::factory('admin/write-page.php')->bottom = array('myG', 'one');
+class myG {
     public static function one()
     {
     ?>
