@@ -13,7 +13,7 @@
   * 基本样式
   */
 *{
-	font-family: 'poppin','Josefin Sans Light', -apple-system, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "'Hiragino Sans GB", STHeiti, "Microsoft Yahei", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", Arial, Verdana, sans-serif;
+	font-family: 'poppin',PingFangSC-Medium, PingFang SC;
 	text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 	-webkit-appearance:none;
   -webkit-tap-highlight-color: transparent;
@@ -346,6 +346,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	line-height: 1.7;
 	margin: 0;
 	margin-top: 10px;
+  font-weight: 600;
 }
 #article-author {
 	float: left;
@@ -630,6 +631,24 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 #post-content-meta a {
 	color: white;
 }
+#post-content-excerpt{
+  padding:1px;
+  background: #fafafa;
+}
+#post-content-excerpt blockquote{
+  color: #9a9a9a;
+  position: relative;
+  padding: 0.4em 0 0 2.2em;
+  font-size: 0.96em;
+}
+#post-content-excerpt blockquote:before {
+    position: absolute;
+    top: -4px;
+    left: 0;
+    content: "\201c";
+    font: 700 62px/1 serif;
+    color: rgba(0, 0, 0, 0.1);
+}
 #post-content {
 	margin: 49px;
 	padding: 1px;
@@ -686,11 +705,12 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 }
 .imageinfo{
   color: #999;
-  font-size: 0.975rem;
+  font-size: 0.875rem;
   text-align: center;
   display: block;
   margin-top: -10px;
 }
+
 #post-content-article p{
 	clear: both;
 	margin-top: 15px;
@@ -713,30 +733,19 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 #post-content-article blockquote {
 	position: relative;
 	display: block;
-	padding: 45px 0px 25px 0px !important;
+	padding: 10px 0px 10px 0px !important;
 	margin: 0;
 	font-size: 16px;
 	line-height: 26px;
 	border-left: none;
-	background: #f5f5f5;
+	border-left: 3px solid #f5f5f5;
 	text-align: justify;
-	border-radius: 15px;
 }
 #post-content-article blockquote p {
 	font-size: 16px;
 	margin: 0px;
 	padding: 0px 25px 0px 25px;
 	color: #878c93;
-}
-#post-content-article blockquote:before {
-	position: absolute;
-	top: 3;
-	left: 7;
-	content: '';
-	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/dot.svg) left top no-repeat;
-	background-size: contain;
-	width: 36px;
-	height: 40px;
 }
 #post-content a ,#page-content a,#links-post a{
 	color: #07f;
@@ -1227,7 +1236,7 @@ ruby>rt {
  #comments .comment-list li.comment-body {
  	padding: 22px 0 0;
  	    margin: 20px 0;
- 	    background: rgba(248,248,248,1);
+ 	    background: rgba(255,255,255,1);
  	    border-radius: 30px;
  	    padding: 24px;
  }

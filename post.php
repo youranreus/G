@@ -12,6 +12,16 @@
 			</div>
 		</div>
 	</div>
+	<?php
+		$excerpt = $this->fields->excerpt;
+		if(isset($excerpt)):
+	 ?>
+	<div id="post-content-excerpt">
+		<blockquote>
+			<p><?php  echo $excerpt;?></p>
+		</blockquote>
+	</div>
+<?php endif; ?>
 	<div id="post-content">
 		<div id="post-content-article">
 			<?php

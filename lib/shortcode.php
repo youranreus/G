@@ -110,3 +110,26 @@ function shortcode_bili( $atts, $content = '' ) {
     return '<iframe class="bilibili" src="//player.bilibili.com/player.html?aid='.$content.'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>';
 }
 add_shortcode( 'bili' , 'shortcode_bili' );
+
+// function _strip_tags($tagsArr,$str) {
+//   foreach ($tagsArr as $tag) {
+//   $p[]="/(<(?:\/".$tag."|".$tag.")[^>]*>)/i";
+//   }
+//   $return_str = preg_replace($p,"",$str);
+//   return $return_str;
+// }
+//
+// function shortcode_photos( $atts, $content = '' ) {
+//     $args = shortcode_atts( array(
+//         '' => ''
+//     ), $atts );
+//
+//     $content = _strip_tags(array("br"),$content);
+//
+//     return '
+//     <div class="post-content-article-photos">
+//       '.$content.'
+//     </div>
+//     ';
+// }
+// add_shortcode( 'photos' , 'shortcode_photos' );

@@ -122,7 +122,16 @@ function themeConfig($form) {
     <input type="submit" name="type" class="btn btn-s" value="备份模板数据" />&nbsp;&nbsp;<input type="submit" name="type" class="btn btn-s" value="还原模板数据" />&nbsp;&nbsp;<input type="submit" name="type" class="btn btn-s" value="删除备份数据" /></form></div>';
 }
 
+function themeFields(Typecho_Widget_Helper_Layout $layout)
+{
+    $excerpt = new Typecho_Widget_Helper_Form_Element_Textarea('excerpt', null, null, '文章引语', '会显示在标题下方，单栏模式时会覆盖文章摘要');
+    $layout->addItem($excerpt);
+    $imgurl = new Typecho_Widget_Helper_Form_Element_Text('imgurl', null, null, '文章主图', '输入图片URL，该图片会用于主页文章列表的显示。');
+    $layout->addItem($imgurl);
+}
+
 require_once __DIR__ . '/lib/shortcode.php';
+require_once __DIR__ . '/lib/Parsedown.php';
 
 
 /**
@@ -361,9 +370,9 @@ function Comment_hash_fix($archive){
 */
 function emotionContent($content)
 {
-    // //HyperDown解析
-    // $Parsedown = new Parsedown();
-    // $content =  $Parsedown->text($content);
+    //HyperDown解析
+    //$Parsedown = new Parsedown();
+    //$content =  $Parsedown->text($content);
     //表情解析
     $fcontent = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/$1.png" class="bq">',$content);
 

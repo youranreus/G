@@ -13,7 +13,16 @@
     <div id="article-<?php $this->cid();?>" class="article-item hoverup">
       <div class="article-item-content">
         <h2 id="article-<?php $this->cid();?>-title"><span><?php $this->title() ?></span></h2>
-        <?php if ($this->options->IndexStyle == 1): ?><em><?php $this->excerpt(50);?></em><?php endif; ?>
+        <?php if ($this->options->IndexStyle == 1): ?>
+          <?php
+        		$excerpt = $this->fields->excerpt;
+        		if(isset($excerpt)):
+        	 ?>
+        			<em><?php  echo $excerpt;?></em>
+        <?php else: ?>
+          <em><?php $this->excerpt(50);?></em>
+        <?php endif; ?>
+        <?php endif; ?>
         <p class="clear"><span id="article-author"><?php $this->author(); ?></span><span id="article-date"><?php $this->date('F j, Y'); ?></span></p>
       </div>
     </div>

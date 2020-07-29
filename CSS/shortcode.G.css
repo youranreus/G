@@ -150,3 +150,17 @@
 	color: RGBA(184,2,51,0.6);
 	border: 0.0625rem solid RGBA(184,2,51,0.6);
 }
+/* 
+.post-content-article-photos a{
+	display: inline-block;
+	float:left;
+	margin:0 2.5%;
+	width:42.5%;
+}
+.post-content-article-photos a img{
+	margin: 1px!important;
+	height:150px;
+}
+.post-content-article-photos .imageinfo{
+	display: none;
+} */
