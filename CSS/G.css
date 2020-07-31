@@ -711,6 +711,41 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
   margin-top: -10px;
 }
 
+/** Table 表格样式 **/
+table{
+    border-collapse: collapse;
+    width:100%;
+    border:1px solid #c6c6c6 !important;
+    margin-bottom:20px;
+}
+table th{
+    border-collapse: collapse;
+    border-right:1px solid #c6c6c6 !important;
+    border-bottom:1px solid #c6c6c6 !important;
+    background-color:#f0f0f0 !important;
+    padding:5px 9px;
+    font-size:14px;
+    font-weight:normal;
+    text-align:center;
+}
+table td{
+    border-collapse: collapse;
+    border-right:1px solid #c6c6c6 !important;
+    border-bottom:1px solid #c6c6c6 !important;
+    padding:5px 9px;
+    font-size:12px;
+    font-weight:normal;
+    text-align:center;
+    word-break: break-all;
+    -webkit-transition: .2s ease all;
+  	-moz-transition: .2s ease all;
+  	-ms-transition: .2s ease all;
+  	-o-transition: .2s ease all;
+  	transition: .2s ease all;
+}
+table td:hover{
+  background:RGBA(240,240,240,0.5);
+}
 #post-content-article p{
 	clear: both;
 	margin-top: 15px;
