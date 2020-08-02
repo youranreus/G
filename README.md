@@ -26,7 +26,7 @@
 
 ## 预览
 
-[季悠然の主题](https://demo.imouto.tech)
+[季悠然の主题](https://blog.exia.xyz)
 
 
 

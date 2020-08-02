@@ -126,7 +126,7 @@ function themeFields(Typecho_Widget_Helper_Layout $layout)
 {
     $excerpt = new Typecho_Widget_Helper_Form_Element_Textarea('excerpt', null, null, '文章引语', '会显示在标题下方，单栏模式时会覆盖文章摘要');
     $layout->addItem($excerpt);
-    $imgurl = new Typecho_Widget_Helper_Form_Element_Text('imgurl', null, null, '文章主图', '输入图片URL，该图片会用于主页文章列表的显示。');
+    $imgurl = new Typecho_Widget_Helper_Form_Element_Text('imgurl', null, null, '文章主图', '该图片会用于主页文章列表及文章头图的显示。');
     $layout->addItem($imgurl);
 }
 

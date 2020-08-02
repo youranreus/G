@@ -4,7 +4,7 @@
 ?>
 
 <div id="post">
-	<div id="post-header" style="background-image:url(<?php  $imgurl = $this->fields->imgurl;if(isset($imgurl)){echo $imgurl;}else{$this->options->defaultPostIMG();}?>)">
+	<div id="post-header" style="background-image:url(<?php  $imgurl = $this->fields->imgurl;if($imgurl != ''){echo $imgurl;}else{$this->options->defaultPostIMG();}?>)">
 		<div id="post-header-mask">
 			<div id="post-header-content">
 				<h2 id="post-content-title"><?php $this->title();?></h2>
@@ -14,7 +14,7 @@
 	</div>
 	<?php
 		$excerpt = $this->fields->excerpt;
-		if(isset($excerpt)):
+		if($excerpt != ''):
 	 ?>
 	<div id="post-content-excerpt">
 		<blockquote>

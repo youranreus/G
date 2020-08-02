@@ -16,7 +16,7 @@
         <?php if ($this->options->IndexStyle == 1): ?>
           <?php
         		$excerpt = $this->fields->excerpt;
-        		if(isset($excerpt)):
+        		if($excerpt != ''):
         	 ?>
         			<em><?php  echo $excerpt;?></em>
         <?php else: ?>
@@ -34,7 +34,7 @@
   <?php while($this->next()): ?>
     <div class="card-item">
        <article>
-         <div class="card-cover" style="background-image: url(<?php  $imgurl = $this->fields->imgurl;if(isset($imgurl)){echo $imgurl;}else{$this->options->defaultPostIMG();}?>)"></div>
+         <div class="card-cover" style="background-image: url(<?php  $imgurl = $this->fields->imgurl;if($imgurl != ''){echo $imgurl;}else{$this->options->defaultPostIMG();}?>)"></div>
          <a class="article-link card-link" href="<?php $this->permalink() ?>" itemprop="url"></a>
          <h2 class="article-title"><?php $this->title() ?></h2>
          <div class="article-meta">
@@ -43,7 +43,6 @@
              <a class="article-date"><?php echo formatTime($this->created);?></a>
            </div>
          </div>
-
        </article>
      </div>
   <?php endwhile; ?>
