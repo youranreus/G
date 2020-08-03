@@ -34,3 +34,4 @@
   </div>
 </div>
 <div id="sliderbar-cover" onclick="sideMenu_toggle();"></div>
+<div id="sliderbar-toc-cover" onclick="toc_toggle();"></div>

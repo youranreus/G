@@ -165,10 +165,11 @@ function sideMenu_toggle(){
 	}
 }
 
-//侧栏菜单开关
+//侧栏目录开关
 function toc_toggle(){
 	$("#sliderbar-toc").toggleClass("move_left");
 	$("#sliderbar-toc").toggleClass("move_right");
+	$("#sliderbar-toc-cover").toggle();
 }
 
 //目录
@@ -200,21 +201,22 @@ function toc(){
 
 				if(status == true){
 					$('#sliderbar-toc').show();
-					tocbot.init({
-				    tocSelector: '.toc',
-				    contentSelector: content,
-				    headingSelector: headerEl,
-				    positionFixedSelector: '#sliderbar-toc',
-				    positionFixedClass: 'is-position-fixed',
-				    fixedSidebarOffset: 'auto',
-				    scrollSmooth: true,
-				    scrollSmoothOffset: -80,
-				    headingsOffset: -200
-					});
+					$('#m_toc').show();
 				}
-
+				tocbot.init({
+					tocSelector: '.toc',
+					contentSelector: content,
+					headingSelector: headerEl,
+					positionFixedSelector: '#sliderbar-toc',
+					positionFixedClass: 'is-position-fixed',
+					fixedSidebarOffset: 'auto',
+					scrollSmooth: true,
+					scrollSmoothOffset: 0,
+					headingsOffset: -200
+				});
 	}else{
 		$('#sliderbar-toc').hide();
+		$('#m_toc').hide();
 	}
 
 

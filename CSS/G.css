@@ -120,16 +120,17 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	-ms-transition: .6s ease all;
 	-o-transition: .6s ease all;
 	transition: .6s ease all;
+  cursor: pointer;
 }
 
 #m_menu{
 	bottom:50px;
 }
 #m_toc{
-	bottom:100px;
+	bottom:150px;
 }
 #m_top{
-	bottom:150px;
+	bottom:100px;
 }
 #m_search{
 	bottom:200px;
@@ -505,6 +506,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	-ms-transition: .3s ease all;
 	-o-transition: .3s ease all;
 	transition: .3s ease all;
+  outline:none;
 }
 #page-content-article h1:hover,#page-content-article h2:hover,#page-content-article h3:hover,#page-content-article h4:hover {
 	letter-spacing: 0.5rem;
@@ -670,6 +672,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	-ms-transition: .3s ease all;
 	-o-transition: .3s ease all;
 	transition: .3s ease all;
+  outline:none;
 }
 #post-content-article h1:hover,#post-content-article h2:hover,#post-content-article h3:hover,#post-content-article h4:hover {
 	letter-spacing: 0.2rem;
@@ -962,6 +965,15 @@ ruby>rt {
 	z-index:999;
 }
 #sliderbar-cover{
+	display: none;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index:998;
+	width:100%;
+	height:100%;
+}
+#sliderbar-toc-cover{
 	display: none;
 	position: fixed;
 	top:0;
@@ -2060,10 +2072,10 @@ input#url, input#mail, input#author {
 #m_menu {
     bottom: 15px;
 }
-#m_toc {
+#m_top {
     bottom: 70px;
 }
-#m_top {
+#m_toc {
     bottom: 125px;
 }
 #m_search {
@@ -2073,6 +2085,15 @@ input#url, input#mail, input#author {
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
   background: RGBA(0,0,0,0.9);
+}
+.toc{
+  margin:10px 0;
+}
+.toc-list-item{
+  font-size: 15px;
+}
+.is-collapsible .toc-list-item{
+    font-size: 13px;
 }
 }
 
