@@ -33,30 +33,19 @@
 
 	</div>
 
-	
+
 	<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 	<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
  	<script src="<?php $this->options->themeUrl('JS/X.js'); ?>"></script>
 	<script src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
 	<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.js"></script>
+	<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.12.0/tocbot.min.js"></script>
 
 
 	<?php $this->footer(); ?>
 
-	<script>
-		ajaxc();
-		PreFancybox();
-		imageinfo();
-		jQuery(document).ready(function ($) {
-				$("img.lazyload").lazyload({
-			        threshold: 100,
-			        effect: "fadeIn"
-			  });
-    });
-		show_site_runtime("<?php getBuildTime($this->options->builtTime);?>");
-		<?php echo $this->options->CustomJSf;?>
-	</script>
+
 
 </div>
 
@@ -72,8 +61,26 @@
 	<span><a onclick="gototop();"><i class="i gototop"></i></a></span>
 </div>
 
+<div id="m_toc">
+	<span><a onclick="toc_toggle();"><i class="i m_toc"></i></a></span>
+</div>
+
 <div id="m_menu">
 	<span><a onclick="sideMenu_toggle();"><i class="i m_menu"></i></a></span>
 </div>
 <?php  $this->need('sliderbar.php'); ?>
+<script>
+	ajaxc();
+	PreFancybox();
+	imageinfo();
+	toc();
+	jQuery(document).ready(function ($) {
+			$("img.lazyload").lazyload({
+						threshold: 100,
+						effect: "fadeIn"
+			});
+	});
+	show_site_runtime("<?php getBuildTime($this->options->builtTime);?>");
+	<?php echo $this->options->CustomJSf;?>
+</script>
 </body>

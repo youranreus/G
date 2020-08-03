@@ -32,6 +32,7 @@ function pjax_click(){
 
 function pjax_send(){
 	$("#M").addClass("opacity-disappear");
+	if ($('.toc').length) tocbot.destroy();
 }
 
 function pjax_complete(){
@@ -52,6 +53,7 @@ function pjax_complete(){
 	$("#M").addClass("opacity-show");
 	PreFancybox();
 	imageinfo();
+	toc();
 	jQuery(document).ready(function ($) {
 			$("img.lazyload").lazyload({
 						threshold: 100,
@@ -158,8 +160,66 @@ function sideMenu_toggle(){
 	$("#sliderbar-cover").toggle();
 	$("#m_search").toggle();
 	$("#pjax-container").toggleClass("main_display");
+	if($("#sliderbar-toc").hasClass("move_left")){
+		toc_toggle();
+	}
 }
 
+//侧栏菜单开关
+function toc_toggle(){
+	$("#sliderbar-toc").toggleClass("move_left");
+	$("#sliderbar-toc").toggleClass("move_right");
+}
+
+//目录
+function toc(){
+	if($("#post-content-article").length>0){
+		var headerEl = 'h1,h2,h3,h4',  //headers
+	    	content = '#post-content-article',//文章容器
+	    	idArr = {},  //标题数组以确定是否增加索引id
+				status = false;
+
+			$(content).children(headerEl).each(function () {
+			    //去除空格以及多余标点
+			    var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+			    headerId = headerId.toLowerCase();
+			    if (idArr[headerId]) {
+			        //id已经存在
+			        $(this).attr('id', headerId + '-' + idArr[headerId]);
+			        idArr[headerId]++;
+							status = true;
+			    }
+			    else {
+			        //id未存在
+			        idArr[headerId] = 1;
+			        $(this).attr('id', headerId);
+							status = true;
+			    }
+			});
+
+				if(status == true){
+					$('#sliderbar-toc').show();
+					tocbot.init({
+				    tocSelector: '.toc',
+				    contentSelector: content,
+				    headingSelector: headerEl,
+				    positionFixedSelector: '#sliderbar-toc',
+				    positionFixedClass: 'is-position-fixed',
+				    fixedSidebarOffset: 'auto',
+				    scrollSmooth: true,
+				    scrollSmoothOffset: -80,
+				    headingsOffset: -200
+					});
+				}
+
+	}else{
+		$('#sliderbar-toc').hide();
+	}
+
+
+
+}
 
 function gototop(){
 	$('body,html').animate({scrollTop:0},500);
