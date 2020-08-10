@@ -92,7 +92,7 @@ function imageinfo(){
 					}
 					$(this).addClass("lazyload");
 					$(this).attr('data-original',$(this).attr("src"));
-					$(this).attr('src','https://gejiba.com/images/u34323001242429626854fm26gp036eb154f6353645d.gif');
+					$(this).attr('src','https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/loading2.gif');
 					$(this).after('<span class="imageinfo">'+ $(this).attr("title") +'</span>');
 		 });
 	});
