@@ -25,7 +25,21 @@
 	<div id="post-content">
 		<div id="post-content-article">
 			<?php
-			$content = $this->content;
+			$db = Typecho_Db::get();
+			$sql = $db->select()->from('table.comments')
+			    ->where('cid = ?',$this->cid)
+			    ->where('mail = ?', $this->remember('mail',true))
+			    ->where('status = ?', 'approved')
+			//只有通过审核的评论才能看回复可见内容
+			    ->limit(1);
+			$result = $db->fetchAll($sql);
+			if($this->user->hasLogin() || $result) {
+			    $content = preg_replace("/\[hide\](.*?)\[\/hide\]/sm",'<div class="reply2see">$1</div>',$this->content);
+			}
+			else{
+			    $content = preg_replace("/\[hide\](.*?)\[\/hide\]/sm",'<div class="reply2see">此处内容需要评论回复后方可阅读。</div>',$this->content);
+			}
+
 			emotionContent($content);
 			 ?>
 		</div>

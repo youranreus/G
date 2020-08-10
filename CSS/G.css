@@ -13,7 +13,7 @@
   * 基本样式
   */
 *{
-	font-family: 'poppin',PingFangSC-Medium, PingFang SC;
+	font-family: 'poppin',BlinkMacSystemFont,"Hiragino Sans GB","Microsoft YaHei","微软雅黑",sans-serif;;
 	text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.1);
 	-webkit-appearance:none;
   -webkit-tap-highlight-color: transparent;
@@ -649,6 +649,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
   position: relative;
   padding: 0.4em 0 0 2.2em;
   font-size: 0.96em;
+  font-weight: 100;
 }
 #post-content-excerpt blockquote:before {
     position: absolute;
@@ -904,56 +905,29 @@ ruby>rt {
 #post-tags a:hover {
   background: #f5f5f5;
 }
-#post-related-posts{
-	width:800px;
-	margin: 0 auto;
-	white-space: nowrap;
+.protected input[type="password"]{
+  width: 100%;
+  background: #EEE;
+  padding: .5em;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: .5em;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+}
+p.word{
+  font-size:1.3rem;
+  font-weight: bold;
+}
+.reply2see{
+  background: #f9f9f9;
+  padding: 10px 10px 10px 10px;
+  position: relative;
+  font-size: 1rem;
+  color: RGBA(0,0,0,0.5);
+}
 
-}
-#post-related-posts span{
-	display: inline-block;
-	padding:10px;
-	width:auto;
-	font-size:20px;
-	font-weight: 600;
-	background:rgba(255,255,255,1);
-	border-radius: 10px;
-	margin-bottom:10px;
-}
-#post-related-posts-continer::-webkit-scrollbar-thumb{
-	background: hsla(0,0%,100%,.6);
-	-webkit-box-shadow:none;
-}
-#post-related-posts-continer::-webkit-scrollbar-thumb:hover{
-	background: rgba(0,0,0,0.8);
-	-webkit-box-shadow:none;
-}
-#post-related-posts-continer::-webkit-scrollbar-track
-{
-    background:rgba(255,255,255,0);
-}
-#post-related-posts-continer{
-	white-space: nowrap;
-	overflow-x: auto; /*添加横向滚动条*/
-	overflow-y: hidden;
-}
-.relatet-post-item{
-	position: relative;
-	display: inline-block;
-	background:rgba(255,255,255,1);
-	height:80px;
-	width:230px;
-	padding:10px;
-	margin-right:25px;
-	border-radius: 10px;
-}
-.relatet-post-item:last-child{
-	margin:0;
-}
-.relatet-post-item h4{
-	margin:5px 0;
-	font-size:20px;
-}
 /**
  * 侧边栏
  */

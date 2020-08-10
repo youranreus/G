@@ -130,6 +130,23 @@ function themeFields(Typecho_Widget_Helper_Layout $layout)
     $layout->addItem($imgurl);
 }
 
+//感谢泽泽大佬的代码
+Typecho_Plugin::factory('Widget_Abstract_Contents')->excerptEx = array('Gx','reply2see');
+Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Gx','reply2see');
+
+class Gx {
+
+    public static function reply2see($con,$obj,$text)
+    {
+      $text = empty($text)?$con:$text;
+      if(!$obj->is('single')){
+        $text = preg_replace("/\[hide\](.*?)\[\/hide\]/sm",'',$text);
+      }
+      return $text;
+    }
+
+}
+
 require_once __DIR__ . '/lib/shortcode.php';
 require_once __DIR__ . '/lib/Parsedown.php';
 

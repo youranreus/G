@@ -366,6 +366,7 @@ function ajaxc(){
 							toastr.success('送信完了', '发送成功');
 							$("#comment-loading").fadeOut();
 							$(".submit").fadeIn();
+							//$.pjax.reload('#pjax-container', {container: '#pjax-container',fragment: '#pjax-container',timeout: 8000});
 						}
 				});
 				return false;
