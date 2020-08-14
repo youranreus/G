@@ -128,6 +128,7 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 }
 #m_toc{
 	bottom:150px;
+  display: none;
 }
 #m_top{
 	bottom:100px;
@@ -135,6 +136,9 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 #m_search{
 	bottom:200px;
 	display: none;
+}
+.m_search_c{
+  bottom:150px!important;
 }
 .i{
 	width: 20px;
@@ -786,6 +790,8 @@ table td:hover{
 	border-left: none;
 	border-left: 3px solid #f5f5f5;
 	text-align: justify;
+  background: rgba(245,245,245,0.5);
+  border-radius: 0 5px 5px 0;
 }
 #post-content-article blockquote p {
 	font-size: 16px;
@@ -2002,15 +2008,6 @@ background   : hsla(0,0%,100%,.6);
 	height: 2.5rem;
 	top: 0.45rem;
 }
-/* .article-item {
-	background: white;
-	border-radius: 30px;
-	box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
-	padding: 20px;
-	width: 87%;
-	margin: 20px auto;
-	float: none;
-} */
 .article-item p {
 	margin: 5px 0px;
 }
@@ -2054,6 +2051,9 @@ input#url, input#mail, input#author {
 }
 #m_search {
     bottom: 180px;
+}
+.m_search_c{
+  bottom:125px!important;
 }
 #sliderbar-toc{
   backdrop-filter: blur(0px);

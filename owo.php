@@ -18,7 +18,7 @@
       <li class="OwO-item" onclick="Smilies.grin('@(biexiao)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/biexiao.png" /></li>
       <li class="OwO-item" onclick="Smilies.grin('@(hemenjiu)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/hemenjiu.png" /></li>
       <li class="OwO-item" onclick="Smilies.grin('@(chigua2)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/chigua2.png" /></li>
-      <li class="OwO-item" onclick="Smilies.grin('@(chaoquan_love)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/chaoquan_love.png" /></li>
+      <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_love)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.6/G/IMG/bq/chaiquan_love.png" /></li>
       <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_red_1)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/chaiquan_red_1.png" /></li>
       <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_melon)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/chaiquan_melon.png" /></li>
       <li class="OwO-item" onclick="Smilies.grin('@(chaiquan_mask)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/chaiquan_mask.png" /></li>
@@ -31,7 +31,7 @@
      <li class="OwO-item" onclick="Smilies.grin('@(chaiquanzaijian)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/chaiquanzaijian.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(chaiquanku)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/chaiquanku.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(hehe)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/hehe.png" /></li>
-     <li class="OwO-item" onclick="Smilies.grin('@(haha)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/haha.png" /></li>
+     <li class="OwO-item" onclick="Smilies.grin('@(haha)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.6/G/IMG/bq/yo.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(tushe)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/tushe.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(taikaixin)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/taikaixin.png" /></li>
      <li class="OwO-item" onclick="Smilies.grin('@(xiaoyan)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/xiaoyan.png" /></li>

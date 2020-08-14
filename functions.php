@@ -1,7 +1,7 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
-    echo "<link rel='stylesheet' href='".__TYPECHO_THEME_DIR__."/G/CSS/S.css'/>";
+    echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/CSS/S.css'/>";
     echo "<h2>G主题设置</h2>";
     $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('图标') , _t(''));
     $form->addInput($favicon);

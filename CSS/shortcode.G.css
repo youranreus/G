@@ -16,6 +16,9 @@
 	margin:0!important;
 	border: none!important;
 }
+.ArtinArt h4 a{
+	display: block;
+}
 .ArtinArt h4:hover{
 	letter-spacing: normal!important;
 	border: none!important;
@@ -87,49 +90,8 @@
   background:#666;
   color:white!important;
 }
-.post-content-notice{
-	margin:15px 0;
-	border:1.5px solid RGB(121,145,209);
-	border-radius: 10px;
-	padding: 1.5rem 1.25rem 1.5rem 3.5rem;
-	position: relative;
-	overflow: hidden;
-}
-.post-content-content{
-	position: relative;
-	z-index:2;
-}
-.post-content-notice:before{
-	content: " ";
-  position: absolute;
-  top: -10;
-  right: 0;
-  bottom: 0;
-  left: -50;
-  background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/notice.svg) no-repeat;
-  opacity: .1;
-	z-index:1;
-}
 
-.post-content-warn{
-	margin:15px 0;
-	border:1.5px solid RGBA(184,2,51,0.6);
-	border-radius: 10px;
-	padding: 1.5rem 1.25rem 1.5rem 3.5rem;
-	position: relative;
-	overflow: hidden;
-}
-.post-content-warn:before{
-	content: " ";
-  position: absolute;
-	top: -10;
-  right: 0;
-  bottom: 0;
-  left: -50;
-  background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/warn.svg) no-repeat;
-  opacity: .1;
-	z-index:1;
-}
+
 .post-content-tag{
 	display: inline-block;
   margin: 0 5px;
@@ -150,17 +112,23 @@
 	color: RGBA(184,2,51,0.6);
 	border: 0.0625rem solid RGBA(184,2,51,0.6);
 }
-/* 
-.post-content-article-photos a{
-	display: inline-block;
-	float:left;
-	margin:0 2.5%;
-	width:42.5%;
+
+.shortcode-notice{
+	background: #eef6fd;
+  padding: 8px 20px;
+  border-left: 3px solid #38a3fd;
+  border-radius: 0 5px 5px 0;
+  margin-bottom: 10px;
+  color: #777;
+	font-size:15px;
 }
-.post-content-article-photos a img{
-	margin: 1px!important;
-	height:150px;
+
+.shortcode-warn{
+	background: #fcf1f1;
+  padding: 8px 20px;
+  border-left: 3px solid #ed0000;
+  border-radius: 0 5px 5px 0;
+  margin-bottom: 10px;
+  color: #777;
+	font-size:15px;
 }
-.post-content-article-photos .imageinfo{
-	display: none;
-} */

@@ -169,6 +169,7 @@ function sideMenu_toggle(){
 function toc_toggle(){
 	$("#sliderbar-toc").toggleClass("move_left");
 	$("#sliderbar-toc").toggleClass("move_right");
+	$('#m_search').removeClass('m_search_c');
 	$("#sliderbar-toc-cover").toggle();
 }
 
@@ -202,6 +203,7 @@ function toc(){
 				if(status == true){
 					$('#sliderbar-toc').show();
 					$('#m_toc').show();
+					$('#m_search').removeClass('m_search_c');
 				}
 				tocbot.init({
 					tocSelector: '.toc',
@@ -217,6 +219,7 @@ function toc(){
 	}else{
 		$('#sliderbar-toc').hide();
 		$('#m_toc').hide();
+		$('#m_search').addClass('m_search_c');
 	}
 
 
