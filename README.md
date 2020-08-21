@@ -32,7 +32,7 @@
 
 ## 配置
 
-[G主题文档](https://g.imouto.tech)
+[G主题文档](http://g.imouto.tech)
 
 
 
