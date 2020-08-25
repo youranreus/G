@@ -22,7 +22,7 @@
 		<div id="footer-content-right">
 			<p>
 				<?php if ($this->options->enableUpyun): ?>
-       		<a href="https://upyun.com" target="_blank"><img src="https://i.loli.net/2019/02/11/5c6187c809c8c.png"/></a>
+       		<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img src="https://i.loli.net/2019/02/11/5c6187c809c8c.png"/></a>
       	<?php endif; ?>
 				<?php if ($this->options->enableAliLogo): ?>
 	       <img src="https://i.loli.net/2019/02/11/5c6187e663b3a.png"/></p>
@@ -41,6 +41,13 @@
 	<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
 	<script src="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.js"></script>
 	<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.12.0/tocbot.min.js"></script>
+	<?php if ($this->options->enableSmooth): ?>
+		<script src="https://cdn.bootcdn.net/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+		<script>
+		SmoothScroll({ stepSize: 40 })
+		</script>
+	<?php endif; ?>
+
 
 
 	<?php $this->footer(); ?>

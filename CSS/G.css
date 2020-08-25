@@ -666,7 +666,6 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 #post-content {
 	margin: 49px;
 	padding: 1px;
-	cursor: default;
 }
 #post-content-article h1,#post-content-article h2,#post-content-article h3,#post-content-article h4 {
 	color: RGB(48,71,88);

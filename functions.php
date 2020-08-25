@@ -31,6 +31,16 @@ function themeConfig($form) {
         '0' => _t('nope')
     ) , '0', _t('是否使用独立页面做首页') , _t('默认为关闭'));
     $form->addInput($enableIndexPage);
+
+    $articlePath = new Typecho_Widget_Helper_Form_Element_Text('articlePath', NULL, NULL, _t('头部文章路径') , _t('默认index.php/blog'));
+    $form->addInput($articlePath);
+
+    $enableSmooth = new Typecho_Widget_Helper_Form_Element_Radio('enableSmooth', array(
+        '1' => _t('开启') ,
+        '0' => _t('关闭')
+    ) , '1', _t('开启平滑滚动') , _t('默认为开启'));
+    $form->addInput($enableSmooth);
+
     $enableUpyun = new Typecho_Widget_Helper_Form_Element_Radio('enableUpyun', array(
         '1' => _t('我是盟友') ,
         '0' => _t('啥东西，不要')

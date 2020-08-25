@@ -71,6 +71,17 @@ function shortcode_warn( $atts, $content = '' ) {
 }
 add_shortcode( 'warn' , 'shortcode_warn' );
 
+function shortcode_warn_block( $atts, $content = '' ) {
+    return "<div class='post-content-warn'><div class='post-content-content'>".$content."</div></div>";
+}
+add_shortcode( 'warn-block' , 'shortcode_warn_block' );
+
+
+function shortcode_notice_block( $atts, $content = '' ) {
+    return "<div class='post-content-notice'><div class='post-content-content'>".$content."</div></div>";
+}
+add_shortcode( 'notice-block' , 'shortcode_notice_block' );
+
 
 function shortcode_tag( $atts, $content = '' ) {
     $args = shortcode_atts( array(
@@ -107,6 +118,10 @@ function shortcode_bili( $atts, $content = '' ) {
     $args = shortcode_atts( array(
         '' => ''
     ), $atts );
-    return '<iframe class="bilibili" src="//player.bilibili.com/player.html?aid='.$content.'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>';
+    if(preg_match('/[a-zA-Z]/',$content)){
+      return '<iframe class="bilibili" src="//player.bilibili.com/player.html?bvid='.$content.'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>';
+    }else{
+            return '<iframe class="bilibili" src="//player.bilibili.com/player.html?aid='.$content.'" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>';
+    }
 }
 add_shortcode( 'bili' , 'shortcode_bili' );
