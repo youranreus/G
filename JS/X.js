@@ -54,6 +54,7 @@ function pjax_complete(){
 	PreFancybox();
 	imageinfo();
 	toc();
+	collapse_toggle();
 	jQuery(document).ready(function ($) {
 			$("img.lazyload").lazyload({
 						threshold: 100,
@@ -172,6 +173,18 @@ function toc_toggle(){
 	$('#m_search').removeClass('m_search_c');
 	$("#sliderbar-toc-cover").toggle();
 }
+
+//折叠框开关
+function collapse_toggle(){
+	$('.collapse-title').click(function(){
+			if($(this).next().css("display")=='none'){
+				 $(this).next().slideDown();
+			}else{
+				 $(this).next().slideUp();
+			 }
+	})
+}
+
 
 //目录
 function toc(){

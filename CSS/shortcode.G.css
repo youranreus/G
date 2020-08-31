@@ -175,3 +175,20 @@
   opacity: .1;
 	z-index:1;
 }
+
+.collapse-box{
+	border: 1px solid #ddd;
+	margin:30px;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.collapse-title{
+	background: #fafafa;
+}
+.collapse-title p{
+	margin:0!important;
+	padding:15px;
+}
+.collapse-content{
+	padding: 15px;
+}

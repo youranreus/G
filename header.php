@@ -184,7 +184,9 @@
             		<a class="<?php if($this->is('page', $pages->slug)): ?> nav-focus<?php endif; ?>" href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
 							<?php endif; ?>
 						<?php endwhile; ?>
-					        <a class="search-form-input">搜索</a>
+						<?php if ($this->options->enableHeaderSearch == 1): ?>
+					        <a style=" cursor: pointer;"class="search-form-input">搜索</a>
+						<?php endif; ?>
 					</nav>
 				</div>
 			</div>

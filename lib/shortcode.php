@@ -125,3 +125,12 @@ function shortcode_bili( $atts, $content = '' ) {
     }
 }
 add_shortcode( 'bili' , 'shortcode_bili' );
+
+function shortcode_collapse( $atts, $content = '' ) {
+    $args = shortcode_atts( array(
+        'title' => '折叠框'
+    ), $atts );
+
+    return '<div class="collapse-box"><div class="collapse-title"><p>'.$args['title'].'</p></div><div class="collapse-content" style="display: none;">'.shortcodeContent($content).'</div></div>';
+}
+add_shortcode( 'collapse' , 'shortcode_collapse' );

@@ -41,6 +41,12 @@ function themeConfig($form) {
     ) , '1', _t('开启平滑滚动') , _t('默认为开启'));
     $form->addInput($enableSmooth);
 
+    $enableHeaderSearch = new Typecho_Widget_Helper_Form_Element_Radio('enableHeaderSearch', array(
+        '1' => _t('开启') ,
+        '0' => _t('关闭')
+    ) , '0', _t('在头部添加一个搜索') , _t('默认为关闭'));
+    $form->addInput($enableHeaderSearch);
+
     $enableUpyun = new Typecho_Widget_Helper_Form_Element_Radio('enableUpyun', array(
         '1' => _t('我是盟友') ,
         '0' => _t('啥东西，不要')
@@ -143,6 +149,8 @@ function themeFields(Typecho_Widget_Helper_Layout $layout)
 //感谢泽泽大佬的代码
 Typecho_Plugin::factory('Widget_Abstract_Contents')->excerptEx = array('Gx','reply2see');
 Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Gx','reply2see');
+Typecho_Plugin::factory('admin/write-post.php')->bottom = array('Gx', 'addButton');
+Typecho_Plugin::factory('admin/write-page.php')->bottom = array('Gx', 'addButton');
 
 class Gx {
 
@@ -155,10 +163,46 @@ class Gx {
       return $text;
     }
 
+    public static function addButton()
+    {
+      echo '  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.7/G/CSS/OwO.min.css?v=2" rel="stylesheet" />';
+
+        echo '
+        <style>
+          .wmd-button-row{
+            height:auto;
+          }
+          .wmd-button{
+            color:#999;
+          }
+          .OwO{
+            background:#fff;
+          }
+          #g-shortcode{
+            line-height: 30px;
+            background:#fff;
+          }
+          #g-shortcode a{
+            cursor: pointer;
+            font-weight:bold;
+            font-size:14px;
+            text-decoration:none;
+            color: #999 !important;
+            margin:5px;
+            display:inline-block;
+          }
+        </style>
+        ';
+
+        echo '<script src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.7/G/JS/editor.js"></script>';
+
+
+    }
+
 }
 
-require_once __DIR__ . '/lib/shortcode.php';
 require_once __DIR__ . '/lib/Parsedown.php';
+require_once __DIR__ . '/lib/shortcode.php';
 
 
 /**
@@ -401,14 +445,26 @@ function emotionContent($content)
     //$Parsedown = new Parsedown();
     //$content =  $Parsedown->text($content);
     //表情解析
-    $fcontent = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/$1.png" class="bq">',$content);
-
+    $fcontent = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/bq/$1.png" class="bq">',$content);
     //感谢Maicong大佬的短代码解析QwQ
     $fcontent = do_shortcode($fcontent);
-
-
     //输出最终结果
     echo $fcontent;
+}
+
+/**
+* 文章内容解析（短代码，表情）
+*
+* @access public
+* @param mixed
+* @return
+*/
+function shortcodeContent($content)
+{
+    $Parsedown = new Parsedown();
+    $fcontent =  $Parsedown->text($content);
+    $fcontent = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/bq/$1.png" class="bq">',$fcontent);
+    return $fcontent;
 }
 
 /**
