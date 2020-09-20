@@ -12,6 +12,47 @@ var mobileHover = function () {
     });
 };
 
+//夜间模式开关
+function switchNightMode(){
+    var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+    if(night == '0'){
+        document.querySelector('link[title="dark"]').disabled = true;
+        document.querySelector('link[title="dark"]').disabled = false;
+        document.cookie = "night=1;path=/"
+        toastr.info('夜间模式开启');
+    }else{
+        document.querySelector('link[title="dark"]').disabled = true;
+        document.cookie = "night=0;path=/"
+        toastr.info('夜间模式关闭');
+    }
+}
+
+//自动判断夜间模式
+(function(){
+    if(document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") == ''){
+        if(new Date().getHours() > 22 || new Date().getHours() < 6){
+        document.querySelector('link[title="dark"]').disabled = true;
+        document.querySelector('link[title="dark"]').disabled = false;
+        document.cookie = "night=1;path=/"
+        toastr.info('夜间模式开启');
+        }else{
+        document.cookie = "night=0;path=/"
+        // toastr.info('夜间模式关闭');
+        }
+    }else{
+        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+        if(night == '0'){
+        document.querySelector('link[title="dark"]').disabled = true;
+        // toastr.info('夜间模式关闭');
+        }else if(night == '1'){
+        document.querySelector('link[title="dark"]').disabled = true;
+        document.querySelector('link[title="dark"]').disabled = false;
+        toastr.info('夜间模式开启');
+        }
+    }
+})();
+
+
 
 //pjax 刷新
 $(document).pjax('a:not(a[target="_blank"], a[no-pjax])', {

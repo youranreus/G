@@ -63,7 +63,7 @@
   top: 0.2rem;
   left: -0.4rem;
   background-size: contain;
-  background-image: url(https://i.loli.net/2019/02/15/5c66d1a1484bd.png);
+  background-image: url(../IMG/dl-b.png);
   -webkit-transition: .3s ease all;
   -moz-transition: .3s ease all;
   -ms-transition: .3s ease all;
@@ -80,7 +80,7 @@
   top: 0.2rem;
   left: -0.4rem;
   background-size: contain;
-  background-image: url(https://i.loli.net/2019/02/15/5c66d1a148f1d.png);
+  background-image: url(../IMG/dl-w.png);
 }
 
 .post-download a::after{
@@ -151,7 +151,7 @@
   right: 0;
   bottom: 0;
   left: -50;
-  background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/notice.svg) no-repeat;
+  background: url(../IMG/notice.svg) no-repeat;
   opacity: .1;
 	z-index:1;
 }
@@ -171,7 +171,7 @@
   right: 0;
   bottom: 0;
   left: -50;
-  background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/warn.svg) no-repeat;
+  background: url(../IMG/warn.svg) no-repeat;
   opacity: .1;
 	z-index:1;
 }
@@ -184,6 +184,7 @@
 }
 .collapse-title{
 	background: #fafafa;
+	cursor: pointer;
 }
 .collapse-title p{
 	margin:0!important;

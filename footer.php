@@ -36,9 +36,9 @@
 
 	<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 	<script src="https://cdn.bootcdn.net/ajax/libs/jquery.lazyload/1.9.1/jquery.lazyload.min.js"></script>
- 	<script src="<?php $this->options->themeUrl('JS/X.js?v=2.1.5'); ?>"></script>
-	<script src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
 	<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+ 	<script src="<?php $this->options->themeUrl('JS/X.js?v=2.1.9'); ?>"></script>
+	<script src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
 	<script src="https://cdn.bootcss.com/fancybox/3.5.6/jquery.fancybox.min.js"></script>
 	<script src="https://cdn.bootcdn.net/ajax/libs/tocbot/4.12.0/tocbot.min.js"></script>
 	<?php if ($this->options->enableSmooth): ?>
@@ -74,6 +74,11 @@
 <div id="m_menu" onclick="sideMenu_toggle();">
 	<span><a><i class="i m_menu"></i></a></span>
 </div>
+
+<div id="m_night" onclick="switchNightMode();">
+	<span><a><i class="i m_night"></i></a></span>
+</div>
+
 <?php  $this->need('sliderbar.php'); ?>
 <script>
 	ajaxc();

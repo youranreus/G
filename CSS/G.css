@@ -137,6 +137,22 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	bottom:200px;
 	display: none;
 }
+#m_night{
+  left:50px;
+  position: fixed;
+  z-index: 999;
+  padding: .725rem;
+	background: rgba(250,250,250,0.9);
+	border:1px solid #444;
+  border-radius: 2.5rem;
+	-webkit-transition: .6s ease all;
+	-moz-transition: .6s ease all;
+	-ms-transition: .6s ease all;
+	-o-transition: .6s ease all;
+	transition: .6s ease all;
+  cursor: pointer;
+  bottom: 50px;
+}
 .m_search_c{
   bottom:150px!important;
 }
@@ -148,23 +164,27 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 	background-size: 100%;
 }
 .gototop{
-	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/up.svg)no-repeat center;
+	background: url(../IMG/up.svg)no-repeat center;
 	background-size: 100%;
 }
 .m_menu{
-	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/menu.svg)no-repeat center;
+	background: url(../IMG/menu.svg)no-repeat center;
 	background-size: 100%;
 }
 .m_search{
-	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/search.svg)no-repeat center;
+	background: url(../IMG/search.svg)no-repeat center;
 	background-size: 100%;
 }
 .m_toc{
-	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.4/G/IMG/toc2.svg)no-repeat center;
+	background: url(../IMG/toc2.svg)no-repeat center;
+	background-size: 100%;
+}
+.m_night{
+	background: url(../IMG/night.svg)no-repeat center;
 	background-size: 100%;
 }
 .down{
-	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/down.svg)no-repeat center;
+	background: url(../IMG/down.svg)no-repeat center;
 	background-size: 100%;
 	width: 35px;
 	height: 35px;
@@ -524,7 +544,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	top: 0.2rem;
 	left: -0.2rem;
 	background-size: contain;
-	background-image: url('https://i.loli.net/2019/02/11/5c6188146e4a4.png');
+	background-image: url('../IMG/title.png');
 }
 #page-content-article p {
 	line-height: 1.75rem;
@@ -568,7 +588,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
 	top: 3;
 	left: 7;
 	content: '';
-	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/dot.svg) left top no-repeat;
+	background: url(../IMG/dot.svg) left top no-repeat;
 	background-size: contain;
 	width: 36px;
 	height: 40px;
@@ -1236,11 +1256,6 @@ p.word{
      vertical-align: top
  }
 
- #comment-form input:focus,#comment-form textarea:focus {
-     outline: 0;
-     border-color: #129fea
- }
-
  #comment-form input,#comment-form textarea {
      display: inline-block;
      -webkit-box-sizing: border-box;
@@ -1401,7 +1416,7 @@ p.word{
 	top: 0.6rem;
 	left: -0.2rem;
 	background-size: contain;
-	background-image: url('https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/friends.svg');
+	background-image: url('../IMG/friends.svg');
 }
 #links-content {
 	margin: 49px;
@@ -1487,7 +1502,7 @@ p.word{
 	top: 3;
 	left: 7;
 	content: '';
-	background: url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/dot.svg) left top no-repeat;
+	background: url(../IMG/dot.svg) left top no-repeat;
 	background-size: contain;
 	width: 36px;
 	height: 40px;
@@ -1600,7 +1615,7 @@ white-space: nowrap;
   top: 0.4rem;
   left: -0.7rem;
 	background-size: contain;
-	background-image: url('https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/archive.svg');
+	background-image: url('../IMG/archive.svg');
 }
 #tag-cloud{
   width:100%;
@@ -2050,6 +2065,22 @@ input#url, input#mail, input#author {
 }
 #m_search {
     bottom: 180px;
+}
+#m_night{
+  left:15px;
+  position: fixed;
+  z-index: 999;
+  padding: .725rem;
+	background: rgba(250,250,250,0.9);
+	border:1px solid #444;
+  border-radius: 2.5rem;
+	-webkit-transition: .6s ease all;
+	-moz-transition: .6s ease all;
+	-ms-transition: .6s ease all;
+	-o-transition: .6s ease all;
+	transition: .6s ease all;
+  cursor: pointer;
+  bottom: 15px;
 }
 .m_search_c{
   bottom:125px!important;
