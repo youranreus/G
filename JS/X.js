@@ -74,6 +74,7 @@ function pjax_click(){
 function pjax_send(){
 	$("#M").addClass("opacity-disappear");
 	if ($('.toc').length) tocbot.destroy();
+	NProgress.start();
 }
 
 function pjax_complete(){
@@ -103,6 +104,7 @@ function pjax_complete(){
 			});
 	});
 	ajaxc();
+	NProgress.done();
 }
 
 function PreFancybox(){
