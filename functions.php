@@ -41,6 +41,12 @@ function themeConfig($form) {
     ) , '1', _t('开启平滑滚动') , _t('默认为开启'));
     $form->addInput($enableSmooth);
 
+    $enablenprogress = new Typecho_Widget_Helper_Form_Element_Radio('enablenprogress', array(
+        '1' => _t('开启') ,
+        '0' => _t('关闭')
+    ) , '0', _t('开启加载进度条') , _t('默认为关闭'));
+    $form->addInput($enablenprogress);
+
     $enableHeaderSearch = new Typecho_Widget_Helper_Form_Element_Radio('enableHeaderSearch', array(
         '1' => _t('开启') ,
         '0' => _t('关闭')

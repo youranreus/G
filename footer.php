@@ -36,12 +36,14 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-lazyload/jquery.lazyload.min.js"></script>
- 	<script src="https://cdn.jsdelivr.net/gh/youranreus/G/JS/X.js"></script>
+ 	<script src="<?php $this->options->themeUrl('JS/X.js'); ?>?v=2.1.5"></script>
 	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/prism.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/toastr/build/toastr.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+	<?php if ($this->options->enablenprogress == 1): ?>
+			<script src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+	<?php endif; ?>
 	<?php if ($this->options->enableSmooth): ?>
 		<script src="https://cdn.jsdelivr.net/gh/gblazex/smoothscroll-for-websites@1.4.10/SmoothScroll.js"></script>
 		<script>
