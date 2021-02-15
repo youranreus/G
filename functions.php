@@ -3,26 +3,37 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form) {
     echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/CSS/S.css'/>";
     echo "<h2>G主题设置</h2>";
+
     $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('图标') , _t(''));
     $form->addInput($favicon);
+
     $bkimg = new Typecho_Widget_Helper_Form_Element_Text('bkimg', NULL, NULL, _t('背景图片') , _t('想要啥背景？'));
     $form->addInput($bkimg);
+
     $bkcolor = new Typecho_Widget_Helper_Form_Element_Text('bkcolor', NULL, NULL, _t('背景颜色') , _t('如果没有想要的背景就换成纯色吧'));
     $form->addInput($bkcolor);
+
     $headerbkcolor = new Typecho_Widget_Helper_Form_Element_Text('headerbkcolor', NULL, NULL, _t('头部背景颜色') , _t('#787878'));
     $form->addInput($headerbkcolor);
+
     $beian = new Typecho_Widget_Helper_Form_Element_Text('beian', NULL, NULL, _t('备案号') , _t('没备案当我没说'));
     $form->addInput($beian);
+
     $builtTime = new Typecho_Widget_Helper_Form_Element_Text('builtTime', NULL, NULL, _t('运行时间') , _t('格式YYYY-MM-DD'));
     $form->addInput($builtTime);
+
     $animateTime = new Typecho_Widget_Helper_Form_Element_Text('animateTime', NULL, NULL, _t('动画过渡时间') , _t('格式 1s'));
     $form->addInput($animateTime);
+
     $feedIMG = new Typecho_Widget_Helper_Form_Element_Text('feedIMG', NULL, NULL, _t('打赏二维码图片') , _t('http://...'));
     $form->addInput($feedIMG);
+
     $defaultPostIMG = new Typecho_Widget_Helper_Form_Element_Text('defaultPostIMG', NULL, NULL, _t('没有设置文章头图的就用这里的图片啦') , _t('http://...'));
     $form->addInput($defaultPostIMG);
+
     $headerLOGO = new Typecho_Widget_Helper_Form_Element_Text('headerLOGO', NULL, NULL, _t('头部logo') , _t('如果留空则不显示'));
     $form->addInput($headerLOGO);
+
     $Links = new Typecho_Widget_Helper_Form_Element_Textarea('Links', NULL, NULL, _t('友情链接'), _t('按照格式输入链接信息，格式：<br><strong>链接名称,链接地址,链接描述,链接分类</strong><br>不同信息之间用英文逗号“,”分隔，例如：<br><strong>季悠然,https://gundam.exia.xyz/,寻找有趣的灵魂,好朋友,https://xxx.xxx.com/avatar.jpg</strong><br>多个链接换行即可，一行一个'));
     $form->addInput($Links);
 
@@ -58,11 +69,13 @@ function themeConfig($form) {
         '0' => _t('啥东西，不要')
     ) , '0', _t('又拍云联盟开关') , _t('默认为关闭'));
     $form->addInput($enableUpyun);
+
     $enableAliLogo = new Typecho_Widget_Helper_Form_Element_Radio('enableAliLogo', array(
         '1' => _t('给爸爸打个广告') ,
         '0' => _t('不给广告费就算了')
     ) , '0', _t('阿里云图标') , _t('默认为关闭'));
     $form->addInput($enableAliLogo);
+
     $enableOpac = new Typecho_Widget_Helper_Form_Element_Radio('enableOpac', array(
         '1' => _t('喜欢') ,
         '0' => _t('不要，快瞎了')
@@ -76,74 +89,96 @@ function themeConfig($form) {
     ) , '0', _t('首页样式') , _t('默认为双列'));
     $form->addInput($IndexStyle);
 
-
-
     $CustomCSS = new Typecho_Widget_Helper_Form_Element_Textarea('CustomCSS', NULL, NULL, _t('自定义CSS'), _t('#logo{...}'));
     $form->addInput($CustomCSS);
+
     $CustomJSh = new Typecho_Widget_Helper_Form_Element_Textarea('CustomJSh', NULL, NULL, _t('自定义JS(head前)'), _t('var...'));
     $form->addInput($CustomJSh);
+
     $CustomJSf = new Typecho_Widget_Helper_Form_Element_Textarea('CustomJSf', NULL, NULL, _t('自定义JS(footer后，主题含JQ)'), _t('var...'));
     $form->addInput($CustomJSf);
 
+    //主题配置备份
     $db = Typecho_Db::get();
     $sjdq=$db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:G'));
     $ysj = $sjdq['value'];
     if(isset($_POST['type']))
     {
-    if($_POST["type"]=="备份模板数据"){
-    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf'))){
-    $update = $db->update('table.options')->rows(array('value'=>$ysj))->where('name = ?', 'theme:Gbf');
-    $updateRows= $db->query($update);
-    echo '<div class="tongzhi">备份已更新，请等待自动刷新！如果等不到请点击';
-    ?>
-    <a href="<?php Helper::options()->adminUrl('options-theme.php'); ?>">这里</a></div>
-    <script language="JavaScript">window.setTimeout("location=\'<?php Helper::options()->adminUrl('options-theme.php'); ?>\'", 2500);</script>
-    <?php
-    }else{
-    if($ysj){
-         $insert = $db->insert('table.options')->rows(array('name' => 'theme:Gbf','user' => '0','value' => $ysj));
-         $insertId = $db->query($insert);
-    echo '<div class="tongzhi">备份完成，请等待自动刷新！如果等不到请点击';
-    ?>
-    <a href="<?php Helper::options()->adminUrl('options-theme.php'); ?>">这里</a></div>
-    <script language="JavaScript">window.setTimeout("location=\'<?php Helper::options()->adminUrl('options-theme.php'); ?>\'", 2500);</script>
-    <?php
-    }
-    }
-            }
-    if($_POST["type"]=="还原模板数据"){
-    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf'))){
-    $sjdub=$db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf'));
-    $bsj = $sjdub['value'];
-    $update = $db->update('table.options')->rows(array('value'=>$bsj))->where('name = ?', 'theme:G');
-    $updateRows= $db->query($update);
-    echo '<div class="tongzhi">检测到模板备份数据，恢复完成，请等待自动刷新！如果等不到请点击';
-    ?>
-    <a href="<?php Helper::options()->adminUrl('options-theme.php'); ?>">这里</a></div>
-    <script language="JavaScript">window.setTimeout("location=\'<?php Helper::options()->adminUrl('options-theme.php'); ?>\'", 2000);</script>
-    <?php
-    }else{
-    echo '<div class="tongzhi">没有模板备份数据，恢复不了哦！</div>';
-    }
-    }
-    if($_POST["type"]=="删除备份数据"){
-    if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf'))){
-    $delete = $db->delete('table.options')->where ('name = ?', 'theme:Gbf');
-    $deletedRows = $db->query($delete);
-    echo '<div class="tongzhi">删除成功，请等待自动刷新，如果等不到请点击';
-    ?>
-    <a href="<?php Helper::options()->adminUrl('options-theme.php'); ?>">这里</a></div>
-    <script language="JavaScript">window.setTimeout("location=\'<?php Helper::options()->adminUrl('options-theme.php'); ?>\'", 2500);</script>
-    <?php
-    }else{
-    echo '<div class="tongzhi">不用删了！备份不存在！！！</div>';
-    }
-    }
+      if($_POST["type"]=="备份模板数据")
+      {
+        if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf')))
+        {
+          $update = $db->update('table.options')->rows(array('value'=>$ysj))->where('name = ?', 'theme:Gbf');
+          $updateRows= $db->query($update);
+          echo '<div class="tongzhi">备份已更新，请等待自动刷新！如果等不到请点击';
+          ?>
+            <a href="<?php Helper::options()->adminUrl('options-theme.php'); ?>">这里</a></div>
+            <script language="JavaScript">window.setTimeout("location=\'<?php Helper::options()->adminUrl('options-theme.php'); ?>\'", 2500);</script>
+          <?php
+        }
+        else
+        {
+          if($ysj)
+          {
+            $insert = $db->insert('table.options')->rows(array('name' => 'theme:Gbf','user' => '0','value' => $ysj));
+            $insertId = $db->query($insert);
+            echo '<div class="tongzhi">备份完成，请等待自动刷新！如果等不到请点击';
+            ?>
+              <a href="<?php Helper::options()->adminUrl('options-theme.php'); ?>">这里</a></div>
+              <script language="JavaScript">window.setTimeout("location=\'<?php Helper::options()->adminUrl('options-theme.php'); ?>\'", 2500);</script>
+            <?php
+          }
+        }
+      }
+      if($_POST["type"]=="还原模板数据")
+      {
+
+        if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf')))
+        {
+
+          $sjdub=$db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf'));
+          $bsj = $sjdub['value'];
+          $update = $db->update('table.options')->rows(array('value'=>$bsj))->where('name = ?', 'theme:G');
+          $updateRows= $db->query($update);
+          echo '<div class="tongzhi">检测到模板备份数据，恢复完成，请等待自动刷新！如果等不到请点击';
+          ?>
+            <a href="<?php Helper::options()->adminUrl('options-theme.php'); ?>">这里</a></div>
+            <script language="JavaScript">window.setTimeout("location=\'<?php Helper::options()->adminUrl('options-theme.php'); ?>\'", 2000);</script>
+          <?php
+
+        }
+        else
+        {
+
+          echo '<div class="tongzhi">没有模板备份数据，恢复不了哦！</div>';
+
+        }
+      }
+      if($_POST["type"]=="删除备份数据")
+      {
+        if($db->fetchRow($db->select()->from ('table.options')->where ('name = ?', 'theme:Gbf')))
+        {
+          $delete = $db->delete('table.options')->where ('name = ?', 'theme:Gbf');
+          $deletedRows = $db->query($delete);
+          echo '<div class="tongzhi">删除成功，请等待自动刷新，如果等不到请点击';
+          ?>
+          <a href="<?php Helper::options()->adminUrl('options-theme.php'); ?>">这里</a></div>
+          <script language="JavaScript">window.setTimeout("location=\'<?php Helper::options()->adminUrl('options-theme.php'); ?>\'", 2500);</script>
+          <?php
+        }
+        else
+        {
+          echo '<div class="tongzhi">不用删了！备份不存在！！！</div>';
+        }
+      }
     }
     echo '<div id="backup"><form class="protected Data-backup" action="?Gbf" method="post"><h4>数据备份</h4>
     <input type="submit" name="type" class="btn btn-s" value="备份模板数据" />&nbsp;&nbsp;<input type="submit" name="type" class="btn btn-s" value="还原模板数据" />&nbsp;&nbsp;<input type="submit" name="type" class="btn btn-s" value="删除备份数据" /></form></div>';
 }
 
+/**
+* 为文章编辑页自动插入自定义字段
+*/
 function themeFields(Typecho_Widget_Helper_Layout $layout)
 {
     $excerpt = new Typecho_Widget_Helper_Form_Element_Textarea('excerpt', null, null, '文章引语', '会显示在标题下方，单栏模式时会覆盖文章摘要');
@@ -158,8 +193,17 @@ Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Gx','rep
 Typecho_Plugin::factory('admin/write-post.php')->bottom = array('Gx', 'addButton');
 Typecho_Plugin::factory('admin/write-page.php')->bottom = array('Gx', 'addButton');
 
+/**
+* 为文章编辑器插入自定义代码
+*
+* @author      qqdie ,modified by youranreus
+*
+*/
 class Gx {
 
+    /**
+    * 回复可见代码替换
+    */
     public static function reply2see($con,$obj,$text)
     {
       $text = empty($text)?$con:$text;
@@ -169,6 +213,9 @@ class Gx {
       return $text;
     }
 
+    /**
+    * 文章编辑器插入按钮
+    */
     public static function addButton()
     {
       echo '  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.7/G/CSS/OwO.min.css?v=2" rel="stylesheet" />';
@@ -199,10 +246,8 @@ class Gx {
           }
         </style>
         ';
-
+        //核心JS
         echo '<script src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.7/G/JS/editor.js"></script>';
-
-
     }
 
 }
@@ -213,9 +258,6 @@ require_once __DIR__ . '/lib/shortcode.php';
 
 /**
 * 网站运行时间
-*
-* @access public
-* @param mixed $arg1
 */
 function getBuildTime($builtTime) {
   echo $builtTime;
@@ -224,46 +266,52 @@ function getBuildTime($builtTime) {
 
 /**
 * 文章阅读次数
-*
-* @access public
-* @param mixed
-* @return
 */
 function get_post_view($archive)
 {
-    $cid    = $archive->cid;
-    $db     = Typecho_Db::get();
-    $prefix = $db->getPrefix();
-    if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
-        $db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
-        echo 0;
-        return;
+
+  $cid    = $archive->cid;
+  $db     = Typecho_Db::get();
+  $prefix = $db->getPrefix();
+
+  if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents'))))
+  {
+    $db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
+    echo 0;
+
+    return;
+  }
+
+  $row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
+
+  if ($archive->is('single'))
+  {
+    $views = Typecho_Cookie::get('extend_contents_views');
+
+    if(empty($views))
+    {
+      $views = array();
     }
-    $row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
-    if ($archive->is('single')) {
- $views = Typecho_Cookie::get('extend_contents_views');
-        if(empty($views)){
-            $views = array();
-        }else{
-            $views = explode(',', $views);
-        }
-if(!in_array($cid,$views)){
-       $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
-            array_push($views, $cid);
-            $views = implode(',', $views);
-            Typecho_Cookie::set('extend_contents_views', $views); //记录查看cookie
-        }
+    else
+    {
+      $views = explode(',', $views);
     }
-    echo $row['views'];
+
+    if(!in_array($cid,$views))
+    {
+      $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
+      array_push($views, $cid);
+      $views = implode(',', $views);
+      Typecho_Cookie::set('extend_contents_views', $views); //记录查看cookie
+    }
+  }
+  echo $row['views'];
+
 }
 
 
 /**
 * 通过id获取文章信息
-*
-* @access public
-* @param mixed
-* @return
 */
 
 function GetPostById($id){
@@ -283,9 +331,9 @@ function GetPostById($id){
         $post_date = $val['created'];
         $post_date = date('Y-m-d',$post_date);
 				echo '<div class="ArtinArt">
-                  <h4><a href="'.$post_permalink.'">'.$post_title.'</a></h4>
-                  <p class="clear"><span style="float:left">ID:'.$id.'</span><span style="float:right">'.$post_date.'</span></p>
-                </div>';
+                <h4><a href="'.$post_permalink.'">'.$post_title.'</a></h4>
+                <p class="clear"><span style="float:left">ID:'.$id.'</span><span style="float:right">'.$post_date.'</span></p>
+              </div>';
 			}
 		}
     else{
@@ -296,10 +344,6 @@ function GetPostById($id){
 
 /**
 * 时间友好化
-*
-* @access public
-* @param mixed
-* @return
 */
 function formatTime($time)
 {
@@ -355,11 +399,7 @@ function formatTime($time)
 }
 
 /**
-* 图片计数
-*
-* @access public
-* @param mixed
-* @return
+* 文章图片计数
 */
 function imgNum($content){
   $output = preg_match_all('#<img(.*?) src="([^"]*/)?(([^"/]*)\.[^"]*)"(.*?)>#', $content,$s);
@@ -369,8 +409,6 @@ function imgNum($content){
 
 /**
 * 评论锚点修复
-*
-* @access public
 */
 function Comment_hash_fix($archive){
   $header = "<script type=\"text/javascript\">
@@ -440,10 +478,6 @@ function Comment_hash_fix($archive){
 
 /**
 * 文章内容解析（短代码，表情）
-*
-* @access public
-* @param mixed
-* @return
 */
 function emotionContent($content)
 {
@@ -460,10 +494,6 @@ function emotionContent($content)
 
 /**
 * 文章内容解析（短代码，表情）
-*
-* @access public
-* @param mixed
-* @return
 */
 function shortcodeContent($content)
 {
@@ -575,9 +605,6 @@ CountChineseCharacters();
 /**
 * 免插件实现友情链接功能
 * @author OFFODD<https://www.offodd.com/59.html>
-* @access public
-* @param mixed
-* @return
 */
 function Links($sorts = NULL) {
     $options = Typecho_Widget::widget('Widget_Options');
