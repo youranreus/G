@@ -962,6 +962,8 @@ p.word{
 	top:0;
 	width:300px;
 	z-index:999;
+  max-height: 100%;
+  overflow-y: auto;
 }
 #sliderbar-cover{
 	display: none;
