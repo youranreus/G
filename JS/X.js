@@ -362,6 +362,7 @@ function ajaxc(){
 				if (ok) {
 						$("#textarea").val('');
 						replyTo = '';
+            toastr.success('发送成功');
 				}
 				bindButton();
 		}
@@ -378,7 +379,8 @@ function ajaxc(){
 						},
 						success: function (data) {
 								if (!$('#comments', data).length) {
-										var msg = $('title').eq(0).text().trim().toLowerCase() === 'error' ? $('.container', data).eq(0).text() : '评论提交失败！';
+										// var msg = $('title').eq(0).text().trim().toLowerCase() === 'error' ? $('.container', data).eq(0).text() : '评论提交失败！';
+                    var msg = $(data)[7].outerText;
 
 										toastr.warning(msg, 'QAQ');
 										$("#comment-loading").fadeOut();
@@ -427,10 +429,9 @@ function ajaxc(){
 							$(".submit").fadeIn();
 						},
 						complete:function(){
-							toastr.success('送信完了', '发送成功');
+
 							$("#comment-loading").fadeOut();
 							$(".submit").fadeIn();
-							//$.pjax.reload('#pjax-container', {container: '#pjax-container',fragment: '#pjax-container',timeout: 8000});
 						}
 				});
 				return false;
