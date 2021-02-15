@@ -158,7 +158,7 @@
 	<script>
 		<?php echo $this->options->CustomJSh;?>
 	</script>
-	<link href="https://cdn.jsdelivr.net/gh/youranreus/G/CSS/dark.css" rel="alternate stylesheet" type="text/css" title="dark">
+	<link href="<?php $this->options->themeUrl('CSS/dark.css'); ?>" rel="<?php if($_COOKIE['night'] != '1'){echo 'alternate ';} ?>stylesheet" type="text/css" title="dark">
 	<link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">
 	<link href="<?php $this->options->favicon(); ?>" rel="icon">
 	<link rel='dns-prefetch' href='//s.w.org'>

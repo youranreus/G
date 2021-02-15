@@ -38,10 +38,9 @@ html {
 #nav-2 a{
   color: hsla(0,0%,100%,.6)!important;
 }
-#footer-content-left p {
+#footer-content-left p,#footer-content-left p a{
     line-height: 1.7;
-    font-size: 1.2rem;
-    color: hsla(0,0%,100%,.6);
+    color: hsla(0,0%,100%,.6)!important;
 }
 #page-content-article,#post-content-article p,#post-content-article h1, #post-content-article h2, #post-content-article h3, #post-content-article h4 {
   color:#f0f0f0;
