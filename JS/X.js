@@ -19,11 +19,11 @@ function switchNightMode(){
         document.querySelector('link[title="dark"]').disabled = true;
         document.querySelector('link[title="dark"]').disabled = false;
         document.cookie = "night=1;path=/"
-        toastr.info('夜间模式开启');
+        Qmsg.info("夜间模式开启",QMSG_GLOBALS.DEFAULTS);
     }else{
         document.querySelector('link[title="dark"]').disabled = true;
         document.cookie = "night=0;path=/"
-        toastr.info('夜间模式关闭');
+        Qmsg.info("夜间模式关闭",QMSG_GLOBALS.DEFAULTS);
     }
 }
 
@@ -34,20 +34,18 @@ function switchNightMode(){
         document.querySelector('link[title="dark"]').disabled = true;
         document.querySelector('link[title="dark"]').disabled = false;
         document.cookie = "night=1;path=/"
-        toastr.info('夜间模式开启');
+        Qmsg.info("夜间模式开启",QMSG_GLOBALS.DEFAULTS);
         }else{
         document.cookie = "night=0;path=/"
-        // toastr.info('夜间模式关闭');
         }
     }else{
         var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
         if(night == '0'){
         document.querySelector('link[title="dark"]').disabled = true;
-        // toastr.info('夜间模式关闭');
         }else if(night == '1'){
         document.querySelector('link[title="dark"]').disabled = true;
         document.querySelector('link[title="dark"]').disabled = false;
-        toastr.info('夜间模式开启');
+        Qmsg.info("夜间模式开启",QMSG_GLOBALS.DEFAULTS);
         }
     }
 })();
@@ -362,7 +360,7 @@ function ajaxc(){
 				if (ok) {
 						$("#textarea").val('');
 						replyTo = '';
-            toastr.success('发送成功');
+            Qmsg.success("发送成功",QMSG_GLOBALS.DEFAULTS);
 				}
 				bindButton();
 		}
@@ -379,10 +377,8 @@ function ajaxc(){
 						},
 						success: function (data) {
 								if (!$('#comments', data).length) {
-										// var msg = $('title').eq(0).text().trim().toLowerCase() === 'error' ? $('.container', data).eq(0).text() : '评论提交失败！';
-                    var msg = $(data)[7].outerText;
-
-										toastr.warning(msg, 'QAQ');
+                    var msg = $(data)[7].innerText.replace(/[\r\n]/g,"").replace(/[ ]/g,"");
+                    Qmsg.warning(msg,QMSG_GLOBALS.DEFAULTS);
 										$("#comment-loading").fadeOut();
 										$(".submit").fadeIn();
 										afterSendComment(false);

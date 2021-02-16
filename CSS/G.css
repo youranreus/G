@@ -1992,12 +1992,9 @@ background   : hsla(0,0%,100%,.6);
 #footer-content-left p a {
   font-size: 0.875rem;
 }
-#footer-content-right p{
-  margin: 0px 0 -5px 0;
-  height: 35px;
-}
-#footer-content-right img {
-	height: 35px;
+
+#footer-content-right{
+  display: none;
 }
 #footer-content-right,#footer-content-left {
 	float: none;

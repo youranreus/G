@@ -4,12 +4,12 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<!-- DNS预解析 -->
 	<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-	<link rel="dns-prefetch" href="//i.loli.net">
 
 	<title><?php $this->archiveTitle(' &raquo; ', '', ' | '); ?><?php $this->options->title(); ?></title>
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/G/CSS/G.css" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>?v=2.3.1" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/message.css'); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/G/CSS/shortcode.G.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/G/CSS/OwO.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism.css" rel="stylesheet" />
@@ -17,8 +17,17 @@
 		<link rel='stylesheet' href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
 	<?php endif; ?>
 	<link href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.css" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/toastr/build/toastr.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/gh/youranreus/G/JS/DPlayer.min.js"></script>
+
+	<script>
+	window.QMSG_GLOBALS = {
+    DEFAULTS:{
+        showClose:false,
+        timeout:15000,
+				html: false
+    }
+	}
+	</script>
 
 	<style>
 		<?php if ($this->options->IndexStyle == 1): ?>
