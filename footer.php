@@ -38,7 +38,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/jquery-lazyload/jquery.lazyload.min.js"></script>
 	<script src="<?php $this->options->themeUrl('JS/message.min.js'); ?>"></script>
  	<script src="<?php $this->options->themeUrl('JS/X.js'); ?>?v=2.3.2"></script>
-	<script src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/prism.min.js"></script>
+	<script src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js"></script>
 	<?php if ($this->options->enablenprogress == 1): ?>
@@ -88,6 +88,7 @@
 	PreFancybox();
 	imageinfo();
 	toc();
+	makeGallery();
 	collapse_toggle();
 	jQuery(document).ready(function ($) {
 			$("img.lazyload").lazyload({

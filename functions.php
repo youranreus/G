@@ -247,7 +247,7 @@ class Gx {
         </style>
         ';
         //核心JS
-        echo '<script src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.7/G/JS/editor.js"></script>';
+        echo '<script src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.4/G/JS/editor.js"></script>';
     }
 
 }

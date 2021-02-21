@@ -51,7 +51,7 @@ function switchNightMode(){
 })();
 
 //相册排版by 熊猫小A
-(function(){
+function makeGallery(){
   var base = 50;
   $.each($('.photos'), function(i, photoSet){
     $.each($(photoSet).children(), function(j, item){
@@ -66,7 +66,7 @@ function switchNightMode(){
       };
     });
   });
-})();
+}
 
 
 
@@ -115,6 +115,7 @@ function pjax_complete(){
 	PreFancybox();
 	imageinfo();
 	toc();
+  makeGallery();
 	collapse_toggle();
 	jQuery(document).ready(function ($) {
 			$("img.lazyload").lazyload({

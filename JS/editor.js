@@ -214,7 +214,7 @@ $(function() {
 	$(document).on("click", "#g-photos",
 	function() {
 		myField = document.getElementById("text"),
-		insertAtCursor(myField, '[photos]\n\n图片1描述,图片1链接|\n\n图片2描述,图片2链接|\n\n以此类推，以 | 符号分割[/potos]')
+		insertAtCursor(myField, '\n[photos]\n图片1描述,图片1链接|\n图片2描述,图片2链接|\n以此类推，以 | 符号分割\n[/potos]\n')
 	});
 
 	$(document).on("click","#wmd-owo-button",function(){OwO_show();});
