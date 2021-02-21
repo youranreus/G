@@ -141,12 +141,13 @@ function shortcode_photos( $atts, $content = '' ) {
   $content = str_replace(["\t", "\r\n", "\r", "\n", " "], '', $content);
   $content = preg_replace('/\s+|\t+/u', '', $content);
   $arr = explode('|',$content);
-  echo "<div class='photos'>";
+
+  $result = "<div class='photos'>";
 
   foreach ($arr as $info) {
     $info = explode(',',$info);
     if($info[0]!=''){
-      echo "
+      $result .= "
         <figure>
           <div><img src='".$info[1]."' /></div>
           <figcaption>".$info[0]."</figcaption>
@@ -155,8 +156,7 @@ function shortcode_photos( $atts, $content = '' ) {
     }
 
   }
-  echo "</div>";
-
-  // return $string;
+  $result .="</div>";
+  return $result;
 }
 add_shortcode( 'photos' , 'shortcode_photos' );
