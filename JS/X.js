@@ -50,6 +50,24 @@ function switchNightMode(){
     }
 })();
 
+//相册排版by 熊猫小A
+(function(){
+  var base = 50;
+  $.each($('.photos'), function(i, photoSet){
+    $.each($(photoSet).children(), function(j, item){
+      var img = new Image();
+      img.src = $(item).find('img').attr('src');
+      img.onload = function(){
+        var w = parseFloat(img.width);
+        var h = parseFloat(img.height);
+        $(item).css('width', w*base/h +'px');
+        $(item).css('flex-grow', w*base/h);
+        $(item).find('div').css('padding-top', h/w*100+'%');
+      };
+    });
+  });
+})();
+
 
 
 //pjax 刷新
@@ -113,13 +131,9 @@ function pjax_complete(){
 function PreFancybox(){
 	$("#post img").each(function(){
 				$(this).wrap(function(){
-					if($(this).is(".bq"))
+					if($(this).is(".bq") || $(this).is("#feedme-content img"))
 					{
 						 return '';
-					}
-					if($(this).is("#feedme-content img"))
-					{
-						return '';
 					}
 				return '<a data-fancybox="gallery" no-pjax data-type="image" href="' + $(this).attr("src") + '" class="light-link"></a>';
 		 });
@@ -129,12 +143,15 @@ function PreFancybox(){
 function imageinfo(){
 	$("#post img").each(function(){
 				$(this).wrap(function(){
-					if($(this).is(".bq"))
+					if($(this).is(".bq") || $(this).is("#feedme-content img"))
 					{
 						 return '';
 					}
-					if($(this).is("#feedme-content img"))
+					if($(this).is("div.photos figure div img"))
 					{
+            $(this).addClass("lazyload");
+  					$(this).attr('data-original',$(this).attr("src"));
+  					$(this).attr('src','https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/loading2.gif');
 						return '';
 					}
 					$(this).addClass("lazyload");

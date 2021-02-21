@@ -140,6 +140,7 @@ $(function() {
 			<a id="g-warn-block">警告块</a>
 			<a id="g-dl">下载按钮</a>
 			<a id="g-tag">标签</a>
+			<a id="g-photos">相册</a>
 	</div>
 		`);
 
@@ -209,6 +210,11 @@ $(function() {
 	function() {
 		myField = document.getElementById("text"),
 		insertAtCursor(myField, '[tag]内容[/tag]')
+	});
+	$(document).on("click", "#g-photos",
+	function() {
+		myField = document.getElementById("text"),
+		insertAtCursor(myField, '[photos]\n\n图片1描述,图片1链接|\n\n图片2描述,图片2链接|\n\n以此类推，以 | 符号分割[/potos]')
 	});
 
 	$(document).on("click","#wmd-owo-button",function(){OwO_show();});

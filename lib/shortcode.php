@@ -134,3 +134,29 @@ function shortcode_collapse( $atts, $content = '' ) {
     return '<div class="collapse-box"><div class="collapse-title"><p>'.$args['title'].'</p></div><div class="collapse-content" style="display: none;">'.shortcodeContent($content).'</div></div>';
 }
 add_shortcode( 'collapse' , 'shortcode_collapse' );
+
+function shortcode_photos( $atts, $content = '' ) {
+  $content = strip_tags($content);
+  $content = trim($content);
+  $content = str_replace(["\t", "\r\n", "\r", "\n", " "], '', $content);
+  $content = preg_replace('/\s+|\t+/u', '', $content);
+  $arr = explode('|',$content);
+  echo "<div class='photos'>";
+
+  foreach ($arr as $info) {
+    $info = explode(',',$info);
+    if($info[0]!=''){
+      echo "
+        <figure>
+          <div><img src='".$info[1]."' /></div>
+          <figcaption>".$info[0]."</figcaption>
+        </figure>
+      ";
+    }
+
+  }
+  echo "</div>";
+
+  // return $string;
+}
+add_shortcode( 'photos' , 'shortcode_photos' );

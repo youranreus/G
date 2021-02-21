@@ -42,7 +42,7 @@ html {
     color: hsla(0,0%,100%,.6)!important;
 }
 #page-content-article,#post-content-article p,#post-content-article h1, #post-content-article h2, #post-content-article h3, #post-content-article h4 {
-  color:#f0f0f0;
+  color:#909090;
 }
 #post-content-article h1, #post-content-article h2, #post-content-article h3, #post-content-article h4 {
   border:none;
@@ -147,6 +147,9 @@ html {
 }
 .post-content-notice{
   background: RGBA(121,145,209,0.1);
+}
+.post-content-content {
+    color: #909090;
 }
 #post-content-excerpt {
     background: #403E3E;

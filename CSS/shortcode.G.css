@@ -143,6 +143,8 @@
 .post-content-content{
 	position: relative;
 	z-index:2;
+	line-height: 1.72222;
+	color: rgba(0,0,0,.86);
 }
 .post-content-notice:before{
 	content: " ";

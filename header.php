@@ -8,9 +8,9 @@
 	<title><?php $this->archiveTitle(' &raquo; ', '', ' | '); ?><?php $this->options->title(); ?></title>
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js"></script>
-	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>?v=2.3.1" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>?v=2.3.5" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/message.css'); ?>" rel="stylesheet" />
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/G/CSS/shortcode.G.css" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/shortcode.G.css'); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/G/CSS/OwO.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/themes/prism.css" rel="stylesheet" />
 	<?php if ($this->options->enablenprogress == 1): ?>
@@ -23,7 +23,7 @@
 	window.QMSG_GLOBALS = {
     DEFAULTS:{
         showClose:false,
-        timeout:15000,
+        timeout:1000,
 				html: false
     }
 	}
@@ -167,7 +167,7 @@
 	<script>
 		<?php echo $this->options->CustomJSh;?>
 	</script>
-	<link href="<?php $this->options->themeUrl('CSS/dark.css'); ?>" rel="<?php if($_COOKIE['night'] != '1'){echo 'alternate ';} ?>stylesheet" type="text/css" title="dark">
+	<link href="<?php $this->options->themeUrl('CSS/dark.css'); ?>?v=2.3.3" rel="<?php if($_COOKIE['night'] != '1'){echo 'alternate ';} ?>stylesheet" type="text/css" title="dark">
 	<link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">
 	<link href="<?php $this->options->favicon(); ?>" rel="icon">
 	<link rel='dns-prefetch' href='//s.w.org'>
