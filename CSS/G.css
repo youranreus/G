@@ -822,8 +822,6 @@ table td:hover{
 	color: #07f;
   overflow:hidden;
   word-break:keep-all;
-  white-space:nowrap;
-  text-overflow:ellipsis;
 }
 code[class*="language-"] span, pre[class*="language-"] span{
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace!important;
