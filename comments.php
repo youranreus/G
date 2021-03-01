@@ -42,6 +42,7 @@ echo $commentClass;
             <div class="comment-content">
               <?php
                 $cos = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/$1.png" class="bq">',$comments->content);
+                $cos = preg_replace('/\:\:(.*?)\:(.*?)\:\:/','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">',$cos);  
                 echo $cos;
               ?>
             </div>

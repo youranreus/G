@@ -744,6 +744,12 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
   display: block;
   margin-top: -10px;
 }
+pre{
+  display: block;
+    height: auto;
+    padding: 1px;
+    overflow-x: auto;
+}
 
 /** Table 表格样式 **/
 table{
@@ -1205,7 +1211,7 @@ figure:hover figcaption{
  }
  #response{
  	color: RGB(48,71,88);
-  border-bottom: 1px solid #eaecef;
+  /* border-bottom: 1px solid #eaecef; */
   padding-bottom: .3em;
   margin: 0;
  	text-align: left;
