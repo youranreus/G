@@ -796,6 +796,7 @@ table td:hover{
 #post-content-article p, #post-content-article li {
 	font-size: 17px;
 	letter-spacing: .6px;
+  word-break: break-all;
 }
 
 #post-content-article li {
