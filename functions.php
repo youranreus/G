@@ -353,8 +353,7 @@ function formatTime($time)
     $t = $ctime - $time; //时间差
     if ($t < 0) {
         return date('Y-m-d', $time);
-    }
-    ;
+    };
     $y = date('Y', $ctime) - date('Y', $time);//是否跨年
     switch ($t) {
         case $t == 0:
@@ -378,8 +377,8 @@ function formatTime($time)
                 $text = floor($t / 86400) . '天前';
             }
             break;
-        case $t < 31536000 && $y == 0://一年内 不跨年
-            $m = date('m', $ctime) - date('m', $time) -1;
+        case $t < 31536000 && $y == 0://一年（365天）内，不跨年
+            $m = date('m', $ctime) - date('m', $time);
 
             if($m == 0) {
                 $text = floor($t / 86400) . '天前';
@@ -387,14 +386,13 @@ function formatTime($time)
                 $text = $m . '个月前';
             }
             break;
-        case $t < 31536000 && $y > 0://一年内 跨年
-            $text = (11 - date('m', $time) + date('m', $ctime)) . '个月前';
+        case $t < 31536000 && $y > 0://一年（365天）内，跨年
+            $text = (12 + date('m', $ctime) - date('m', $time)) . '个月前';
             break;
-        default:
+        default://超过一年
             $text = (date('Y', $ctime) - date('Y', $time)) . '年前';
             break;
     }
-
     return $text;
 }
 
