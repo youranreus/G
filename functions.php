@@ -485,7 +485,7 @@ function emotionContent($content)
     //$Parsedown = new Parsedown();
     //$content =  $Parsedown->text($content);
     //表情解析
-    $fcontent = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/bq/$1.png" class="bq">',$content);
+    $fcontent = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.9/G/IMG/bq/$1.png" class="bq">',$content);
     //感谢Maicong大佬的短代码解析QwQ
     $fcontent = do_shortcode($fcontent);
     //输出最终结果

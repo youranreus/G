@@ -998,6 +998,7 @@ figcaption{
   padding: 5px 0 0px;
   color: #fff;
   text-shadow: 1PX 1PX 1PX RGBA(0,0,0,0.7);
+  /* text-shadow: 0.1rem 0.1rem 0.2rem rgb(255 255 255 / 15%); */
   text-align: center;
   /* background-image: linear-gradient(180deg,hsla(0,0%,100%,0) 0,rgba(0,0,0,.3) 26%,rgba(0,0,0,.5) 71%,rgba(0,0,0,.7)); */
   opacity: .6;
