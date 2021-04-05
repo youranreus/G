@@ -5,14 +5,14 @@
 
 
 .ArtinArt{
-	padding: 20px;
-	background: #eee;
-	border-radius: 30px;
+	padding: 15px;
+	background: RGBA(250,250,250,1);
+	border-radius: 15px;
 	max-width: 300px;
 	margin: 10px auto;
 }
 .ArtinArt h4{
-	font-size: 1.5rem!important;
+	font-size: 1.2rem!important;
 	margin:0!important;
 	border: none!important;
 }
@@ -33,6 +33,8 @@
 .ArtinArt p {
 	margin-top:5px!important;
 	margin-bottom: 0!important;
+	font-size: 14px!important;
+	color: #919191!important;
 }
 
 .post-download a{

@@ -10,7 +10,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js"></script>
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>?v=2.3.98" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/message.css'); ?>" rel="stylesheet" />
-	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/shortcode.G.css'); ?>" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/shortcode.G.css'); ?>?v=2.3.98" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/G/CSS/OwO.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/G/CSS/prism.css" rel="stylesheet" />
 	<?php if ($this->options->enablenprogress == 1): ?>
