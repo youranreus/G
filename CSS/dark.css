@@ -97,7 +97,6 @@ html {
 }
 #post-content-article blockquote {
   border-left-color: rgba(255,255,255,0.24);
-  color: #ccc;
   background-color: rgba(255,255,255,0.06);
   margin: 0;
   padding: .5rem .9375rem;
@@ -150,6 +149,12 @@ html {
 }
 .post-content-content {
     color: #909090;
+}
+.shortcode-warn {
+    background: #3e3536;
+}
+.shortcode-notice {
+    background: RGBA(121,145,209,0.1);
 }
 #post-content-excerpt {
     background: #403E3E;
@@ -212,6 +217,7 @@ hr {
 }
 #page-content-article blockquote {
   background:rgba(255,255,255,0.24);
+  color: #f0f0f0;
 }
 #page-content-article blockquote p {
   color: #f0f0f0;

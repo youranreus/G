@@ -809,21 +809,22 @@ table td:hover{
 #post-content-article blockquote {
 	position: relative;
 	display: block;
-	padding: 10px 0px 10px 0px !important;
+	padding: 10px 0px 10px 25px !important;
 	margin: 0;
 	font-size: 16px;
 	line-height: 26px;
-	border-left: none;
 	border-left: 3px solid #f5f5f5;
 	text-align: justify;
   background: rgba(245,245,245,0.5);
   border-radius: 0 5px 5px 0;
+  color: #878c93;
 }
 #post-content-article blockquote p {
 	font-size: 16px;
 	margin: 0px;
-	padding: 0px 25px 0px 25px;
-	color: #878c93;
+	padding: 0px 25px 0px 0px;
+  color: #878c93;
+
 }
 #post-content a ,#page-content a,#links-post a{
 	color: #07f;
