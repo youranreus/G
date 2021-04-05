@@ -34,7 +34,7 @@ function shortcode_jump_button( $atts, $content= ''){
       $post_date = date('Y-m-d',$post_date);
       return '
       <div class="ArtinArt">
-                <h4><a href="'.$post_permalink.'">'.$post_title.'</a></h4>
+                <h5><a href="'.$post_permalink.'">'.$post_title.'</a></h5>
                 <p class="clear"><span style="float:left">ID:'.$post_cid.'</span><span style="float:right">'.$post_date.'</span></p>
       </div>
       ';

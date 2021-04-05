@@ -11,22 +11,22 @@
 	max-width: 300px;
 	margin: 10px auto;
 }
-.ArtinArt h4{
+.ArtinArt h5{
 	font-size: 1.2rem!important;
 	margin:0!important;
 	border: none!important;
 }
-.ArtinArt h4 a{
+.ArtinArt h5 a{
 	display: block;
 }
-.ArtinArt h4:hover{
+.ArtinArt h5:hover{
 	letter-spacing: normal!important;
 	border: none!important;
 }
-.ArtinArt h4 a::after{
+.ArtinArt h5 a::after{
 	display: none;
 }
-.ArtinArt h4 a:hover{
+.ArtinArt h5 a:hover{
 	color:#07f!important;
 	background: rgba(255,255,255,0)!important;
 }

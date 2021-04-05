@@ -131,10 +131,10 @@ html {
 .ArtinArt{
   background: #403E3E;
 }
-.ArtinArt h4 a{
+.ArtinArt h5 a{
   color: #ccc!important;
 }
-.ArtinArt h4 a:hover{
+.ArtinArt h5 a:hover{
   color: #ccc!important;
 }
 .post-content-warn,.post-content-notice{
