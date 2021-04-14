@@ -1793,12 +1793,12 @@ white-space: nowrap;
 #nav-2{
 	margin: 0px 0px 24px 0;
 	position: relative;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: nowrap;
   max-width: 100%;
 }
 #nav-2::-webkit-scrollbar-thumb {
-background   : hsla(0,0%,100%,.6);
+  background: hsla(0,0%,100%,.6);
 }
 #nav-2 a{
 	display: inline-block;
