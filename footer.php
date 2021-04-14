@@ -8,7 +8,7 @@
 			<nav id="nav-2">
 				<a href="<?php Helper::options()->siteUrl()?>">首页</a>
 				<?php if ($this->options->enableIndexPage): ?>
-						<a href="<?php Helper::options()->siteUrl()?>blog">文章</a>
+						<a href="<?php Helper::options()->siteUrl()?><?php if($this->options->articlePath != ''){echo $this->options->articlePath;}else{echo 'index/blog';} ?>" <?php if ($this->is('archive') or $this->is('post')) : ?> class="nav-focus"<?php endif; ?>>文章</a>
 				<?php endif; ?>
 				<?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
         <?php while($pages->next()): ?>

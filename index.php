@@ -4,8 +4,8 @@
  *
  *
  * @package G
- * @author YOURAN
- * @version 2.3
+ * @author 季悠然
+ * @version 2.4
  * @link https://gundam.exia.xyz/
  */
 

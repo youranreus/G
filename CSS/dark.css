@@ -8,7 +8,7 @@ html {
 .article-item{
   background: #2c2a2a;
 }
-.article-item h2 span {
+.article-item h2 span ,.article-item h2 {
   color: #f0f0f0!important;
 }
 .article-item p{
