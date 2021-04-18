@@ -207,6 +207,11 @@ table td:hover {
 .link-item-content p {
   color: #f0f0f0;
 }
+#article-content h1
+{
+  color:#f0f0f0;
+  background: #2c2a2a!important;
+}
 #page-content-article h1, #page-content-article h2, #page-content-article h3, #page-content-article h4,#links-post h1, #links-post h2, #links-post h3, #links-post h4{
   color:#f0f0f0;
   border:none;
