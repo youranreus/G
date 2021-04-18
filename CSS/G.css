@@ -1467,17 +1467,6 @@ figure:hover figcaption{
 	color: RGB(182,177,150);
 	margin: 0;
 }
-#links h2::before {
-	content: ' ';
-	display: inline-block;
-	position: relative;
-	width: 3rem;
-	height: 3rem;
-	top: 0.6rem;
-	left: -0.2rem;
-	background-size: contain;
-	background-image: url('../IMG/friends.svg');
-}
 #links-content {
 	margin: 49px;
 }
