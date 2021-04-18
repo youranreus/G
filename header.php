@@ -167,7 +167,7 @@
 	<script>
 		<?php echo $this->options->CustomJSh;?>
 	</script>
-	<link href="<?php $this->options->themeUrl('CSS/dark.css'); ?>?v=2.3.4" rel="<?php if($_COOKIE['night'] != '1'){echo 'alternate ';} ?>stylesheet" type="text/css" title="dark">
+	<link href="<?php $this->options->themeUrl('CSS/dark.css'); ?>?v=2.4.1" rel="<?php if($_COOKIE['night'] != '1'){echo 'alternate ';} ?>stylesheet" type="text/css" title="dark">
 	<link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">
 	<link href="<?php $this->options->favicon(); ?>" rel="icon">
 	<link rel='dns-prefetch' href='//s.w.org'>

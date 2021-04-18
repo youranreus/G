@@ -101,6 +101,7 @@ html {
   margin: 0;
   padding: .5rem .9375rem;
 }
+
 #page-content-title img{
   display: none;
 }
@@ -206,16 +207,17 @@ table td:hover {
 .link-item-content p {
   color: #f0f0f0;
 }
-#page-content-article h1, #page-content-article h2, #page-content-article h3, #page-content-article h4{
+#page-content-article h1, #page-content-article h2, #page-content-article h3, #page-content-article h4,#links-post h1, #links-post h2, #links-post h3, #links-post h4{
   color:#f0f0f0;
+  border:none;
 }
-#page-content-article h1::before, #page-content-article h2::before, #page-content-article h3::before, #page-content-article h4::before {
+#page-content-article h1::before, #page-content-article h2::before, #page-content-article h3::before, #page-content-article h4::before,#links-post h1::before, #links-post h2::before, #links-post h3::before, #links-post h4::before{
   display: none;
 }
 hr {
   border-top: 2px solid #777;
 }
-#page-content-article blockquote {
+#page-content-article blockquote ,#links-post blockquote {
   background:rgba(255,255,255,0.24);
   color: #f0f0f0;
 }
