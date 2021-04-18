@@ -1656,17 +1656,6 @@ white-space: nowrap;
 	color: RGB(182,177,150);
 	margin: 0;
 }
-#archives-content h2::before {
-	content: ' ';
-	display: inline-block;
-	position: relative;
-	width: 2.5rem;
-  height: 2.5rem;
-  top: 0.4rem;
-  left: -0.7rem;
-	background-size: contain;
-	background-image: url('../IMG/archive.svg');
-}
 #tag-cloud{
   width:100%;
   margin:40px auto;
@@ -1678,15 +1667,13 @@ white-space: nowrap;
 }
 #tag-cloud li a{
   color:#787878;
-  padding:8px;
+  padding: 5px 15px;
   margin:10px;
   -webkit-transition:all .24s ease;
-  /* border: 2px solid rgba(241,243,244,0.5); */
   background:rgba(241,243,244,0.7) ;
   border-radius: 5px;
 }
 #tag-cloud li a:hover{
-
   background:rgba(241,243,244,1) ;
 }
 

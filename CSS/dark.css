@@ -207,6 +207,13 @@ table td:hover {
 .link-item-content p {
   color: #f0f0f0;
 }
+#tag-cloud li a{
+  color:#f0f0f0;
+  background:rgba(0,0,0,0.2);
+}
+#tag-cloud li a:hover{
+  background:#403E3E;
+}
 #article-content h1
 {
   color:#f0f0f0;
