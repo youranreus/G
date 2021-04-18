@@ -1531,7 +1531,7 @@ figure:hover figcaption{
 #links-post blockquote {
 	position: relative;
 	display: block;
-	padding: 45px 0px 25px 0px !important;
+	padding: 45px 25px 25px 25px !important;
 	margin: 0;
 	font-size: 16px;
 	line-height: 26px;
@@ -1539,11 +1539,12 @@ figure:hover figcaption{
 	background: #f5f5f5;
 	text-align: justify;
 	border-radius: 15px;
+  color: #878c93;
 }
 #links-post blockquote p {
 	font-size: 16px;
 	margin: 0px;
-	padding: 0px 25px 0px 25px;
+	padding: 0px 25px 0px 0px;
 	color: #878c93;
 }
 #links-post blockquote:before {
