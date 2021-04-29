@@ -868,6 +868,28 @@ code[class*="language-"] span, pre[class*="language-"] span{
 	background: #FF6666;
 	color:white;
 }
+#agree-btn{
+  display: inline-block;
+	margin:10px auto;
+	border: 2px solid #07F;
+	color:#07F;
+	font-size:14px;
+	font-weight:400;
+	padding: .35rem .85rem;
+	border-radius: 1000rem;
+	text-align: center;
+	-webkit-transition: .3s cubic-bezier(.25,.46,.45,.94) all;
+  transition: .3s cubic-bezier(.25,.46,.45,.94) all;
+  cursor: pointer;
+}
+#agree-btn:hover{
+	background: #07F;
+	color:white;
+}
+.agreed{
+  background: #07F;
+	color:white!important;
+}
 #feedme-content{
 	background: #f4f4f4;
 	width:100%;

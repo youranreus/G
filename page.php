@@ -1,5 +1,13 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('header.php'); ?>
+<?php
+	$this->need('header.php');
+	if (isset($_POST['agree'])) {
+    if ($_POST['agree'] == $this->cid) {
+        exit(agree($this->cid));
+    }
+    exit('error');
+	}
+?>
 
 
 		<div id="page">

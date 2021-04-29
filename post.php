@@ -1,6 +1,13 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php
+	if (isset($_POST['agree'])) {
+		if ($_POST['agree'] == $this->cid) {
+				exit(agree($this->cid));
+		}
+		exit('error');
+	}
 	$this->need('header.php');
+	$agree = $this->hidden?array('agree' => 0, 'recording' => true):agreeNum($this->cid);
 ?>
 
 <div id="post">
@@ -45,12 +52,21 @@
 		</div>
 	</div>
 
-	<?php if ($this->options->feedIMG): ?>
-	<p align='center'><a id="feedme" onclick="feedme_show()">喝杯水</a></p>
+
+	<p align='center'>
+		<?php if ($this->options->feedIMG): ?>
+			<a id="feedme" onclick="feedme_show()">喝杯水</a>
+		<?php endif; ?>
+		<a id="agree-btn" class="<?php echo $agree['recording']?'agreed':''; ?>" data-cid="<?php echo $this->cid; ?>" data-url="<?php $this->permalink(); ?>">
+	  	<span>ENJOY</span>
+	  	<span class="agree-num"><?php echo $agree['agree']; ?></span>
+		</a>
+	</p>
 	<div id="feedme-content">
 		<img src="<?php $this->options->feedIMG(); ?>"></img>
 	</div>
-	<?php endif; ?>
+
+
 
 	<div id="post-footer" class="clear">
 		<div id="post-tags"><p><?php $this->tags('', true, 'none'); ?></p></div>

@@ -5,7 +5,7 @@
  *
  * @package G
  * @author 季悠然
- * @version 2.4.1
+ * @version 2.4.2
  * @link https://gundam.exia.xyz/
  */
 
