@@ -738,6 +738,33 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
   min-height: 1.875rem!important;
   height: 1em!important;
 }
+#post-content-article ol{
+  list-style-type: none;
+  counter-reset: item;
+}
+#post-content-article ol li:before {
+  font-size: 11.4px;
+  font-weight: 700;
+  content: counter(item);
+  counter-increment: item;
+}
+#post-content-article ol li:before {
+  box-sizing: border-box;
+  border: 0 solid #999;
+  margin-top: 5px;
+  margin-right: 10px;
+  position: relative;
+  top: -2.2px;
+  margin-left: -35px!important;
+  display: inline-block;
+  align-items: center;
+  text-align: center;
+  height: 19px;
+  width: 25px;
+  background-color: RGB(231,181,91,.1);
+  border-radius: 9999px;
+  color: rgba(231,181,91,1);
+}
 .imageinfo{
   color: #999;
   font-size: 0.875rem;
