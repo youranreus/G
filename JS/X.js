@@ -346,44 +346,6 @@ function gototop(){
 }
 
 
-//侧栏内容开关
-function show_slide_content(id){
-
-	var rotate = {
-		"-webkit-transition":" .3s ease all",
-		"-moz-transition": ".3s ease all",
-		"-ms-transition": ".3s ease all",
-		"-o-transition": ".3s ease all",
-		transition: ".3s ease all",
-		"-webkit-transform":" rotate(180deg)",
-		"-moz-transform":" rotate(180deg)",
-		"-ms-transform": "rotate(180deg)",
-		"-o-transform": "rotate(180deg)",
-	  transform: "rotate(180deg)"
-	};
-
-	var rotate2 = {
-		"-webkit-transition":" .3s ease all",
-		"-moz-transition": ".3s ease all",
-		"-ms-transition": ".3s ease all",
-		"-o-transition": ".3s ease all",
-		transition: ".3s ease all",
-		"-webkit-transform":" rotate(0deg)",
-		"-moz-transform":" rotate(0deg)",
-		"-ms-transform": "rotate(0deg)",
-		"-o-transform": "rotate(0deg)",
-	  transform: "rotate(0deg)"
-	};
-
-	if($("#Sliderbar-content-"+id).css("display")=='none'){
-		 $("#Sliderbar-content-"+id).slideDown();
-		 $("#Sliderbar-content-"+id).prev().find('i').css(rotate);
-	}else{
-		 $("#Sliderbar-content-"+id).slideUp();
-		 $("#Sliderbar-content-"+id).prev().find('i').css(rotate2);
-	 }
-}
-
 //ajax评论
 function ajaxc(){
 		var replyTo = '',   //回复评论时候的ID

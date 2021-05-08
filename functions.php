@@ -16,6 +16,15 @@ function themeConfig($form) {
     $headerbkcolor = new Typecho_Widget_Helper_Form_Element_Text('headerbkcolor', NULL, NULL, _t('头部背景颜色') , _t('#787878'));
     $form->addInput($headerbkcolor);
 
+    $profileBG = new Typecho_Widget_Helper_Form_Element_Text('profileBG', NULL, NULL, _t('侧边栏背景图') , _t('https://...'));
+    $form->addInput($profileBG);
+
+    $profileAvatar = new Typecho_Widget_Helper_Form_Element_Text('profileAvatar', NULL, NULL, _t('侧边栏头像') , _t('https://...'));
+    $form->addInput($profileAvatar);
+
+    $profileDes = new Typecho_Widget_Helper_Form_Element_Text('profileDes', NULL, NULL, _t('侧边栏简介') , _t('尽量简洁一些'));
+    $form->addInput($profileDes);
+
     $beian = new Typecho_Widget_Helper_Form_Element_Text('beian', NULL, NULL, _t('备案号') , _t('没备案当我没说'));
     $form->addInput($beian);
 
@@ -42,6 +51,18 @@ function themeConfig($form) {
         '0' => _t('nope')
     ) , '0', _t('是否使用独立页面做首页') , _t('默认为关闭'));
     $form->addInput($enableIndexPage);
+
+    $enableSliderBarPhoto = new Typecho_Widget_Helper_Form_Element_Radio('enableSliderBarPhoto', array(
+        '1' => _t('开就可以') ,
+        '0' => _t('算了算了')
+    ) , '0', _t('启用侧边栏小相框（只能放一张图片）') , _t('默认为关闭'));
+    $form->addInput($enableSliderBarPhoto);
+
+    $profilePhoto = new Typecho_Widget_Helper_Form_Element_Text('profilePhoto', NULL, NULL, _t('侧边栏小相框图片') , _t('https://'));
+    $form->addInput($profilePhoto);
+
+    $profilePhotoDes = new Typecho_Widget_Helper_Form_Element_Text('profilePhotoDes', NULL, NULL, _t('侧边栏小相框图片介绍') , _t('阿巴阿巴'));
+    $form->addInput($profilePhotoDes);
 
     $articlePath = new Typecho_Widget_Helper_Form_Element_Text('articlePath', NULL, NULL, _t('头部文章路径') , _t('默认index.php/blog'));
     $form->addInput($articlePath);

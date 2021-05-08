@@ -8,7 +8,7 @@
 	<title><?php $this->archiveTitle(' &raquo; ', '', ' | '); ?><?php $this->options->title(); ?></title>
 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.1.1/dist/jquery.min.js"></script>
-	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>?v=2.4.23" rel="stylesheet" />
+	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/G.css'); ?>?v=2.4.25" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/message.css'); ?>" rel="stylesheet" />
 	<link rel="stylesheet" href="<?php $this->options->themeUrl('CSS/shortcode.G.css'); ?>?v=2.3.99" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/G/CSS/OwO.min.css" rel="stylesheet" />
@@ -158,6 +158,11 @@
 			#header,#footer{background: <?php echo $this->options->headerbkcolor; ?>}
 		<?php endif; ?>
 
+		<?php if (!$this->options->enableSliderBarPhoto): ?>
+			#sliderbar-photo{display: none;}
+			#categoryList{width: 100%;}
+		<?php endif; ?>
+
 		#post-content-article h1,#post-content-article h2,#post-content-article h3,#post-content-article h4 {
 			color: RGB(48,71,88);
 		}
@@ -167,7 +172,7 @@
 	<script>
 		<?php echo $this->options->CustomJSh;?>
 	</script>
-	<link href="<?php $this->options->themeUrl('CSS/dark.css'); ?>?v=2.4.2" rel="<?php if($_COOKIE['night'] != '1'){echo 'alternate ';} ?>stylesheet" type="text/css" title="dark">
+	<link href="<?php $this->options->themeUrl('CSS/dark.css'); ?>?v=2.4.2.2" rel="<?php if($_COOKIE['night'] != '1'){echo 'alternate ';} ?>stylesheet" type="text/css" title="dark">
 	<link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">
 	<link href="<?php $this->options->favicon(); ?>" rel="icon">
 	<link rel='dns-prefetch' href='//s.w.org'>

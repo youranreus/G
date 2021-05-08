@@ -1,33 +1,47 @@
 <div id="sliderbar" class="move_left">
-  <div class="sliderbar-content-menu">
-    <div class="Sliderbar-content clear">
-      <div class="Sliderbar-content-switch clear">
-        <h2>CATEGORIES</h2>
-        <a onclick="show_slide_content(1);"><i class="i down"></i></a>
+  <div class="sliderbar-content" id="profile">
+    <div class="profile-content">
+      <div class="profile-avatar-container">
+        <img src="<?php echo $this->options->profileAvatar; ?>" alt="avatar">
       </div>
-      <div id="Sliderbar-content-1" class="clear">
-        <?php $this->widget('Widget_Metas_Category_List')->parse('<a onclick="sideMenu_toggle()" href="{permalink}">{name}</a>'); ?>
-      </div>
-    </div>
-  </div>
-  <div class="sliderbar-content-menu">
-    <div class="Sliderbar-content clear">
-      <div class="Sliderbar-content-switch clear">
-        <h2>PAGES</h2>
-        <a onclick="show_slide_content(2);"><i class="i down"></i></a>
-      </div>
-      <div id="Sliderbar-content-2" class="clear">
-        <a href="<?php Helper::options()->siteUrl()?>" onclick="sideMenu_toggle()">首页</a>
-				<?php if ($this->options->enableIndexPage): ?>
-						<a href="<?php Helper::options()->siteUrl()?>blog" onclick="sideMenu_toggle()">文章</a>
-				<?php endif; ?>
-        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-        <?php while($pages->next()): ?>
-        <a href="<?php $pages->permalink(); ?>" title="<?php $pages->title(); ?>" onclick="sideMenu_toggle()"><?php $pages->title(); ?></a>
-        <?php endwhile; ?>
+      <div class="profile-cover" style="background-image:url(<?php echo $this->options->profileBG; ?>)"></div>
+      <h4><?php $this->author(); ?></h4>
+      <i><?php echo $this->options->profileDes; ?></i>
+      <div class="profile-meta clear">
+        <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?>
+        <div class="articles">
+          <p><?php $stat->publishedPostsNum() ?></p>
+          <span>文章数</span>
+        </div>
+        <div class="reviews">
+          <p><?php $stat->publishedCommentsNum() ?></p>
+          <span>评论数</span>
+        </div>
+        <div class="cats">
+          <p><?php $stat->categoriesNum() ?></p>
+          <span>分类</span>
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="clear">
+    <div class="sliderbar-content" id="categoryList">
+      <div class="category-content">
+        <?php $this->widget('Widget_Metas_Category_List')->parse('<li><a onclick="sideMenu_toggle()" href="{permalink}">{name}</a></li>'); ?>
+      </div>
+    </div>
+
+    <div class="sliderbar-content" id="sliderbar-photo" style="background-image:url(<?php echo $this->options->profilePhoto; ?>)">
+      <div>
+        <p><?php echo $this->options->profilePhotoDes; ?></p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      document.getElementById("sliderbar-photo").style.height = document.getElementById('categoryList').clientHeight;
+    </script>
+  </div>
+
 </div>
 <div id="sliderbar-toc" class="move_right">
   <div class="toc">

@@ -240,3 +240,21 @@ hr {
   border: none;
   color: #777;
 }
+
+.sliderbar-content{
+  background: #2c2a2a;
+  color: #909090;
+}
+.profile-avatar-container img {
+  border: 2px solid #2c2a2a;
+}
+.profile-content i{
+  background: #403E3E;
+  color: #9a9a9a;
+}
+.category-content li a {
+    color: #909090!important;
+}
+#sliderbar-photo div{
+  background: RGBA(44,42,42,0.7);
+}
