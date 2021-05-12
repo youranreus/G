@@ -51,7 +51,7 @@
           echo '<a href="'.$obj->permalink.'" onclick="sideMenu_toggle()">
             <div class="recentComment-item clear">
             <div class="recentComment-title">
-              <h5 aligen="center">《'.getTitleByID($obj->cid).'》</h5>
+              <h5 aligen="center">'.getTitleByID($obj->cid).'</h5>
             </div>
               <div class="left">
                 <img src="https://sdn.geekzu.org/avatar/'.md5($obj->mail).'" alt="'.$obj->author.'"/>

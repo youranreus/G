@@ -1216,6 +1216,7 @@ figure:hover figcaption{
   background: RGBA(255,255,255,0.7);
   height: 100%;
   position: relative;
+  backdrop-filter: blur(5px);
 }
 #sliderbar-photo div p{
   margin: 0;
@@ -1231,12 +1232,12 @@ figure:hover figcaption{
 }
 #recentComment h4{
   text-align: center;
-  opacity: 0.9;
+  opacity: 0.7;
   margin: 5px 0px;
 }
 #recentComment h4::after,#recentComment h4::before{
   content: '-';
-  opacity: 0.7;
+  opacity: 0.2;
   padding: 0px 10px;
 }
 .recentComment-title{
@@ -1251,10 +1252,21 @@ figure:hover figcaption{
   z-index: 2;
   backdrop-filter: blur(5px);
   -webkit-transition: .2s ease all;
-    -moz-transition: .2s ease all;
-    -ms-transition: .2s ease all;
-    -o-transition: .2s ease all;
-    transition: .2s ease all;
+     -moz-transition: .2s ease all;
+      -ms-transition: .2s ease all;
+       -o-transition: .2s ease all;
+  transition: .2s ease all;
+}
+.recentComment-title h5{
+  margin:0 auto;
+  width: 90%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  height: 60px;
+  line-height: 60px;
+  font-weight: 100;
+  font-style: italic;
 }
 .recentComment-item{
   height: 60px;
@@ -2400,6 +2412,9 @@ input#url, input#mail, input#author {
 }
 #categoryList{
   width: 100%;
+}
+#recentComment{
+  display: none;
 }
 }
 
