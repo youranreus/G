@@ -1070,7 +1070,12 @@ figure:hover figcaption{
 	z-index:999;
   max-height: 100%;
   overflow-y: auto;
+  padding-bottom: 100px;
 }
+#sliderbar::-webkit-scrollbar{
+  display: none!important;
+}
+
 #sliderbar-cover,#sliderbar-toc-cover{
 	display: none;
 	position: fixed;
@@ -1219,6 +1224,86 @@ figure:hover figcaption{
   transform: translateY(-50%);
   text-align: center;
 }
+#recentComment{
+  padding: 10px;
+  margin-bottom: 100px;
+  padding-bottom: 0px;
+}
+#recentComment h4{
+  text-align: center;
+  opacity: 0.9;
+  margin: 5px 0px;
+}
+#recentComment h4::after,#recentComment h4::before{
+  content: '-';
+  opacity: 0.7;
+  padding: 0px 10px;
+}
+.recentComment-title{
+  position: absolute;
+  top:0;
+  left:0;
+  opacity: 0;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  background: RGBA(255,255,255,0.8);
+  z-index: 2;
+  backdrop-filter: blur(5px);
+  -webkit-transition: .2s ease all;
+    -moz-transition: .2s ease all;
+    -ms-transition: .2s ease all;
+    -o-transition: .2s ease all;
+    transition: .2s ease all;
+}
+.recentComment-item{
+  height: 60px;
+  overflow: hidden;
+  margin: 10px 0;
+  position: relative;
+}
+.recentComment-item:hover .recentComment-title{
+  opacity: 1;
+}
+.recentComment-item .left{
+  width: 60px;
+  float: left;
+  text-align: center;
+}
+.recentComment-item .left img{
+  margin:5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 10000rem;
+}
+.recentComment-item .right{
+  width: 210px;
+  height: 60px;
+  float:right;
+
+}
+.recentComment-item .right h5, .recentComment-item .right p{
+  margin: 0;
+}
+.recentComment-item .right h5 span{
+  float: right;
+  color: #000;
+  opacity: 0.4;
+  font-weight: 100;
+  padding-right: 10px;
+}
+.recentComment-item .right h5{
+  margin-top: 5px;
+}
+.recentComment-item .right p{
+  color: #000;
+  font-size: 14px;
+  width: 90%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
 .main_display{
 	opacity: 0.6!important;
 }

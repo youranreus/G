@@ -258,3 +258,12 @@ hr {
 #sliderbar-photo div{
   background: RGBA(44,42,42,0.7);
 }
+.recentComment-item .right p {
+    color: #909090;
+}
+.recentComment-item .right h5 span {
+    color: #fff;
+}
+.recentComment-title {
+    background: RGBA(44,44,42,0.8);
+  }

@@ -37,9 +37,38 @@
         <p><?php echo $this->options->profilePhotoDes; ?></p>
       </div>
     </div>
-    <script type="text/javascript">
-      document.getElementById("sliderbar-photo").style.height = document.getElementById('categoryList').clientHeight;
-    </script>
+  </div>
+
+  <div class="sliderbar-content" id="recentComment">
+    <div class="">
+      <h4>新鲜出炉の评论</h4>
+      <?php
+      $obj = $this->widget('Widget_Comments_Recent','pageSize=5');
+      if($obj->have()){
+        while($obj->next()){
+          $cos = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/$1.png" class="bq">',$obj->text);
+          $cos = preg_replace('/\:\:(.*?)\:(.*?)\:\:/','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">',$cos);
+          echo '<a href="'.$obj->permalink.'" onclick="sideMenu_toggle()">
+            <div class="recentComment-item clear">
+            <div class="recentComment-title">
+              <h5 aligen="center">《'.getTitleByID($obj->cid).'》</h5>
+            </div>
+              <div class="left">
+                <img src="https://sdn.geekzu.org/avatar/'.md5($obj->mail).'" alt="'.$obj->author.'"/>
+              </div>
+              <div class="right">
+                <h5>'.$obj->author.'<span>'.date('Y-m-d',$obj->created).'</span></h5>
+                <p>'.$cos.'</p>
+              </div>
+            </div>
+          </a>
+          ';
+        }
+      }else{
+        echo '无最新回复';
+      }
+      ?>
+    </div>
   </div>
 
 </div>

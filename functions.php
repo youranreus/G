@@ -334,9 +334,7 @@ function get_post_view($archive)
 /**
 * 通过id获取文章信息
 */
-
 function GetPostById($id){
-
 		$db = Typecho_Db::get();
 		$result = $db->fetchAll($db->select()->from('table.contents')
 			->where('status = ?','publish')
@@ -362,6 +360,41 @@ function GetPostById($id){
     }
 }
 
+function getTitleByID($id)
+{
+  $db = Typecho_Db::get();
+  $result = $db->fetchAll($db->select()->from('table.contents')
+    ->where('status = ?','publish')
+    ->where('type = ?', 'post')
+    ->where('cid = ?',$id)
+  );
+  if($result){
+    $i=1;
+    foreach($result as $val){
+      $val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
+      $post_title = htmlspecialchars($val['title']);
+      return $post_title;
+    }
+  }
+  else{
+    $result = $db->fetchAll($db->select()->from('table.contents')
+      ->where('status = ?','publish')
+      ->where('type = ?', 'page')
+      ->where('cid = ?',$id)
+    );
+    if($result){
+      $i=1;
+      foreach($result as $val){
+        $val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
+        $post_title = htmlspecialchars($val['title']);
+        return $post_title;
+      }
+    }
+    else {
+      return '标题获取失败';
+    }
+  }
+}
 
 /**
 * 时间友好化

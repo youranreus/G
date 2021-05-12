@@ -99,5 +99,6 @@
 	});
 	show_site_runtime("<?php getBuildTime($this->options->builtTime);?>");
 	<?php echo $this->options->CustomJSf;?>
+  document.getElementById("sliderbar-photo").style.height = document.getElementById('categoryList').clientHeight;
 </script>
 </body>
