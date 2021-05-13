@@ -1206,6 +1206,7 @@ figure:hover figcaption{
   -webkit-background-size: cover;
   -o-background-size: cover;
   background-position: center center;
+  position: relative;
 }
 #sliderbar-photo:hover div{
   opacity: 1;
@@ -1224,6 +1225,9 @@ figure:hover figcaption{
   top: 50%; /*偏移*/
   transform: translateY(-50%);
   text-align: center;
+}
+#sliderbar-video{
+  position: absolute;
 }
 #recentComment{
   padding: 10px;

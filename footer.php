@@ -100,5 +100,18 @@
 	show_site_runtime("<?php getBuildTime($this->options->builtTime);?>");
 	<?php echo $this->options->CustomJSf;?>
   document.getElementById("sliderbar-photo").style.height = document.getElementById('categoryList').clientHeight;
+	if(document.getElementById("sliderbar-video")!=undefined)
+	{
+		if(document.getElementById("sliderbar-photo").clientHeight >= document.getElementById("sliderbar-photo").clientWidth)
+		{
+			document.getElementById("sliderbar-video").style.height = document.getElementById('sliderbar-photo').clientHeight;
+		}
+		else
+		{
+			document.getElementById("sliderbar-video").style.height = document.getElementById('sliderbar-photo').clientWidth;
+		}
+	}
+
+
 </script>
 </body>

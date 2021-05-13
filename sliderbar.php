@@ -33,10 +33,14 @@
     </div>
 
     <div class="sliderbar-content" id="sliderbar-photo" style="background-image:url(<?php echo $this->options->profilePhoto; ?>)">
+      <?php if ($this->options->enableSliderBarVideo): ?>
+        <video id="sliderbar-video" loop muted autoplay src="<?php echo $this->options->profileVideo; ?>" poster="<?php echo $this->options->profilePhoto; ?>"></video>
+      <?php endif; ?>
       <div>
         <p><?php echo $this->options->profilePhotoDes; ?></p>
       </div>
     </div>
+
   </div>
 
   <div class="sliderbar-content" id="recentComment">

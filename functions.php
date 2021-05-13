@@ -58,8 +58,17 @@ function themeConfig($form) {
     ) , '0', _t('启用侧边栏小相框（只能放一张图片）') , _t('默认为关闭'));
     $form->addInput($enableSliderBarPhoto);
 
+    $enableSliderBarVideo = new Typecho_Widget_Helper_Form_Element_Radio('enableSliderBarVideo', array(
+        '1' => _t('是') ,
+        '0' => _t('否')
+    ) , '0', _t('启用侧边栏小相框的视频模式') , _t('默认为关闭'));
+    $form->addInput($enableSliderBarVideo);
+
     $profilePhoto = new Typecho_Widget_Helper_Form_Element_Text('profilePhoto', NULL, NULL, _t('侧边栏小相框图片') , _t('https://'));
     $form->addInput($profilePhoto);
+
+    $profileVideo = new Typecho_Widget_Helper_Form_Element_Text('profileVideo', NULL, NULL, _t('侧边栏小相框视频（需开启视频模式）') , _t('https://'));
+    $form->addInput($profileVideo);
 
     $profilePhotoDes = new Typecho_Widget_Helper_Form_Element_Text('profilePhotoDes', NULL, NULL, _t('侧边栏小相框图片介绍') , _t('阿巴阿巴'));
     $form->addInput($profilePhotoDes);
