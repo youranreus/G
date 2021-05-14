@@ -40,6 +40,12 @@ function themeConfig($form) {
     $defaultPostIMG = new Typecho_Widget_Helper_Form_Element_Text('defaultPostIMG', NULL, NULL, _t('没有设置文章头图的就用这里的图片啦') , _t('http://...'));
     $form->addInput($defaultPostIMG);
 
+    $enableFirstIMG = new Typecho_Widget_Helper_Form_Element_Radio('enableFirstIMG', array(
+        '1' => _t('cool') ,
+        '0' => _t('nope')
+    ) , '1', _t('是否使用文章第一张图片作为文章首图') , _t('当没有设置头图时<br/>默认为开启<br/>p.s 不会选择[photo]短代码中的图片'));
+    $form->addInput($enableFirstIMG);
+
     $headerLOGO = new Typecho_Widget_Helper_Form_Element_Text('headerLOGO', NULL, NULL, _t('头部logo') , _t('如果留空则不显示'));
     $form->addInput($headerLOGO);
 
@@ -753,4 +759,21 @@ function Links($sorts = NULL) {
         }
     }
     echo $link ? $link : '<li>暂无链接</li>';
+}
+
+/**
+* 获取文章首图
+*/
+function getPostImg($archive) {
+    $img = array();
+    //  匹配 img 的 src 的正则表达式
+    preg_match_all("/<img.*?src=\"(.*?)\".*?\/?>/i", $archive->content, $img);
+    //  判断是否匹配到图片
+    if (count($img) > 0 && count($img[0]) > 0) {
+        //  返回图片
+        return $img[1][0];
+    } else {
+        //  如果没有匹配到就返回 false
+        return false;
+    }
 }
