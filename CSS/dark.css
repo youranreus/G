@@ -266,4 +266,7 @@ hr {
 }
 .recentComment-title {
     background: RGBA(44,44,42,0.8);
-  }
+}
+.article-item em {
+    color: #909090;
+}
