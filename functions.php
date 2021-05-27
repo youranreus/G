@@ -40,6 +40,12 @@ function themeConfig($form) {
     $defaultPostIMG = new Typecho_Widget_Helper_Form_Element_Text('defaultPostIMG', NULL, NULL, _t('没有设置文章头图的就用这里的图片啦') , _t('http://...'));
     $form->addInput($defaultPostIMG);
 
+    $enableLazyload = new Typecho_Widget_Helper_Form_Element_Radio('enableLazyload', array(
+        '1' => _t('cool') ,
+        '0' => _t('nope')
+    ) , '1', _t('是否开启图片懒加载') , _t('默认开启'));
+    $form->addInput($enableLazyload);
+
     $enableFirstIMG = new Typecho_Widget_Helper_Form_Element_Radio('enableFirstIMG', array(
         '1' => _t('cool') ,
         '0' => _t('nope')

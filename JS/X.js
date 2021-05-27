@@ -149,17 +149,16 @@ function imageinfo(){
 					{
 						 return '';
 					}
-					if($(this).is("div.photos figure div img"))
-					{
+          if(enableLazyload)
+          {
             $(this).addClass("lazyload");
   					$(this).attr('data-original',$(this).attr("src"));
   					$(this).attr('src','https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/loading2.gif');
-						return '';
+          }
+          if(!$(this).is("div.photos figure div img"))
+					{
+              $(this).after('<span class="imageinfo">'+ $(this).attr("title") +'</span>');
 					}
-					$(this).addClass("lazyload");
-					$(this).attr('data-original',$(this).attr("src"));
-					$(this).attr('src','https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/loading2.gif');
-					$(this).after('<span class="imageinfo">'+ $(this).attr("title") +'</span>');
 		 });
 	});
 }
