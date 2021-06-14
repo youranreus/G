@@ -11,7 +11,7 @@
 ?>
 
 <div id="post">
-	<div id="post-header" style="background-image:url(<?php  $imgurl = $this->fields->imgurl;if($imgurl != ''){echo $imgurl;}else{if($this->options->enableFirstIMG == 1 && getPostImg($this)){echo getPostImg($this);}else{$this->options->defaultPostIMG();}}?>)">
+	<div id="post-header" style="background-image:url(<?php  $imgurl = $this->fields->imgurl;if($imgurl != ''){echo $imgurl;}else{if($this->options->enableFirstIMG == 1 && getPostImg($this)){echo getPostImg($this);}else{echo $this->options->defaultPostIMG.'?v='.rand(1000,9999);}}?>)">
 		<div id="post-header-mask">
 			<div id="post-header-content">
 				<h2 id="post-content-title"><?php $this->title();?></h2>

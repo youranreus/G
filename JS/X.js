@@ -118,6 +118,16 @@ function pjax_complete(){
   makeGallery();
   agree();
 	collapse_toggle();
+  if(document.getElementById('post-content-article')!=undefined)
+  {
+    renderMathInElement(document.getElementById('post-content-article'), {
+      delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+      ],
+      throwOnError : true
+    });
+  }
 	jQuery(document).ready(function ($) {
 			$("img.lazyload").lazyload({
 						threshold: 100,
