@@ -34,7 +34,7 @@
 	</div>
 
 	<script>
-		<?php if($this->options->enableLazyload): ?>
+		<?php if($this->options->enableLazyload == 1): ?>
 			const enableLazyload = true;
 		<?php else: ?>
 			const enableLazyload = false;

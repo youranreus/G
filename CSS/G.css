@@ -1791,8 +1791,8 @@ figure:hover figcaption{
 }
 #links-post blockquote:before {
 	position: absolute;
-	top: 3;
-	left: 7;
+	top: 3px;
+	left: 7px;
 	content: '';
 	background: url(../IMG/dot.svg) left top no-repeat;
 	background-size: contain;
