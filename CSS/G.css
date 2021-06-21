@@ -1071,6 +1071,7 @@ figure:hover figcaption{
   max-height: 100%;
   overflow-y: auto;
   padding-bottom: 100px;
+  scrollbar-color: transparent transparent;
 }
 #sliderbar::-webkit-scrollbar{
   display: none!important;
@@ -1293,10 +1294,9 @@ figure:hover figcaption{
   border-radius: 10000rem;
 }
 .recentComment-item .right{
-  width: 210px;
+  width: 200px;
   height: 60px;
   float:right;
-
 }
 .recentComment-item .right h5, .recentComment-item .right p{
   margin: 0;
