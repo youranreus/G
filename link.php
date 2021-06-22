@@ -8,7 +8,7 @@ $this -> need('header.php');
 ?>
 	<div id="links">
 		<div id="links-content">
-			<h2>ともだち</h2>
+			<h2><?php $this->title(); ?></h2>
 			<div id="links-post">
 				<?php
 				$content = $this->content;

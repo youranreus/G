@@ -9,7 +9,7 @@ $this -> need('header.php');
 
 <div id="archives">
   <div id="archives-content">
-    <h2>归档</h2>
+    <h2><?php $this->title(); ?></h2>
       <div id="tag-cloud">
 
   			<?php $this->widget('Widget_Metas_Tag_Cloud', array('sort' => 'count', 'ignoreZeroCount' => true, 'desc' => true, 'limit' => 20))->to($tags); ?>
