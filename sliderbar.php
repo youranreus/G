@@ -50,7 +50,7 @@
       $obj = $this->widget('Widget_Comments_Recent','pageSize=5');
       if($obj->have()){
         while($obj->next()){
-          $cos = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/bq/$1.png" class="bq">',$obj->text);
+          $cos = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/$1.png" class="bq">',$obj->text);
           $cos = preg_replace('/\:\:(.*?)\:(.*?)\:\:/','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">',$cos);
           echo '<a href="'.$obj->permalink.'" onclick="sideMenu_toggle()">
             <div class="recentComment-item clear">
