@@ -129,7 +129,7 @@ function pjax_complete(){
     });
   }
 	jQuery(document).ready(function ($) {
-			$("img.lazyload").lazyload({
+			$(".lazyload").lazyload({
 						threshold: 100,
 						effect: "fadeIn"
 			});
@@ -171,6 +171,18 @@ function imageinfo(){
 					}
 		 });
 	});
+
+  $("#post-header").each(function(){
+    $(this).addClass("lazyload");
+    $(this).attr('data-original',$(this).css("background-image").slice(5,-2));
+    $(this).css('background-image','url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading-banner.gif)');
+  });
+
+  $(".card-cover").each(function(){
+    $(this).addClass("lazyload");
+    $(this).attr('data-original',$(this).css("background-image").slice(5,-2));
+    $(this).css('background-image','url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading-banner.gif)');
+  });
 }
 
 
