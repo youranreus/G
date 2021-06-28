@@ -34,7 +34,7 @@
   <?php while($this->next()): ?>
     <div class="card-item">
        <article>
-         <div class="card-cover" style="background-image: url(<?php  $imgurl = $this->fields->imgurl;if($imgurl != ''){echo $imgurl;}else{if($this->options->enableFirstIMG == 1 && getPostImg($this)){echo getPostImg($this);}else{echo $this->options->defaultPostIMG.'?v='.rand(1000,9999);}}?>)"></div>
+         <div class="card-cover" style="background-image: url(<?php  $imgurl = $this->fields->imgurl;if($imgurl != ''){echo $imgurl;}else{if($this->options->enableFirstIMG == 1 && getPostImg($this)){echo getPostImg($this);}else{echo replaceBannerUrl($this->options->defaultPostIMG);}}?>)"></div>
          <a class="article-link card-link" href="<?php $this->permalink() ?>" itemprop="url"></a>
          <h2 class="article-title"><?php $this->title() ?></h2>
          <div class="article-meta">

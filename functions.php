@@ -480,6 +480,10 @@ function imgNum($content){
   return $cnt;
 }
 
+function replaceBannerUrl($img){
+  return str_replace("{random}",(string)rand(1000,9999), $img);
+}
+
 /**
 * 评论锚点修复
 */
