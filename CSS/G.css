@@ -107,10 +107,17 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 /**
  * 小部件
  */
-#m_menu,#m_top,#m_search,#m_toc{
-	position: fixed;
+#footer-toolbar{
+  position: fixed;
 	right:50px;
+  bottom: 50px;
   z-index: 999;
+  display: flex;
+  flex-direction:column
+}
+
+#m_menu,#m_top,#m_search,#m_toc,#m_night{
+  margin-top: 10px;
   padding: .725rem;
 	background: rgba(250,250,250,0.9);
 	border:1px solid #444;
@@ -124,34 +131,17 @@ html::-webkit-scrollbar-thumb,html *::-webkit-scrollbar-thumb {
 }
 
 #m_menu{
-	bottom:50px;
+
 }
 #m_toc{
-	bottom:150px;
   display: none;
 }
 #m_top{
-	bottom:100px;
+
 }
 #m_search{
-	bottom:200px;
+
 	display: none;
-}
-#m_night{
-  left:50px;
-  position: fixed;
-  z-index: 999;
-  padding: .725rem;
-	background: rgba(250,250,250,0.9);
-	border:1px solid #444;
-  border-radius: 2.5rem;
-	-webkit-transition: .6s ease all;
-	-moz-transition: .6s ease all;
-	-ms-transition: .6s ease all;
-	-o-transition: .6s ease all;
-	transition: .6s ease all;
-  cursor: pointer;
-  bottom: 50px;
 }
 .m_search_c{
   bottom:150px!important;

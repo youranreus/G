@@ -65,28 +65,30 @@
 
 </div>
 
+<div id="footer-toolbar">
+	<?php if (isset($this->options->plugins['activated']['ExSearch'])) : ?>
+		<div id="m_search">
+			<span><a><i class="i m_search search-form-input"></i></a></span>
+		</div>
+	<?php endif ?>
 
-<?php if (isset($this->options->plugins['activated']['ExSearch'])) : ?>
-	<div id="m_search">
-		<span><a><i class="i m_search search-form-input"></i></a></span>
+	<div id="m_toc"  onclick="toc_toggle();">
+		<span><a><i class="i m_toc"></i></a></span>
 	</div>
-<?php endif ?>
 
-<div id="m_toc"  onclick="toc_toggle();">
-	<span><a><i class="i m_toc"></i></a></span>
+	<div id="m_top" onclick="gototop();">
+		<span><a><i class="i gototop"></i></a></span>
+	</div>
+
+	<div id="m_menu" onclick="sideMenu_toggle();">
+		<span><a><i class="i m_menu"></i></a></span>
+	</div>
+
+	<div id="m_night" onclick="switchNightMode();">
+		<span><a><i class="i m_night"></i></a></span>
+	</div>
 </div>
 
-<div id="m_top" onclick="gototop();">
-	<span><a><i class="i gototop"></i></a></span>
-</div>
-
-<div id="m_menu" onclick="sideMenu_toggle();">
-	<span><a><i class="i m_menu"></i></a></span>
-</div>
-
-<div id="m_night" onclick="switchNightMode();">
-	<span><a><i class="i m_night"></i></a></span>
-</div>
 
 <?php  $this->need('sliderbar.php'); ?>
 <script>
