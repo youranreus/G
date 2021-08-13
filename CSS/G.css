@@ -920,13 +920,12 @@ code[class*="language-"] span, pre[class*="language-"] span{
 	margin:10px;
 }
 code:not([class*="language-"]) {
-    padding: 2px 8px;
-    margin: 0 4px;
-    word-wrap: break-word;
-    color: #555;
-    background: #eee;
-    border-radius: 3px;
-    font-size: 14px;
+  font-family: "Monaco","Courier New","Consolas";
+  margin: 0 4px;
+  word-wrap: break-word;
+  color: #DD4A68;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 hr {
