@@ -227,6 +227,8 @@ function themeFields(Typecho_Widget_Helper_Layout $layout)
     $layout->addItem($excerpt);
     $imgurl = new Typecho_Widget_Helper_Form_Element_Text('imgurl', null, null, '文章主图', '该图片会用于主页文章列表及文章头图的显示。');
     $layout->addItem($imgurl);
+    // $type = new Typecho_Widget_Helper_Form_Element_Text('type', null, null, '页面类型', '[redirect|normal]');
+    // $layout->addItem($type);
 }
 
 //感谢泽泽大佬的代码
