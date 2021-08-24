@@ -304,12 +304,12 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
  * welcome.php
  */
 
-	#zp {
+#zp {
 	margin: 50px auto;
 	width: 800px;
 	background: white;
 	border-radius: 30px;
-	box-shadow: 0px 0px 70px 6px rgba(0,0,0,0.12);
+	box-shadow: 0 0 70px 6px rgba(0,0,0,0.12);
 	padding: 1px;
 }
 #zp-content {
@@ -751,7 +751,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
   text-align: center;
   height: 19px;
   width: 25px;
-  background-color: RGB(231,181,91,.1);
+  background-color: RGBA(231,181,91,0.1);
   border-radius: 9999px;
   color: rgba(231,181,91,1);
 }
@@ -1076,10 +1076,10 @@ figure:hover figcaption{
 	height:100%;
 }
 .sliderbar-content{
-  margin:10px 0px;
+  margin:10px 0;
   background: #fff;
   border-width: 0;
-  box-shadow: 0px 0px 45px -5px rgb(158 158 158 / 22%);
+  box-shadow: 0 0 45px -5px rgba(158,158,158,.22);
   border-radius: 15px;
   overflow:hidden;
 }
@@ -1101,7 +1101,6 @@ figure:hover figcaption{
   background-position: center center;
   -webkit-filter: grayscale(20%); /* Chrome, Opera */
      -moz-filter: grayscale(20%);
-      -ms-filter: grayscale(20%);
           filter: grayscale(20%);
   opacity: 0.5;
 }
@@ -2162,7 +2161,7 @@ white-space: nowrap;
 	padding: 20px 19px 22.5px;
 }
 .card-item article h2{
-	bottom:19;
+	bottom: 19px;
 	font-size: 1.25rem;
 }
 .article-category-link,.article-date,.article-picnum{
