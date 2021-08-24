@@ -5,11 +5,11 @@
 
 //移动端Hover补偿
 var mobileHover = function () {
-    $('*').on('touchstart', function () {
-        $(this).trigger('hover');
-    }).on('touchend', function () {
-        $(this).trigger('hover');
-    });
+    $('*').on('touchstart', function () {
+        $(this).trigger('hover');
+    }).on('touchend', function () {
+        $(this).trigger('hover');
+    });
 };
 
 //夜间模式开关
