@@ -4,18 +4,18 @@
  */
 
 //夜间模式开关
-function switchNightMode(){
-    var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-    if(night == '0'){
-        document.querySelector('link[title="dark"]').disabled = true;
-        document.querySelector('link[title="dark"]').disabled = false;
-        document.cookie = "night=1;path=/"
-        Qmsg.info("夜间模式开启",QMSG_GLOBALS.DEFAULTS);
-    }else{
-        document.querySelector('link[title="dark"]').disabled = true;
-        document.cookie = "night=0;path=/"
-        Qmsg.info("夜间模式关闭",QMSG_GLOBALS.DEFAULTS);
-    }
+let switchNightMode = () => {
+	let night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+	if (night === '0') {
+		document.querySelector('link[title="dark"]').disabled = true;
+		document.querySelector('link[title="dark"]').disabled = false;
+		document.cookie = "night=1;path=/";
+		Qmsg.info("夜间模式开启", QMSG_GLOBALS.DEFAULTS);
+	} else {
+		document.querySelector('link[title="dark"]').disabled = true;
+		document.cookie = "night=0;path=/";
+		Qmsg.info("夜间模式关闭", QMSG_GLOBALS.DEFAULTS);
+	}
 }
 
 //自动判断夜间模式
