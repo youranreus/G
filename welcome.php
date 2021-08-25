@@ -1,14 +1,14 @@
 <?php
 /**
-* 首页
+* 歌词页面
 *
 * @package custom
 */
 $this -> need('header.php');
 ?>
 
-  <div id="zp">
-    <div id="zp-content">
+  <div id="lyric">
+    <div id="lyric-content">
       <?php $this->content();?>
     </div>
   </div>

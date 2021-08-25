@@ -340,7 +340,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
  * welcome.php
  */
 
-#zp {
+#lyric {
     margin: 50px auto;
     width: 800px;
     background: white;
@@ -349,18 +349,23 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
     padding: 1px;
 }
 
-#zp-content {
+#lyric-content {
     margin: 49px;
     overflow: auto;
 }
 
-#zp-content p {
+#lyric-content p:nth-child(even) {
+    color: RGB(87, 103, 104);
+    margin-top: -20px;
+}
+
+#lyric-content p {
     line-height: 1.7;
     font-size: 1.2rem;
     color: RGB(182, 177, 150);
 }
 
-#zp-content img {
+#lyric-content img {
     display: block;
     margin: 20px auto;
     text-align: center;
@@ -371,7 +376,7 @@ div.code-toolbar > .toolbar a, div.code-toolbar > .toolbar button, div.code-tool
     height: auto;
 }
 
-#zp-content p span {
+#lyric-content p span {
     color: RGB(87, 103, 104);
 }
 
@@ -2294,12 +2299,12 @@ ol.comment-list .comment-child {
         width: 37.5%;
     }
 
-    #zp, #footer, #links, #page, #post, #article, #comments, #archives, #Search {
+    #lyric, #footer, #links, #page, #post, #article, #comments, #archives, #Search {
         width: 65%;
         margin: 20px auto;
     }
 
-    #zp-content, #footer-content, #links-content, #page-content, #post-content, #archives-content, #Search-content {
+    #lyric-content, #footer-content, #links-content, #page-content, #post-content, #archives-content, #Search-content {
         margin: 24px;
     }
 
@@ -2307,7 +2312,7 @@ ol.comment-list .comment-child {
         margin: 0;
     }
 
-    #zp-content p {
+    #lyric-content p {
         font-size: 1rem;
     }
 
@@ -2425,12 +2430,12 @@ ol.comment-list .comment-child {
         width: 100px;
     }
 
-    #zp, #footer, #links, #page, #post, #article, #comments, #archives, #Search {
+    #lyric, #footer, #links, #page, #post, #article, #comments, #archives, #Search {
         width: 95%;
         margin: 20px auto;
     }
 
-    #zp-content, #footer-content, #links-content, #page-content, #post-content, #archives-content, #Search-content {
+    #lyric-content, #footer-content, #links-content, #page-content, #post-content, #archives-content, #Search-content {
         margin: 24px;
     }
 
@@ -2508,7 +2513,7 @@ ol.comment-list .comment-child {
         margin-right: 5px;
     }
 
-    #zp-content p {
+    #lyric-content p {
         font-size: 1rem;
     }
 
