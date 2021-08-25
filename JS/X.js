@@ -44,21 +44,21 @@ let autoNight = () => {
 }
 
 //相册排版by 熊猫小A
-function makeGallery(){
-  var base = 50;
-  $.each($('.photos'), function(i, photoSet){
-    $.each($(photoSet).children(), function(j, item){
-      var img = new Image();
-      img.src = $(item).find('img').attr('src');
-      img.onload = function(){
-        var w = parseFloat(img.width);
-        var h = parseFloat(img.height);
-        $(item).css('width', w*base/h +'px');
-        $(item).css('flex-grow', w*base/h);
-        $(item).find('div').css('padding-top', h/w*100+'%');
-      };
-    });
-  });
+let makeGallery = () => {
+	let base = 50;
+	$.each($('.photos'), function (i, photoSet) {
+		$.each($(photoSet).children(), function (j, item) {
+			let img = new Image();
+			img.src = $(item).find('img').attr('src');
+			img.onload = function () {
+				let w = img.width;
+				let h = img.width;
+				$(item).css('width', w * base / h + 'px');
+				$(item).css('flex-grow', w * base / h);
+				$(item).find('div').css('padding-top', h / w * 100 + '%');
+			};
+		});
+	});
 }
 
 
