@@ -65,19 +65,28 @@ let makeGallery = () => {
 
 //pjax 刷新
 $(document).pjax('a:not(a[target="_blank"], a[no-pjax])', {
-		container: '#pjax-container',
-		fragment: '#pjax-container',
-		timeout: 8000
-}).on('pjax:send',function () {pjax_send();}).on('pjax:complete',function() {pjax_complete();}).on('pjax:click',function() {pjax_click();});
+	container: '#pjax-container',
+	fragment: '#pjax-container',
+	timeout: 8000
+}).on('pjax:send', () => {
+	pjax_send();
+}).on('pjax:complete', () => {
+	pjax_complete();
+}).on('pjax:click', () => {
+	pjax_click();
+});
 
-function pjax_click(){
+let pjax_click = () => {
 	//结束aplayer进程
-	if (typeof aplayers !== 'undefined'){
-    for (var i = 0; i < aplayers.length; i++) {
-        try {aplayers[i].destroy()} catch(e){}
-    }
+	if (typeof aplayers !== 'undefined') {
+		for (let i = 0; i < aplayers.length; i++) {
+			try {
+				aplayers[i].destroy();
+			} catch (e) {
+				console.log(e);
+			}
+		}
 	}
-
 }
 
 function pjax_send(){
