@@ -89,13 +89,12 @@ let pjax_click = () => {
 	}
 }
 
-function pjax_send(){
+let pjax_send = () => {
 	$("#M").addClass("opacity-disappear");
-	if ($('.toc').length) tocbot.destroy();
-
-  if(typeof(NProgress)!=="undefined"){
-    NProgress.start();
-  }
+	if ($('.toc').length)
+		tocbot.destroy();
+	if (typeof (NProgress) !== "undefined")
+		NProgress.start();
 }
 
 function pjax_complete(){
