@@ -231,7 +231,7 @@
                         <a href="<?php Helper::options()->siteUrl() ?><?php if ($this->options->articlePath != '') {
                             echo $this->options->articlePath;
                         } else {
-                            echo 'index/blog';
+                            echo 'index.php/blog';
                         } ?>" <?php if ($this->is('archive') or $this->is('post')) : ?> class="nav-focus"<?php endif; ?>>文章</a>
                     <?php endif; ?>
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
