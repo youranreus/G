@@ -97,48 +97,48 @@ let pjax_send = () => {
 		NProgress.start();
 }
 
-function pjax_complete(){
+let pjax_complete = () => {
 	//Prism重启
 	if (typeof Prism !== 'undefined') {
-		Prism.highlightAll(true,null);
+		Prism.highlightAll(true, null);
 	}
 	//Meting重启
-	var isFunction =false;
-	try{
-  isFunction = typeof(eval('loadMeting'))=="function";
-	}catch(e){}
-		if(isFunction) {
-  	loadMeting();
-	}else{}
+	try {
+		if (typeof (loadMeting) === "function") {
+			loadMeting();
+		}
+	} catch (e) {
+		console.log(e);
+	}
 
 	//显示主页面
 	$("#M").addClass("opacity-show");
 	PreFancybox();
 	imageinfo();
 	toc();
-  makeGallery();
-  agree();
+	makeGallery();
+	agree();
 	collapse_toggle();
-  if(document.getElementById('post-content-article')!=undefined)
-  {
-    renderMathInElement(document.getElementById('post-content-article'), {
-      delimiters: [
-          {left: '$$', right: '$$', display: true},
-          {left: '$', right: '$', display: false}
-      ],
-      throwOnError : true
-    });
-  }
+	if (document.getElementById('post-content-article')) {
+		renderMathInElement(document.getElementById('post-content-article'), {
+			delimiters: [
+				{left: '$$', right: '$$', display: true},
+				{left: '$', right: '$', display: false}
+			],
+			throwOnError: true
+		});
+	}
+
 	jQuery(document).ready(function ($) {
-			$(".lazyload").lazyload({
-						threshold: 100,
-						effect: "fadeIn"
-			});
+		$(".lazyload").lazyload({
+			threshold: 100,
+			effect: "fadeIn"
+		});
 	});
 	ajaxc();
-  if(typeof(NProgress) !== "undefined"){
-    NProgress.done();
-  }
+	if (typeof (NProgress) !== "undefined") {
+		NProgress.done();
+	}
 }
 
 function PreFancybox(){
