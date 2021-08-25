@@ -214,7 +214,7 @@
     <?php $this->header(); ?>
 </head>
 
-<body ontouchstart>
+<body>
 <!-- 头部/pjax -->
 <div id="pjax-container">
     <div id="header">
