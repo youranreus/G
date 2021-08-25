@@ -196,14 +196,12 @@ let show_site_runtime = (bdate) => {
 	site_runtime.innerHTML = D + "<span>天</span>" + H + "<span>小时</span>" + M + "<span>分</span>" + S + "<span>秒</span>"
 }
 
-
-//赞赏按钮
-let feedme_show = () => {
-	let content = $('#feedme-content');
-	if (content.css("display") === 'none') {
-		content.slideDown();
+//滑动显示开关
+let slideToggle = (obj) => {
+	if (obj.css("display") === 'none') {
+		obj.slideDown();
 	} else {
-		content.slideUp();
+		obj.slideUp();
 	}
 }
 
@@ -219,19 +217,8 @@ Smilies = {
     },
     insertTag: function(tag) {
         myField = Smilies.dom("textarea");
-        myField.selectionStart || myField.selectionStart == "0" ? (startPos = myField.selectionStart, endPos = myField.selectionEnd, cursorPos = startPos, myField.value = myField.value.substring(0, startPos) + tag + myField.value.substring(endPos, myField.value.length), cursorPos += tag.length, myField.focus(), myField.selectionStart = cursorPos, myField.selectionEnd = cursorPos) : (myField.value += tag, myField.focus());
+        myField.selectionStart || myField.selectionStart === "0" ? (startPos = myField.selectionStart, endPos = myField.selectionEnd, cursorPos = startPos, myField.value = myField.value.substring(0, startPos) + tag + myField.value.substring(endPos, myField.value.length), cursorPos += tag.length, myField.focus(), myField.selectionStart = cursorPos, myField.selectionEnd = cursorPos) : (myField.value += tag, myField.focus());
     }
-}
-
-
-
-//OwO开关
-function OwO_show(){
-	if($("#OwO-container").css("display")=='none'){
-		 $("#OwO-container").slideDown();
-	}else{
-		 $("#OwO-container").slideUp();
-	 }
 }
 
 //侧栏菜单开关

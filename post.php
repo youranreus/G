@@ -55,7 +55,7 @@
 
 	<p align='center'>
 		<?php if ($this->options->feedIMG): ?>
-			<a id="feedme" onclick="feedme_show()">喝杯水</a>
+			<a id="feedme" onclick="slideToggle($('#feedme-content'))">喝杯水</a>
 		<?php endif; ?>
 		<a id="agree-btn" class="<?php echo $agree['recording']?'agreed':''; ?>" data-cid="<?php echo $this->cid; ?>" data-url="<?php $this->permalink(); ?>">
 	  	<span>ENJOY</span>
@@ -63,7 +63,7 @@
 		</a>
 	</p>
 	<div id="feedme-content">
-		<img src="<?php $this->options->feedIMG(); ?>"></img>
+		<img src="<?php $this->options->feedIMG(); ?>" alt="谢谢大哥"/>
 	</div>
 
 

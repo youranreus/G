@@ -82,7 +82,7 @@ echo $commentClass;
                   <textarea rows="5" name="text" id="textarea" placeholder="在这里输入你的评论..." style="resize:none;"><?php $this->remember('text'); ?></textarea>
               </p>
               <div class="clear">
-                <div class="OwO-logo" onclick="OwO_show()">
+                <div class="OwO-logo" onclick="slideToggle($('#OwO-container'))">
                   <span>(OwO)</span>
                 </div>
                 <button type="submit" class="submit"><?php _e('发射'); ?></button>
