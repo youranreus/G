@@ -150,67 +150,63 @@ let PreFancybox = () => {
 	});
 }
 
-function imageinfo(){
-	$("#post img").each(function(){
-				$(this).wrap(function(){
-					if($(this).is(".bq") || $(this).is("#feedme-content img"))
-					{
-						 return '';
-					}
-          if(enableLazyload)
-          {
-            $(this).addClass("lazyload");
-  					$(this).attr('data-original',$(this).attr("src"));
-  					$(this).attr('src','https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/loading2.gif');
-          }
-          if(!$(this).is("div.photos figure div img"))
-					{
-              $(this).after('<span class="imageinfo">'+ $(this).attr("title") +'</span>');
-					}
-		 });
+//配置图片懒加载&Title显示
+let imageinfo = () => {
+	$("#post img").each(function () {
+		$(this).wrap(function () {
+			if ($(this).is(".bq") || $(this).is("#feedme-content img")) {
+				return '';
+			}
+
+			if (enableLazyload) {
+				$(this).addClass("lazyload");
+				$(this).attr('data-original', $(this).attr("src"));
+				$(this).attr('src', 'https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/loading2.gif');
+			}
+
+			if (!$(this).is("div.photos figure div img")) {
+				$(this).after('<span class="imageinfo">' + $(this).attr("title") + '</span>');
+			}
+		});
 	});
 
-  $("#post-header").each(function(){
-    $(this).addClass("lazyload");
-    $(this).attr('data-original',$(this).css("background-image").slice(5,-2));
-    $(this).css('background-image','url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading-banner.gif)');
-  });
-
-  $(".card-cover").each(function(){
-    $(this).addClass("lazyload");
-    $(this).attr('data-original',$(this).css("background-image").slice(5,-2));
-    $(this).css('background-image','url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading-banner.gif)');
-  });
+	$("#post-header,.card-cover").each(function () {
+		$(this).addClass("lazyload");
+		$(this).attr('data-original', $(this).css("background-image").slice(5, -2));
+		$(this).css('background-image', 'url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading-banner.gif)');
+	});
 }
 
-
-function show_site_runtime(bdate){
-	window.setTimeout("show_site_runtime('" +bdate + "')",1000);
-	X=new Date(bdate);
-	Y=new Date();
-	T=(Y.getTime()-X.getTime());
-	i=24*60*60*1000;
-	d=T/i;
-	D=Math.floor(d);
-	h=(d-D)*24;
-	H=Math.floor(h);
-	m=(h-H)*60;
-	M=Math.floor(m);
-	s=(m-M)*60
-	S=Math.floor(s);
-	site_runtime.innerHTML= D + "<span>天</span>" + H + "<span>小时</span>" + M + "<span>分</span>" + S + "<span>秒</span>"
+//网站运行时间
+let show_site_runtime = (bdate) => {
+	window.setTimeout("show_site_runtime('" + bdate + "')", 1000);
+	let X = new Date(bdate);
+	let Y = new Date();
+	let T = (Y.getTime() - X.getTime());
+	let i = 24 * 60 * 60 * 1000;
+	let d = T / i;
+	let D = Math.floor(d);
+	let h = (d - D) * 24;
+	let H = Math.floor(h);
+	let m = (h - H) * 60;
+	let M = Math.floor(m);
+	let s = (m - M) * 60
+	let S = Math.floor(s);
+	let site_runtime = document.getElementById('site_runtime');
+	site_runtime.innerHTML = D + "<span>天</span>" + H + "<span>小时</span>" + M + "<span>分</span>" + S + "<span>秒</span>"
 }
-
 
 
 //赞赏按钮
-function feedme_show(){
-	if($("#feedme-content").css("display")=='none'){
-		 $("#feedme-content").slideDown();
-	}else{
-		 $("#feedme-content").slideUp();
-	 }
+let feedme_show = () => {
+	let content = $('#feedme-content');
+	if (content.css("display") === 'none') {
+		content.slideDown();
+	} else {
+		content.slideUp();
+	}
 }
+
 //OwO设置
 Smilies = {
     dom: function(id) {
