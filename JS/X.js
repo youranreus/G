@@ -19,27 +19,29 @@ let switchNightMode = () => {
 }
 
 //自动判断夜间模式
-(function(){
-    if(document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") == ''){
-        if(new Date().getHours() > 22 || new Date().getHours() < 6){
-        document.querySelector('link[title="dark"]').disabled = true;
-        document.querySelector('link[title="dark"]').disabled = false;
-        document.cookie = "night=1;path=/"
-        Qmsg.info("夜间模式开启",QMSG_GLOBALS.DEFAULTS);
-        }else{
-        document.cookie = "night=0;path=/"
-        }
-    }else{
-        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-        if(night == '0'){
-        document.querySelector('link[title="dark"]').disabled = true;
-        }else if(night == '1'){
-        document.querySelector('link[title="dark"]').disabled = true;
-        document.querySelector('link[title="dark"]').disabled = false;
-        Qmsg.info("夜间模式开启",QMSG_GLOBALS.DEFAULTS);
-        }
-    }
-})();
+let autoNight = () => {
+	if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
+		if (new Date().getHours() > 22 || new Date().getHours() < 6) {
+			document.querySelector('link[title="dark"]').disabled = true;
+			document.querySelector('link[title="dark"]').disabled = false;
+			document.cookie = "night=1;path=/";
+			Qmsg.info("夜间模式开启", QMSG_GLOBALS.DEFAULTS);
+		} else {
+			document.cookie = "night=0;path=/";
+			console.log('还不是晚上哦');
+		}
+	} else {
+		let night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
+		if (night === '0') {
+			document.querySelector('link[title="dark"]').disabled = true;
+			console.log('还不是晚上哦');
+		} else if (night === '1') {
+			document.querySelector('link[title="dark"]').disabled = true;
+			document.querySelector('link[title="dark"]').disabled = false;
+			Qmsg.info("夜间模式开启", QMSG_GLOBALS.DEFAULTS);
+		}
+	}
+}
 
 //相册排版by 熊猫小A
 function makeGallery(){

@@ -43,7 +43,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
 	<script src="<?php $this->options->themeUrl('JS/lazyload.min.js'); ?>"></script>
 	<script src="<?php $this->options->themeUrl('JS/message.min.js'); ?>"></script>
- 	<script src="<?php $this->options->themeUrl('JS/X.js'); ?>?v=2.4.6.4"></script>
+ 	<script src="<?php $this->options->themeUrl('JS/X.js'); ?>?v=2.4.6.4<?php echo rand(0,1000); ?>"></script>
 	<script src="<?php $this->options->themeUrl('JS/prism.js'); ?>"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.6/dist/jquery.fancybox.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js"></script>
@@ -99,6 +99,7 @@
 	makeGallery();
 	collapse_toggle();
 	agree();
+	autoNight();
 	jQuery(document).ready(function ($) {
 			$(".lazyload").lazyload({
 						threshold: 100,
