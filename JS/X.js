@@ -102,13 +102,13 @@ let pjax_complete = () => {
 	if (typeof Prism !== 'undefined') {
 		Prism.highlightAll(true, null);
 	}
+	//跑完加载进度条
+	if (typeof (NProgress) !== "undefined") {
+		NProgress.done();
+	}
 	//Meting重启
-	try {
-		if (typeof (loadMeting) === "function") {
-			loadMeting();
-		}
-	} catch (e) {
-		console.log(e);
+	if (typeof (loadMeting) === "function") {
+		loadMeting();
 	}
 
 	//显示主页面
@@ -129,27 +129,24 @@ let pjax_complete = () => {
 		});
 	}
 
-	jQuery(document).ready(function ($) {
+	$(document).ready(function ($) {
 		$(".lazyload").lazyload({
 			threshold: 100,
 			effect: "fadeIn"
 		});
 	});
 	ajaxc();
-	if (typeof (NProgress) !== "undefined") {
-		NProgress.done();
-	}
 }
 
-function PreFancybox(){
-	$("#post img").each(function(){
-				$(this).wrap(function(){
-					if($(this).is(".bq") || $(this).is("#feedme-content img"))
-					{
-						 return '';
-					}
-				return '<a data-fancybox="gallery" no-pjax data-type="image" href="' + $(this).attr("src") + '" class="light-link"></a>';
-		 });
+//配置Fancybox灯箱插件
+let PreFancybox = () => {
+	$("#post img").each(function () {
+		$(this).wrap(function () {
+			if ($(this).is(".bq") || $(this).is("#feedme-content img")) {
+				return '';
+			}
+			return '<a data-fancybox="gallery" no-pjax data-type="image" href="' + $(this).attr("src") + '" class="light-link"></a>';
+		});
 	});
 }
 
