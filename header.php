@@ -39,7 +39,6 @@
             }
         }
     </script>
-
     <style>
         <?php if ($this->options->IndexStyle == 1): ?>
         .article-item {
@@ -220,7 +219,7 @@
 <div id="pjax-container">
     <div id="header">
         <?php if ($this->options->headerLOGO): ?>
-            <img id="header-logo" src="<?php echo $this->options->headerLOGO; ?>"/>
+            <img id="header-logo" src="<?php echo $this->options->headerLOGO; ?>" alt="header-logo"/>
         <?php endif; ?>
         <div id="header-container">
             <h2><?php $this->options->title(); ?></h2>
