@@ -222,21 +222,18 @@ Smilies = {
 }
 
 //侧栏菜单开关
-function sideMenu_toggle(){
-	$("#sliderbar").toggleClass("move_left");
-	$("#sliderbar").toggleClass("move_right");
-	$("#sliderbar-cover").toggle();
-	$("#m_search").toggle();
+let sideMenu_toggle = () => {
+	$("#sliderbar").toggleClass("move_left").toggleClass("move_right");
+	$("#sliderbar-cover,#m_search").toggle();
 	$("#pjax-container").toggleClass("main_display");
-	if($("#sliderbar-toc").hasClass("move_left")){
+	if ($("#sliderbar-toc").hasClass("move_left")) {
 		toc_toggle();
 	}
 }
 
 //侧栏目录开关
-function toc_toggle(){
-	$("#sliderbar-toc").toggleClass("move_left");
-	$("#sliderbar-toc").toggleClass("move_right");
+let toc_toggle = () => {
+	$("#sliderbar-toc").toggleClass("move_left").toggleClass("move_right");
 	$('#m_search').removeClass('m_search_c');
 	$("#sliderbar-toc-cover").toggle();
 }
