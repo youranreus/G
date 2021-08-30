@@ -239,7 +239,7 @@ let toc_toggle = () => {
 }
 
 //折叠框开关
-function collapse_toggle(){
+let collapse_toggle = () => {
 	$('.collapse-title').click(function(){
 			if($(this).next().css("display")=='none'){
 				 $(this).next().slideDown();
