@@ -250,40 +250,40 @@ let collapse_toggle = () => {
 }
 
 //点赞
-function agree()
-{
+let agree = () => {
   //  点赞按钮点击
-  $('#agree-btn').on('click', function () {
-    $('#agree-btn').get(0).disabled = true;  //  禁用点赞按钮
+  $("#agree-btn").on("click", function() {
+    $("#agree-btn").get(0).disabled = true; //  禁用点赞按钮
     //  发送 AJAX 请求
     $.ajax({
       //  请求方式 post
-      type: 'post',
+      type: "post",
       //  url 获取点赞按钮的自定义 url 属性
-      url: $('#agree-btn').attr('data-url'),
+      url: $("#agree-btn").attr("data-url"),
       //  发送的数据 cid，直接获取点赞按钮的 cid 属性
-      data: 'agree=' + $('#agree-btn').attr('data-cid'),
+      data: "agree=" + $("#agree-btn").attr("data-cid"),
       async: true,
       timeout: 30000,
       cache: false,
       //  请求成功的函数
-      success: function (data) {
-        var re = /\d/;  //  匹配数字的正则表达式
+      success: function(data) {
+        var re = /\d/; //  匹配数字的正则表达式
         //  匹配数字
         if (re.test(data)) {
           //  把点赞按钮中的点赞数量设置为传回的点赞数量
-          $('#agree-btn .agree-num').html(data);
-          $('#agree-btn').addClass('agreed');
+          $("#agree-btn .agree-num").html(data);
+          $("#agree-btn").addClass("agreed");
         }
       },
-      error: function () {
+      error: function() {
         //  如果请求出错就恢复点赞按钮
-        $('#agree-btn').get(0).disabled = false;
-        Qmsg.info("点赞失败惹",QMSG_GLOBALS.DEFAULTS);
-      },
+        $("#agree-btn").get(0).disabled = false;
+        Qmsg.info("点赞失败惹", QMSG_GLOBALS.DEFAULTS);
+      }
     });
   });
-}
+};
+
 
 
 //目录
