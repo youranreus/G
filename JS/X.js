@@ -347,7 +347,7 @@ let gototop = () => {
 
 
 //ajax评论
-function ajaxc(){
+let ajaxc = () => {
 		var replyTo = '',   //回复评论时候的ID
 		submitButton = $(".submit").eq(0),  //提交评论按钮
 		commentForm = $("#comment-form"),   //评论表单
@@ -357,7 +357,7 @@ function ajaxc(){
 					replyTo = $(this).parent().parent().parent().attr("id");
 			});
 			$(".cancel-comment-reply a").click(function () { replyTo = ''; });
-	};
+		};
 		bindButton();
 
 		/**
