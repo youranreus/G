@@ -287,57 +287,58 @@ let agree = () => {
 
 
 //目录
-function toc(){
-	if($("#post-content-article").length>0){
-		var headerEl = 'h1,h2,h3,h4',  //headers
-	    	content = '#post-content-article',//文章容器
-	    	idArr = {},  //标题数组以确定是否增加索引id
-				status = false;
+let toc = () => {
+	let contentSelector = "#post-content-article";
+  if ($(contentSelector).length > 0) {
+		let content = $(contentSelector);
+    let headerEl = "h1,h2,h3,h4"; //headers
+    let idArr = {}; //标题数组以确定是否增加索引id
+    let status = false;
 
-			$(content).children(headerEl).each(function () {
-			    //去除空格以及多余标点
-			    var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+    content.children(headerEl).each(function() {
+        //去除空格以及多余标点
+        let headerId = $(this).text().replace(
+            /[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g,
+            ""
+          );
 
-			    headerId = headerId.toLowerCase();
-			    if (idArr[headerId]) {
-			        //id已经存在
-			        $(this).attr('id', headerId + '-' + idArr[headerId]);
-			        idArr[headerId]++;
-							status = true;
-			    }
-			    else {
-			        //id未存在
-			        idArr[headerId] = 1;
-			        $(this).attr('id', headerId);
-							status = true;
-			    }
-			});
+        headerId = headerId.toLowerCase();
+        if (idArr[headerId]) {
+          //id已经存在
+          $(this).attr("id", headerId + "-" + idArr[headerId]);
+          idArr[headerId]++;
+          status = true;
+        } else {
+          //id未存在
+          idArr[headerId] = 1;
+          $(this).attr("id", headerId);
+          status = true;
+        }
+      });
 
-				if(status == true){
-					$('#sliderbar-toc').show();
-					$('#m_toc').show();
-					$('#m_search').removeClass('m_search_c');
-				}
-				tocbot.init({
-					tocSelector: '.toc',
-					contentSelector: content,
-					headingSelector: headerEl,
-					positionFixedSelector: '#sliderbar-toc',
-					positionFixedClass: 'is-position-fixed',
-					fixedSidebarOffset: 'auto',
-					scrollSmooth: true,
-					scrollSmoothOffset: 0,
-					headingsOffset: -200
-				});
-	}else{
-		$('#sliderbar-toc').hide();
-		$('#m_toc').hide();
-		$('#m_search').addClass('m_search_c');
-	}
+    if (status === true) {
+      $("#sliderbar-toc").show();
+      $("#m_toc").show();
+      $("#m_search").removeClass("m_search_c");
+    }
+    tocbot.init({
+      tocSelector: ".toc",
+      contentSelector: contentSelector,
+      headingSelector: headerEl,
+      positionFixedSelector: "#sliderbar-toc",
+      positionFixedClass: "is-position-fixed",
+      fixedSidebarOffset: "auto",
+      scrollSmooth: true,
+      scrollSmoothOffset: 0,
+      headingsOffset: -200
+    });
+  } else {
+    $("#sliderbar-toc").hide();
+    $("#m_toc").hide();
+    $("#m_search").addClass("m_search_c");
+  }
+};
 
-
-
-}
 
 function gototop(){
 	$('body,html').animate({scrollTop:0},500);
