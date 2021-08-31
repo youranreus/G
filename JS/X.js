@@ -321,7 +321,7 @@ let toc = () => {
       $("#m_toc").show();
       $("#m_search").removeClass("m_search_c");
     }
-    tocbot.init({
+		tocbot.init({
       tocSelector: ".toc",
       contentSelector: contentSelector,
       headingSelector: headerEl,
@@ -341,9 +341,9 @@ let toc = () => {
 
 
 let gototop = () => {
-	$('body,html').animate({scrollTop:0},500);
-	return false;
-}
+  $("body,html").animate({scrollTop: 0}, 500);
+};
+
 
 
 //ajax评论
