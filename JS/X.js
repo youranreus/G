@@ -190,10 +190,10 @@ let show_site_runtime = (bdate) => {
 	let H = Math.floor(h);
 	let m = (h - H) * 60;
 	let M = Math.floor(m);
-	let s = (m - M) * 60
+	let s = (m - M) * 60;
 	let S = Math.floor(s);
 	let site_runtime = document.getElementById('site_runtime');
-	site_runtime.innerHTML = D + "<span>天</span>" + H + "<span>小时</span>" + M + "<span>分</span>" + S + "<span>秒</span>"
+	site_runtime.innerHTML = D + "<span>天</span>" + H + "<span>小时</span>" + M + "<span>分</span>" + S + "<span>秒</span>";
 }
 
 //滑动显示开关

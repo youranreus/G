@@ -106,7 +106,7 @@
 						effect: "fadeIn"
 			});
 	});
-	show_site_runtime("<?php getBuildTime($this->options->builtTime);?>");
+	show_site_runtime(<?php $this->options->builtTime();?>);
 	<?php echo $this->options->CustomJSf;?>
 	$("#sliderbar-photo").height($('#categoryList').height());
 	if(document.getElementById("sliderbar-video")!=undefined)
