@@ -18,7 +18,6 @@
     text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
-    -webkit-transform-style: preserve-3d;
 }
 
 html {
