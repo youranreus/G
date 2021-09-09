@@ -34,8 +34,12 @@ html {
     color: #333 !important;
 }
 
-#footer, #header, #archives, #page, #post, #links {
+#footer, #header, #archives, #page, #post, #links, #lyric {
     background: #2c2a2a;
+}
+
+#lyric-content p:nth-child(even), #lyric-content p span {
+  color: hsla(0, 0%, 100%, .6);
 }
 
 #page-content-title {
