@@ -25,12 +25,10 @@
        		<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"><img src="<?php $this->options->themeUrl('IMG/upyun.png'); ?>"/></a>
       	<?php endif; ?>
 				<?php if ($this->options->enableAliLogo): ?>
-	       <img src="<?php $this->options->themeUrl('IMG/aliyun.svg'); ?>"/></p>
+	       <img src="<?php $this->options->themeUrl('IMG/aliyun.svg'); ?>"/>
 	      <?php endif; ?>
-
+			</p>
 		</div>
-
-
 	</div>
 
 	<script>
