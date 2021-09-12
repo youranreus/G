@@ -115,6 +115,7 @@ let pjax_complete = () => {
 	$("#M").addClass("opacity-show");
 	PreFancybox();
 	imageinfo();
+	generateTiptools();
 	toc();
 	makeGallery();
 	agree();
@@ -247,6 +248,10 @@ let collapse_toggle = () => {
 				 $(this).next().slideUp();
 			 }
 	})
+}
+
+let generateTiptools = () => {
+    Tipped.create('.post-content-tooltip');
 }
 
 //点赞

@@ -160,3 +160,11 @@ function shortcode_photos( $atts, $content = '' ) {
   return $result;
 }
 add_shortcode( 'photos' , 'shortcode_photos' );
+
+function shortcode_tiptool( $atts, $content = '' ) {
+    $args = shortcode_atts( array(
+        'title' => '?'
+    ), $atts );
+    return '<span class="post-content-tooltip" title='.$content.'><svg t="1631427014249" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3732" width="200" height="200"><path d="M512 960c-243.2 0-448-198.4-448-448 0-243.2 198.4-448 448-448 243.2 0 448 198.4 448 448s-204.8 448-448 448zM512 128C300.8 128 128 300.8 128 512s172.8 384 384 384 384-172.8 384-384-172.8-384-384-384z" fill="#bfbfbf" p-id="3733"></path><path d="M460.8 307.2c0 25.6 19.2 51.2 51.2 51.2s51.2-19.2 51.2-51.2S537.6 256 512 256s-51.2 19.2-51.2 51.2zM512 768c-19.2 0-32-12.8-32-32V448c0-19.2 12.8-32 32-32s32 12.8 32 32v288c0 19.2-12.8 32-32 32z" fill="#bfbfbf" p-id="3734"></path></svg></span>';
+}
+add_shortcode( 'tip' , 'shortcode_tiptool' );
