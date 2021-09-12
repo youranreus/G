@@ -101,10 +101,16 @@ function themeConfig($form) {
     $form->addInput($enablenprogress);
 
     $enableHeaderSearch = new Typecho_Widget_Helper_Form_Element_Radio('enableHeaderSearch', array(
-        '1' => _t('开启') ,
+        '1' => _t('开启'),
         '0' => _t('关闭')
     ) , '0', _t('在头部添加一个搜索') , _t('默认为关闭'));
     $form->addInput($enableHeaderSearch);
+
+    $enableFooterRightDisplay = new Typecho_Widget_Helper_Form_Element_Radio('enableFooterRightDisplay', array(
+        '1' => _t('开启') ,
+        '0' => _t('关闭')
+    ) , '0', _t('移动端底部图标显示') , _t('默认为关闭'));
+    $form->addInput($enableFooterRightDisplay);
 
     $enableUpyun = new Typecho_Widget_Helper_Form_Element_Radio('enableUpyun', array(
         '1' => _t('我是盟友') ,

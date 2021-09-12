@@ -199,6 +199,14 @@
             color: RGB(48, 71, 88);
         }
 
+        <?php if($this->options->enableFooterRightDisplay != 1): ?>
+        @media screen and (max-width: 1024px) {
+          #footer-content-right{
+            display: none;
+          }
+        }
+        <?php endif; ?>
+
         <?php echo $this->options->CustomCSS;?>
     </style>
     <script>

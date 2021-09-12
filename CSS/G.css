@@ -2551,10 +2551,6 @@ ol.comment-list .comment-child {
         font-size: 0.875rem;
     }
 
-    #footer-content-right {
-        display: none;
-    }
-
     #footer-content-right, #footer-content-left {
         float: none;
     }
