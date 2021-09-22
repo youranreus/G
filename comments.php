@@ -1,100 +1,49 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-$GLOBALS['theme_url'] = $this->options->themeUrl;
-$header = Comment_hash_fix($this);
-echo $header;
-?>
-
-
-<?php
-function threadedComments($comments, $options) {
-    $commentClass = '';
-    if ($comments->authorId) {
-        if ($comments->authorId == $comments->ownerId) {
-            $commentClass .= ' comment-by-author';
-        } else {
-            $commentClass .= ' comment-by-user';
-        }
-    }
-
-    $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
-?>
-
-<li id="li-<?php $comments->theId(); ?>" class="comment-body<?php
-if ($comments->levels > 0) {
-    echo ' comment-child';
-    $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
-} else {
-    echo ' comment-parent';
-}
-$comments->alt(' comment-odd', ' comment-even');
-echo $commentClass;
-?>">
-
-<div id="<?php $comments->theId(); ?>">
-        <div class="comment-inner">
-            <div class="comment-author">
-                <?php $comments->gravatar('40', ''); ?>
-                <span><?php $comments->author(); ?></span>
-            </div>
-            <div class="comment-meta">
-                <span><?php $comments->date('Y-m-d H:i'); ?></span>
-            </div>
-            <div class="comment-content">
-              <?php
-                $cos = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/$1.png" class="bq">',$comments->content);
-                $cos = preg_replace('/\:\:(.*?)\:(.*?)\:\:/','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">',$cos);
-                echo $cos;
-              ?>
-            </div>
-            <span class="comment-reply"><?php $comments->reply(); ?></span>
-        </div>
-    </div>
-
-<?php if ($comments->children) { ?>
-    <div class="comment-children">
-        <?php $comments->threadedComments($options); ?>
-    </div>
-<?php } ?>
-</li>
-<?php } ?>
-
-
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <div id="comments">
     <?php $this->comments()->to($comments); ?>
-    <div class="comments-header" id="<?php $this->respondId(); ?>" >
-
-        <?php if($this->allow('comment')): ?>
-          <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form">
-            <img id="comment-loading" src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.0.3/G/IMG/loading.gif"></img>
-            <div class="cancel-comment-reply clear">
-                <?php $comments->cancelReply(); ?>
-            </div>
-              <?php if($this->user->hasLogin()): ?>
-                  <h2 id="response" class="widget-title text-left"><?php _e('添加新评论'); ?></h2>
-              <?php else: ?>
-                <h2 id="response" class="widget-title text-left"><?php _e('添加新评论'); ?></h2>
-                  <input type="text" name="author" id="author" placeholder="称呼" value="<?php $this->remember('author'); ?>" />
-                  <input type="email" name="mail" id="mail" placeholder="电子邮件" value="<?php $this->remember('mail'); ?>" />
-                  <input type="text" name="url" id="url" placeholder="网站"  value="<?php $this->remember('url'); ?>" />
-              <?php endif; ?>
-              <p>
-                  <input name="_" type="hidden" id="comment_" value="<?php echo Helper::security()->getToken(str_replace(array('?_pjax=%23pjax-container', '&_pjax=%23pjax-container'), '', Typecho_Request::getInstance()->getRequestUrl()));?>"/>
-                  <textarea rows="5" name="text" id="textarea" placeholder="在这里输入你的评论..." style="resize:none;"><?php $this->remember('text'); ?></textarea>
-              </p>
-              <div class="clear">
-                <div class="OwO-logo" onclick="slideToggle($('#OwO-container'))">
-                  <span>(OwO)</span>
-                </div>
-                <button type="submit" class="submit"><?php _e('发射'); ?></button>
-              </div>
-              <div id="OwO-container"><?php  $this->need('owo.php'); ?></div>
-          </form>
-        <?php endif; ?>
-		    </div>
-
     <?php if ($comments->have()): ?>
-        <?php $comments->listComments(); ?>
-        <?php $comments->pageNav('<上一页', '下一页>'); ?>
+	<h3><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t('已有 %d 条评论')); ?></h3>
+    
+    <?php $comments->listComments(); ?>
+
+    <?php $comments->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
+    
     <?php endif; ?>
 
+    <?php if($this->allow('comment')): ?>
+    <div id="<?php $this->respondId(); ?>" class="respond">
+        <div class="cancel-comment-reply">
+        <?php $comments->cancelReply(); ?>
+        </div>
+    
+    	<h3 id="response"><?php _e('添加新评论'); ?></h3>
+    	<form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
+            <?php if($this->user->hasLogin()): ?>
+    		<p><?php _e('登录身份: '); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a></p>
+            <?php else: ?>
+    		<p>
+                <label for="author" class="required"><?php _e('称呼'); ?></label>
+    			<input type="text" name="author" id="author" class="text" value="<?php $this->remember('author'); ?>" required />
+    		</p>
+    		<p>
+                <label for="mail"<?php if ($this->options->commentsRequireMail): ?> class="required"<?php endif; ?>><?php _e('Email'); ?></label>
+    			<input type="email" name="mail" id="mail" class="text" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> />
+    		</p>
+    		<p>
+                <label for="url"<?php if ($this->options->commentsRequireURL): ?> class="required"<?php endif; ?>><?php _e('网站'); ?></label>
+    			<input type="url" name="url" id="url" class="text" placeholder="<?php _e('http://'); ?>" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
+    		</p>
+            <?php endif; ?>
+    		<p>
+                <label for="textarea" class="required"><?php _e('内容'); ?></label>
+                <textarea rows="8" cols="50" name="text" id="textarea" class="textarea" required ><?php $this->remember('text'); ?></textarea>
+            </p>
+    		<p>
+                <button type="submit" class="submit"><?php _e('提交评论'); ?></button>
+            </p>
+    	</form>
+    </div>
+    <?php else: ?>
+    <h3><?php _e('评论已关闭'); ?></h3>
+    <?php endif; ?>
 </div>

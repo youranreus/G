@@ -1,80 +1,27 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php
-	if (isset($_POST['agree'])) {
-		if ($_POST['agree'] == $this->cid) {
-				exit(agree($this->cid));
-		}
-		exit('error');
-	}
-	$this->need('header.php');
-	$agree = $this->hidden?array('agree' => 0, 'recording' => true):agreeNum($this->cid);
-?>
+<?php $this->need('header.php'); ?>
 
-<div id="post">
-	<div id="post-header" style="background-image:url(<?php  $imgurl = $this->fields->imgurl;if($imgurl != ''){echo $imgurl;}else{if($this->options->enableFirstIMG == 1 && getPostImg($this)){echo getPostImg($this);}else{echo replaceBannerUrl($this->options->defaultPostIMG);}}?>)">
-		<div id="post-header-mask">
-			<div id="post-header-content">
-				<h2 id="post-content-title"><?php $this->title();?></h2>
-				<span id="post-content-meta"><?php $this->date('F j, Y'); ?> · <?php $this->category(' · '); ?> · <?php get_post_view($this); ?>次阅读</span>
-			</div>
-		</div>
-	</div>
-	<?php
-		$excerpt = $this->fields->excerpt;
-		if($excerpt != ''):
-	 ?>
-	<div id="post-content-excerpt">
-		<blockquote>
-			<p><?php  echo $excerpt;?></p>
-		</blockquote>
-	</div>
-<?php endif; ?>
-	<div id="post-content">
-		<div id="post-content-article">
-			<?php
-			$db = Typecho_Db::get();
-			$sql = $db->select()->from('table.comments')
-			    ->where('cid = ?',$this->cid)
-			    ->where('mail = ?', $this->remember('mail',true))
-			    ->where('status = ?', 'approved')
-			//只有通过审核的评论才能看回复可见内容
-			    ->limit(1);
-			$result = $db->fetchAll($sql);
-			if($this->user->hasLogin() || $result) {
-			    $content = preg_replace("/\[hide\](.*?)\[\/hide\]/sm",'<div class="reply2see">$1</div>',$this->content);
-			}
-			else{
-			    $content = preg_replace("/\[hide\](.*?)\[\/hide\]/sm",'<div class="reply2see">此处内容需要评论回复后方可阅读。</div>',$this->content);
-			}
+<div class="col-mb-12 col-8" id="main" role="main">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <h1 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
+        <ul class="post-meta">
+            <li itemprop="author" itemscope itemtype="http://schema.org/Person"><?php _e('作者: '); ?><a itemprop="name" href="<?php $this->author->permalink(); ?>" rel="author"><?php $this->author(); ?></a></li>
+            <li><?php _e('时间: '); ?><time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date(); ?></time></li>
+            <li><?php _e('分类: '); ?><?php $this->category(','); ?></li>
+        </ul>
+        <div class="post-content" itemprop="articleBody">
+            <?php $this->content(); ?>
+        </div>
+        <p itemprop="keywords" class="tags"><?php _e('标签: '); ?><?php $this->tags(', ', true, 'none'); ?></p>
+    </article>
 
-			emotionContent($content);
-			 ?>
-		</div>
-	</div>
+    <?php $this->need('comments.php'); ?>
 
+    <ul class="post-near">
+        <li>上一篇: <?php $this->thePrev('%s','没有了'); ?></li>
+        <li>下一篇: <?php $this->theNext('%s','没有了'); ?></li>
+    </ul>
+</div><!-- end #main-->
 
-	<p align='center'>
-		<?php if ($this->options->feedIMG): ?>
-			<a id="feedme" onclick="slideToggle($('#feedme-content'))">喝杯水</a>
-		<?php endif; ?>
-		<a id="agree-btn" class="<?php echo $agree['recording']?'agreed':''; ?>" data-cid="<?php echo $this->cid; ?>" data-url="<?php $this->permalink(); ?>">
-	  	<span>ENJOY</span>
-	  	<span class="agree-num"><?php echo $agree['agree']; ?></span>
-		</a>
-	</p>
-	<div id="feedme-content">
-		<img src="<?php $this->options->feedIMG(); ?>" alt="谢谢大哥"/>
-	</div>
-
-
-
-	<div id="post-footer" class="clear">
-		<div id="post-tags"><p><?php $this->tags('', true, 'none'); ?></p></div>
-		<div id="post-lastEdit"><p>最后编辑于<?php echo formatTime($this->modified);?></p></div>
-	</div>
-</div>
-
-
-	<?php $this->need('comments.php'); ?>
-
-	<?php $this->need('footer.php'); ?>
+<?php $this->need('sidebar.php'); ?>
+<?php $this->need('footer.php'); ?>
