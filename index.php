@@ -1,8 +1,8 @@
 <?php
 /**
- * G
+ * a graceful typecho theme
  *
- * @package a graceful typecho theme
+ * @package G
  * @author 季悠然
  * @version 3.0 beta
  * @link https://季悠然.space
