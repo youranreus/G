@@ -2,6 +2,8 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 require_once("lib/G.class.php");
+G::init();
+
 
 function themeConfig($form) {
     echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/CSS/S.css'/>";
@@ -24,4 +26,4 @@ function themeFields($layout) {
 }
 */
 
-G::init();
+
