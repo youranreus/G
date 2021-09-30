@@ -7,7 +7,10 @@ class G {
     public static $config = [
         'favicon'=>'',
         'cdn'=>'',
-        'background'=>''
+        'background'=>'',
+        'themeColor'=>'',
+        'headerColor'=>'',
+        'themeRadius'=>''
     ];
 
     /**
@@ -50,5 +53,21 @@ class G {
         if(preg_match($regex, self::$config['background']) == 0)
             return ($background.": ".self::$config['background'].";");
         return $background."-image: url(".self::$config['background'].");";
+    }
+
+    public static function setColors()
+    {
+        return "
+        :root {
+            --theme-color: ".self::$config["themeColor"].";
+            --header-color: ".self::$config["headerColor"].";
+            --theme-radius: ".self::$config["themeRadius"].";
+        }
+        ";
+    }
+
+    public static function test()
+    {
+        var_dump(self::$config);
     }
 }

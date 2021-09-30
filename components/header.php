@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="<?php G::staticUrl('static/css/normalize.css'); ?>">
     <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>">
     <style>
+        /* 输出自定义主题色 */
+        <?php G::setColors(); ?>
+        /* 设置自定义背景[颜色/图片] */
         html::before {
             <?php echo G::getBackground(); ?>
         }
@@ -22,6 +25,8 @@
 </head>
 <body>
 
-<header id="header">
-    
-</header>
+    <header id="header">
+        <div id="header-title">
+            <h2><?php $this->options->title(); ?></h2>
+        </div>
+    </header>

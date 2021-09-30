@@ -17,6 +17,15 @@ function themeConfig($form) {
 
     $background = new Typecho_Widget_Helper_Form_Element_Text('background', NULL, NULL, _t('背景图片'), _t('可填颜色代码或者图片url'));
     $form->addInput($background);
+
+    $themeColor = new Typecho_Widget_Helper_Form_Element_Text('themeColor', NULL, '#07F', _t('主题色'), _t('一般在链接、按钮的颜色中体现'));
+    $form->addInput($themeColor);
+
+    $headerColor = new Typecho_Widget_Helper_Form_Element_Text('headerColor', NULL, '#6A6A6A', _t('头部色'), _t('想要一朵绿帽子不？'));
+    $form->addInput($headerColor);
+
+    $themeRadius = new Typecho_Widget_Helper_Form_Element_Text('themeRadius', NULL, '30px', _t('主题圆角'), _t('圆还是方，由你来定'));
+    $form->addInput($themeRadius);
 }
 
 /*
