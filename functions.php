@@ -9,6 +9,9 @@ function themeConfig($form) {
 
     $cdn = new Typecho_Widget_Helper_Form_Element_Text('cdn', NULL, NULL, _t('是否开启静态资源cdn加速'), _t('填写加速域名或者jsdelivr，留空则使用本地文件'));
     $form->addInput($cdn);
+
+    $background = new Typecho_Widget_Helper_Form_Element_Text('background', NULL, NULL, _t('背景图片'), _t('可填颜色代码或者图片url'));
+    $form->addInput($background);
 }
 
 /*

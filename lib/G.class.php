@@ -7,10 +7,15 @@ class G {
     public static $config = [
         'favicon'=>'',
         'cdn'=>'',
+        'background'=>''
     ];
 
+    /**
+     * 初始化
+     */
     public static function init()
     {
+        //读取配置内容
         $options = Helper::options();
         $keys = array_keys(self::$config);
         foreach ($keys as $key) {
@@ -33,5 +38,20 @@ class G {
         return self::$config['cdn'].$path;
     }
 
-    
+    /**
+     * 获取背景信息
+     */
+    public static function getBackground()
+    {
+        $background = "background: ";
+        $regex = '@(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))@';
+        if(preg_match($regex, self::$config['background']) == 0)
+        {
+            return ($background.self::$config['background'].";");
+        }
+        else
+        {
+            return $background."url(".self::$config['background'].");";
+        }
+    }
 }
