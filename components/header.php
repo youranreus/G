@@ -33,33 +33,35 @@
 </head>
 <body>
 
-    <header id="header">
-        <div id="header-title">
-            <h2><?php $this->options->title(); ?></h2>
-        </div>
-        <div id="header-content">
-            <div id="header-content-left">
-                <?php $this->options->description(); ?>
+    <div id="main">
+        <header id="header">
+            <div id="header-title">
+                <h2><?php $this->options->title(); ?></h2>
             </div>
-            <div id="header-content-right">
-                <nav>
-                    <a href="<?php Helper::options()->siteUrl() ?>" <?php if ($this->is('index')) : ?> class="nav-focus"<?php endif; ?>>首页</a>
-                    <?php if ($this->options->enableIndexPage): ?>
-                        <a href="<?php Helper::options()->siteUrl() ?><?php if ($this->options->articlePath != '') {
-                            echo $this->options->articlePath;
-                        } else {
-                            echo 'index.php/blog';
-                        } ?>" <?php if ($this->is('archive') or $this->is('post')) : ?> class="nav-focus"<?php endif; ?>>文章</a>
-                    <?php endif; ?>
-                    <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-                    <?php while ($pages->next()): ?>
-                        <?php if ($pages->slug == 'links' or strtolower($pages->slug) == 'about' or $pages->fields->showHeader == 1): ?>
-                            <a class="<?php if ($this->is('page', $pages->slug)): ?> nav-focus<?php endif; ?>"
-                               href="<?php $pages->permalink(); ?>"
-                               title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+            <div id="header-content">
+                <div id="header-content-left">
+                    <?php $this->options->description(); ?>
+                </div>
+                <div id="header-content-right">
+                    <nav>
+                        <a href="<?php Helper::options()->siteUrl() ?>" <?php if ($this->is('index')) : ?> class="nav-focus"<?php endif; ?>>首页</a>
+                        <?php if ($this->options->enableIndexPage): ?>
+                            <a href="<?php Helper::options()->siteUrl() ?><?php if ($this->options->articlePath != '') {
+                                echo $this->options->articlePath;
+                            } else {
+                                echo 'index.php/blog';
+                            } ?>" <?php if ($this->is('archive') or $this->is('post')) : ?> class="nav-focus"<?php endif; ?>>文章</a>
                         <?php endif; ?>
-                    <?php endwhile; ?>
-                </nav>
+                        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+                        <?php while ($pages->next()): ?>
+                            <?php if ($pages->slug == 'links' or strtolower($pages->slug) == 'about' or $pages->fields->showHeader == 1): ?>
+                                <a class="<?php if ($this->is('page', $pages->slug)): ?> nav-focus<?php endif; ?>"
+                                href="<?php $pages->permalink(); ?>"
+                                title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+                            <?php endif; ?>
+                        <?php endwhile; ?>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+    </div>
