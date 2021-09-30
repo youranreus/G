@@ -1,0 +1,28 @@
+@charset "UTF-8";
+html {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html::before {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center 0;
+}

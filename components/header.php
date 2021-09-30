@@ -13,6 +13,11 @@
         ), '', ' | '); ?><?php $this->options->title(); ?></title>
     <link rel="stylesheet" href="<?php G::staticUrl('static/css/normalize.css'); ?>">
     <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>">
+    <style>
+        html::before {
+            <?php echo G::getBackground(); ?>
+        }
+    </style>
     <?php $this->header(); ?>
 </head>
 <body>
