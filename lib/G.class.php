@@ -31,22 +31,21 @@ class G {
     public static function staticUrl($path)
     {
         if(self::$config['cdn'] == 'local' || self::$config['cdn'] == '' || self::$config['cdn'] == 'jsdelivr')
-        {
             return Helper::options()->themeUrl($path);
-        }
         
         return self::$config['cdn'].$path;
     }
 
     /**
      * 获取背景信息
+     * regex source: https://daringfireball.net/2010/07/improved_regex_for_matching_urls
      */
     public static function getBackground()
     {
         $background = "background";
         if(self::$config['background'] == '')
             return $background.": #fff;";
-
+        
         $regex = '@(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))@';
         if(preg_match($regex, self::$config['background']) == 0)
             return ($background.": ".self::$config['background'].";");
