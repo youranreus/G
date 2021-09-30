@@ -31,9 +31,9 @@ class G {
     public static function staticUrl($path)
     {
         if(self::$config['cdn'] == 'local' || self::$config['cdn'] == '' || self::$config['cdn'] == 'jsdelivr')
-            return Helper::options()->themeUrl($path);
-        
-        return self::$config['cdn'].$path;
+            Helper::options()->themeUrl($path);
+        else
+            return self::$config['cdn'].$path;
     }
 
     /**
