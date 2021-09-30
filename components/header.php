@@ -11,15 +11,18 @@
             'tag'       =>  _t('标签 %s 下的文章'),
             'author'    =>  _t('%s 发布的文章')
         ), '', ' | '); ?><?php $this->options->title(); ?></title>
-    <link rel="stylesheet" href="<?php G::staticUrl('static/css/normalize.css'); ?>">
-    <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>">
     <style>
         /* 输出自定义主题色 */
         <?php G::setColors(); ?>
+    </style>
+    <link rel="stylesheet" href="<?php G::staticUrl('static/css/normalize.css'); ?>">
+    <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>">
+    <style>
         /* 设置自定义背景[颜色/图片] */
         html::before {
             <?php echo G::getBackground(); ?>
         }
+        <?php $this->options->customCSS(); ?>
     </style>
     <?php $this->header(); ?>
 </head>
@@ -29,4 +32,5 @@
         <div id="header-title">
             <h2><?php $this->options->title(); ?></h2>
         </div>
+        
     </header>

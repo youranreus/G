@@ -26,6 +26,9 @@ function themeConfig($form) {
 
     $themeRadius = new Typecho_Widget_Helper_Form_Element_Text('themeRadius', NULL, '30px', _t('主题圆角'), _t('圆还是方，由你来定'));
     $form->addInput($themeRadius);
+
+    $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', NULL, NULL, _t('自定义CSS'), _t(''));
+    $form->addInput($customCSS);
 }
 
 /*
