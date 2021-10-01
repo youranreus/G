@@ -87,7 +87,7 @@ class G {
             --theme-color: ".self::$config["themeColor"].";
             --header-color: ".self::$config["headerColor"].";
             --theme-radius: ".self::$config["themeRadius"].";
-            --theme-Shadow: ".self::getBoxShadow(self::$config["themeShadow"]).";
+            --theme-shadow: ".self::getBoxShadow(self::$config["themeShadow"]).";
         }
         ";
     }

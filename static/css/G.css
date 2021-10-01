@@ -27,6 +27,14 @@ html::before {
     background-position: center 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    color: var(--theme-color, #07f);
+}
+
 /* Basic */
 #main {
     width: 800px;
@@ -35,9 +43,10 @@ html::before {
 
 /* Header */
 #header {
-    padding: 30px;
+    padding: 40px;
     border-radius: var(--theme-radius, 30px);
     background: var(--header-color, #6A6A6A);
+    box-shadow: var(--theme-shadow, none);
     color: #fff;
 }
 
@@ -53,6 +62,37 @@ html::before {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+}
+
+#header-content-left p {
+    color: hsla(0, 0%, 100%, .6);
+    margin: 0;
+}
+
+#header-content-right nav a {
+    position: relative;
+    display: inline-block;
+    color: hsla(0, 0%, 100%, .6);
+    margin-left: .5rem;
+    transition: color .2s;
+}
+
+#header-content-right nav a:hover, #header-content-right nav a.nav-focus {
+    color: #fff;
+}
+
+#header-content-right nav a.nav-focus::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background: #fff;
+    top: -5px;
+    right: -5px;
+    border-radius: 1000rem;
+    opacity: 0.7;
+    transition: opacity .2s;
 }
 
 

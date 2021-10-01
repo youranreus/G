@@ -21,7 +21,7 @@
         <?php echo G::setColors(); ?>
     </style>
     <link rel="stylesheet" href="<?php G::staticUrl('static/css/normalize.css'); ?>">
-    <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>?v=1">
+    <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>?v=3.0">
     <style>
         /* 设置自定义背景[颜色/图片] */
         html::before {
@@ -40,7 +40,7 @@
             </div>
             <div id="header-content">
                 <div id="header-content-left">
-                    <?php $this->options->description(); ?>
+                    <p><?php $this->options->description(); ?></p>
                 </div>
                 <div id="header-content-right">
                     <nav>

@@ -27,6 +27,12 @@ function themeConfig($form) {
     $themeRadius = new Typecho_Widget_Helper_Form_Element_Text('themeRadius', NULL, '30px', _t('主题圆角'), _t('圆还是方，由你来定'));
     $form->addInput($themeRadius);
 
+    $themeShadow = new Typecho_Widget_Helper_Form_Element_Radio('themeShadow', array(
+        '1' => _t('开启') ,
+        '0' => _t('关闭')
+    ) , '1', _t('是否开启主题阴影') , _t('默认开启'));
+    $form->addInput($themeShadow);
+
     $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', NULL, NULL, _t('自定义CSS'), _t(''));
     $form->addInput($customCSS);
 }
