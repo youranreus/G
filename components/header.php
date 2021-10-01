@@ -18,10 +18,10 @@
         ), '', ' | '); ?><?php $this->options->title(); ?></title>
     <style>
         /* 输出自定义主题色 */
-        <?php G::setColors(); ?>
+        <?php echo G::setColors(); ?>
     </style>
     <link rel="stylesheet" href="<?php G::staticUrl('static/css/normalize.css'); ?>">
-    <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>">
+    <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>?v=1">
     <style>
         /* 设置自定义背景[颜色/图片] */
         html::before {

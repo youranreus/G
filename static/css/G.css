@@ -26,3 +26,52 @@ html::before {
     -o-background-size: cover;
     background-position: center 0;
 }
+
+/* Basic */
+#main {
+    width: 800px;
+    margin: 50px auto;
+}
+
+/* Header */
+#header {
+    padding: 30px;
+    border-radius: var(--theme-radius, 30px);
+    background: var(--header-color, #6A6A6A);
+    color: #fff;
+}
+
+#header-title h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: 200;
+    font-size: 2rem;
+    margin-bottom: 1.125rem;
+}
+
+#header-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+
+
+@media (max-width: 1024px) {
+    .text {
+      font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .text {
+      font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text {
+      font-size: 16px;
+    }
+}
