@@ -100,7 +100,7 @@ class G {
      */
     public static function getBoxShadow($config)
     {
-        return ($config == 1) ? "0 0 70px 6px rgba(0, 0, 0, 0.12)" : "none";
+        return ($config == 1) ? "0 6px 12px 0 rgb(31 35 41 / 8%)" : "none";
     }
 
     public static function test()
