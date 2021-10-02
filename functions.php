@@ -12,6 +12,9 @@ function themeConfig($form) {
     $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
     $form->addInput($favicon);
 
+    $buildYear = new Typecho_Widget_Helper_Form_Element_Text('buildYear', NULL, date('Y'), _t('建站年份'), _t('什么时候开始建站的呀'));
+    $form->addInput($buildYear);
+
     $cdn = new Typecho_Widget_Helper_Form_Element_Text('cdn', NULL, NULL, _t('是否开启静态资源cdn加速'), _t('填写加速域名或者jsdelivr，留空则使用本地文件'));
     $form->addInput($cdn);
 

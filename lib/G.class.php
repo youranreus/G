@@ -25,7 +25,8 @@ class G {
         'themeRadius'=>'',
         'themeShadow'=>'',
         'autoBanner'=>'',
-        'defaultBanner'=>''
+        'defaultBanner'=>'',
+        'buildYear'=>''
     ];
 
     /**
