@@ -136,6 +136,15 @@ class G {
             return 'none';
     }
 
+    public static function getICP()
+    {
+        if(Helper::options()->icp != '')
+            return Helper::options()->icp;
+        if(isset(self::$advanceConfig["customICP"]))
+            return self::$advanceConfig["customICP"];
+        return '还没有备案噢';
+    }
+
     public static function test()
     {
         var_dump(self::$config);
