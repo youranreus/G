@@ -18,6 +18,9 @@ function themeConfig($form) {
     $cdn = new Typecho_Widget_Helper_Form_Element_Text('cdn', NULL, NULL, _t('是否开启静态资源cdn加速'), _t('填写加速域名或者jsdelivr，留空则使用本地文件'));
     $form->addInput($cdn);
 
+    $icp = new Typecho_Widget_Helper_Form_Element_Text('icp', NULL, NULL, _t('ICP备案号'), _t('没有可以不填哟'));
+    $form->addInput($icp);
+
     $background = new Typecho_Widget_Helper_Form_Element_Text('background', NULL, NULL, _t('背景图片'), _t('可填颜色代码或者图片url'));
     $form->addInput($background);
 
@@ -47,6 +50,9 @@ function themeConfig($form) {
 
     $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', NULL, NULL, _t('自定义CSS'), _t(''));
     $form->addInput($customCSS);
+
+    $advanceSetting = new Typecho_Widget_Helper_Form_Element_Textarea('advanceSetting', NULL, NULL, _t('高级设置'), _t('看着就很高级'));
+    $form->addInput($advanceSetting);
 }
 
 

@@ -26,8 +26,12 @@ class G {
         'themeShadow'=>'',
         'autoBanner'=>'',
         'defaultBanner'=>'',
-        'buildYear'=>''
+        'buildYear'=>'',
+        'icp'=>'',
+        'advanceSetting'=>''
     ];
+
+    public static $advanceConfig = [];
 
     /**
      * 初始化
@@ -39,11 +43,12 @@ class G {
         //读取配置内容
         $options = Helper::options();
         $keys = array_keys(self::$config);
-        foreach ($keys as $key) {
-            if(!empty($options->{$key})){
+        foreach ($keys as $key) 
+            if(!empty($options->{$key}))
                 self::$config[$key] = $options->{$key};
-            }
-        }
+        $advanceConfig = explode("\n",self::$config['advanceSetting']);
+        foreach($advanceConfig as $item)
+            self::$advanceConfig[explode("=",$item)[0]] = explode("=",$item)[1];
     }
 
     /**
