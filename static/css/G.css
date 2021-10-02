@@ -126,7 +126,7 @@ a:link, a:visited {
 }
 
 .article-item:hover {
-    transform: scale(0.99);
+    transform: scale(1.01);
 }
 
 .article-banner-wrap {
@@ -154,14 +154,6 @@ a:link, a:visited {
     -webkit-background-size: cover;
     -o-background-size: cover;
     background-position: center center;
-}
-
-.article-banner::before {
-    content: '';
-    height: 100%;
-    background: rgba(0,0,0,.1);
-    background: -webkit-linear-gradient(left,transparent,rgba(255,255,255,.5));
-    background: linear-gradient(to right,transparent,rgba(255,255,255,.5));
 }
 
 .article-title {
@@ -223,14 +215,21 @@ a.prev:hover, a.next:hover {
 
 
 @media (max-width: 1024px) {
-    .text {
-      font-size: 16px;
+    #main {
+        width: 95%;
+    }
+
+    .article-item {
+        width: 100%;
     }
 }
 
 @media (max-width: 768px) {
-    .text {
-      font-size: 16px;
+    #main {
+        width: 95%;
+    }
+    #container {
+        width: 95%;
     }
 }
 
