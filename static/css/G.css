@@ -58,6 +58,7 @@ a:link, a:visited {
     background: var(--header-color, #6A6A6A);
     box-shadow: var(--theme-shadow, none);
     color: #fff;
+    margin-bottom: 50px;
 }
 
 #header-title h2 {
@@ -215,8 +216,35 @@ a.prev:hover, a.next:hover {
 
 
 @media (max-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+
     #main {
         width: 95%;
+        margin: 20px auto;
+    }
+
+    #container {
+        width: 100%;
+    }
+
+    #header {
+        margin-bottom: 20px;
+        padding: 25px;
+    }
+
+    #header-title h2 {
+        font-size: 1.5rem;
+    }
+
+    #header-content {
+        display: block;
+    }
+
+    #header-content-right {
+        margin-top: 20px;
+        text-align: center;
     }
 
     .article-item {
@@ -225,16 +253,9 @@ a.prev:hover, a.next:hover {
 }
 
 @media (max-width: 768px) {
-    #main {
-        width: 95%;
-    }
-    #container {
-        width: 95%;
-    }
+    
 }
 
 @media (max-width: 480px) {
-    .text {
-      font-size: 16px;
-    }
+    
 }
