@@ -114,6 +114,7 @@ a:link, a:visited {
 }
 
 .article-item {
+    position: relative;
     width: 325px;
     margin-bottom: 20px;
     padding: 30px;
@@ -121,17 +122,51 @@ a:link, a:visited {
     box-shadow: var(--theme-shadow, none);
     border-radius: var(--theme-radius, 30px);
     transition: transform .2s ease;
+    overflow: hidden;
 }
 
 .article-item:hover {
     transform: scale(0.99);
 }
 
-.article-link {
-    display: block;
+.article-banner-wrap {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    background: rgba(255,255,255,.1);
+    background: -webkit-linear-gradient(left,transparent,rgba(255,255,255,1));
+    background: linear-gradient(to left,transparent,rgba(255,255,255,1));
+}
+
+.article-banner {
+    opacity: 0.2;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    right: 0;
+    top: 0;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+}
+
+.article-banner::before {
+    content: '';
+    height: 100%;
+    background: rgba(0,0,0,.1);
+    background: -webkit-linear-gradient(left,transparent,rgba(255,255,255,.5));
+    background: linear-gradient(to right,transparent,rgba(255,255,255,.5));
 }
 
 .article-title {
+    position: relative;
+    z-index: 2;
     font-size: 1.25rem;
     margin: 0;
     margin-bottom: 0.875rem;
@@ -142,6 +177,8 @@ a:link, a:visited {
 }
 
 .article-data {
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
 }

@@ -5,5 +5,9 @@
             <span><?php $this->category(); ?></span>
             <span><?php $this->date('Y-m-d'); ?></span>
         </div>
+        <?php if(G::getArticleBanner($this) != 'none'): ?>
+            <div class="article-banner-wrap"></div>
+            <div style="background-image: url(<?php echo G::getArticleBanner($this); ?>)" class="article-banner"></div>
+        <?php endif; ?>
     </div>
 <?php endwhile; ?>

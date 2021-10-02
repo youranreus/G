@@ -27,21 +27,30 @@ function themeConfig($form) {
     $themeRadius = new Typecho_Widget_Helper_Form_Element_Text('themeRadius', NULL, '30px', _t('主题圆角'), _t('圆还是方，由你来定'));
     $form->addInput($themeRadius);
 
+    $defaultBanner = new Typecho_Widget_Helper_Form_Element_Text('defaultBanner', NULL, NULL, _t('默认头图'), _t('填入图片API时，可以使用{random}来替换生成一个随机字符串以达到随机图片得效果'));
+    $form->addInput($defaultBanner);
+
     $themeShadow = new Typecho_Widget_Helper_Form_Element_Radio('themeShadow', array(
         '1' => _t('开启') ,
         '0' => _t('关闭')
     ) , '1', _t('是否开启主题阴影') , _t('默认开启'));
     $form->addInput($themeShadow);
 
+    $autoBanner = new Typecho_Widget_Helper_Form_Element_Radio('autoBanner', array(
+        '1' => _t('开启') ,
+        '0' => _t('关闭')
+    ) , '1', _t('自动获取第一张图片作为头图') , _t('默认开启'));
+    $form->addInput($autoBanner);
+
     $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', NULL, NULL, _t('自定义CSS'), _t(''));
     $form->addInput($customCSS);
 }
 
-/*
+
 function themeFields($layout) {
-    $logoUrl = new Typecho_Widget_Helper_Form_Element_Text('logoUrl', NULL, NULL, _t('站点LOGO地址'), _t('在这里填入一个图片URL地址, 以在网站标题前加上一个LOGO'));
-    $layout->addItem($logoUrl);
+    $imgurl = new Typecho_Widget_Helper_Form_Element_Text('imgurl', NULL, NULL, _t('文章头图地址'), _t('在这里填入一个图片URL地址'));
+    $layout->addItem($imgurl);
 }
-*/
+
 
 

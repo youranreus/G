@@ -23,7 +23,9 @@ class G {
         'themeColor'=>'',
         'headerColor'=>'',
         'themeRadius'=>'',
-        'themeShadow'=>''
+        'themeShadow'=>'',
+        'autoBanner'=>'',
+        'defaultBanner'=>''
     ];
 
     /**
@@ -101,6 +103,31 @@ class G {
     public static function getBoxShadow($config)
     {
         return ($config == 1) ? "0 6px 12px 0 rgb(31 35 41 / 8%)" : "none";
+    }
+
+    /**
+     * 获取文章头图
+     *
+     * @param Object $post
+     * @return String
+     */
+    public static function getArticleBanner($post)
+    {
+        $img = array();
+        $banner = $post->fields->imgurl;
+
+        if(isset($banner) && $banner != '')
+            return $post->fields->imgurl;
+        if(self::$config['defaultBanner'] != '')
+            return self::$config['defaultBanner'];
+        if(self::$config['autoBanner'] == 0)
+            return 'none';
+        
+        preg_match_all("/<img.*?src=\"(.*?)\".*?\/?>/i", $post->content, $img);
+        if (count($img) > 0 && count($img[0]) > 0)
+            return $img[1][0];
+        else
+            return 'none';
     }
 
     public static function test()
