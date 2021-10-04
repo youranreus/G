@@ -30,10 +30,14 @@ class G {
         'icp'=>'',
         'defaultArticlePath'=>'',
         'enableIndexPage'=>'',
-        'advanceSetting'=>''
+        'advanceSetting'=>'',
+        'footerLOGO'=>'',
+        'enableUPYUNLOGO'=>''
     ];
 
     public static $advanceConfig = [];
+
+    public static $themeUrl = '';
 
     /**
      * 初始化
@@ -51,6 +55,7 @@ class G {
         $advanceConfig = explode("\n",self::$config['advanceSetting']);
         foreach($advanceConfig as $item)
             self::$advanceConfig[explode("=",$item)[0]] = explode("=",$item)[1];
+        self::$themeUrl = Helper::options()->themeUrl.'/';
     }
 
     /**
@@ -62,7 +67,7 @@ class G {
     public static function staticUrl($path)
     {
         if(self::$config['cdn'] == 'local' || self::$config['cdn'] == '' || self::$config['cdn'] == 'jsdelivr')
-            Helper::options()->themeUrl($path);
+            return self::$themeUrl.$path;
         else
             return self::$config['cdn'].$path;
     }
@@ -167,8 +172,25 @@ class G {
         return $path;
     }
 
+    /**
+     * 以HTML格式返回底部LOGO
+     *
+     * @return String
+     */
+    public static function getFooterLogos()
+    {
+        if(self::$config['enableUPYUNLOGO'] == 1)
+            $logos = '<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="'.self::staticUrl('static/img/upyun.png').'"/></a>';
+        else
+            $logos = '';
+        $imgs = explode(',', self::$config["footerLOGO"]);
+        foreach($imgs as $img)
+            $logos = $logos.'<img src="'.$img.'" />';
+        return $logos;
+    }
+
     public static function test()
     {
-        var_dump(self::$config);
+        var_dump(self::$themeUrl);
     }
 }

@@ -3,7 +3,7 @@
     <footer>
         <div id="footer-content">
             <div id="footer-sponsor">
-                <p>这里是一些图片</p>
+                <?php echo G::getFooterLogos(); ?>
             </div>
             <nav id="footer-nav">
 				<a href="<?php Helper::options()->siteUrl()?>" <?php if ($this->is('index')) : ?> class="nav-focus"<?php endif; ?>>首页</a>

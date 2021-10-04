@@ -36,7 +36,7 @@ a:link, a:visited {
 }
 
 a.icp {
-    color: #fff;
+    color: hsla(0, 0%, 100%, .8);
 }
 
 .clear, .clear::before, .clear::after {
@@ -128,7 +128,7 @@ footer {
     border-radius: var(--theme-radius, 30px);
     background: var(--header-color, #6A6A6A);
     box-shadow: var(--theme-shadow, none);
-    color: #fff;
+    color: hsla(0, 0%, 100%, .8);
     margin-top: 50px;
     font-size: 0.875rem;
 }
@@ -171,6 +171,11 @@ footer p {
     border-radius: 1000rem;
     opacity: 0.7;
     transition: opacity .2s;
+}
+
+#footer-sponsor img, #footer-sponsor a{
+    height: 1.35rem;
+    margin-right: 5px;
 }
 
 /* Articles */

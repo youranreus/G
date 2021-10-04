@@ -36,6 +36,15 @@ function themeConfig($form) {
     $defaultBanner = new Typecho_Widget_Helper_Form_Element_Text('defaultBanner', NULL, NULL, _t('默认头图'), _t('填入图片API时，可以使用{random}来替换生成一个随机字符串以达到随机图片得效果'));
     $form->addInput($defaultBanner);
 
+    $footerLOGO = new Typecho_Widget_Helper_Form_Element_Text('footerLOGO', NULL, NULL, _t('底部左侧logo'), _t('填写logo图片链接，用,分割'));
+    $form->addInput($footerLOGO);
+
+    $enableUPYUNLOGO = new Typecho_Widget_Helper_Form_Element_Radio('enableUPYUNLOGO', array(
+        '1' => _t('开启') ,
+        '0' => _t('关闭')
+    ) , '0', _t('是否开启又拍云联盟图标展示') , _t('默认关闭'));
+    $form->addInput($enableUPYUNLOGO);
+
     $themeShadow = new Typecho_Widget_Helper_Form_Element_Radio('themeShadow', array(
         '1' => _t('开启') ,
         '0' => _t('关闭')
@@ -54,7 +63,7 @@ function themeConfig($form) {
     ) , '0', _t('是否使用独立页面作首页') , _t('默认不使用'));
     $form->addInput($enableIndexPage);
 
-    $defaultArticlePath = new Typecho_Widget_Helper_Form_Element_Text('defaultArticlePath', NULL, 'index.php/blog', _t('默认头部文章路径'), _t(''));
+    $defaultArticlePath = new Typecho_Widget_Helper_Form_Element_Text('defaultArticlePath', NULL, 'index.php/blog', _t('默认头部文章路径'), _t('前面不需要加/'));
     $form->addInput($defaultArticlePath);
 
     $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', NULL, NULL, _t('自定义CSS'), _t(''));
