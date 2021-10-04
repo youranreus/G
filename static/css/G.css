@@ -124,7 +124,7 @@ a.icp {
 
 /* Footer */
 footer {
-    padding: 40px;
+    padding: 30px 40px;
     border-radius: var(--theme-radius, 30px);
     background: var(--header-color, #6A6A6A);
     box-shadow: var(--theme-shadow, none);
@@ -135,6 +135,42 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+#footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+#footer-nav {
+    text-align: right;
+}
+
+#footer-nav a {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    margin-left: 5px;
+    transition: all .2s;
+}
+
+#footer-nav a:hover {
+    transform: translateY(-2px);
+}
+
+#footer-nav a.nav-focus::before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background: #fff;
+    top: -5px;
+    right: -5px;
+    border-radius: 1000rem;
+    opacity: 0.7;
+    transition: opacity .2s;
 }
 
 /* Articles */
