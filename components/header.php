@@ -21,7 +21,7 @@
         <?php echo G::setColors(); ?>
     </style>
     <link rel="stylesheet" href="<?php G::staticUrl('static/css/normalize.css'); ?>">
-    <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>?v=3.07">
+    <link rel="stylesheet" href="<?php G::staticUrl('static/css/G.css'); ?>?v=3.091">
     <style>
         /* 设置自定义背景[颜色/图片] */
         html::before {
@@ -44,20 +44,18 @@
                 </div>
                 <div id="header-content-right">
                     <nav>
-                        <a href="<?php Helper::options()->siteUrl() ?>" <?php if ($this->is('index')) : ?> class="nav-focus"<?php endif; ?>>首页</a>
+                        <a href="<?php $this->options->siteUrl() ?>" <?php if ($this->is('index')) : ?> class="nav-focus"<?php endif; ?>>首页</a>
                         <?php if ($this->options->enableIndexPage): ?>
-                            <a href="<?php Helper::options()->siteUrl() ?><?php if ($this->options->articlePath != '') {
-                                echo $this->options->articlePath;
-                            } else {
-                                echo 'index.php/blog';
-                            } ?>" <?php if ($this->is('archive') or $this->is('post')) : ?> class="nav-focus"<?php endif; ?>>文章</a>
+                            <a href="<?php echo G::getArticlePath(); ?>" <?php if ($this->is('archive') or $this->is('post')) : ?> class="nav-focus"<?php endif; ?>>文章</a>
                         <?php endif; ?>
                         <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                         <?php while ($pages->next()): ?>
-                            <?php if ($pages->slug == 'links' or strtolower($pages->slug) == 'about' or $pages->fields->showHeader == 1): ?>
-                                <a class="<?php if ($this->is('page', $pages->slug)): ?> nav-focus<?php endif; ?>"
-                                href="<?php $pages->permalink(); ?>"
-                                title="<?php $pages->title(); ?>"><?php $pages->title(); ?></a>
+                            <?php if ($pages->slug == 'links' or strtolower($pages->slug) == 'about'): ?>
+                                <a 
+                                    <?php if ($this->is('page', $pages->slug)): ?>class="nav-focus"<?php endif; ?>
+                                    href="<?php $pages->permalink(); ?>"
+                                    title="<?php $pages->title(); ?>"
+                                ><?php $pages->title(); ?></a>
                             <?php endif; ?>
                         <?php endwhile; ?>
                     </nav>

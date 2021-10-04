@@ -28,6 +28,8 @@ class G {
         'defaultBanner'=>'',
         'buildYear'=>'',
         'icp'=>'',
+        'defaultArticlePath'=>'',
+        'enableIndexPage'=>'',
         'advanceSetting'=>''
     ];
 
@@ -136,6 +138,11 @@ class G {
             return 'none';
     }
 
+    /**
+     * 获取ICP备案号
+     *
+     * @return String
+     */
     public static function getICP()
     {
         if(Helper::options()->icp != '')
@@ -143,6 +150,21 @@ class G {
         if(isset(self::$advanceConfig["customICP"]))
             return self::$advanceConfig["customICP"];
         return '还没有备案噢';
+    }
+
+    /**
+     * 获取头部文章路径
+     *
+     * @return String
+     */
+    public static function getArticlePath()
+    {
+        $path = Helper::options()->siteUrl;
+        if(substr($path, -1) == '/')
+            $path = $path.self::$config["defaultArticlePath"];
+        else
+            $path = $path.'/'.self::$config["defaultArticlePath"];
+        return $path;
     }
 
     public static function test()

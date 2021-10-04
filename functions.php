@@ -48,6 +48,15 @@ function themeConfig($form) {
     ) , '1', _t('自动获取第一张图片作为头图') , _t('默认开启'));
     $form->addInput($autoBanner);
 
+    $enableIndexPage = new Typecho_Widget_Helper_Form_Element_Radio('enableIndexPage', array(
+        '1' => _t('使用') ,
+        '0' => _t('不使用')
+    ) , '0', _t('是否使用独立页面作首页') , _t('默认不使用'));
+    $form->addInput($enableIndexPage);
+
+    $defaultArticlePath = new Typecho_Widget_Helper_Form_Element_Text('defaultArticlePath', NULL, 'index.php/blog', _t('默认头部文章路径'), _t(''));
+    $form->addInput($defaultArticlePath);
+
     $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', NULL, NULL, _t('自定义CSS'), _t(''));
     $form->addInput($customCSS);
 
