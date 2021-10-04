@@ -319,6 +319,23 @@ a.prev:hover, a.next:hover {
         text-align: center;
     }
 
+    footer {
+        padding: 25px;
+    }
+
+    #footer-content {
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    #footer-nav {
+        margin-top: 10px;
+    }
+
+    #footer-nav a {
+        margin: 0 5px 0 0;
+    }
+
     .article-item {
         width: 100%;
     }
