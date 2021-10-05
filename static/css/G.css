@@ -330,6 +330,7 @@ a.prev:hover, a.next:hover {
 
     #footer-nav {
         margin-top: 10px;
+        text-align: left;
     }
 
     #footer-nav a {
