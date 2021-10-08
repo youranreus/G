@@ -1,15 +1,14 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('components/header.php'); ?>
 
-<div class="col-mb-12 col-8" id="main" role="main">
-    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-        <h1 class="post-title" itemprop="name headline"><a itemprop="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h1>
-        <div class="post-content" itemprop="articleBody">
+<div id="page" class="PAP" role="main">
+    <article itemscope itemtype="http://schema.org/BlogPosting">
+        <div id="page-banner" class="PAP-banner">
+            <h2 itemprop="name headline"><?php $this->title() ?></h2>
+        </div>
+        <div id="page-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
     </article>
-    <?php $this->need('components/comments.php'); ?>
 </div><!-- end #main-->
-
-<?php $this->need('components/sidebar.php'); ?>
 <?php $this->need('components/footer.php'); ?>

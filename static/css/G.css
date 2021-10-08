@@ -254,7 +254,7 @@ footer p {
     font-size: 0.925rem;
 }
 
-.article-data span a:link{
+.article-data span a:link, .article-data span a{
     color: #000;
 }
 
@@ -285,6 +285,31 @@ a.prev:hover, a.next:hover {
     transform: scale(0.99);
 }
 
+/* Page & Post */
+.PAP {
+    background: #fff;
+    box-shadow: var(--theme-shadow, none);
+    border-radius: var(--theme-radius, 30px);
+    overflow: hidden;
+}
+
+.PAP-banner {
+    height: 15.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+}
+
+.PAP-banner h2 {
+    font-size: 2rem;
+    margin: 0;
+    color: #333;
+    font-weight: 200;
+}
+
+/* Page */
 
 
 @media (max-width: 1024px) {
