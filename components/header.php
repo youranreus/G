@@ -21,7 +21,7 @@
         <?php echo G::setColors(); ?>
     </style>
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/normalize.css'); ?>">
-    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.096">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.098">
     <style>
         /* 设置自定义背景[颜色/图片] */
         html::before {

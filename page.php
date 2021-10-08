@@ -6,7 +6,7 @@
         <div id="page-banner" class="PAP-banner">
             <h2 itemprop="name headline"><?php $this->title() ?></h2>
         </div>
-        <div id="page-content" itemprop="articleBody">
+        <div id="page-content" class="PAP-content" itemprop="articleBody">
             <?php $this->content(); ?>
         </div>
     </article>

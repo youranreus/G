@@ -27,6 +27,14 @@ html::before {
     background-position: center 0;
 }
 
+html, body, div, p, ol, ul, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, form, input, select, button, textarea, iframe, table, th, td, blockquote, img {
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
 a {
     text-decoration: none;
 }
@@ -309,7 +317,80 @@ a.prev:hover, a.next:hover {
     font-weight: 200;
 }
 
-/* Page */
+.PAP-content p, .PAP-content h1, .PAP-content h2, .PAP-content h3, .PAP-content h4, .PAP-content h5{
+    margin: 0 1.5rem 1.25rem;
+    font-weight: 400;
+    position: relative;
+}
+
+.PAP-content h1::after, .PAP-content h2::after, .PAP-content h3::after, .PAP-content h4::after, .PAP-content h5::after{
+    content: ' ';
+    display: block;
+    height: 3px;
+    width: 3rem;
+    background-color: #eee;
+    opacity: 0.6;
+    position: absolute;
+    bottom: -0.5rem;
+}
+
+.PAP-content h1 {
+    font-size: 1.5rem;
+}
+
+.PAP-content h2 {
+    font-size: 1.35rem;
+}
+
+.PAP-content h3 {
+    font-size: 1.15rem;
+}
+
+.PAP-content h4 {
+    font-size: 1.05rem;
+}
+
+.PAP-content h5 {
+    font-size: 1rem;
+}
+
+.PAP-content>*:first-child {
+    margin-top: 1.5rem;
+}
+
+.PAP-content p {
+    margin-bottom: 1.25rem;
+    text-align: justify;
+    color: #202020;
+    word-wrap: break-word;
+    line-height: 1.8;
+    letter-spacing: 0.013rem;
+    font-size: 0.925rem;
+}
+
+.PAP-content:first {
+    margin-top: 1.5rem;
+}
+
+.PAP-content blockquote {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+    border-left: 5px solid #ddd;
+    color: #555;
+    padding-left: 0.5rem;
+    line-height: 1.8;
+}
+
+.PAP-content strong, .PAP-content em {
+    color: red;
+    opacity: 0.7;
+} 
+
+.PAP-content img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
 
 
 @media (max-width: 1024px) {
