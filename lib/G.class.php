@@ -52,9 +52,12 @@ class G {
         foreach ($keys as $key) 
             if(!empty($options->{$key}))
                 self::$config[$key] = $options->{$key};
-        $advanceConfig = explode("\n",self::$config['advanceSetting']);
-        foreach($advanceConfig as $item)
-            self::$advanceConfig[explode("=",$item)[0]] = explode("=",$item)[1];
+        if(self::$config['advanceSetting']!='')
+        {
+            $advanceConfig = explode("\n",self::$config['advanceSetting']);
+            foreach($advanceConfig as $item)
+                self::$advanceConfig[explode("=",$item)[0]] = explode("=",$item)[1];
+        }
         self::$themeUrl = Helper::options()->themeUrl.'/';
     }
 
