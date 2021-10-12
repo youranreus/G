@@ -181,9 +181,8 @@ let imageinfo = () => {
 //网站运行时间
 let show_site_runtime = (bdate) => {
 	window.setTimeout("show_site_runtime('" + bdate + "')", 1000);
-	let X = new Date(bdate.split("-")[0],bdate.split("-")[1],bdate.split("-")[2]);
 	let Y = new Date();
-	let T = (Y.getTime() - X.getTime());
+	let T = (Y.getTime() - Date.parse(bdate));
 	let i = 24 * 60 * 60 * 1000;
 	let d = T / i;
 	let D = Math.floor(d);
