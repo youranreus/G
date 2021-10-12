@@ -313,6 +313,9 @@ a.prev:hover, a.next:hover {
     margin: 0;
     color: #333;
     font-weight: 200;
+    max-width: 80%;
+    text-align: center;
+    line-height: 1.33;
 }
 
 .PAP-content {
@@ -409,11 +412,18 @@ a.prev:hover, a.next:hover {
     top: 0;
 }
 
+.PAP-content hr {
+    overflow: hidden;
+    margin: 1rem 0;
+    padding: 0;
+    height: .125rem;
+    border: none;
+    background: #e7e7e7 repeating-linear-gradient(-45deg, #fff, #fff 0.25rem, transparent 0.25rem, transparent 0.5rem);
+}
+
 .PAP-content ul, .PAP-content ol {
     margin: 1.5rem 1.5rem; 
 }
-
-
 
 .PAP-content blockquote p{
     margin-left: 0;
@@ -424,7 +434,7 @@ a.prev:hover, a.next:hover {
     color: RGB(204,53,54);
 } 
 
-.PAP-content img {
+.PAP-content p img, .PAP-content img {
     display: block;
     max-width: 100%;
     margin: 0 auto;
@@ -447,6 +457,15 @@ code:not([class*="lang-"]) {
     padding: 1.5rem;
     background: #343232;
     color: rgb(240,240,240);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid #ddd;
+    margin: 1.5rem 0;
+    border-left: none;
+    border-right: none;
 }
 
 @media (max-width: 1024px) {
