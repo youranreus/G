@@ -4,6 +4,7 @@ html {
 	font-weight: 400;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
+    transition: font-size .2s ease;
 }
 
 body {
@@ -420,7 +421,7 @@ a.next:hover {
 	color: #202020;
 	word-wrap: break-word;
 	line-height: 1.8;
-	letter-spacing: 0.013rem;
+	letter-spacing: 0.03rem;
 }
 
 .PAP-content li {
@@ -536,7 +537,7 @@ table {
 	}
 }
 
-@media (max-width: 810px) {
+@media (max-width: 830px) {
 	html {
 		font-size: 16px;
 	}
