@@ -13,6 +13,33 @@ html {
 	transition: font-size 0.2s ease;
 }
 
+html::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+    background-clip: padding-box;
+    background-color: gray;
+    min-height: 40px;
+    padding-top: 100px;
+    border-radius: 4px
+}
+
+html::-webkit-scrollbar-thumb:hover, html::-webkit-scrollbar-thumb:active {
+    background-color: #b3b3b3
+}
+
+html::-webkit-scrollbar, html *::-webkit-scrollbar {
+    height: 15px;
+    width: 8px;
+}
+
+html::-webkit-scrollbar-thumb, html *::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+    background-clip: padding-box;
+    background-color: #696969;
+    min-height: 40px;
+    padding-top: 100px;
+    border-radius: 4px
+}
+
 body {
 	margin: 0;
 	padding: 0;
