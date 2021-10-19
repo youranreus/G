@@ -553,13 +553,36 @@ code[class*=language-], pre[class*=language-] {
 	font-family: "Jetbrains Mono", "Monaco", "Courier New", "Consolas", serif;
 }
 
-table {
+.PAP-content table,.comment-content table {
 	border-collapse: collapse;
-	width: 100%;
-	border: 2px solid #ddd;
-	margin: 1.5rem 0;
-	border-left: none;
-	border-right: none;
+	border-spacing: 0;
+	display: table;
+	overflow: auto;
+	width: 80%;
+	word-break: normal;
+	margin: 1.5rem auto;
+}
+
+.PAP-content table th{
+	font-weight: bold
+}
+
+.PAP-content table th,.PAP-content table td{
+	padding: .375rem .8125rem;
+	border: .0625rem solid #ddd
+}
+
+.PAP-content table tr{
+	border-top: .0625rem solid #ccc;
+	background-color: #fff
+}
+
+.PAP-content table tr:nth-child(2n),.comment-content table tr:nth-child(2n) {
+	background-color: #f8f8f8
+}
+
+.PAP-content table thead tr{
+	background-color: #f8f8f8
 }
 
 @media (max-width: 1024px) {
