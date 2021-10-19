@@ -14,7 +14,7 @@ html {
 }
 
 html::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
     background-clip: padding-box;
     background-color: gray;
     min-height: 40px;
@@ -32,7 +32,7 @@ html::-webkit-scrollbar, html *::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb, html *::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+    box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
     background-clip: padding-box;
     background-color: #696969;
     min-height: 40px;
