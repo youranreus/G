@@ -4,10 +4,16 @@
 <div id="post" class="PAP" role="main">
     <article itemscope itemtype="http://schema.org/BlogPosting">
         <div id="post-banner" class="PAP-banner">
-            <h2 itemprop="name headline"><?php $this->title() ?></h2>
+            <div>
+                <h2 itemprop="name headline"><?php $this->title() ?></h2>
+                <p><?php echo G::getSemanticDate($this->created); ?> · <?php $this->category(' · '); ?> </p>
+            </div>
         </div>
         <div class="post-content PAP-content" itemprop="articleBody">
             <?php $this->content(); ?>
+        </div>
+        <div id="post-footer">
+
         </div>
     </article>
 </div><!-- end #main-->
