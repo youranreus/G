@@ -1,10 +1,16 @@
 @charset "UTF-8";
+
+@font-face {
+	font-family: "Jetbrains Mono";
+	src: url(../font/JB.ttf) format("truetype");
+}
+
 html {
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
-    transition: font-size .2s ease;
+	transition: font-size 0.2s ease;
 }
 
 body {
@@ -498,13 +504,8 @@ a.next:hover {
 	margin: 0 auto;
 }
 
-.PAP-content pre,
-.PAP-content code {
-	font-family: "Courier New", Courier, monospace;
-}
-
-code:not([class*="lang-"]) {
-	font-family: "Monaco", "Courier New", "Consolas", serif;
+code:not([class*="language-"]) {
+	font-family: "Jetbrains Mono", "Monaco", "Courier New", "Consolas", serif;
 	margin: 0 4px;
 	word-wrap: break-word;
 	color: #dd4a68;
@@ -513,9 +514,16 @@ code:not([class*="lang-"]) {
 }
 
 .PAP-content pre {
-	padding: 1.5rem;
 	background: #343232;
 	color: rgb(240, 240, 240);
+}
+
+.code-toolbar {
+	margin: 1.5rem 0;
+}
+
+code[class*=language-], pre[class*=language-] {
+	font-family: "Jetbrains Mono", "Monaco", "Courier New", "Consolas", serif;
 }
 
 table {

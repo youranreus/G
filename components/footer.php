@@ -23,5 +23,7 @@
     </footer>
 </div>
 <?php $this->footer(); ?>
+<script src="<?php echo G::staticUrl('static/js/prism.js'); ?>?v=1.01" data-manual></script>
+<script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=1.02"></script>
 </body>
 </html>
