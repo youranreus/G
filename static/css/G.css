@@ -537,7 +537,6 @@ code:not([class*="language-"]) {
 	word-wrap: break-word;
 	color: #dd4a68;
 	font-size: 14px;
-	font-weight: 600;
 }
 
 .PAP-content pre {
