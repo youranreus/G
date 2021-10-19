@@ -192,6 +192,27 @@ class G {
         return $logos;
     }
 
+    /**
+     * 获取语义化日期
+     *
+     * @param string $date
+     * @return string
+     */
+    public static function getSemanticDate($date) 
+    {
+        $now = time();
+        $sub = $now - $date;
+
+        if($sub < 60)
+            return $sub."秒前";
+        else if($sub < 3600)
+            return (int)($sub/60)."分钟前";
+        else if($sub < 86400)
+            return (int)($sub/3600)."小时前";
+        else
+            return (int)($sub/86400)."天前";
+    }
+
     public static function test()
     {
         var_dump(self::$themeUrl);
