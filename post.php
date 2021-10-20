@@ -13,7 +13,12 @@
             <?php $this->content(); ?>
         </div>
         <div id="post-footer">
-
+            <div id="post-footer-tag">
+                <p><?php $this->tags(' ', true, 'none'); ?></p>
+            </div>
+            <div id="post-footer-modified">
+                <p><?php echo G::getModifiedDate($this->modified, $this->created); ?></p>
+            </div>
         </div>
     </article>
 </div><!-- end #main-->

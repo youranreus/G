@@ -591,6 +591,26 @@ code[class*=language-], pre[class*=language-] {
 	background-color: #f8f8f8
 }
 
+/* Post */
+#post-footer {
+	font-size: 0.625rem;
+	display: flex;
+	justify-content: space-between;
+	margin: 1.5rem;
+}
+
+#post-footer p{
+	margin: 0;
+	opacity: 0.7;
+}
+
+#post-footer-tag p a {
+	padding: 8px 15px;
+	background-color: #f5f5f5;
+	color: #777;
+	border-radius: 1000rem;
+}
+
 @media (max-width: 1024px) {
 	html {
 		font-size: 17px;
