@@ -476,6 +476,10 @@ a.next:hover {
 	margin-top: 1.5rem;
 }
 
+.PAP-content:last-child {
+	margin-bottom: 2rem;
+}
+
 .PAP-content blockquote {
 	margin: 1.5rem 0;
 	color: #878c93;
@@ -526,8 +530,7 @@ a.next:hover {
 	margin-left: 0;
 }
 
-.PAP-content strong,
-.PAP-content em {
+.PAP-content strong {
 	color: RGB(204, 53, 54);
 }
 
@@ -538,6 +541,11 @@ a.next:hover {
 	margin: 0 auto;
 }
 
+.PAP-content pre {
+	background: #343232;
+	color: rgb(240, 240, 240);
+}
+
 code:not([class*="language-"]) {
 	font-family: "Jetbrains Mono", "Monaco", "Courier New", "Consolas", serif;
 	margin: 0 4px;
@@ -546,17 +554,12 @@ code:not([class*="language-"]) {
 	font-size: 14px;
 }
 
-.PAP-content pre {
-	background: #343232;
-	color: rgb(240, 240, 240);
+code[class*=language-], pre[class*=language-] {
+	font-family: "Jetbrains Mono", "Monaco", "Courier New", "Consolas", serif;
 }
 
 .code-toolbar {
 	margin: 1.5rem 0;
-}
-
-code[class*=language-], pre[class*=language-] {
-	font-family: "Jetbrains Mono", "Monaco", "Courier New", "Consolas", serif;
 }
 
 .PAP-content table,.comment-content table {
