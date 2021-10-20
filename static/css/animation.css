@@ -1,0 +1,38 @@
+@keyframes banner-show {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0.2
+    }
+}
+
+@-moz-keyframes banner-show
+{
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0.2
+    }
+}
+
+@-webkit-keyframes banner-show
+{
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0.2
+    }
+}
+
+@-o-keyframes banner-show
+{
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 0.2
+    }
+}

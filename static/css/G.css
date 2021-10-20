@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "animation.css";
 
 @font-face {
 	font-family: "Jetbrains Mono";
@@ -291,6 +292,7 @@ footer p {
 }
 
 .article-banner {
+	visibility: hidden;
 	opacity: 0.2;
 	position: absolute;
 	height: 100%;
@@ -677,7 +679,4 @@ code[class*=language-], pre[class*=language-] {
 	footer {
 		padding: 25px;
 	}
-}
-
-@media (max-width: 480px) {
 }
