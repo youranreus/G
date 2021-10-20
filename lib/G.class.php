@@ -213,6 +213,18 @@ class G {
             return (int)($sub/86400)."天前";
     }
 
+    /**
+     * 获取语义化修改时间
+     *
+     * @param string $modified
+     * @param string $created
+     * @return string
+     */
+    public static function getModifiedDate($modified, $created)
+    {
+        return $modified == $created ? "还没有修改过" : "最后修改于".self::getSemanticDate($modified);
+    }
+
     public static function test()
     {
         var_dump(self::$themeUrl);
