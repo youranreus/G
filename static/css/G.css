@@ -402,6 +402,10 @@ a.next:hover {
 	font-size: 0.875rem;
 }
 
+.PAP-content > * {
+	max-width: 100%;
+}
+
 .PAP-content p,
 .PAP-content h1,
 .PAP-content h2,
