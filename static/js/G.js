@@ -6,14 +6,17 @@ let makePrismLineNum = () => {
 	Prism.highlightAll();
 };
 
+let preLazy = () => {
+	let ele = document.getElementsByClassName("article-banner");
+	for (let element of ele) {
+		element.setAttribute("origin", element.getAttribute("style"));
+		element.setAttribute("style", " ");
+	}
+};
+
 let lazyBanner = () => {
 	let ele = document.getElementsByClassName("article-banner");
 	if (ele.length > 0) {
-		for (let element of ele) {
-			element.setAttribute("origin", element.getAttribute("style"));
-			element.setAttribute("style", " ");
-		}
-
 		let imgs = [...document.getElementsByClassName("article-banner")];
 		const observe = new IntersectionObserver((entries) => {
 			for (let element of entries) {
@@ -23,7 +26,7 @@ let lazyBanner = () => {
 						let image = new Image();
 						image.src = data_src.slice(22,-2);
 						image.onload = function(){
-							rs(data_src.slice(22,-2))
+							rs(data_src.slice(22,-2));
 						};
 					}).then((success)=>{
 						console.log(success , '加载完成');
@@ -40,45 +43,12 @@ let lazyBanner = () => {
 	}
 };
 
-function myReady(fn){
-    if ( document.addEventListener ) 
-        document.addEventListener("DOMContentLoaded", fn, false);
-	else 
-        IEContentLoaded(fn);
-	
-    function IEContentLoaded (fn) {
-        let d = window.document;
-        let done = false;
-
-        let init = function () {
-            if (!done) {
-                done = true;
-                fn();
-            }
-        };
-
-        (function () {
-            try {
-                d.documentElement.doScroll('left');
-            } catch (e) {
-                setTimeout(arguments.callee, 50);
-                return;
-            }
-            init();
-        })();
-
-        d.onreadystatechange = function() {
-            if (d.readyState == 'complete') {
-                d.onreadystatechange = null;
-                init();
-            }
-        }
-    }
-}
-
 window.onload = function () {
 	console.log("G.js onload");
 	makePrismLineNum();
+	lazyBanner();
 };
 
-myReady(lazyBanner);
+window.ready(function() {
+	preLazy();
+});
