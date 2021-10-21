@@ -6,11 +6,11 @@ let makePrismLineNum = () => {
 	Prism.highlightAll();
 };
 
-let preLazy = () => {
-	let ele = document.getElementsByClassName("article-banner");
+//将ele元素集合的attribute属性移动至origin属性
+let preLazy = (ele, attribute, origin) => {
 	for (let element of ele) {
-		element.setAttribute("origin", element.getAttribute("style"));
-		element.setAttribute("style", " ");
+		element.setAttribute(origin, element.getAttribute(attribute));
+		element.setAttribute(attribute, " ");
 	}
 };
 
@@ -50,5 +50,5 @@ window.onload = function () {
 };
 
 window.ready(function() {
-	preLazy();
+	preLazy(document.getElementsByClassName("article-banner"), "style", "origin");
 });
