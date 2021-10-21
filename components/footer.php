@@ -23,8 +23,8 @@
     </footer>
 </div>
 <?php $this->footer(); ?>
-<script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10008"></script>
+<script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10010"></script>
 <script src="<?php echo G::staticUrl('static/js/prism.js'); ?>?v=1.01" data-manual></script>
-<script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.10008"></script>
+<script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.10010"></script>
 </body>
 </html>
