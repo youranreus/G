@@ -16,10 +16,10 @@ let makePrismLineNum = () => {
  * @param {string} attribute 源属性
  * @param {string} origin 目标属性
  */
-let preLazy = (ele, attribute, origin) => {
+let preLazy = (ele, attribute, origin, instead = "") => {
 	for (let element of ele) {
 		element.setAttribute(origin, element.getAttribute(attribute));
-		element.setAttribute(attribute, " ");
+		element.setAttribute(attribute, instead);
 	}
 };
 
@@ -97,7 +97,7 @@ window.ready(function () {
 	let banners = document.getElementsByClassName("article-banner");
 	let pics = document.getElementsByTagName("img");
 	preLazy(banners, "style", "origin");
-	preLazy(pics, "src", "origin");
+	preLazy(pics, "src", "origin", "https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading2.gif");
 	lazyload(banners, function (element, observe) {
 		lazyBanner(element, observe);
 	});
