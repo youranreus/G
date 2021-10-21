@@ -545,6 +545,13 @@ a.next:hover {
 	display: block;
 	max-width: 100%;
 	margin: 0 auto;
+	visibility: hidden;
+}
+
+.PAP-content p img.lazyload-done,
+.PAP-content img.lazyload-done {
+	visibility: visible;
+	animation: pic-show 1s;
 }
 
 .PAP-content pre {
