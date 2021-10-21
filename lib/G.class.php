@@ -188,7 +188,8 @@ class G {
             $logos = '';
         $imgs = explode(',', self::$config["footerLOGO"]);
         foreach($imgs as $img)
-            $logos = $logos.'<img src="'.$img.'" />';
+            if($img != '')
+                $logos = $logos.'<img src="'.$img.'" />';
         return $logos;
     }
 
