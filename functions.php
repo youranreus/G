@@ -2,7 +2,12 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 require_once("lib/G.class.php");
+require_once("lib/GEditor.class.php");
 G::init();
+Typecho_Plugin::factory('Widget_Abstract_Contents')->excerptEx = array('GEditor','reply2see');
+Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('GEditor','reply2see');
+Typecho_Plugin::factory('admin/write-post.php')->bottom = array('GEditor', 'addButton');
+Typecho_Plugin::factory('admin/write-page.php')->bottom = array('GEditor', 'addButton');
 
 
 function themeConfig($form) {
