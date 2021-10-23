@@ -88,9 +88,37 @@ let lazyload = (ele, fn) => {
 	}
 };
 
+/**
+ * 灯箱
+ * 
+ * @param {object} target 
+ */
+let lightbox = (target) => {
+    console.log('图片' + target.src + '开启灯箱，创建容器元素');
+    let wrap = document.createElement('div');
+    wrap.classList.add('lightbox-wrap');
+    wrap.innerHTML = '<img alt="" src="' + target.src + '">';
+    wrap.setAttribute('onclick', 'closeLightbox(this)');
+    document.body.appendChild(wrap);
+}
+
+/**
+ * 灯箱关闭
+ * 
+ * @param {object} target 
+ */
+let closeLightbox = (target) => {
+    target.setAttribute('style', 'animation: opacity-out .2s;opacity: 0;');
+    setTimeout(()=>{
+        document.body.removeChild(target);
+    }, 200);
+}
+
 window.onload = function () {
 	console.log("G.js onload");
 	makePrismLineNum();
+	let images = document.querySelectorAll('.PAP-content img');
+	images.forEach(img=>{img.setAttribute("onclick", "lightbox(this)")});
 };
 
 window.ready(function () {

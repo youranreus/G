@@ -127,6 +127,19 @@ a.icp {
 	float: right;
 }
 
+.lightbox-wrap {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 999;
+	background: RGBA(255, 255, 255, 0.99);
+	animation: opacity-in .2s;
+}
+
 /* Basic */
 #main {
 	width: 800px;
