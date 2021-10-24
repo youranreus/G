@@ -151,7 +151,7 @@ a.icp {
 #container {
 	width: 800px;
 	margin: auto;
-	animation: opacity-in 1s ease;
+	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 }
 
 /* Header */
@@ -397,7 +397,7 @@ a.next:hover {
 	box-shadow: var(--theme-shadow, none);
 	border-radius: var(--theme-radius, 30px);
 	overflow: hidden;
-	animation: opacity-in 1s ease;
+	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 }
 
 .PAP-banner {

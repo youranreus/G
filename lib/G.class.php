@@ -96,18 +96,22 @@ class G {
     /**
      * 配置主题CSS变量
      *
-     * @return void
+     * @return string
      */
     public static function setColors()
     {
-        return "
-        :root {
+        $result = ":root {
             --theme-color: ".self::$config["themeColor"].";
             --header-color: ".self::$config["headerColor"].";
             --theme-radius: ".self::$config["themeRadius"].";
             --theme-shadow: ".self::getBoxShadow(self::$config["themeShadow"]).";
-        }
         ";
+        if(isset(self::$advanceConfig['customAnimationInDuration']))
+            $result .= "--theme-animation-in-duration: ".self::$advanceConfig['customAnimationInDuration'].";";
+            if(isset(self::$advanceConfig['customAnimationOutDuration']))
+            $result .= "--theme-animation-out-duration: ".self::$advanceConfig['customAnimationOutDuration'].";";
+        $result .= "}";
+        return $result;
     }
     
     /**
