@@ -12,5 +12,5 @@
             <?php $this->content(); ?>
         </div>
     </article>
-</div><!-- end #main-->
+</div>
 <?php $this->need('components/footer.php'); ?>

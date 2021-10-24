@@ -381,6 +381,15 @@ a.next:hover {
 	transform: scale(0.99);
 }
 
+.archive-title {
+	font-weight: 400;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 3px 6px rgba(255,255,255,0.3);
+    color: #000;
+    opacity: 0.8;
+}
+
 /* Page & Post */
 .PAP {
 	background: #fff;
