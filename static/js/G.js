@@ -87,6 +87,11 @@ let lazyload = (ele, fn) => {
 	}
 };
 
+/**
+ * 折叠开关控制器
+ * 
+ * @param {object} target 元素
+ */
 let collapseController = (target) =>{
 	if(target.parentNode.getAttribute('data-collapsed') == "true")
 	{
@@ -151,7 +156,13 @@ window.onload = function () {
 	console.log("G.js onload");
 	makePrismLineNum();
 	let images = document.querySelectorAll('.PAP-content img');
-	images.forEach(img=>{img.setAttribute("onclick", "lightbox(this)")});
+	images.forEach(img=>{
+		img.setAttribute("onclick", "lightbox(this)");
+		let info = document.createElement('span');
+		info.innerText = img.getAttribute('title');
+		info.classList.add('imageinfo');
+		img.after(info);
+	});
 	makeGallery();
 };
 

@@ -562,6 +562,14 @@ a.next:hover {
 	margin: 0 auto;
 }
 
+.imageinfo {
+	display: block;
+	color: #999;
+    font-size: 0.625rem;
+    text-align: right;
+    margin-top: 10px;
+}
+
 .PAP-content p img.lazyload-done,
 .PAP-content img.lazyload-done {
 	visibility: visible;
