@@ -1,6 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-
+require_once("shortcode.php");
 
 class G {
 
@@ -224,6 +224,17 @@ class G {
     public static function getModifiedDate($modified, $created)
     {
         return $modified == $created ? "还没有修改过" : "最后修改于".self::getSemanticDate($modified);
+    }
+
+    /**
+     * 解析文章内容
+     *
+     * @param string $content
+     * @return string
+     */
+    public static function analyzeContent($content)
+    {
+        return do_shortcode($content);
     }
 
     public static function test()

@@ -60,7 +60,6 @@ let lazyPic = (element, observe) => {
 		};
 		image.src = element.target.getAttribute("origin");
 	}).then((success) => {
-		console.log("图片", success, "加载完成");
 		element.target.setAttribute("src", success);
 		addClass(element.target, 'lazyload-done');
 		observe.unobserve(element.target);
@@ -88,16 +87,30 @@ let lazyload = (ele, fn) => {
 	}
 };
 
+let collapseController = (target) =>{
+	if(target.parentNode.getAttribute('data-collapsed') == "true")
+	{
+		expandSection(target.parentNode.children[1]);
+		target.parentNode.setAttribute('data-collapsed', 'false');
+	}
+	else
+	{
+		target.parentNode.setAttribute('data-collapsed', 'true');
+		target.parentNode.children[1].setAttribute('style','height: auto;');
+		collapseSection(target.parentNode.children[1]);
+	}
+		
+};
+
 /**
  * 灯箱
  * 
  * @param {object} target 
  */
 let lightbox = (target) => {
-    console.log('图片' + target.src + '开启灯箱，创建容器元素');
     let wrap = document.createElement('div');
     wrap.classList.add('lightbox-wrap');
-    wrap.innerHTML = '<img alt="" src="' + target.src + '">';
+    wrap.innerHTML = '<img alt="" style="max-width: 80%;max-height: 80%;" src="' + target.src + '">';
     wrap.setAttribute('onclick', 'closeLightbox(this)');
     document.body.appendChild(wrap);
 }
@@ -114,11 +127,32 @@ let closeLightbox = (target) => {
     }, 200);
 }
 
+/**
+ * 生成相册
+ */
+let makeGallery = () => {
+	let base = 50;
+	let galleries = document.getElementsByClassName('photos');
+	for(let gallery of galleries)
+		for(let pic of gallery.children)
+		{
+			let img = new Image();
+			img.src = pic.children[0].children[0].getAttribute('src');
+			img.onload = function () {
+				let w = img.width;
+				let h = img.width;
+				pic.setAttribute('style','width: ' + w * base / h + 'px;flex-grow: ' + w * base / h);
+				pic.children[0].setAttribute('style', 'padding-top: ' + h / w * 100 + '%');
+			};
+		}
+}
+
 window.onload = function () {
 	console.log("G.js onload");
 	makePrismLineNum();
 	let images = document.querySelectorAll('.PAP-content img');
 	images.forEach(img=>{img.setAttribute("onclick", "lightbox(this)")});
+	makeGallery();
 };
 
 window.ready(function () {

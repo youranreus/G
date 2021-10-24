@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "animation.css";
+@import "shortcode.css?v=3.10003";
 
 @font-face {
 	font-family: "Jetbrains Mono";
@@ -429,6 +430,7 @@ a.next:hover {
 .PAP-content h5 {
 	margin: 0 1.5rem 1.25rem;
 	position: relative;
+	font-weight: 400;
 }
 
 .PAP-content h1,
@@ -697,5 +699,9 @@ code[class*=language-], pre[class*=language-] {
 
 	footer {
 		padding: 25px;
+	}
+
+	.bilibili {
+		height: 10rem;
 	}
 }

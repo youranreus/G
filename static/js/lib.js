@@ -63,3 +63,37 @@ let addClass = (element, classname) => {
 let removeClass = (element, classname)=>{
 	element.classList.remove(classname);
 }
+
+/**
+ * 收合动画
+ * modified from https://css-tricks.com/using-css-transitions-auto-dimensions/
+ * 
+ * @param {object} element 元素
+ */
+function collapseSection(element) {
+	let sectionHeight = element.scrollHeight;
+	let elementTransition = element.style.transition;
+	element.style.transition = '';
+	
+	requestAnimationFrame(function() {
+	  element.style.height = sectionHeight + 'px';
+	  element.style.transition = elementTransition;
+	  
+	  requestAnimationFrame(function() {
+		element.style.height = 0 + 'px';
+	  });
+	});
+}
+
+/**
+ * 扩张动画
+ * 
+ * @param {object} element 元素
+ */
+ function expandSection(element) {
+	let sectionHeight = element.scrollHeight;
+	element.style.height = sectionHeight + 'px';
+	element.addEventListener('transitionend', function(e) {
+	  element.removeEventListener('transitionend', arguments.callee);
+	});
+  }

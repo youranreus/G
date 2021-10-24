@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/normalize.css'); ?>">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/prism.css'); ?>?v=1.01">
-    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.10011">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.10014">
     <style>
         /* 设置自定义背景[颜色/图片] */
         html::before {
@@ -31,6 +31,7 @@
         <?php $this->options->customCSS(); ?>
     </style>
     <?php $this->header(); ?>
+    <script src="<?php echo G::staticUrl('static/js/DPlayer.min.js'); ?>"></script>
 </head>
 <body>
 

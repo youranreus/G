@@ -10,7 +10,7 @@
             </div>
         </div>
         <div class="post-content PAP-content" itemprop="articleBody">
-            <?php $this->content(); ?>
+            <?php echo G::analyzeContent($this->content); ?>
         </div>
         <div id="post-footer">
             <div id="post-footer-tag">
