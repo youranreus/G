@@ -178,3 +178,18 @@ window.ready(function () {
 		lazyPic(element, observe);
 	});
 });
+
+window.onbeforeunload = function() {
+	let main = document.querySelector('#container');
+	if(main)
+	{
+		main.setAttribute('style','animation: opacity-out .1s ease;opacity: 0;');
+		return;
+	}
+	let pap = document.querySelector('#container');
+	if(pap)
+	{
+		main.setAttribute('style','animation: opacity-out .1s ease;opacity: 0;');
+		return;
+	}
+};
