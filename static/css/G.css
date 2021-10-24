@@ -139,6 +139,7 @@ a.icp {
 	z-index: 999;
 	background: RGBA(255, 255, 255, 0.99);
 	animation: opacity-in .2s;
+	cursor: pointer;
 }
 
 /* Basic */
