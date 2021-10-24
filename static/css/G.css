@@ -560,6 +560,7 @@ a.next:hover {
 	display: block;
 	max-width: 100%;
 	margin: 0 auto;
+	cursor: pointer;
 }
 
 .imageinfo {
