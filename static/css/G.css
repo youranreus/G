@@ -382,7 +382,7 @@ a.next:hover {
 	transform: scale(0.99);
 }
 
-.archive-title {
+h3.archive-title {
 	font-weight: 400;
     text-align: center;
     margin-bottom: 2rem;
@@ -660,6 +660,76 @@ code[class*=language-], pre[class*=language-] {
 	background-color: #f5f5f5;
 	color: #777;
 	border-radius: 1000rem;
+}
+
+/* Archives */
+#archives-content {
+	margin: 1.5rem;
+}
+
+#archives-content h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: 400;
+    color: RGB(182, 177, 150);
+    margin: 0;
+}
+
+#tag-cloud {
+    width: 100%;
+    line-height: 50px;
+}
+
+#tag-cloud li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+#tag-cloud li a {
+	font-size: 0.625rem;
+    color: #777;
+    padding: 8px 15px;
+    margin: .1rem;
+    transition: all .24s ease;
+    background: rgba(241, 243, 244, 0.7);
+    border-radius: 10000rem;
+}
+
+#tag-cloud li a:hover {
+    background: rgba(241, 243, 244, 1);
+}
+
+#timeline {
+    margin: 40px auto;
+}
+
+#timeline > * {
+    color: #787878;
+    font-family: 'STHeiti Light', 'Microsoft YaHei', 'SimHei', 'Microsoft JhengHei', 'Microsoft YaHei', 'Mirages Custom', 'Merriweather', 'Open Sans', "PingFang SC", 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'Segoe UI Emoji', 'Segoe UI Symbol', Helvetica, Arial, sans-serif !important;
+}
+
+.archive-title h3 {
+    font-size: 1.125rem;
+}
+
+.archives a {
+    position: relative;
+    display: block;
+    padding: .625rem;
+    color: #333;
+    font-style: normal;
+    line-height: 1.125rem;
+    font-size: 0.875rem;
+    border-radius: .25rem;
+}
+
+.archives a:hover {
+    background: #eee;
+}
+
+.archives a .time {
+    color: #888;
+    padding-right: .625rem;
 }
 
 @media (max-width: 1024px) {
