@@ -11,7 +11,8 @@ Typecho_Plugin::factory('admin/write-page.php')->bottom = array('GEditor', 'addB
 
 
 function themeConfig($form) {
-    // echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/CSS/S.css'/>";
+    echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.7/G/CSS/S.css'/>";
+    echo "<h2>G主题设置</h2>";
 
     $favicon = new Typecho_Widget_Helper_Form_Element_Text('favicon', NULL, NULL, _t('站点 LOGO 地址'), _t('在这里填入一个图片 URL 地址, 以在网站标题前加上一个 LOGO'));
     $form->addInput($favicon);
