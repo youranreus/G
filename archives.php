@@ -9,10 +9,10 @@ $this -> need('components/header.php');
 
 <div class="PAP" id="archives">
     <div id="page-banner" class="PAP-banner">
-            <div>
-                <h2 itemprop="name headline"><?php $this->title() ?></h2>
-            </div>
-     </div>
+		<div>
+			<h2 itemprop="name headline"><?php $this->title() ?></h2>
+		</div>
+    </div>
     <div id="archives-content">
         <div id="tag-cloud">
   			<?php $this->widget('Widget_Metas_Tag_Cloud', array('sort' => 'count', 'ignoreZeroCount' => true, 'desc' => true, 'limit' => 20))->to($tags); ?>
