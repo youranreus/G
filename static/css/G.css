@@ -392,7 +392,7 @@ h3.archive-title {
 }
 
 /* Page & Post */
-.PAP {
+.PAP, #lyrics {
 	background: #fff;
 	box-shadow: var(--theme-shadow, none);
 	border-radius: var(--theme-radius, 30px);
@@ -730,6 +730,26 @@ code[class*=language-], pre[class*=language-] {
 .archives a .time {
     color: #888;
     padding-right: .625rem;
+}
+
+/* Lyrics */
+#lyrics {
+	padding: 1.5rem;
+}
+
+#lyrics p:nth-child(even) {
+    color: RGB(87, 103, 104);
+    margin-top: -20px;
+}
+
+#lyrics p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: RGB(182, 177, 150);
+}
+
+#lyrics p span {
+    color: RGB(87, 103, 104);
 }
 
 @media (max-width: 1024px) {
