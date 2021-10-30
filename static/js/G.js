@@ -180,16 +180,7 @@ window.ready(function () {
 });
 
 window.onbeforeunload = function() {
-	let main = document.querySelector('#container');
+	let main = document.querySelector('#container') || document.querySelector('.PAP') || document.querySelector('#Lyrics');
 	if(main)
-	{
-		main.setAttribute('style','animation: opacity-out var(--theme-animation-out-duration, 1s) ease;opacity: 0;');
-		return;
-	}
-	let pap = document.querySelector('#container');
-	if(pap)
-	{
-		main.setAttribute('style','animation: opacity-out var(--theme-animation-out-duration, 1s) ease;opacity: 0;');
-		return;
-	}
+		main.setAttribute('style','animation: opacity-out var(--theme-animation-out-duration, .2s) ease;opacity: 0;');
 };
