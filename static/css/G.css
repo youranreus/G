@@ -410,6 +410,10 @@ h3.archive-title {
 	background: #fafafa;
 }
 
+.PAP-banner div {
+	width: 100%;
+}
+
 .PAP-banner div h2 {
 	font-size: 2rem;
 	margin: 0;
@@ -417,6 +421,8 @@ h3.archive-title {
 	font-weight: 200;
 	text-align: center;
 	line-height: 1.33;
+	max-width: 80%;
+	margin: 0 auto;
 }
 
 .PAP-banner div p {
@@ -778,6 +784,7 @@ code[class*=language-], pre[class*=language-] {
 
 	.article-item {
 		width: 100%;
+		padding: 1.5rem;
 	}
 
 	#header {
@@ -792,6 +799,18 @@ code[class*=language-], pre[class*=language-] {
 	#header-content-right {
 		margin-top: 20px;
 		text-align: center;
+	}
+
+	.PAP-banner {
+		height: 10rem;
+	}
+
+	.PAP-banner div h2 {
+		font-size: 1.125rem;
+	}
+
+	#post-footer-modified {
+		display: none;
 	}
 
 	#footer-content {
