@@ -135,9 +135,12 @@ class G {
     {
         $img = array();
         $banner = $post->fields->imgurl;
-
+        $mirageBanner = $post->fields->thumb;
+        
         if(isset($banner) && $banner != '')
             return $post->fields->imgurl;
+        if(isset($mirageBanner) && $mirageBanner != '')
+            return $mirageBanner;
         if(self::$config['defaultBanner'] != '')
             return self::$config['defaultBanner'];
         if(self::$config['autoBanner'] == 0)
