@@ -154,6 +154,25 @@ class G {
     }
 
     /**
+     * 获取文章字段头图
+     *
+     * @param Object $post
+     * @return String
+     */
+    public static function getArticleFieldsBanner($post)
+    {
+        $img = array();
+        $banner = $post->fields->imgurl;
+        $mirageBanner = $post->fields->thumb;
+        
+        if(isset($banner) && $banner != '')
+            return $post->fields->imgurl;
+        else if(isset($mirageBanner) && $mirageBanner != '')
+            return $mirageBanner;
+        return 'none';
+    }
+
+    /**
      * 获取ICP备案号
      *
      * @return String
