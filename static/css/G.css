@@ -445,6 +445,7 @@ h3.archive-title {
 
 .PAP-IMG-Banner div h2 {
 	opacity: .85;
+	font-size: 1.5rem;
 }
 
 .PAP-IMG-Banner div h2, .PAP-IMG-Banner div p , .PAP-IMG-Banner div p a{
@@ -453,10 +454,6 @@ h3.archive-title {
 	color: #fff;
 	text-shadow: 0 3px 6px rgba(0, 0, 0, .3);
 } 
-
-.PAP-IMG-Banner div h2 {
-	font-size: 2rem;
-}
 
 .PAP-banner-mask {
 	position: absolute;
