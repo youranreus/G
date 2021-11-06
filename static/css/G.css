@@ -432,6 +432,57 @@ h3.archive-title {
 	opacity: 0.4;
 }
 
+.PAP-IMG-Banner {
+	display: block;
+	position: relative;
+}
+
+.PAP-IMG-Banner div:not(.PAP-banner-background, .PAP-banner-mask) {
+	position: absolute;
+	bottom: 1.5rem;
+	left: 1.5rem;
+}
+
+.PAP-IMG-Banner div h2 {
+	opacity: .85;
+}
+
+.PAP-IMG-Banner div h2, .PAP-IMG-Banner div p , .PAP-IMG-Banner div p a{
+	text-align: left;
+	max-width: 100%;
+	color: #fff;
+	text-shadow: 0 3px 6px rgba(0, 0, 0, .3);
+} 
+
+.PAP-IMG-Banner div h2 {
+	font-size: 2rem;
+}
+
+.PAP-banner-mask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	height: 100%;
+	width: 100%;
+	background:rgba(0, 0, 0, 0.25);
+}
+
+.PAP-banner-background {
+	position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15.5rem;
+    zoom: 1;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-position: center center;
+}
+
 .PAP-content {
 	font-size: 0.875rem;
 }
@@ -801,7 +852,7 @@ code[class*=language-], pre[class*=language-] {
 		text-align: center;
 	}
 
-	.PAP-banner {
+	.PAP-banner, .PAP-banner-background, .PAP-banner-mask {
 		height: 10rem;
 	}
 
