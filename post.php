@@ -3,8 +3,8 @@
 
 <div id="post" class="PAP" role="main">
     <article itemscope itemtype="http://schema.org/BlogPosting">
-        <div id="post-banner" class="PAP-banner <?php $img = $this->fields->imgurl; if($img != '') echo 'PAP-IMG-Banner'; ?>">
-            <?php $img = $this->fields->imgurl; if($img != ''): ?>
+        <div id="post-banner" class="PAP-banner <?php $img = G::getArticleFieldsBanner($this); if($img != 'none') echo 'PAP-IMG-Banner'; ?>">
+            <?php $img = G::getArticleFieldsBanner($this); if($img != 'none'): ?>
                 <div class="PAP-banner-background" style="background-image: url('<?php echo $img; ?>');"></div>
                 <div class="PAP-banner-mask"></div>
             <?php endif; ?>
