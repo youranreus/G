@@ -163,7 +163,7 @@ class G {
     {
         $img = array();
         $banner = $post->fields->imgurl;
-        $mirageBanner = $post->fields->thumb;
+        $mirageBanner = $post->fields->banner;
         
         if(isset($banner) && $banner != '')
             return $post->fields->imgurl;
