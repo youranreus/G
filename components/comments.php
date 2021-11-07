@@ -1,5 +1,47 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
+<?php
+function threadedComments($comments, $options) {
+    $commentClass = '';
+    if ($comments->authorId) {
+        if ($comments->authorId == $comments->ownerId) {
+            $commentClass .= ' comment-by-author';
+        } else {
+            $commentClass .= ' comment-by-user';
+        }
+    }
+
+    $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
+?>
+
+<li id="li-<?php $comments->theId(); ?>" class="comment-body<?php if ($comments->levels > 0) {echo ' comment-child';$comments->levelsAlt(' comment-level-odd', ' comment-level-even');}else{echo ' comment-parent';} $comments->alt(' comment-odd', ' comment-even');echo $commentClass;?>">
+    <div id="<?php $comments->theId(); ?>">
+        <div class="comment-inner">
+            <div class="comment-avatar">
+                <?php $comments->gravatar('40', ''); ?>
+            </div>
+            <div class="comment-content">
+                <div class="comment-meta">
+                    <span><?php $comments->author(); ?></span>
+                    <span><?php echo G::getSemanticDate($comments->created); ?></span>
+                </div>
+                <?php
+                    $cos = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/$1.png" class="bq">',$comments->content);
+                    $cos = preg_replace('/\:\:(.*?)\:(.*?)\:\:/','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">',$cos);
+                    echo $cos;
+                ?>
+            </div>
+            <!-- <span class="comment-reply"><?php $comments->reply(); ?></span> -->
+        </div>
+    </div>
+<?php if ($comments->children) { ?>
+    <div class="comment-children">
+        <?php $comments->threadedComments($options); ?>
+    </div>
+<?php } ?>
+</li>
+<?php } ?>
+
 <div id="comments">
     <?php if($this->allow('comment')): ?>
         <div id="comments-form">
@@ -19,9 +61,17 @@
                 </div>
                 <?php endif; ?>
                 <!-- 输入要回复的内容 -->
-                <textarea id="comments-textarea" name="text"><?php $this->remember('text'); ?></textarea>
+                <textarea id="comments-textarea" name="text" placeholder="说点什么"><?php $this->remember('text'); ?></textarea>
                 <input type="submit" value="发送" class="submit"/>
             </form>
         </div>
+    <?php endif; ?>
+
+    <?php 
+        $this->comments()->to($comments);
+        if ($comments->have()): 
+    ?>
+        <?php $comments->listComments(); ?>
+        <?php $comments->pageNav('<上一页', '下一页>'); ?>
     <?php endif; ?>
 </div>

@@ -975,6 +975,56 @@ pre[class*="language-"] {
 	background: RGBA(236, 237, 237, 1);
 }
 
+.comment-list {
+	padding: 0;
+}
+
+.comment-list li {
+	list-style-type: none;
+}
+
+.comment-inner {
+	display: flex;
+	width: 100%;
+	box-sizing: border-box;
+
+}
+
+.comment-avatar img{
+	height: 50px;
+	width: 50px;
+	border-radius: 10000rem;
+}
+
+.comment-content {
+	background-color: white;
+	border-radius: 15px;
+	padding: 15px;
+	margin: 0 0 1rem 10px;
+	font-size: 0.875rem;
+	min-width: 40%;
+}
+
+.comment-meta {
+	display: flex;
+	justify-content: space-between;
+}
+
+.comment-meta span:first-child {
+	font-weight: 600;
+	font-size: 1rem;
+}
+
+.comment-meta span:last-child {
+	opacity: 0.5;
+}
+
+.comment-content p {
+	margin-bottom: 0;
+	line-height: 1.7;
+	letter-spacing: 0.03rem;
+}
+
 @media (max-width: 1024px) {
 	html {
 		font-size: 17px;
