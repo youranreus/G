@@ -904,6 +904,77 @@ pre[class*="language-"] {
 	opacity: 0.06;
 }
 
+/* Comments */
+#comments-form {
+	background: RGBA(255, 255, 255, 1);
+	border-radius: var(--theme-radius);
+	box-shadow: var(--theme-shadow);
+	padding: 1.5rem;
+	margin: 1.5rem 0;
+	position: relative;
+}
+
+#comments-form h3 {
+	margin: 0 0 0 0;
+	font-size: 1.125rem;
+	font-weight: 600;
+}
+
+.comments-Input {
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+}
+
+.comments-Input input {
+	width: 30%;
+	background: RGBA(46, 50, 56, 0.05);
+	border: 1px solid transparent;
+	outline: none;
+	padding: 0.438rem 0.525rem;
+	border-radius: 5px;
+	font-size: 0.875rem;
+	color: RGBA(28, 31, 35, 1);
+}
+
+#comments-textarea {
+	box-sizing: border-box;
+	width: 100%;
+	margin: 0.5rem 0 0 0;
+	background: RGBA(46, 50, 56, 0.05);
+	border: 1px solid transparent;
+	outline: none;
+	padding: 0.438rem 0.525rem;
+	font-size: 0.875rem;
+	resize: none;
+	height: 7rem;
+	z-index: 1;
+	position: relative;
+	border-radius: 5px;
+}
+
+#comments-form input.submit {
+	background: RGBA(244, 245, 245, 1);
+	border: none;
+	padding: 0.438rem 0.825rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+	border-radius: 5px;
+	color: var(--theme-color);
+	position: absolute;
+	bottom: 2rem;
+	right: 2rem;
+	z-index: 2;
+	transition: background .2s;
+	cursor: pointer;
+}
+
+#comments-form input.submit:hover {
+	background: RGBA(236, 237, 237, 1);
+}
+
 @media (max-width: 1024px) {
 	html {
 		font-size: 17px;

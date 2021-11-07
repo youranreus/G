@@ -27,5 +27,5 @@
     </article>
 </div><!-- end #main-->
 
-<?php $this->need('components/sidebar.php'); ?>
+<?php $this->need('components/comments.php'); ?>
 <?php $this->need('components/footer.php'); ?>
