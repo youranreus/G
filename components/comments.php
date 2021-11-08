@@ -55,7 +55,7 @@ function threadedComments($comments, $options) {
                     <!-- 如果当前用户已经登录 -->
                     <?php if($this->user->hasLogin()): ?>
                         <!-- 显示当前登录用户的用户名以及登出连接 -->
-                        <span style="font-size: 0.875rem;position: absolute;top: 1.5rem;right: 1.5rem;">🙋<?php $this->user->screenName(); ?></span> 
+                        <span style="font-size: 0.875rem;position: absolute;top: 1.5rem;right: 1.5rem;color:var(--theme-text-main);">🙋<?php $this->user->screenName(); ?></span> 
                     <!-- 若当前用户未登录 -->
                     <?php else: ?>
                     <!-- 要求输入名字、邮箱、网址 -->

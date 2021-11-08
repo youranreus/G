@@ -152,6 +152,14 @@ let makeGallery = () => {
 		}
 }
 
+let darkModeToggle = () => {
+	let h = document.querySelector('html');
+	if(h.hasAttribute('theme-mode'))
+		h.removeAttribute('theme-mode');
+	else
+		h.setAttribute('theme-mode', 'dark');
+};
+
 window.onload = function () {
 	console.log("G.js onload");
 	makePrismLineNum();
@@ -177,6 +185,7 @@ window.ready(function () {
 	lazyload(pics, function (element, observe) {
 		lazyPic(element, observe);
 	});
+	darkModeToggle();
 });
 
 window.onbeforeunload = function() {

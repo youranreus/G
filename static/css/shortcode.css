@@ -118,6 +118,7 @@
 }
 
 .collapse-content-inner {
+	color:var(--theme-text-main);
 	margin: 1.5rem;
 }
 

@@ -1,13 +1,18 @@
 @charset "UTF-8";
 @import "animation.css";
-@import "shortcode.css?v=3.10003";
+@import "shortcode.css?v=3.10004";
 
 @font-face {
 	font-family: "Jetbrains Mono";
 	src: url(../font/JB.ttf) format("truetype");
 }
 
-:root {
+html {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	transition: font-size 0.2s ease;
 	--theme-text-main: #000;
 	--theme-bg-main: #fff;
 	--theme-text-strong: RGB(204, 53, 54);
@@ -31,14 +36,6 @@
 	--theme-banner-bg: #fafafa;
 	--theme-banner-title: #333;
 	--theme-pap-text-main: #202020;
-}
-
-html {
-	font-size: 18px;
-	font-weight: 400;
-	line-height: 1.15;
-	-webkit-text-size-adjust: 100%;
-	transition: font-size 0.2s ease;
 }
 
 html::-webkit-scrollbar-thumb {
@@ -465,6 +462,7 @@ h3.archive-title {
 }
 
 .PAP-banner div p {
+	color: var(--theme-text-main);
 	margin: 0.5rem 0 0 0;
 	font-size: 0.875rem;
 	text-align: center;
@@ -535,6 +533,7 @@ h3.archive-title {
 .PAP-content h3,
 .PAP-content h4,
 .PAP-content h5 {
+	color: var(--theme-text-main);
 	margin: 0 1.5rem 1.25rem;
 	position: relative;
 	font-weight: 400;
@@ -750,6 +749,7 @@ pre[class*="language-"] {
 }
 
 #post-footer p {
+	color: var(--theme-text-main);
 	margin: 0;
 	opacity: 0.7;
 }
@@ -948,6 +948,7 @@ pre[class*="language-"] {
 }
 
 #comments-form h3 {
+	color: var(--theme-text-main);
 	margin: 0;
 	font-size: 1.125rem;
 	font-weight: 600;
@@ -963,7 +964,7 @@ pre[class*="language-"] {
 
 .comments-Input input {
 	width: 30%;
-	background: RGBA(46, 50, 56, 0.05);
+	background: #F4F5F5;
 	border: 1px solid transparent;
 	outline: none;
 	padding: 0.438rem 0.525rem;
@@ -976,7 +977,7 @@ pre[class*="language-"] {
 	box-sizing: border-box;
 	width: 100%;
 	margin: 0.5rem 0 0 0;
-	background: RGBA(46, 50, 56, 0.05);
+	background: #F4F5F5;
 	border: 1px solid transparent;
 	outline: none;
 	padding: 0.438rem 0.525rem;
@@ -1065,6 +1066,7 @@ pre[class*="language-"] {
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: .5rem;
+	color: var(--theme-text-main);
 }
 
 .comment-meta span:first-child {
@@ -1078,6 +1080,7 @@ pre[class*="language-"] {
 }
 
 .comment-content p {
+	color: var(--theme-text-main);
 	margin-bottom: 0;
 	line-height: 1.7;
 	letter-spacing: 0.03rem;
