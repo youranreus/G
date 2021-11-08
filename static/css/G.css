@@ -1075,6 +1075,16 @@ pre[class*="language-"] {
 	background: RGBA(236, 237, 237, 1);
 }
 
+/* Toolbar */
+#toolbar {
+	position: fixed;
+	bottom: 1.5rem;
+	right: 1.5rem;
+	width: 3rem;
+	height: 3rem;
+	background: #000;
+}
+
 @media (max-width: 1024px) {
 	html {
 		font-size: 17px;
