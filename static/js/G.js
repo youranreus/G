@@ -185,7 +185,6 @@ window.ready(function () {
 	lazyload(pics, function (element, observe) {
 		lazyPic(element, observe);
 	});
-	darkModeToggle();
 });
 
 window.onbeforeunload = function() {
