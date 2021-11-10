@@ -1122,13 +1122,14 @@ pre[class*="language-"] {
 	height: 2.5rem;
 	width: 2.5rem;
 	box-sizing: border-box;
-	padding: 0.5rem;
+	padding: calc(0.5rem - 2px);
 	border-radius: 10000rem;
 	background: var(--theme-bg-main);
 	margin-top: 0.5rem;
 	cursor: pointer;
 	opacity: 0.5;
 	transition: opacity 0.2s;
+	border: 1px solid #eee;
 }
 
 .toolbar-btn:hover {
