@@ -28,6 +28,6 @@
 <script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10012"></script>
 <script src="<?php echo G::staticUrl('static/js/smoothscroll.js'); ?>?v=3.215"></script>
 <script src="<?php echo G::staticUrl('static/js/prism.js'); ?>?v=1.01" data-manual></script>
-<script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.216"></script>
+<script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.217"></script>
 </body>
 </html>

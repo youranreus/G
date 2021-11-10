@@ -175,6 +175,7 @@ a.icp {
 	height: 1.5rem;
 	position: relative;
 	bottom: -0.385rem;
+	display: inline-block!important;
 }
 
 /* Basic */

@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/normalize.css'); ?>">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/prism.css'); ?>?v=1.01">
-    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.219">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.220">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/dark.css'); ?>?v=3.219">
     
     <style>

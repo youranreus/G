@@ -185,11 +185,13 @@ window.onload = function () {
 	makePrismLineNum();
 	let images = document.querySelectorAll('.PAP-content img');
 	images.forEach(img=>{
-		img.setAttribute("onclick", "lightbox(this)");
-		let info = document.createElement('span');
-		info.innerText = img.getAttribute('title');
-		info.classList.add('imageinfo');
-		img.after(info);
+		if(!img.classList.contains('bq')) {
+			img.setAttribute("onclick", "lightbox(this)");
+			let info = document.createElement('span');
+			info.innerText = img.getAttribute('title');
+			info.classList.add('imageinfo');
+			img.after(info);
+		}
 	});
 	makeGallery();
 	toolbarInit();
