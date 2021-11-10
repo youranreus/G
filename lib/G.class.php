@@ -100,7 +100,7 @@ class G {
      */
     public static function setColors()
     {
-        $result = ":root {
+        $result = "html {
             --theme-color: ".self::$config["themeColor"].";
             --header-color: ".self::$config["headerColor"].";
             --theme-radius: ".self::$config["themeRadius"].";
