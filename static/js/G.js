@@ -201,6 +201,9 @@ let toolbarInit = () => {
 	document.querySelector('#darkmode').onclick = darkModeToggle;
 };
 
+/**
+ * 表情控件开关
+ */
 let toggleOwO = () => {
 	let OwOContainer = document.querySelector('#OwO-container');
 	if(!OwOContainer.classList.contains('OwO-in') && !OwOContainer.classList.contains('OwO-out'))
@@ -210,7 +213,14 @@ let toggleOwO = () => {
 		OwOContainer.classList.toggle('OwO-in');
 		OwOContainer.classList.toggle('OwO-out');
 	}
-}
+};
+
+/**
+ * 滑动OwO
+ */
+let slideOwO = (id) => {
+	document.querySelector('#' + id).scrollIntoView({ behavior: 'smooth' });
+};
 
 window.onload = function () {
 	console.log("G.js onload");
@@ -228,6 +238,7 @@ window.onload = function () {
 	makeGallery();
 	toolbarInit();
 	autoDarkMode();
+	toggleOwO();
 };
 
 window.ready(function () {
