@@ -964,7 +964,7 @@ pre[class*="language-"] {
 
 .comments-Input input {
 	width: 30%;
-	background: #F4F5F5;
+	background: #f4f5f5;
 	border: 1px solid transparent;
 	outline: none;
 	padding: 0.438rem 0.525rem;
@@ -977,7 +977,7 @@ pre[class*="language-"] {
 	box-sizing: border-box;
 	width: 100%;
 	margin: 0.5rem 0 0 0;
-	background: #F4F5F5;
+	background: #f4f5f5;
 	border: 1px solid transparent;
 	outline: none;
 	padding: 0.438rem 0.525rem;
@@ -1023,7 +1023,7 @@ pre[class*="language-"] {
 	box-sizing: border-box;
 }
 
-.comment-inner:hover .comment-avatar span a{
+.comment-inner:hover .comment-avatar span a {
 	opacity: 1;
 }
 
@@ -1033,7 +1033,7 @@ pre[class*="language-"] {
 	text-align: center;
 }
 
-.comment-avatar span a{
+.comment-avatar span a {
 	display: block;
 	font-size: 0.825rem;
 	background-color: RGBA(244, 245, 245, 1);
@@ -1041,7 +1041,7 @@ pre[class*="language-"] {
 	padding: 3px 6px;
 	margin-top: 5px;
 	opacity: 0;
-	transition: opacity .2s;
+	transition: opacity 0.2s;
 	font-weight: 600;
 }
 
@@ -1065,7 +1065,7 @@ pre[class*="language-"] {
 .comment-meta {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: .5rem;
+	margin-bottom: 0.5rem;
 	color: var(--theme-text-main);
 }
 
@@ -1096,7 +1096,7 @@ pre[class*="language-"] {
 	font-weight: 600;
 	padding: 0.438rem 0.825rem;
 	z-index: 2;
-	transition: background .2s;
+	transition: background 0.2s;
 	border-radius: 5px;
 }
 
@@ -1109,9 +1109,39 @@ pre[class*="language-"] {
 	position: fixed;
 	bottom: 1.5rem;
 	right: 1.5rem;
+}
+
+#toolbar-container {
 	width: 3rem;
+	height: auto;
+}
+
+.toolbar-btn {
+	display: block;
 	height: 3rem;
-	background: #000;
+	width: 3rem;
+	box-sizing: border-box;
+	padding: 0.75rem;
+	border-radius: 10000rem;
+	background: var(--theme-bg-main);
+	margin-top: 0.5rem;
+	cursor: pointer;
+	opacity: 0.5;
+	transition: opacity 0.2s;
+}
+
+.toolbar-btn:hover {
+	opacity: 1;
+}
+
+.toolbar-btn svg {
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+.toolbar-btn svg path {
+	fill: var(--theme-text-main);
+	opacity: 0.7;
 }
 
 @media (max-width: 1024px) {
