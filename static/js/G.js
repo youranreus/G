@@ -155,12 +155,25 @@ let makeGallery = () => {
 let darkModeToggle = () => {
 	let h = document.querySelector('html');
 	if(h.hasAttribute('theme-mode'))
+	{
 		h.removeAttribute('theme-mode');
+		localStorage.removeItem('theme-mode');
+	}
 	else
+	{
 		h.setAttribute('theme-mode', 'dark');
+		localStorage.setItem('theme-mode', 'dark');
+	}
+		
 };
 
-let toolbarInit = ()=>{
+let autoDarkMode = () => {
+	let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	if((localStorage.getItem('theme-mode') && localStorage.getItem('theme-mode') === 'dark') || prefersDarkMode)
+		darkModeToggle();
+}
+
+let toolbarInit = () => {
 	document.querySelector('#gototop').onclick=function(){
 		console.log('yo');
 		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
@@ -180,6 +193,7 @@ window.onload = function () {
 	});
 	makeGallery();
 	toolbarInit();
+	autoDarkMode();
 };
 
 window.ready(function () {
