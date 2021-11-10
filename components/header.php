@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/normalize.css'); ?>">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/prism.css'); ?>?v=1.01">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.219">
-    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/dark.css'); ?>?v=3.218">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/dark.css'); ?>?v=3.219">
     
     <style>
         /* 设置自定义背景[颜色/图片] */

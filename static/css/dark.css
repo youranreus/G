@@ -109,3 +109,7 @@ html[theme-mode="dark"] .archives a:hover {
 html[theme-mode="dark"] .archives a .time {
 	color: rgb(204, 204, 204);
 }
+
+html[theme-mode="dark"] #lyrics p:nth-child(even), #lyrics p span{
+	color: rgb(204, 204, 204);
+}
