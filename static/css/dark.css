@@ -113,3 +113,7 @@ a.next {
 #lyrics p:nth-child(even), #lyrics p span{
 	color: rgb(204, 204, 204);
 }
+
+.toolbar-btn {
+	border: 1px solid #555;
+}
