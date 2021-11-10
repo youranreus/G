@@ -160,6 +160,13 @@ let darkModeToggle = () => {
 		h.setAttribute('theme-mode', 'dark');
 };
 
+let toolbarInit = ()=>{
+	document.querySelector('#gototop').onclick=function(){
+		console.log('yo');
+		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+	};
+};
+
 window.onload = function () {
 	console.log("G.js onload");
 	makePrismLineNum();
@@ -172,6 +179,7 @@ window.onload = function () {
 		img.after(info);
 	});
 	makeGallery();
+	toolbarInit();
 };
 
 window.ready(function () {
