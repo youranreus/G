@@ -68,6 +68,13 @@ function themeConfig($form) {
     ) , '0', _t('是否使用独立页面作首页') , _t('默认不使用'));
     $form->addInput($enableIndexPage);
 
+    $articleStyle = new Typecho_Widget_Helper_Form_Element_Radio('articleStyle', array(
+      '2' => _t('大图') ,
+      '1' => _t('单列') ,
+      '0' => _t('双列')
+    ) , '0', _t('首页样式') , _t('默认为双列'));
+    $form->addInput($articleStyle);
+
     $defaultArticlePath = new Typecho_Widget_Helper_Form_Element_Text('defaultArticlePath', NULL, 'index.php/blog', _t('默认头部文章路径'), _t('前面不需要加/'));
     $form->addInput($defaultArticlePath);
 

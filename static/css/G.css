@@ -327,6 +327,13 @@ footer p {
 	transform: scale(1.01);
 }
 
+.article-item p {
+	color: var(--theme-text-main);
+	font-size: 0.875rem;
+	z-index: 2;
+	position: relative;
+}
+
 .article-banner-wrap {
 	position: absolute;
 	height: 100%;
