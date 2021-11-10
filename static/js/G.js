@@ -174,10 +174,11 @@ let autoDarkMode = () => {
 }
 
 let toolbarInit = () => {
-	document.querySelector('#gototop').onclick=function(){
+	document.querySelector('#gototop').onclick = function(){
 		console.log('yo');
 		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 	};
+	document.querySelector('#darkmode').onclick = darkModeToggle;
 };
 
 window.onload = function () {
