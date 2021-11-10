@@ -57,6 +57,7 @@ a.next {
 }
 
 #comments-textarea,
+#comments-textarea-wrap,
 .comments-Input input {
 	background: #343232;
 	color: var(--theme-text-main);
@@ -110,7 +111,8 @@ a.next {
 	color: rgb(204, 204, 204);
 }
 
-#lyrics p:nth-child(even), #lyrics p span{
+#lyrics p:nth-child(even),
+#lyrics p span {
 	color: rgb(204, 204, 204);
 }
 

@@ -1252,11 +1252,9 @@ pre[class*="language-"] {
 	font-weight: 600;
 	padding: 0.438rem 0.825rem;
 	z-index: 2;
-	background-color: #f4f5f5;
-	transition: background 0.2s;
-	border-radius: 5px;
 	color: var(--theme-text-main);
 	cursor: pointer;
+	opacity: 0.7;
 }
 
 /* Toolbar */
