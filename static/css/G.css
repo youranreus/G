@@ -7,6 +7,10 @@
 	src: url(../font/JB.ttf) format("truetype");
 }
 
+* {
+	transition: color .2s, background .2s;
+}
+
 html {
 	font-size: 18px;
 	font-weight: 400;
