@@ -152,6 +152,9 @@ let makeGallery = () => {
 		}
 }
 
+/**
+ * 夜间模式开关
+ */
 let darkModeToggle = () => {
 	let night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
 	if (night === '0') {
@@ -164,6 +167,9 @@ let darkModeToggle = () => {
 	}
 };
 
+/**
+ * 自动夜间模式判断
+ */
 let autoDarkMode = () => {
 	if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
 		if (new Date().getHours() > 22 || new Date().getHours() < 6) {
@@ -184,6 +190,9 @@ let autoDarkMode = () => {
 	}
 }
 
+/**
+ * toolbar按钮赋能
+ */
 let toolbarInit = () => {
 	document.querySelector('#gototop').onclick = function(){
 		console.log('yo');
@@ -191,6 +200,17 @@ let toolbarInit = () => {
 	};
 	document.querySelector('#darkmode').onclick = darkModeToggle;
 };
+
+let toggleOwO = () => {
+	let OwOContainer = document.querySelector('#OwO-container');
+	if(!OwOContainer.classList.contains('OwO-in') && !OwOContainer.classList.contains('OwO-out'))
+		OwOContainer.classList.add('OwO-in');
+	else
+	{
+		OwOContainer.classList.toggle('OwO-in');
+		OwOContainer.classList.toggle('OwO-out');
+	}
+}
 
 window.onload = function () {
 	console.log("G.js onload");

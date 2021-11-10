@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "animation.css";
+@import "animation.css?v=3.2.1";
 @import "shortcode.css?v=3.10004";
 
 @font-face {
@@ -173,6 +173,9 @@ a.icp {
 	z-index: 999;
 	background: RGBA(255, 255, 255, 0.99);
 	animation: opacity-in 0.2s;
+	-moz-animation: opacity-in 0.2s;
+    -webkit-animation: opacity-in 0.2s;
+    -o-animation: opacity-in 0.2s;
 	cursor: pointer;
 }
 
@@ -194,6 +197,9 @@ a.icp {
 	width: 800px;
 	margin: auto;
 	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+	-moz-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+    -webkit-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+    -o-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 }
 
 /* Header */
@@ -558,6 +564,9 @@ h3.archive-title {
 	border-radius: var(--theme-radius, 30px);
 	overflow: hidden;
 	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+	-moz-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+    -webkit-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+    -o-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 }
 
 .PAP-banner {
@@ -805,6 +814,9 @@ h3.archive-title {
 .PAP-content img.lazyload-done {
 	visibility: visible;
 	animation: pic-show 1s;
+	-moz-animation: pic-show 1s;
+    -webkit-animation: pic-show 1s;
+    -o-animation: pic-show 1s;
 }
 
 .PAP-content pre {
@@ -1111,7 +1123,7 @@ pre[class*="language-"] {
 	position: relative;
 }
 
-#comments-textarea-wrap{
+#comments-textarea-wrap {
 	height: 9.5rem;
 	background: #f4f5f5;
 	padding: 0;
@@ -1158,7 +1170,7 @@ pre[class*="language-"] {
 }
 
 .comment-children .comment-children {
-	padding-left: 0
+	padding-left: 0;
 }
 
 .comment-inner:hover .comment-avatar span a {
@@ -1255,6 +1267,67 @@ pre[class*="language-"] {
 	color: var(--theme-text-main);
 	cursor: pointer;
 	opacity: 0.7;
+}
+
+#OwO-container {
+	height: 20rem;
+	width: 40rem;
+	max-width: 90%;
+	border-radius: var(--theme-radius);
+	overflow: hidden;
+	background-color: var(--theme-bg-main);
+	position: fixed;
+	bottom: -35rem;
+	left: calc(50%);
+	transform: translateX(-50%);
+	z-index: 9;
+	box-shadow: var(--theme-shadow);
+}
+
+#OwO-content {
+	box-sizing: border-box;
+	height: 15rem;
+	width: 100%;
+	padding: 1.5rem;
+}
+
+#OwO-header {
+	display: flex;
+	justify-content: space-between;
+}
+
+#OwO-header span {
+	padding: 0.438rem 0.825rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+	border-radius: 5px;
+	color: var(--theme-text-main);
+	transition: color 0.2s;
+	cursor: pointer;
+}
+
+#meme-selector span:hover {
+	color: var(--theme-color);
+}
+
+span#toggleOwO {
+	color: var(--theme-text-strong);
+}
+
+#OwO-container.OwO-in {
+	bottom: -5rem;
+	animation: OwO-in 0.5s;
+    -moz-animation: OwO-in 0.5s;
+    -webkit-animation: OwO-in 0.5s;
+    -o-animation: OwO-in 0.5s;
+}
+
+#OwO-container.OwO-out {
+	bottom: -35rem;
+	animation: OwO-out 0.5s;
+    -moz-animation: OwO-out 0.5s;
+    -webkit-animation: OwO-out 0.5s;
+    -o-animation: OwO-out 0.5s;
 }
 
 /* Toolbar */
@@ -1412,5 +1485,9 @@ pre[class*="language-"] {
 
 	.comment-content {
 		max-width: 65%;
+	}
+
+	.comments-Input input {
+		width: 26%;
 	}
 }
