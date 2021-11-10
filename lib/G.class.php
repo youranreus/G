@@ -260,7 +260,23 @@ class G {
      */
     public static function analyzeContent($content)
     {
+        $content = self::analyzeMeme($content);
         return do_shortcode($content);
+    }
+
+    /**
+     * 解析文字中的表情包
+     *
+     * @param string $content
+     * @return string
+     */
+    public static function analyzeMeme($content)
+    {
+        //@(xx)格式表情
+        $result = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/$1.png" class="bq">',$content);
+        //mirage格式表情 （原神，小黄脸）
+        $result = preg_replace('/\:\:(.*?)\:(.*?)\:\:/','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">',$result);
+        return $result;
     }
 
     public static function test()
