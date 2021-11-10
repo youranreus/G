@@ -8,7 +8,7 @@
 }
 
 * {
-	transition: color .2s, background .2s;
+	transition: color 0.2s, background 0.2s;
 }
 
 html {
@@ -181,7 +181,7 @@ a.icp {
 	height: 1.5rem;
 	position: relative;
 	bottom: -0.385rem;
-	display: inline-block!important;
+	display: inline-block !important;
 }
 
 /* Basic */
@@ -404,6 +404,116 @@ footer p {
 
 .articles-switch {
 	display: block;
+}
+
+.card-item {
+	float: left;
+	width: 100%;
+	margin-bottom: 2rem;
+}
+
+.card-item article {
+	color: #fff;
+	background: rgb(138, 160, 255);
+	background: -moz-linear-gradient(
+		128deg,
+		rgb(138, 160, 255) 30%,
+		rgb(90, 140, 250) 70%
+	);
+	background: -webkit-linear-gradient(
+		128deg,
+		rgb(138, 160, 255) 30%,
+		rgb(90, 140, 250) 70%
+	);
+	background: -o-linear-gradient(
+		128deg,
+		rgb(138, 160, 255) 30%,
+		rgb(90, 140, 250) 70%
+	);
+	background: -ms-linear-gradient(
+		128deg,
+		rgb(138, 160, 255) 30%,
+		rgb(90, 140, 250) 70%
+	);
+	background: linear-gradient(
+		218deg,
+		rgb(138, 160, 255) 30%,
+		rgb(90, 140, 250) 70%
+	);
+	position: relative;
+	z-index: 0;
+	padding: 2rem 1.5rem;
+	height: 6.5rem;
+	border-radius: var(--theme-radius);
+	overflow: hidden;
+	word-break: break-all;
+	transition: all 0.5s ease;
+}
+
+.card-item article:hover {
+	transform: translateY(-5px);
+}
+
+.card-item article h2 {
+	position: absolute;
+	bottom: 38px;
+	color: white;
+	margin: 0;
+	font-size: 1.25rem;
+	width: 100%;
+}
+
+.card-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	transition: all 0.2s;
+	filter: brightness(90%);
+}
+
+.card-link {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.card-item-title {
+	max-width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.card-item-meta {
+	font-size: 0.875rem;
+}
+
+.card-item-category {
+	position: absolute;
+	display: inline-block;
+	z-index: 2;
+}
+
+.card-item-category-link,
+.card-item-date,
+.card-item-picnum {
+	color: white;
+	border-radius: 20px;
+	padding: 4px 8px;
+	transition: all 0.2s ease;
+	text-decoration: none;
+	cursor: default;
 }
 
 a.next {
