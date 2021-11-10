@@ -1100,7 +1100,6 @@ pre[class*="language-"] {
 #comments-textarea {
 	box-sizing: border-box;
 	width: 100%;
-	margin: 0.5rem 0 0 0;
 	background: #f4f5f5;
 	border: 1px solid transparent;
 	outline: none;
@@ -1110,6 +1109,13 @@ pre[class*="language-"] {
 	height: 7rem;
 	z-index: 1;
 	position: relative;
+}
+
+#comments-textarea-wrap{
+	height: 9.5rem;
+	background: #f4f5f5;
+	padding: 0;
+	margin: 0.5rem 0 0 0;
 	border-radius: 5px;
 }
 
@@ -1234,6 +1240,23 @@ pre[class*="language-"] {
 
 #cancel-comment-reply-link:hover {
 	background: RGBA(236, 237, 237, 1);
+}
+
+/* OwO */
+#OwO-logo {
+	display: block;
+	position: absolute;
+	bottom: 2rem;
+	left: 2rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+	padding: 0.438rem 0.825rem;
+	z-index: 2;
+	background-color: #f4f5f5;
+	transition: background 0.2s;
+	border-radius: 5px;
+	color: var(--theme-text-main);
+	cursor: pointer;
 }
 
 /* Toolbar */
