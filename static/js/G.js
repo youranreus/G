@@ -256,7 +256,6 @@ window.onload = function () {
 	makeGallery();
 	toolbarInit();
 	autoDarkMode();
-	toggleOwO();
 };
 
 window.ready(function () {
