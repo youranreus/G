@@ -1071,6 +1071,8 @@ pre[class*="language-"] {
 	font-style: italic;
 	-webkit-text-stroke: 2px var(--theme-color);
 	color: transparent;
+	-ms-user-select: none;
+	-webkit-user-select: none;
 	user-select: none;
 	opacity: 0.06;
 }
