@@ -301,7 +301,7 @@ document.addEventListener('pjax:send', () => {
 			}
 		}
 	}
-
+	window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 	let main = document.querySelector('#container') || document.querySelector('.PAP') || document.querySelector('#Lyrics');
 	if(main)
 	{
