@@ -10,7 +10,7 @@
             <?php endif; ?>
             <div>
                 <h2 itemprop="name headline"><?php $this->title() ?></h2>
-                <p><?php echo G::getSemanticDate($this->created); ?> · <?php $this->category(' · '); ?> </p>
+                <p><?php echo G::getSemanticDate($this->created); ?> · <?php $this->category(' · '); ?> · <?php echo G::getPostView($this); ?>次阅读</p>
             </div>
         </div>
         <div class="post-content PAP-content" itemprop="articleBody">
