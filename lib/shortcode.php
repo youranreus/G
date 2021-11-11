@@ -1,18 +1,6 @@
 <?php
-/**
- *
- * 感谢Maicong大佬的短代码解析QwQ
- * 注册短代码
- *
- * @author  MaiCong <i@maicong.me>
- * @link    https://github.com/maicong/stay
- * @since   1.5.4
- *
- */
-
-if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-
-require_once __DIR__ . '/shortcode.main.php';
+require_once("shortcode.lib.php");
+require_once("G.class.php");
 
 //文章跳转
 function shortcode_jump_button( $atts, $content= ''){
@@ -43,21 +31,8 @@ function shortcode_jump_button( $atts, $content= ''){
   else{
     return '<span>id无效QAQ</span>';
   }
-
-
-
 }
 add_shortcode('art','shortcode_jump_button');
-
-// 下载
-function shortcode_button_dl( $atts, $content = '' ) {
-    $args = shortcode_atts( array(
-        'href' => 'https://',
-        'target' => '_blank'
-    ), $atts );
-    return '<div class="post-download"><a href="//' .  $args['href'] . '" target="' . $args['target'] . '"><span>' . $content . '</span></a></div>';
-}
-add_shortcode( 'dl' , 'shortcode_button_dl' );
 
 
 function shortcode_notice( $atts, $content = '' ) {
@@ -70,18 +45,6 @@ function shortcode_warn( $atts, $content = '' ) {
     return "<div class='shortcode-warn'>".$content."</div>";
 }
 add_shortcode( 'warn' , 'shortcode_warn' );
-
-function shortcode_warn_block( $atts, $content = '' ) {
-    return "<div class='post-content-warn'><div class='post-content-content'>".$content."</div></div>";
-}
-add_shortcode( 'warn-block' , 'shortcode_warn_block' );
-
-
-function shortcode_notice_block( $atts, $content = '' ) {
-    return "<div class='post-content-notice'><div class='post-content-content'>".$content."</div></div>";
-}
-add_shortcode( 'notice-block' , 'shortcode_notice_block' );
-
 
 function shortcode_tag( $atts, $content = '' ) {
     $args = shortcode_atts( array(
@@ -100,15 +63,15 @@ function shortcode_dplayer( $atts, $content = '' ) {
     return "
     <div id='dplayer-".$args["id"]."' class='dp'></div>
     <script>
-    var dplayer". $args["id"] ." = new DPlayer({
-    container: document.getElementById('dplayer-".$args["id"]."'),
-    preload:'auto',
-    autoplay: false,
-    video: {
-        url: '".$args["url"]."',
-        pic: '".$args["pic"]."'
-      }
-    });
+        let dplayer". $args["id"] ." = new DPlayer({
+        container: document.getElementById('dplayer-".$args["id"]."'),
+        preload:'auto',
+        autoplay: false,
+        video: {
+            url: '".$args["url"]."',
+            pic: '".$args["pic"]."'
+        }
+        });
     </script>
     ";
 }
@@ -131,7 +94,7 @@ function shortcode_collapse( $atts, $content = '' ) {
         'title' => '折叠框'
     ), $atts );
 
-    return '<div class="collapse-box"><div class="collapse-title"><p>'.$args['title'].'</p></div><div class="collapse-content" style="display: none;">'.shortcodeContent($content).'</div></div>';
+    return '<div class="collapse-box" data-collapsed="true"><div class="collapse-title" onclick="collapseController(this)"><p>'.$args['title'].'</p></div><div class="collapse-content"><div class="collapse-content-inner">'.G::analyzeContent($content).'</div></div></div>';
 }
 add_shortcode( 'collapse' , 'shortcode_collapse' );
 
@@ -160,11 +123,3 @@ function shortcode_photos( $atts, $content = '' ) {
   return $result;
 }
 add_shortcode( 'photos' , 'shortcode_photos' );
-
-function shortcode_tiptool( $atts, $content = '' ) {
-    $args = shortcode_atts( array(
-        'title' => '?'
-    ), $atts );
-    return '<span class="post-content-tooltip" title='.$content.'><svg t="1631427014249" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3732" width="200" height="200"><path d="M512 960c-243.2 0-448-198.4-448-448 0-243.2 198.4-448 448-448 243.2 0 448 198.4 448 448s-204.8 448-448 448zM512 128C300.8 128 128 300.8 128 512s172.8 384 384 384 384-172.8 384-384-172.8-384-384-384z" fill="#bfbfbf" p-id="3733"></path><path d="M460.8 307.2c0 25.6 19.2 51.2 51.2 51.2s51.2-19.2 51.2-51.2S537.6 256 512 256s-51.2 19.2-51.2 51.2zM512 768c-19.2 0-32-12.8-32-32V448c0-19.2 12.8-32 32-32s32 12.8 32 32v288c0 19.2-12.8 32-32 32z" fill="#bfbfbf" p-id="3734"></path></svg></span>';
-}
-add_shortcode( 'tip' , 'shortcode_tiptool' );

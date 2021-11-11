@@ -4,41 +4,45 @@
 *
 * @package custom
 */
-$this -> need('header.php');
+$this -> need('components/header.php');
 ?>
-	<div id="links">
-		<div id="links-content">
-			<h2><?php $this->title(); ?></h2>
-			<div id="links-post">
-				<?php
-				$content = $this->content;
-				emotionContent($content,$this->options->themeUrl);
-				 ?>
-		 </div>
-	    <div class="friends">
-				<?php if (isset($this->options->plugins['activated']['Links'])) : ?>
-					<?php Links_Plugin::output("
-					<li class='clear'>
-						<a href='{url}' target='_blank'></a>
-						<img src='{image}' alt='{name}'/>
-						<div class='link-item-content'>
-							<h3>{name}</h3>
-							<span>{sort}</span>
-							<p>{description}</p>
-						</div>
-					</li>
-					", 0); ?>
-				<?php else: ?>
-					<?php Links(); ?>
-				<?php endif; ?>
 
-		</div>
-	</div>
-  </div>
-	<?php
-		$enableComment = $this->fields->enableComment;
-		if ($enableComment == 1):
-	?>
-	<?php $this->need('comments.php'); ?>
-<?php endif; ?>
-<?php $this -> need('footer.php'); ?>
+<div class="PAP" id="link">
+	<article itemscope itemtype="http://schema.org/BlogPosting">
+        <div id="post-banner" class="PAP-banner <?php $img = G::getArticleFieldsBanner($this); if($img != 'none') echo 'PAP-IMG-Banner'; ?>">
+            <?php $img = G::getArticleFieldsBanner($this); if($img != 'none'): ?>
+                <div class="PAP-banner-background" style="background-image: url('<?php echo $img; ?>');"></div>
+                <div class="PAP-banner-mask"></div>
+            <?php endif; ?>
+            <div>
+                <h2 itemprop="name headline"><?php $this->title() ?></h2>
+            </div>
+        </div>
+        <div class="post-content PAP-content" itemprop="articleBody">
+            <?php echo G::analyzeContent($this->content); ?>
+        </div>
+    </article>
+</div>
+
+<div id="link-list">
+	<?php if (isset($this->options->plugins['activated']['Links'])) : ?>
+		<?php 
+			Links_Plugin::output('
+				<a target="_blank" href="{url}" class="link-wrap">
+					<div class="link-item">
+						<img src="{image}" alt="{name}"/>
+						<div class="link-item-content">
+							<h4>{name}</h4>
+							<p>{sort}</p>
+						</div>
+						<div class="link-item-m-content">
+							<span>{name}</span>
+						</div>
+					</div>
+				</a>', 0); 
+		?>
+	<?php endif; ?>
+</div>
+
+
+<?php $this->need('components/footer.php'); ?>

@@ -1,26 +1,23 @@
 <?php
 /**
- * 大气
- *
+ * a graceful typecho theme
  *
  * @package G
  * @author 季悠然
- * @version 2.5.2
- * @link https://gundam.exia.xyz/
+ * @version 3.2.1
+ * @link https://季悠然.space
  */
 
- $this->need('header.php');
- ?>
-<div id="article" class="clear">
-  <div id="article-content">
-
-    <?php  $this->need('IndexSwitcher.php'); ?>
-
-    <div id="pages" class="clear changePage">
-      <?php $this->pageLink('更多 >','next'); ?>
-      <?php $this->pageLink('< 返回','prev'); ?>
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+$this->need('components/header.php');
+?>
+<div id="container">
+    <div id="articles">
+        <?php $this->need('components/article.php'); ?>
     </div>
-
-  </div>
+    <div id="articles-switch" class="clear">
+        <?php $this->pageLink('更多 >','next'); ?>
+        <?php $this->pageLink('< 返回','prev'); ?>
+    </div>
 </div>
-<?php $this->need('footer.php'); ?>
+<?php $this->need('components/footer.php'); ?>

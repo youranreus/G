@@ -4,25 +4,25 @@
 *
 * @package custom
 */
-$this -> need('header.php');
+$this -> need('components/header.php');
 ?>
 
-<div id="archives">
-  <div id="archives-content">
-    <h2><?php $this->title(); ?></h2>
-      <div id="tag-cloud">
-
+<div class="PAP" id="archives">
+    <div id="page-banner" class="PAP-banner">
+		<div>
+			<h2 itemprop="name headline"><?php $this->title() ?></h2>
+		</div>
+    </div>
+    <div id="archives-content">
+        <div id="tag-cloud">
   			<?php $this->widget('Widget_Metas_Tag_Cloud', array('sort' => 'count', 'ignoreZeroCount' => true, 'desc' => true, 'limit' => 20))->to($tags); ?>
   			<?php if($tags->have()): ?>
-  			<?php while ($tags->next()): ?>
-  			    <li><a href="<?php $tags->permalink(); ?>" rel="tag" class="size-<?php $tags->split(5, 10, 20, 30); ?>" title="<?php $tags->count(); ?> 个话题">#<?php $tags->name(); ?></a></li>
-  			<?php endwhile; ?>
+                <?php while ($tags->next()): ?>
+                    <li><a href="<?php $tags->permalink(); ?>" rel="tag" class="size-<?php $tags->split(5, 10, 20, 30); ?>" title="<?php $tags->count(); ?> 个话题"><?php $tags->name(); ?></a></li>
+                <?php endwhile; ?>
   			<?php endif; ?>
-
   		</div>
-
   		<div id="timeline">
-
   			<?php
   	        $Month_E = array(1 => "Jan",
   	            2 => "Feb",
@@ -76,10 +76,9 @@ $this -> need('header.php');
   	            $html .= "</ul></li>";
   	        }
   	        ?>
-
   		</div>
 </div>
 </div>
 
 
-<?php $this -> need('footer.php'); ?>
+<?php $this->need('components/footer.php'); ?>
