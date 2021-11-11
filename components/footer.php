@@ -25,9 +25,10 @@
 <div id="dark-cover"></div>
 <?php $this->need('components/toolbar.php'); ?>
 <?php $this->footer(); ?>
+<script src="<?php echo G::staticUrl('static/js/pjax.min.js'); ?>?v=3.10012"></script>
 <script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10012"></script>
 <script src="<?php echo G::staticUrl('static/js/smoothscroll.js'); ?>?v=3.215"></script>
 <script src="<?php echo G::staticUrl('static/js/prism.js'); ?>?v=1.01" data-manual></script>
-<script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.219"></script>
+<script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.223"></script>
 </body>
 </html>

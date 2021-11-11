@@ -240,8 +240,10 @@ Smilies = {
     }
 }
 
-window.onload = function () {
-	console.log("G.js onload");
+/**
+ * 页面初始化
+ */
+let pageInit = () => {
 	makePrismLineNum();
 	let images = document.querySelectorAll('.PAP-content img');
 	images.forEach(img=>{
@@ -254,11 +256,12 @@ window.onload = function () {
 		}
 	});
 	makeGallery();
-	toolbarInit();
-	autoDarkMode();
 };
 
-window.ready(function () {
+/**
+ * lazyload加载
+ */
+let doLazyload = () => {
 	let banners = document.getElementsByClassName("article-banner");
 	let pics = document.getElementsByTagName("img");
 	preLazy(banners, "style", "origin");
@@ -269,6 +272,53 @@ window.ready(function () {
 	lazyload(pics, function (element, observe) {
 		lazyPic(element, observe);
 	});
+};
+
+window.onload = function () {
+	console.log("G.js onload");
+	let pjax = new Pjax({
+		elements: "a:not(a[target='_blank'], a[no-pjax])", // default is "a[href], form[action]"
+		selectors: ["#main", "title"],
+		timeout: 10000,
+    	cacheBust: false,
+    	scrollRestoration: true
+	});
+	pageInit();
+	autoDarkMode();
+	toolbarInit();
+};
+
+/**
+ * pjax发送回调
+ */
+document.addEventListener('pjax:send', () => {
+	if (typeof aplayers !== 'undefined') {
+		for (let i = 0; i < aplayers.length; i++) {
+			try {
+				aplayers[i].destroy();
+			} catch (e) {
+				console.log(e);
+			}
+		}
+	}
+});
+
+/**
+ * pjax完成回调
+ */
+document.addEventListener('pjax:complete', () => {
+	if (typeof Prism !== 'undefined') {
+		Prism.highlightAll(true, null);
+	};
+	if (typeof (loadMeting) === "function") {
+		loadMeting();
+	};
+	pageInit();
+	doLazyload();
+});
+
+window.ready(function () {
+	doLazyload();
 });
 
 window.onbeforeunload = function() {
