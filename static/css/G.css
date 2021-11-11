@@ -15,6 +15,7 @@ html {
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
 	text-size-adjust: 100%;
 	transition: font-size 0.2s ease;
 	--theme-text-main: #000;
@@ -91,9 +92,9 @@ html::before {
 	left: 0;
 	width: 100%;
 	background-repeat: no-repeat;
-	background-size: cover;
 	-webkit-background-size: cover;
 	-o-background-size: cover;
+	background-size: cover;
 	background-position: center 0;
 }
 
@@ -124,6 +125,7 @@ th,
 td,
 blockquote,
 img {
+	-webkit-text-size-adjust: 100%;
 	text-size-adjust: 100%;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -172,10 +174,10 @@ a.icp {
 	align-items: center;
 	z-index: 999;
 	background: RGBA(255, 255, 255, 0.99);
-	animation: opacity-in 0.2s;
 	-moz-animation: opacity-in 0.2s;
     -webkit-animation: opacity-in 0.2s;
     -o-animation: opacity-in 0.2s;
+	animation: opacity-in 0.2s;
 	cursor: pointer;
 }
 
@@ -196,10 +198,10 @@ a.icp {
 #container {
 	width: 800px;
 	margin: auto;
-	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 	-moz-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
     -webkit-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
     -o-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 }
 
 /* Header */
@@ -563,10 +565,10 @@ h3.archive-title {
 	box-shadow: var(--theme-shadow, none);
 	border-radius: var(--theme-radius, 30px);
 	overflow: hidden;
-	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 	-moz-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
     -webkit-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
     -o-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 }
 
 .PAP-banner {
@@ -813,10 +815,10 @@ h3.archive-title {
 .PAP-content p img.lazyload-done,
 .PAP-content img.lazyload-done {
 	visibility: visible;
-	animation: pic-show 1s;
 	-moz-animation: pic-show 1s;
     -webkit-animation: pic-show 1s;
     -o-animation: pic-show 1s;
+	animation: pic-show 1s;	
 }
 
 .PAP-content pre {
@@ -1316,18 +1318,18 @@ span#toggleOwO {
 
 #OwO-container.OwO-in {
 	bottom: -5rem;
-	animation: OwO-in 0.5s;
-    -moz-animation: OwO-in 0.5s;
+	-moz-animation: OwO-in 0.5s;
     -webkit-animation: OwO-in 0.5s;
     -o-animation: OwO-in 0.5s;
+	animation: OwO-in 0.5s;
 }
 
 #OwO-container.OwO-out {
 	bottom: -35rem;
-	animation: OwO-out 0.5s;
-    -moz-animation: OwO-out 0.5s;
+	-moz-animation: OwO-out 0.5s;
     -webkit-animation: OwO-out 0.5s;
     -o-animation: OwO-out 0.5s;
+	animation: OwO-out 0.5s;
 }
 
 #meme-display {
