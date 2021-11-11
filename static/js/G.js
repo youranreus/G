@@ -301,6 +301,16 @@ document.addEventListener('pjax:send', () => {
 			}
 		}
 	}
+
+	let main = document.querySelector('#container') || document.querySelector('.PAP') || document.querySelector('#Lyrics');
+	if(main)
+	{
+		main.setAttribute('style','animation: opacity-out var(--theme-animation-out-duration, 1s) ease;opacity: 0;');
+		let duration  = parseFloat(getComputedStyle(main).getPropertyValue('--theme-animation-out-duration'))*1000;
+		setTimeout(function(){
+			main.style.opacity = '0';
+		}, duration);
+	}
 });
 
 /**
@@ -322,13 +332,5 @@ window.ready(function () {
 });
 
 window.onbeforeunload = function() {
-	let main = document.querySelector('#container') || document.querySelector('.PAP') || document.querySelector('#Lyrics');
-	if(main)
-	{
-		main.setAttribute('style','animation: opacity-out var(--theme-animation-out-duration, .2s) ease;opacity: 0;');
-		let duration  = parseFloat(getComputedStyle(main).getPropertyValue('--theme-animation-out-duration'))*1000;
-		setTimeout(function(){
-			main.style.opacity = '0';
-		}, duration);
-	}
+	
 };

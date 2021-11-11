@@ -107,10 +107,10 @@ class G {
             --theme-shadow: ".self::getBoxShadow(self::$config["themeShadow"]).";
         ";
         if(isset(self::$advanceConfig['customAnimationInDuration']))
-            $result .= "--theme-animation-in-duration: ".self::$advanceConfig['customAnimationInDuration'].";";
-            if(isset(self::$advanceConfig['customAnimationOutDuration']))
-            $result .= "--theme-animation-out-duration: ".self::$advanceConfig['customAnimationOutDuration'].";";
-        $result .= "}";
+            $result .= "    --theme-animation-in-duration: ".self::$advanceConfig['customAnimationInDuration'].";\n        ";
+        if(isset(self::$advanceConfig['customAnimationOutDuration']))
+            $result .= "    --theme-animation-out-duration: ".self::$advanceConfig['customAnimationOutDuration'].";\n    ";
+        $result .= "    }\n";
         return $result;
     }
     
