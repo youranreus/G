@@ -119,3 +119,15 @@ a.next {
 .toolbar-btn {
 	border: 1px solid #555;
 }
+
+.ArtinArt {
+	background: #383737;
+}
+
+.ArtinArt h5 a {
+	color: var(--theme-text-main);
+}
+
+.ArtinArt h5 a:hover {
+	color: var(--theme-text-main)!important;
+}
