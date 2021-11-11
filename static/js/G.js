@@ -302,7 +302,7 @@ document.addEventListener('pjax:send', () => {
 		}
 	}
 	window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-	let main = document.querySelector('#container') || document.querySelector('.PAP') || document.querySelector('#Lyrics');
+	let main = document.querySelector('#container') || document.querySelector('.PAP') || document.querySelector('#lyrics');
 	if(main)
 	{
 		main.setAttribute('style','animation: opacity-out var(--theme-animation-out-duration, 1s) ease;opacity: 0;');
