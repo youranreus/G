@@ -175,8 +175,8 @@ a.icp {
 	z-index: 999;
 	background: RGBA(255, 255, 255, 0.99);
 	-moz-animation: opacity-in 0.2s;
-    -webkit-animation: opacity-in 0.2s;
-    -o-animation: opacity-in 0.2s;
+	-webkit-animation: opacity-in 0.2s;
+	-o-animation: opacity-in 0.2s;
 	animation: opacity-in 0.2s;
 	cursor: pointer;
 }
@@ -199,8 +199,8 @@ a.icp {
 	width: 800px;
 	margin: auto;
 	-moz-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
-    -webkit-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
-    -o-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+	-webkit-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+	-o-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 }
 
@@ -566,8 +566,8 @@ h3.archive-title {
 	border-radius: var(--theme-radius, 30px);
 	overflow: hidden;
 	-moz-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
-    -webkit-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
-    -o-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+	-webkit-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
+	-o-animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 	animation: opacity-in var(--theme-animation-in-duration, 1s) ease;
 }
 
@@ -816,9 +816,9 @@ h3.archive-title {
 .PAP-content img.lazyload-done {
 	visibility: visible;
 	-moz-animation: pic-show 1s;
-    -webkit-animation: pic-show 1s;
-    -o-animation: pic-show 1s;
-	animation: pic-show 1s;	
+	-webkit-animation: pic-show 1s;
+	-o-animation: pic-show 1s;
+	animation: pic-show 1s;
 }
 
 .PAP-content pre {
@@ -876,6 +876,25 @@ pre[class*="language-"] {
 
 .PAP-content table thead tr {
 	background-color: var(--theme-table-th-bg);
+}
+
+.PAP-content .aplayer {
+	box-shadow: none;
+	margin: 1.5rem;
+	background: var(--theme-bg-main);
+	color: var(--theme-pap-text-main);
+}
+
+.PAP-content .aplayer .aplayer-lrc p {
+	color: var(--theme-pap-text-main);
+}
+
+.PAP-content .aplayer .aplayer-lrc:before {
+	display: none;
+}
+
+.PAP-content .aplayer .aplayer-lrc:after {
+	display: none;
 }
 
 /* Post */
@@ -1321,16 +1340,16 @@ span#toggleOwO {
 #OwO-container.OwO-in {
 	bottom: -5rem;
 	-moz-animation: OwO-in 0.5s;
-    -webkit-animation: OwO-in 0.5s;
-    -o-animation: OwO-in 0.5s;
+	-webkit-animation: OwO-in 0.5s;
+	-o-animation: OwO-in 0.5s;
 	animation: OwO-in 0.5s;
 }
 
 #OwO-container.OwO-out {
 	bottom: -35rem;
 	-moz-animation: OwO-out 0.5s;
-    -webkit-animation: OwO-out 0.5s;
-    -o-animation: OwO-out 0.5s;
+	-webkit-animation: OwO-out 0.5s;
+	-o-animation: OwO-out 0.5s;
 	animation: OwO-out 0.5s;
 }
 
@@ -1364,7 +1383,7 @@ span#toggleOwO {
 .OwO-item img {
 	width: 2rem;
 	height: 2rem;
-	margin: .5rem;
+	margin: 0.5rem;
 }
 
 /* Toolbar */
