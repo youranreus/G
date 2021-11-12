@@ -129,9 +129,20 @@ a.next {
 }
 
 .ArtinArt h5 a:hover {
-	color: var(--theme-text-main)!important;
+	color: var(--theme-text-main) !important;
 }
 
 .post-toolbar-btn {
 	background-color: #403e3e;
+}
+
+.PAP-content hr {
+	background: #2c2a2a
+		repeating-linear-gradient(
+			-45deg,
+			#bcbcbc,
+			#bcbcbc 0.25rem,
+			transparent 0.25rem,
+			transparent 0.5rem
+		);
 }
