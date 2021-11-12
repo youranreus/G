@@ -108,6 +108,24 @@ let collapseController = (target) =>{
 };
 
 /**
+ * 赞助开关
+ */
+let sponsorToggle = () => {
+	let item = document.querySelector('#post-sponsor');
+	if(item.dataset.collapsed == "true")
+	{
+		expandSection(item);
+		item.dataset.collapsed = "false";
+	}
+	else
+	{
+		item.dataset.collapsed = "true";
+		item.setAttribute('style', 'height: auto;');
+		collapseSection(item);
+	}
+}
+
+/**
  * 灯箱
  * 
  * @param {object} target 

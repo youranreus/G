@@ -32,7 +32,7 @@ class G {
         'enableIndexPage'=>'',
         'advanceSetting'=>'',
         'footerLOGO'=>'',
-        'enableUPYUNLOGO'=>''
+        'enableUPYUNLOGO'=>'',
     ];
 
     public static $advanceConfig = [];
@@ -184,6 +184,18 @@ class G {
         if(isset(self::$advanceConfig["customICP"]))
             return self::$advanceConfig["customICP"];
         return '还没有备案噢';
+    }
+
+    /**
+     * 获取赞助按钮文字
+     *
+     * @return string
+     */
+    public static function getSponsorText()
+    {
+        if(isset(self::$advanceConfig["customICP"]))
+            return self::$advanceConfig["customICP"];
+        return "支持 ☕";
     }
 
     /**

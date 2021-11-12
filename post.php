@@ -29,7 +29,15 @@
                 <span class="agree-icon">👍</span>
                 <span class="agree-num"><?php echo $agree['agree']; ?></span>
             </a>
+            <?php if($this->options->sponsorIMG != ''): ?>
+                <span class="post-toolbar-btn" onclick="sponsorToggle()"><?php echo G::getSponsorText(); ?></span>
+            <?php endif; ?>
         </div>
+        <?php if($this->options->sponsorIMG != ''): ?>
+            <div id="post-sponsor" data-collapsed="true">
+                <img src="<?php $this->options->sponsorIMG(); ?>" alt="<?php echo G::getSponsorText(); ?>"/>
+            </div>
+        <?php endif; ?>
         <div id="post-footer">
             <div id="post-footer-tag">
                 <p><?php $this->tags(' ', true, 'none'); ?></p>

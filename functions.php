@@ -44,6 +44,9 @@ function themeConfig($form) {
     $footerLOGO = new Typecho_Widget_Helper_Form_Element_Text('footerLOGO', NULL, NULL, _t('底部左侧logo'), _t('填写logo图片链接，用,分割'));
     $form->addInput($footerLOGO);
 
+    $sponsorIMG = new Typecho_Widget_Helper_Form_Element_Text('sponsorIMG', NULL, NULL, _t('赞助二维码图片'), _t('填写后会在文章底部添加一个赞助按钮'));
+    $form->addInput($sponsorIMG);
+
     $enableUPYUNLOGO = new Typecho_Widget_Helper_Form_Element_Radio('enableUPYUNLOGO', array(
         '1' => _t('开启') ,
         '0' => _t('关闭')

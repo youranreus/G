@@ -22,7 +22,7 @@
     </style>
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/normalize.css'); ?>?v=1.1">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/prism.css'); ?>?v=1.02">
-    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.223">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.224">
     <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {echo 'alternate';} ?>" href="<?php echo G::staticUrl('static/css/dark.css'); ?>?v=3.224" title="dark">
     
     <style>
