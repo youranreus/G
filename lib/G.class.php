@@ -193,8 +193,8 @@ class G {
      */
     public static function getSponsorText()
     {
-        if(isset(self::$advanceConfig["customICP"]))
-            return self::$advanceConfig["customICP"];
+        if(isset(self::$advanceConfig["customSponsorText"]))
+            return self::$advanceConfig["customSponsorText"];
         return "支持 ☕";
     }
 
