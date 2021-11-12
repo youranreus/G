@@ -131,3 +131,7 @@ a.next {
 .ArtinArt h5 a:hover {
 	color: var(--theme-text-main)!important;
 }
+
+.post-toolbar-btn {
+	background-color: #403e3e;
+}

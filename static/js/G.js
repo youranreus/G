@@ -280,7 +280,7 @@ let sendLike = () => {
 	Ajax.post(btn.dataset.url, 'agree='+btn.dataset.cid, (res) => {
 		let re = /\d/;
 		if (re.test(res)) {
-			let counter = document.querySelector('#agree-btn .agree-num');
+			let counter = btn.childNodes[3];
 			if(parseInt(res) == parseInt(counter.innerHTML))
 				console.log('已经点赞过咯');
 			else
