@@ -274,6 +274,25 @@ let doLazyload = () => {
 	});
 };
 
+let sendLike = () => {
+	let btn = document.querySelector('#agree-btn');
+	btn.style.disabled = true;
+	Ajax.post(btn.dataset.url, 'agree='+btn.dataset.cid, (res) => {
+		let re = /\d/;
+		if (re.test(res)) {
+			let counter = document.querySelector('#agree-btn .agree-num');
+			if(parseInt(res) == parseInt(counter.innerHTML))
+				console.log('已经点赞过咯');
+			else
+				console.log('点赞成功');
+			counter.innerHTML = res;
+			counter.parentNode.childNodes[1].innerHTML = '😍';
+		}
+		else
+			console.log('出了点小问题');
+	});
+}
+
 window.onload = function () {
 	console.log("G.js onload");
 	let pjax = new Pjax({

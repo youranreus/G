@@ -1,5 +1,13 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('components/header.php'); ?>
+<?php 
+    if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+    if (isset($_POST['agree'])) {
+		if ($_POST['agree'] == $this->cid)
+				exit(G::agree($this->cid));
+		exit('error');
+	}
+    $agree = $this->hidden?array('agree' => 0, 'recording' => true):  G::agreeNum($this->cid);
+    $this->need('components/header.php');
+?>
 
 <div id="post" class="PAP" role="main">
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -15,6 +23,12 @@
         </div>
         <div class="post-content PAP-content" itemprop="articleBody">
             <?php echo G::analyzeContent($this->content); ?>
+        </div>
+        <div id="post-toolbar">
+            <a id="agree-btn" onclick="sendLike()" class="<?php echo $agree['recording']?'agreed':''; ?> post-toolbar-btn" data-cid="<?php echo $this->cid; ?>" data-url="<?php $this->permalink(); ?>">
+                <span class="agree-icon">👍</span>
+                <span class="agree-num"><?php echo $agree['agree']; ?></span>
+            </a>
         </div>
         <div id="post-footer">
             <div id="post-footer-tag">

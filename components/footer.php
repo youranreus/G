@@ -27,9 +27,9 @@
         <?php $this->footer(); ?>
         
         <script src="<?php echo G::staticUrl('static/js/pjax.min.js'); ?>?v=3.10012"></script>
-        <script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10012"></script>
+        <script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10014"></script>
         <script src="<?php echo G::staticUrl('static/js/smoothscroll.js'); ?>?v=3.215"></script>
         <script src="<?php echo G::staticUrl('static/js/prism.js'); ?>?v=1.01" data-manual></script>
-        <script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.225"></script>
+        <script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.226"></script>
     </body>
 </html>

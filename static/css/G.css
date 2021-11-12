@@ -918,6 +918,23 @@ pre[class*="language-"] {
 	border-radius: 1000rem;
 }
 
+#post-toolbar {
+	margin: 1.5rem;
+}
+
+.post-toolbar-btn {
+	display: inline-block;
+	background: RGBA(244, 245, 245, 1);
+	border: none;
+	padding: 0.438rem 0.825rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+	border-radius: 5px;
+	color: var(--theme-color);
+	transition: background 0.2s;
+	cursor: pointer;
+}
+
 /* Archives */
 #archives-content {
 	margin: 1.5rem;
