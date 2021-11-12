@@ -282,14 +282,14 @@ let sendLike = () => {
 		if (re.test(res)) {
 			let counter = btn.childNodes[3];
 			if(parseInt(res) == parseInt(counter.innerHTML))
-				console.log('已经点赞过咯');
+				showToast('已经点过赞咯');
 			else
-				console.log('点赞成功');
+				showToast('点赞成功');
 			counter.innerHTML = res;
 			counter.parentNode.childNodes[1].innerHTML = '😍';
 		}
 		else
-			console.log('出了点小问题');
+			showToast('出了点小问题');
 	});
 }
 

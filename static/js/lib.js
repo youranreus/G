@@ -141,3 +141,13 @@ let Ajax = {
 		});
     }
 }
+
+let showToast = (text) => {
+	Toastify({
+		text: text,
+		duration: 3000,
+		gravity: "top",
+		position: "center",
+		className: "g-toast",
+	}).showToast();
+};

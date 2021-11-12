@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import "animation.css?v=3.2.1";
 @import "shortcode.css?v=3.10004";
+@import "toastify.css?v=3.20004";
 
 @font-face {
 	font-family: "Jetbrains Mono";
@@ -187,6 +188,15 @@ a.icp {
 	position: relative;
 	bottom: -0.385rem;
 	display: inline-block !important;
+}
+
+.g-toast {
+	background: var(--theme-bg-main);
+	color: var(--theme-text-main);
+	font-size: 0.875rem;
+	font-weight: 600;
+	padding: 0.438rem 0.825rem;
+	box-shadow: var(--theme-shadow);
 }
 
 /* Basic */
