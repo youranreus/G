@@ -81,6 +81,12 @@ function themeConfig($form) {
     $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', NULL, NULL, _t('自定义CSS'), _t(''));
     $form->addInput($customCSS);
 
+    $customHeaderJS = new Typecho_Widget_Helper_Form_Element_Textarea('customHeaderJS', NULL, NULL, _t('自定义头部JS'), _t('head标签中'));
+    $form->addInput($customHeaderJS);
+
+    $customFooterJS = new Typecho_Widget_Helper_Form_Element_Textarea('customFooterJS', NULL, NULL, _t('自定义底部JS'), _t('body结束前'));
+    $form->addInput($customFooterJS);
+
     $advanceSetting = new Typecho_Widget_Helper_Form_Element_Textarea('advanceSetting', NULL, NULL, _t('高级设置'), _t('看着就很高级'));
     $form->addInput($advanceSetting);
 

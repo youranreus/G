@@ -34,6 +34,9 @@
     </style>
     <?php $this->header(); ?>
     <script src="<?php echo G::staticUrl('static/js/DPlayer.min.js'); ?>"></script>
+    <script>
+        <?php $this->options->customHeaderJS(); ?>
+    </script>
 </head>
 <body>
 
