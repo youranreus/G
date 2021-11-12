@@ -97,3 +97,47 @@ function collapseSection(element) {
 	  element.removeEventListener('transitionend', arguments.callee);
 	});
   }
+
+let Ajax = {
+    get: function(url,callback){
+		new Promise((rs, rj)=> {
+			let xhr=new XMLHttpRequest();
+			xhr.open('GET',url,true);
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200 || xhr.status==304)
+						rs(xhr.responseText);
+					else
+						rj(xhr.responseText);
+				}
+			}
+			xhr.send();
+		}).then(success => {
+			callback(success);
+		}).catch(error => {
+			console.log('error', error);
+		})
+        
+    },
+
+    post: function(url,data,callback){
+		new Promise((rs,rj)=>{
+			let xhr=new XMLHttpRequest();
+			xhr.open('POST',url,true);
+			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			xhr.onreadystatechange = function(){
+				if (xhr.readyState == 4){
+					if (xhr.status == 200 || xhr.status == 304)
+						rs(xhr.responseText);
+					else
+						rj(xhr.responseText);
+				}
+			}
+			xhr.send(data);
+		}).then(success => {
+			callback(success);
+		}).catch(error=>{
+			console.log('error: ',error);
+		});
+    }
+}
