@@ -1519,9 +1519,9 @@ span#toggleOwO {
 #toc {
 	position: fixed;
 	z-index: 3;
-	right: -17rem;
+	right: -10rem;
 	top: 0;
-	width: 17rem;
+	width: 10rem;
 	height: 100vh;
 	background: var(--theme-banner-bg);
 	transition: right 0.3s;
@@ -1560,6 +1560,29 @@ span#toggleOwO {
 #toc-close svg path {
 	fill: var(--theme-text-main);
 	opacity: 0.8;
+}
+
+.toc-list {
+	padding: 0;
+}
+
+.toc-list li {
+	list-style-type: none;
+	line-height: 1.7;
+	border-radius: 5px;
+	transition: transform .2s, font-weight .2s;
+}
+
+.toc-list li a{
+	color: var(--theme-text-main);
+}
+
+.toc-list li:hover {
+	transform: translateX(.5rem);
+}
+
+.is-active-li {
+	font-weight: 600;
 }
 
 @media (max-width: 1024px) {
