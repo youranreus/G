@@ -24,6 +24,7 @@
         </div>
         <div id="dark-cover"></div>
         <?php $this->need('components/toolbar.php'); ?>
+        <?php $this->need('components/toc.php'); ?>
         <?php $this->footer(); ?>
         
         <script src="<?php echo G::staticUrl('static/js/pjax.min.js'); ?>?v=3.10012"></script>

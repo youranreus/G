@@ -203,6 +203,9 @@ a.icp {
 #main {
 	width: 800px;
 	margin: 50px auto;
+	position: relative;
+	right: 0;
+	transition: right .3s;
 }
 
 #container {
@@ -1490,6 +1493,26 @@ span#toggleOwO {
 .toolbar-btn svg path {
 	fill: var(--theme-text-main);
 	opacity: 0.7;
+}
+
+/* TOC */
+#toc {
+	position: fixed;
+	z-index: 3;
+	right: -17rem;
+	top: 0;
+	width: 17rem;
+	height: 100vh;
+	background: var(--theme-banner-bg);
+	transition: right .3s;
+}
+
+.toc-show {
+	right: 0!important;
+}
+
+.toc-show-main {
+	right: 5rem!important;
 }
 
 @media (max-width: 1024px) {

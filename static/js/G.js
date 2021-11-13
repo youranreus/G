@@ -234,6 +234,14 @@ let toggleOwO = () => {
 };
 
 /**
+ * 目录开关
+ */
+let toggleToc = () => {
+	document.getElementById('toc').classList.toggle('toc-show');
+	document.getElementById('main').classList.toggle('toc-show-main');
+};
+
+/**
  * 滑动OwO
  */
 let slideOwO = (id) => {
