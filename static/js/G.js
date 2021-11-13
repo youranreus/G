@@ -275,7 +275,16 @@ let TocInit = () => {
 		title.onclick = () => {
 			toggleToc();
 		}
-		console.log('yo');
+		title.id = title.innerHTML;
+	});
+
+	tocbot.init({
+		tocSelector: '#toc-content',
+		contentSelector: '.PAP-content',
+		headingSelector: 'h1, h2, h3',
+		hasInnerContainers: true,
+		headingsOffset: 40,
+  		scrollSmoothOffset: -40
 	});
 };
 

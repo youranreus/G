@@ -205,7 +205,7 @@ a.icp {
 	margin: 50px auto;
 	position: relative;
 	right: 0;
-	transition: right .3s;
+	transition: right 0.3s;
 }
 
 #container {
@@ -740,7 +740,7 @@ h3.archive-title {
 	right: 2rem;
 	top: 0;
 	opacity: 0;
-	transition: opacity .2s;
+	transition: opacity 0.2s;
 }
 
 .PAP-content h1:hover::before,
@@ -996,7 +996,7 @@ pre[class*="language-"] {
 	width: 100%;
 	height: 0;
 	overflow: hidden;
-	transition: height .5s;
+	transition: height 0.5s;
 }
 
 #post-sponsor img {
@@ -1524,15 +1524,42 @@ span#toggleOwO {
 	width: 17rem;
 	height: 100vh;
 	background: var(--theme-banner-bg);
-	transition: right .3s;
+	transition: right 0.3s;
+	color: var(--theme-text-main);
 }
 
 .toc-show {
-	right: 0!important;
+	right: 0 !important;
 }
 
 .toc-show-main {
-	right: 5rem!important;
+	right: 5rem !important;
+}
+
+#toc-container {
+	box-sizing: border-box;
+	padding: 1.5rem;
+}
+
+#toc-close {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	padding: 0.5rem 0.5rem 0.5rem 0;
+	border-top-right-radius: 1000rem;
+	border-bottom-right-radius: 1000rem;
+	background: var(--theme-bg-main);
+	cursor: pointer;
+}
+
+#toc-close svg {
+	width: 2rem;
+	height: 2rem;
+}
+
+#toc-close svg path {
+	fill: var(--theme-text-main);
+	opacity: 0.8;
 }
 
 @media (max-width: 1024px) {
