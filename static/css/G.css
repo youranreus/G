@@ -714,6 +714,8 @@ h3.archive-title {
 .PAP-content h2,
 .PAP-content h3 {
 	margin-top: 2rem;
+	cursor: pointer;
+	position: relative;
 }
 
 .PAP-content h1::after,
@@ -727,6 +729,24 @@ h3.archive-title {
 	opacity: 0.6;
 	position: absolute;
 	bottom: -0.5rem;
+}
+
+.PAP-content h1::before,
+.PAP-content h2::before,
+.PAP-content h3::before {
+	content: "🔖";
+	position: absolute;
+	zoom: 0.8;
+	right: 2rem;
+	top: 0;
+	opacity: 0;
+	transition: opacity .2s;
+}
+
+.PAP-content h1:hover::before,
+.PAP-content h2:hover::before,
+.PAP-content h3:hover::before {
+	opacity: 0.2;
 }
 
 .PAP-content h1 {

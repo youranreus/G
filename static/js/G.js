@@ -267,6 +267,19 @@ Smilies = {
 }
 
 /**
+ * 目录初始化
+ */
+let TocInit = () => {
+	let titles = document.querySelectorAll('.PAP-content h1, .PAP-content h2, .PAP-content h3');
+	titles.forEach(title=>{
+		title.onclick = () => {
+			toggleToc();
+		}
+		console.log('yo');
+	});
+};
+
+/**
  * 页面初始化
  */
 let pageInit = () => {
@@ -282,6 +295,7 @@ let pageInit = () => {
 		}
 	});
 	makeGallery();
+	TocInit();
 };
 
 /**
