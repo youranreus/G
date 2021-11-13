@@ -346,6 +346,8 @@ document.addEventListener('pjax:send', () => {
 			}
 		}
 	}
+	if(document.getElementById('main').classList.contains('toc-show-main'))
+		toggleToc();
 	window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 	let main = document.querySelector('#container') || document.querySelector('.PAP') || document.querySelector('#lyrics');
 	if(main)
