@@ -31,7 +31,7 @@
         <script src="<?php echo G::staticUrl('static/js/smoothscroll.js'); ?>?v=3.215"></script>
         <script src="<?php echo G::staticUrl('static/js/toastify.min.js'); ?>?v=3.215"></script>
         <script src="<?php echo G::staticUrl('static/js/prism.js'); ?>?v=1.01" data-manual></script>
-        <script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.228"></script>
+        <script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.229"></script>
         <script>
             <?php $this->options->customFooterJS(); ?>
         </script>

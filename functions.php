@@ -47,6 +47,9 @@ function themeConfig($form) {
     $sponsorIMG = new Typecho_Widget_Helper_Form_Element_Text('sponsorIMG', NULL, NULL, _t('赞助二维码图片'), _t('填写后会在文章底部添加一个赞助按钮'));
     $form->addInput($sponsorIMG);
 
+    $headerBackground = new Typecho_Widget_Helper_Form_Element_Text('headerBackground', NULL, NULL, _t('头部背景图'), _t('填写后会在站点头部添加一个半透明的背景图'));
+    $form->addInput($headerBackground);
+
     $enableUPYUNLOGO = new Typecho_Widget_Helper_Form_Element_Radio('enableUPYUNLOGO', array(
         '1' => _t('开启') ,
         '0' => _t('关闭')

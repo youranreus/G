@@ -18,11 +18,11 @@
         ), '', ' | '); ?><?php $this->options->title(); ?></title>
     <style>
         /* 输出自定义主题色 */
-        <?php echo G::setColors(); ?>
+        <?php echo G::setCSSValues(); ?>
     </style>
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/normalize.css'); ?>?v=1.1">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/prism.css'); ?>?v=1.02">
-    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.224">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.226">
     <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {echo 'alternate';} ?>" href="<?php echo G::staticUrl('static/css/dark.css'); ?>?v=3.225" title="dark">
     
     <style>
@@ -68,5 +68,9 @@
                     </nav>
                 </div>
             </div>
+            <?php if($this->options->headerBackground != ''): ?>
+                <img src="<?php $this->options->headerBackground(); ?>" alt="<?php $this->options->title(); ?>" id="header-background">
+            <?php endif; ?>
         </header>
+
     

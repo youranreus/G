@@ -98,7 +98,7 @@ class G {
      *
      * @return string
      */
-    public static function setColors()
+    public static function setCSSValues()
     {
         $result = "html {
             --theme-color: ".self::$config["themeColor"].";
@@ -110,6 +110,10 @@ class G {
             $result .= "    --theme-animation-in-duration: ".self::$advanceConfig['customAnimationInDuration'].";\n        ";
         if(isset(self::$advanceConfig['customAnimationOutDuration']))
             $result .= "    --theme-animation-out-duration: ".self::$advanceConfig['customAnimationOutDuration'].";\n    ";
+        if(isset(self::$advanceConfig['customHeaderOffsetX']))
+            $result .= "    --theme-header-offset-x: ".self::$advanceConfig['customHeaderOffsetX'].";\n    ";
+        if(isset(self::$advanceConfig['customHeaderOffsetY']))
+            $result .= "    --theme-header-offset-y: ".self::$advanceConfig['customHeaderOffsetY'].";\n    ";
         $result .= "    }\n";
         return $result;
     }

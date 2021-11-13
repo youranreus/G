@@ -222,6 +222,13 @@ a.icp {
 	box-shadow: var(--theme-shadow, none);
 	color: #fff;
 	margin-bottom: 50px;
+	position: relative;
+	overflow: hidden;
+}
+
+#header-title {
+	position: relative;
+	z-index: 2;
 }
 
 #header-title h2 {
@@ -233,9 +240,11 @@ a.icp {
 }
 
 #header-content {
+	position: relative;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+	z-index: 2;
 }
 
 #header-content-left p {
@@ -268,6 +277,20 @@ a.icp {
 	border-radius: 1000rem;
 	opacity: 0.7;
 	transition: opacity 0.2s;
+}
+
+#header-background {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	opacity: 0.5;
+	z-index: 1;
+	max-height: 20rem;
+	bottom: var(--theme-header-offset-y, 0);
+	right: var(--theme-header-offset-x, 0);
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 /* Footer */
@@ -609,7 +632,7 @@ h3.archive-title {
 .PAP-banner div p {
 	color: var(--theme-text-main);
 	margin: 0.5rem 0 0 0;
-	font-size: 0.875rem;
+	font-size: 0.725rem;
 	text-align: center;
 	opacity: 0.4;
 }
