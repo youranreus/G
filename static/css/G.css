@@ -1526,6 +1526,7 @@ span#toggleOwO {
 	background: var(--theme-banner-bg);
 	transition: right 0.3s;
 	color: var(--theme-text-main);
+	box-shadow: var(--theme-shadow);
 }
 
 .toc-show {
