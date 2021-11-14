@@ -460,8 +460,44 @@ class G {
         return $agree['agree'];
     }
 
-    public static function test()
+    /**
+     * 获取文章标题
+     *
+     * @param int $id
+     * @return string
+     */
+    public static function getTitleByID($id)
     {
-        var_dump(self::$themeUrl);
+        $db = Typecho_Db::get();
+        $result = $db->fetchAll($db->select()->from('table.contents')
+            ->where('status = ?','publish')
+            ->where('type = ?', 'post')
+            ->where('cid = ?',$id)
+        );
+        if($result){
+            $i=1;
+            foreach($result as $val){
+                $val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
+                $post_title = htmlspecialchars($val['title']);
+                return $post_title;
+            }
+        }
+        else{
+            $result = $db->fetchAll($db->select()->from('table.contents')
+                ->where('status = ?','publish')
+                ->where('type = ?', 'page')
+                ->where('cid = ?',$id)
+            );
+            if($result){
+                $i=1;
+                foreach($result as $val){
+                    $val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
+                    $post_title = htmlspecialchars($val['title']);
+                    return $post_title;
+                }
+            }
+            else 
+                return '标题获取失败';
+        }
     }
 }

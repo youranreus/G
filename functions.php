@@ -43,6 +43,24 @@ function themeConfig($form) {
     $defaultBanner = new Typecho_Widget_Helper_Form_Element_Text('defaultBanner', NULL, NULL, _t('默认头图'), _t('填入图片API时，可以使用{random}来替换生成一个随机字符串以达到随机图片得效果'));
     $form->addInput($defaultBanner);
 
+    $profileAvatar = new Typecho_Widget_Helper_Form_Element_Text('profileAvatar', NULL, NULL, _t('侧边栏头像'), _t('https://...'));
+    $form->addInput($profileAvatar);
+
+    $profileBG = new Typecho_Widget_Helper_Form_Element_Text('profileBG', NULL, NULL, _t('侧边栏背景'), _t('https://...'));
+    $form->addInput($profileBG);
+
+    $profileDes = new Typecho_Widget_Helper_Form_Element_Text('profileDes', NULL, NULL, _t('侧边栏简介'), _t('尽量简洁'));
+    $form->addInput($profileDes);
+
+    $profilePhoto = new Typecho_Widget_Helper_Form_Element_Text('profilePhoto', NULL, NULL, _t('侧边栏小相片'), _t('https://'));
+    $form->addInput($profilePhoto);
+
+    $profileVideo = new Typecho_Widget_Helper_Form_Element_Text('profileVideo', NULL, NULL, _t('侧边栏小视频'), _t('https://'));
+    $form->addInput($profileVideo);
+
+    $profilePhotoDes = new Typecho_Widget_Helper_Form_Element_Text('profilePhotoDes', NULL, NULL, _t('侧边栏图片描述'), _t('关于图片/视频的简短描述'));
+    $form->addInput($profilePhotoDes);
+
     $footerLOGO = new Typecho_Widget_Helper_Form_Element_Text('footerLOGO', NULL, NULL, _t('底部左侧logo'), _t('填写logo图片链接，用,分割'));
     $form->addInput($footerLOGO);
 

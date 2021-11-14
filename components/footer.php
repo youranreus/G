@@ -25,6 +25,7 @@
         <div id="dark-cover"></div>
         <?php $this->need('components/toolbar.php'); ?>
         <?php $this->need('components/toc.php'); ?>
+        <?php $this->need('components/sidebar.php'); ?>
         <?php $this->footer(); ?>
         
         <script src="<?php echo G::staticUrl('static/js/pjax.min.js'); ?>?v=3.10012"></script>
@@ -33,7 +34,7 @@
         <script src="<?php echo G::staticUrl('static/js/tocbot.min.js'); ?>?v=3.211"></script>
         <script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10015"></script>
         <script src="<?php echo G::staticUrl('static/js/prism.js'); ?>?v=1.01" data-manual></script>
-        <script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.233"></script>
+        <script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.236"></script>
         <script>
             <?php $this->options->customFooterJS(); ?>
         </script>
