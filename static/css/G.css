@@ -1555,9 +1555,9 @@ span#toggleOwO {
 #toc {
 	position: fixed;
 	z-index: 3;
-	right: -10rem;
+	right: -15rem;
 	top: 0;
-	width: 10rem;
+	width: 15rem;
 	height: 100vh;
 	background: var(--theme-banner-bg);
 	transition: right 0.3s;
@@ -1576,6 +1576,15 @@ span#toggleOwO {
 #toc-container {
 	box-sizing: border-box;
 	padding: 1.5rem;
+	margin-left: 1.5rem;
+	max-height: 100%;
+    overflow-y: auto;
+	direction: rtl;
+}
+
+#toc-container h3{
+	font-size: 1.5rem;
+	margin-top: 0;
 }
 
 #toc-close {
@@ -1601,13 +1610,18 @@ span#toggleOwO {
 
 .toc-list {
 	padding: 0;
+	direction: ltr;
 }
 
 .toc-list li {
+	font-size: 0.875rem;
 	list-style-type: none;
-	line-height: 1.7;
+	line-height: 2;
 	border-radius: 5px;
 	transition: transform .2s, font-weight .2s;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
 }
 
 .toc-list li a{
