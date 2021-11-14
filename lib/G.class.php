@@ -144,11 +144,11 @@ class G {
         $mirageBanner = $post->fields->thumb;
         
         if(isset($banner) && $banner != '')
-            return $post->fields->imgurl;
+            return str_replace("{random}",(string)rand(1000,9999), $post->fields->imgurl);
         if(isset($mirageBanner) && $mirageBanner != '')
-            return $mirageBanner;
+            return str_replace("{random}",(string)rand(1000,9999), $mirageBanner);
         if(self::$config['defaultBanner'] != '')
-            return self::$config['defaultBanner'];
+            return str_replace("{random}",(string)rand(1000,9999), self::$config['defaultBanner']);
         if(self::$config['autoBanner'] == 0)
             return 'none';
         
