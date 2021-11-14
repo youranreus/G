@@ -56,7 +56,8 @@ class G {
         {
             $advanceConfig = explode("\n",self::$config['advanceSetting']);
             foreach($advanceConfig as $item)
-                self::$advanceConfig[explode("=",$item)[0]] = explode("=",$item)[1];
+                if($item != '')
+                    self::$advanceConfig[explode("=",$item)[0]] = explode("=",$item)[1];
         }
         self::$themeUrl = Helper::options()->themeUrl.'/';
     }
