@@ -50,6 +50,10 @@ a.next {
 	border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.page-navigator li a {
+	border: 1px solid #555;
+}
+
 #post-footer-tag p a,
 #tag-cloud li a {
 	background-color: #403e3e;
@@ -66,10 +70,6 @@ a.next {
 #comments-form input.submit {
 	background: #2e2f34;
 }
-
-/* .comment-avatar span a {
-	background: var(--theme-bg-main);
-} */
 
 .collapse-title {
 	background: rgb(64, 62, 62);

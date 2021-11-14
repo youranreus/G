@@ -79,6 +79,6 @@ function threadedComments($comments, $options) {
 
     <?php if ($comments->have()): ?>
         <?php $comments->listComments(); ?>
-        <?php $comments->pageNav('<上一页', '下一页>'); ?>
+        <?php $comments->pageNav('<span>👈</span>', '<span>👉</span>'); ?>
     <?php endif; ?>
 </div>
