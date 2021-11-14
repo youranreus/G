@@ -330,6 +330,10 @@ let ajaxComment = () =>{
 				afterSendComment(false);
 				showToast('评论失败，' + newComment.childNodes[0].childNodes[0].children[0].innerText);
 			}
+		}, (error) => {
+			let newComment = document.createElement('div');
+			newComment.innerHTML = error;
+			showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
 		});
 		return false;
 	};

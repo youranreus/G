@@ -120,7 +120,7 @@ let Ajax = {
         
     },
 
-    post: function(url,data,callback){
+    post: function(url,data,resolve,reject){
 		new Promise((rs,rj)=>{
 			let xhr=new XMLHttpRequest();
 			xhr.open('POST',url,true);
@@ -135,9 +135,9 @@ let Ajax = {
 			}
 			xhr.send(data);
 		}).then(success => {
-			callback(success);
+			resolve(success);
 		}).catch(error=>{
-			console.log('error: ',error);
+			reject(error);
 		});
     }
 }
