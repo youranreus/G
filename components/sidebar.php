@@ -3,7 +3,7 @@
     <div class="sliderbar-content" id="profile">
         <div class="profile-content">
             <div class="profile-avatar-container">
-                <img src="<?php echo $this->options->profileAvatar; ?>" alt="avatar">
+                <img id="profile-avatar" src="<?php echo $this->options->profileAvatar; ?>" alt="avatar">
             </div>
             <div class="profile-cover" style="background-image:url(<?php echo $this->options->profileBG; ?>)"></div>
             <h4><?php $this->author(); ?></h4>

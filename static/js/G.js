@@ -324,7 +324,7 @@ let pageInit = () => {
  */
 let doLazyload = () => {
 	let banners = document.getElementsByClassName("article-banner");
-	let pics = document.querySelectorAll("img:not(img#header-background)");
+	let pics = document.querySelectorAll("img:not(img#header-background,img#profile-avatar)");
 	preLazy(banners, "style", "origin");
 	preLazy(pics, "src", "origin", "https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading2.gif");
 	lazyload(banners, function (element, observe) {
