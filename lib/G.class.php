@@ -72,7 +72,7 @@ class G {
         if(self::$config['cdn'] == 'local' || self::$config['cdn'] == '')
             return self::$themeUrl.$path;
         else if (self::$config['cdn'] == 'jsdelivr')
-            return 'https://cdn.jsdelivr.net/gh/youranreus/G/';
+            return 'https://cdn.jsdelivr.net/gh/youranreus/G/'.$path;
         else
             return self::$config['cdn'].$path;
     }
