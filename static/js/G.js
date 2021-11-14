@@ -271,21 +271,23 @@ Smilies = {
  */
 let TocInit = () => {
 	let titles = document.querySelectorAll('.PAP-content h1, .PAP-content h2, .PAP-content h3');
-	titles.forEach(title=>{
-		title.onclick = () => {
-			toggleToc();
-		}
-		title.id = title.innerHTML;
-	});
-
-	tocbot.init({
-		tocSelector: '#toc-content',
-		contentSelector: '.PAP-content',
-		headingSelector: 'h1, h2, h3',
-		hasInnerContainers: true,
-		headingsOffset: 40,
-  		scrollSmoothOffset: -40
-	});
+	if(titles.length > 0)
+	{
+		titles.forEach(title=>{
+			title.onclick = () => {
+				toggleToc();
+			}
+			title.id = title.innerHTML;
+		});
+		tocbot.init({
+			tocSelector: '#toc-content',
+			contentSelector: '.PAP-content',
+			headingSelector: 'h1, h2, h3',
+			hasInnerContainers: true,
+			headingsOffset: 40,
+			  scrollSmoothOffset: -40
+		});
+	}
 };
 
 /**
@@ -369,6 +371,7 @@ document.addEventListener('pjax:send', () => {
 			}
 		}
 	}
+	tocbot.destroy();
 	if(document.getElementById('main').classList.contains('toc-show-main'))
 		toggleToc();
 	window.scroll({ top: 0, left: 0, behavior: 'smooth' });
