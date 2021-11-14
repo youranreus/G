@@ -242,6 +242,9 @@ let toggleToc = () => {
 	document.getElementById('main').classList.toggle('toc-show-main');
 };
 
+/**
+ * 侧边栏开关
+ */
 let toggleSidebar = () => {
 	document.getElementById('sliderbar').classList.toggle('move-left');
 	document.getElementById('sliderbar').classList.toggle('move-right');
@@ -257,6 +260,80 @@ let toggleSidebar = () => {
 let slideOwO = (id) => {
 	document.querySelector('#' + id).scrollIntoView({ behavior: 'smooth' });
 };
+
+/**
+ * ajax评论
+ */
+let ajaxComment = () =>{
+	let replyTo = '',
+	//回复评论时候的ID
+	submitButton = document.querySelector('#comment-submit'),
+	//提交评论按钮
+	commentForm = document.querySelector("#comment_form"),
+	//评论表单
+	newCommentId = ""; //新评论的ID
+	let bindButton = () => {
+		document.querySelectorAll(".comment-reply a").forEach(reply=>{
+			reply.onclick = function() {
+				replyTo = reply.parentNode.parentNode.parentNode.parentNode.id;
+				console.log('回复绑定成功，当前回复id为', replyTo);
+				return TypechoComment.reply(replyTo, parseInt(replyTo.slice(8)));
+			};
+		});
+		document.querySelectorAll(".cancel-comment-reply a").forEach((cancel) => {
+			cancel.onclick = () => {
+				replyTo = '';
+				console.log('取消绑定，当前回复id重置为', replyTo);
+				return TypechoComment.cancelReply();
+			};
+		});
+	};
+	bindButton();
+
+	/**
+	 * 发送前的处理
+	 */
+	function beforeSendComment() {
+		if(document.getElementById('OwO-container').classList.contains('OwO-in') || (!document.getElementById('OwO-container').classList.contains('OwO-out') && document.getElementById('OwO-container').classList.length === 1))
+			toggleOwO();
+	}
+
+	/**
+	 * 发送后的处理
+	 * @param {boolean} status
+	 */
+	function afterSendComment(status) {
+		if (status) {
+			document.getElementById("comments-textarea").value = '';
+			replyTo = '';
+			showToast('发送成功');
+		}
+		bindButton();
+	}
+
+	commentForm.onsubmit = function() {
+		commentData = commentForm.serialize();
+		beforeSendComment();
+		Ajax.post(commentForm.getAttribute('action'), commentData, (result)=>{
+			let newComment = document.createElement('div');
+			newComment.innerHTML = result;
+			if(newComment.getElementsByTagName('title').length > 0 && newComment.getElementsByTagName('title')[0].innerText === document.title)
+			{
+				afterSendComment(true);
+				TypechoComment.cancelReply();
+				document.querySelector('#comments').removeChild(document.querySelector('.comment-list'));
+				document.querySelector('#comments').appendChild(newComment.querySelector('.comment-list'));
+				replyTo = '';
+			}
+			else
+			{
+				afterSendComment(false);
+				showToast('评论失败，' + newComment.childNodes[0].childNodes[0].children[0].innerText);
+			}
+		});
+		return false;
+	};
+}
 
 /**
  * 表情配置
@@ -317,6 +394,8 @@ let pageInit = () => {
 	});
 	makeGallery();
 	TocInit();
+	if(document.getElementById('comment_form') !== null)
+		ajaxComment();
 };
 
 /**

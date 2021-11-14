@@ -69,7 +69,7 @@ function threadedComments($comments, $options) {
                         <textarea id="comments-textarea" name="text" placeholder="说点什么"><?php $this->remember('text'); ?></textarea>
                         <input type="submit" value="发送" class="submit" id="comment-submit"/>
                         <span id="OwO-logo" onclick="toggleOwO()">(QwQ)</span>
-                        <?php $comments->cancelReply(); ?>
+                        <span class="cancel-comment-reply"><?php $comments->cancelReply(); ?></span>
                         <?php $this->need('components/OwO.php'); ?>
                     </div>
                 </form>

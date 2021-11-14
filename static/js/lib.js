@@ -142,6 +142,10 @@ let Ajax = {
     }
 }
 
+/**
+ * 显示一个toast
+ * @param {string} text 提示语
+ */
 let showToast = (text) => {
 	Toastify({
 		text: text,
@@ -151,3 +155,55 @@ let showToast = (text) => {
 		className: "g-toast",
 	}).showToast();
 };
+
+/**
+ * 表单序列化
+ * @returns {string}
+ */
+Object.prototype.serialize = function() {
+	let res = [],
+	current = null,
+	i,
+	len,
+	k,
+	optionLen,
+	option,
+	optionValue,
+	form = this;
+	for (i = 0, len = form.elements.length; i < len; i++) {
+		current = form.elements[i];
+		if (current.disabled) continue;
+		switch (current.type) {
+		case "file":
+		case "submit":
+		case "button":
+		case "image":
+		case "reset":
+		case undefined:
+			break;
+		case "select-one":
+		case "select-multiple":
+			if (current.name && current.name.length) {
+				 	for (k = 0, optionLen = current.options.length; k < optionLen; k++) {
+					option = current.options[k];
+					optionValue = "";
+					if (option.selected) {
+						if (option.hasAttribute)
+							optionValue = option.hasAttribute('value') ? option.value: option.text
+						else 
+							optionValue = option.attributes('value').specified ? option.value: option.text;
+						res.push(encodeURIComponent(current.name) + "=" + encodeURIComponent(optionValue));
+					}
+				}
+			}
+			break;
+		case "radio":
+		case "checkbox":
+			if (!current.checked) break;
+		default:
+			if (current.name && current.name.length) 
+				res.push(encodeURIComponent(current.name) + "=" + encodeURIComponent(current.value));
+		}
+	}
+	return res.join("&");
+}

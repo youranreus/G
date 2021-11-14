@@ -32,9 +32,9 @@
         <script src="<?php echo G::staticUrl('static/js/smoothscroll.js'); ?>?v=3.215"></script>
         <script src="<?php echo G::staticUrl('static/js/toastify.min.js'); ?>?v=3.211"></script>
         <script src="<?php echo G::staticUrl('static/js/tocbot.min.js'); ?>?v=3.211"></script>
-        <script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10015"></script>
+        <script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10016"></script>
         <script src="<?php echo G::staticUrl('static/js/prism.js'); ?>?v=1.01" data-manual></script>
-        <script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.236"></script>
+        <script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.238"></script>
         <script>
             <?php $this->options->customFooterJS(); ?>
         </script>
