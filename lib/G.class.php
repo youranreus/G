@@ -9,7 +9,7 @@ class G {
      *
      * @var string
      */
-    public static $version = "3.0";
+    public static $version = "3.2.3";
 
     /**
      * 主题配置
@@ -69,8 +69,10 @@ class G {
      */
     public static function staticUrl($path)
     {
-        if(self::$config['cdn'] == 'local' || self::$config['cdn'] == '' || self::$config['cdn'] == 'jsdelivr')
+        if(self::$config['cdn'] == 'local' || self::$config['cdn'] == '')
             return self::$themeUrl.$path;
+        else if (self::$config['cdn'] == 'jsdelivr')
+            return 'https://cdn.jsdelivr.net/gh/youranreus/G/';
         else
             return self::$config['cdn'].$path;
     }
