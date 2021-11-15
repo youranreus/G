@@ -62,6 +62,7 @@ function threadedComments($comments, $options) {
                         <input type="text" name="author" class="text" size="35" value="<?php $this->remember('author'); ?>" placeholder="🙌用户名"/>
                         <input type="text" name="mail" class="text" size="35" value="<?php $this->remember('mail'); ?>" placeholder="📫邮箱"/>
                         <input type="text" name="url" class="text" size="35" value="<?php $this->remember('url'); ?>" placeholder="🔗博客链接"/>
+                        <input type="hidden" name="receiveMail" id="receiveMail" value="yes" />
                     </div>
                     <?php endif; ?>
                     <!-- 输入要回复的内容 -->

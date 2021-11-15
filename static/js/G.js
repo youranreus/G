@@ -328,7 +328,7 @@ let ajaxComment = () =>{
 			else
 			{
 				afterSendComment(false);
-				showToast('评论失败，' + newComment.childNodes[0].childNodes[0].children[0].innerText);
+				showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
 			}
 		}, (error) => {
 			let newComment = document.createElement('div');
