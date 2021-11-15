@@ -1446,7 +1446,7 @@ pre[class*="language-"] {
 }
 
 #OwO-header span {
-	padding: 0.438rem 0.825rem;
+	padding: 0.438rem 0 0 0.825rem;
 	font-size: 0.875rem;
 	font-weight: 600;
 	border-radius: 5px;

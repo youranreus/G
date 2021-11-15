@@ -20,7 +20,7 @@
         /* 输出自定义主题色 */
         <?php echo G::setCSSValues(); ?>
     </style>
-    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.2325">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.2326">
     <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {echo 'alternate';} ?>" href="<?php echo G::staticUrl('static/css/dark.css'); ?>?v=3.227" title="dark">
     
     <style>
