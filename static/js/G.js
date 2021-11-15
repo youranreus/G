@@ -266,12 +266,7 @@ let slideOwO = (id) => {
  */
 let ajaxComment = () =>{
 	let replyTo = '',
-	//回复评论时候的ID
-	submitButton = document.querySelector('#comment-submit'),
-	//提交评论按钮
-	commentForm = document.querySelector("#comment_form"),
-	//评论表单
-	newCommentId = ""; //新评论的ID
+		commentForm = document.querySelector("#comment_form");
 	let bindButton = () => {
 		document.querySelectorAll(".comment-reply a").forEach(reply=>{
 			reply.onclick = function() {
