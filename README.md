@@ -6,6 +6,7 @@
 ![](https://img.shields.io/github/v/release/youranreus/G?style=for-the-badge)
 ![](https://img.shields.io/badge/From-2019-yellowgreen?style=for-the-badge)
 ![](https://img.shields.io/badge/To-4ever-orange?style=for-the-badge)
+![](https://img.shields.io/github/license/youranreus/G?style=for-the-badge)
 
 ------
 
