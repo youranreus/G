@@ -55,7 +55,7 @@
                         <?php endif; ?>
                         <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
                         <?php while ($pages->next()): ?>
-                            <?php if ($pages->slug == 'links' or strtolower($pages->slug) == 'about'): ?>
+                            <?php if (strtolower($pages->slug) == 'links' or strtolower($pages->slug) == 'about' or $pages->fields->headerDisplay == 1): ?>
                                 <a 
                                     <?php if ($this->is('page', $pages->slug)): ?>class="nav-focus"<?php endif; ?>
                                     href="<?php $pages->permalink(); ?>"

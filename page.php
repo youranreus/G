@@ -1,5 +1,7 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php $this->need('components/header.php'); ?>
+<?php 
+    if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+    $this->need('components/header.php');
+?>
 
 <div id="page" class="PAP" role="main">
     <article itemscope itemtype="http://schema.org/BlogPosting">
@@ -17,4 +19,7 @@
         </div>
     </article>
 </div>
+<?php if($this->fields->enableComment == 1): ?>
+    <?php $this->need('components/comments.php'); ?>
+<?php endif; ?>
 <?php $this->need('components/footer.php'); ?>

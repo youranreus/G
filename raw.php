@@ -13,4 +13,7 @@ $this -> need('components/header.php');
     </div>
 </div>
 
+<?php if($this->fields->enableComment == 1): ?>
+    <?php $this->need('components/comments.php'); ?>
+<?php endif; ?>
 <?php $this->need('components/footer.php'); ?>

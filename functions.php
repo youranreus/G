@@ -197,6 +197,18 @@ function themeConfig($form) {
 function themeFields($layout) {
     $imgurl = new Typecho_Widget_Helper_Form_Element_Text('imgurl', NULL, NULL, _t('文章头图地址'), _t('在这里填入一个图片URL地址'));
     $layout->addItem($imgurl);
+
+    $headerDisplay = new Typecho_Widget_Helper_Form_Element_Radio('headerDisplay', array(
+      '1' => _t('显示') ,
+      '0' => _t('不显示')
+    ) , '0', _t('(独立页面)是否显示在头部导航栏') , _t('默认不显示'));
+    $layout->addItem($headerDisplay);
+    
+    $enableComment = new Typecho_Widget_Helper_Form_Element_Radio('enableComment', array(
+      '1' => _t('显示') ,
+      '0' => _t('不显示')
+    ) , '0', _t('(独立页面)是否显示评论框') , _t('默认不显示'));
+    $layout->addItem($enableComment);
 }
 
 
