@@ -1,15 +1,18 @@
 <?php
 /**
-* 歌词页
+* RAW
 *
 * @package custom
 */
 $this -> need('components/header.php');
 ?>
 
-<div id="lyrics">
-    <?php $this->content(); ?>
+<div class="PAP">
+    <div class="PAP-content">
+        <?php $this->content(); ?>
+    </div>
 </div>
+
 <?php if($this->fields->enableComment == 1): ?>
     <?php $this->need('components/comments.php'); ?>
 <?php endif; ?>

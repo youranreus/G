@@ -235,6 +235,14 @@ let toggleOwO = () => {
 };
 
 /**
+ * 关闭OwO
+ */
+let closeOwO = () => {
+	if(document.getElementById('OwO-container').classList.contains('OwO-in') || (!document.getElementById('OwO-container').classList.contains('OwO-out') && document.getElementById('OwO-container').classList.length === 1))
+			toggleOwO();
+};
+
+/**
  * 目录开关
  */
 let toggleToc = () => {
@@ -266,12 +274,7 @@ let slideOwO = (id) => {
  */
 let ajaxComment = () =>{
 	let replyTo = '',
-	//回复评论时候的ID
-	submitButton = document.querySelector('#comment-submit'),
-	//提交评论按钮
-	commentForm = document.querySelector("#comment_form"),
-	//评论表单
-	newCommentId = ""; //新评论的ID
+		commentForm = document.querySelector("#comment_form");
 	let bindButton = () => {
 		document.querySelectorAll(".comment-reply a").forEach(reply=>{
 			reply.onclick = function() {
@@ -294,8 +297,7 @@ let ajaxComment = () =>{
 	 * 发送前的处理
 	 */
 	function beforeSendComment() {
-		if(document.getElementById('OwO-container').classList.contains('OwO-in') || (!document.getElementById('OwO-container').classList.contains('OwO-out') && document.getElementById('OwO-container').classList.length === 1))
-			toggleOwO();
+		closeOwO();
 	}
 
 	/**
