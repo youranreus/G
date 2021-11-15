@@ -51,7 +51,7 @@ class GEditor
         </style>
         ';
         
-        echo '<script src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.7/G/JS/editor.js"></script>';
+        echo '<script src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.8/G/JS/editor.js"></script>';
     }
 
     public static function wordCounter()
@@ -138,7 +138,6 @@ class GEditor
         <script>
         $(document).ready(function(){
         $("#wmd-editarea").append('<div class="field is-grouped"><span class="tag">共计：</span><div class="control"><div class="tags has-addons"><span class="tag is-dark" id="zishu">0</span> <span class="tag is-primary">个字数</span></div></div><div class="control"><div class="tags has-addons"><span class="tag is-dark" id="zifu">0</span> <span class="tag is-primary">个字符</span></div></div><span class="tag">包含：</span><div class="control"><div class="tags has-addons"><span class="tag is-light" id="hanzi">0</span> <span class="tag is-danger">个文字</span></div></div><div class="control"><div class="tags has-addons"><span class="tag is-light" id="biaodian">0</span> <span class="tag is-info">个符号</span></div></div><div class="control"><div class="tags has-addons"><span class="tag is-light" id="zimu">0</span> <span class="tag is-success">个字母</span></div></div><div class="control"><div class="tags has-addons"><span class="tag is-light" id="shuzi">0</span> <span class="tag is-warning">个数字</span></div></div></div>');
-        //$("#wmd-button-row").append('<img src="https://i.loli.net/2020/03/04/JFTcewagjrt5xBO.png" id="panel-toggle"></img>');
         CountChineseCharacters();
         });
         </script>
