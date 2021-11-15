@@ -235,6 +235,14 @@ let toggleOwO = () => {
 };
 
 /**
+ * 关闭OwO
+ */
+let closeOwO = () => {
+	if(document.getElementById('OwO-container').classList.contains('OwO-in') || (!document.getElementById('OwO-container').classList.contains('OwO-out') && document.getElementById('OwO-container').classList.length === 1))
+			toggleOwO();
+};
+
+/**
  * 目录开关
  */
 let toggleToc = () => {
@@ -289,8 +297,7 @@ let ajaxComment = () =>{
 	 * 发送前的处理
 	 */
 	function beforeSendComment() {
-		if(document.getElementById('OwO-container').classList.contains('OwO-in') || (!document.getElementById('OwO-container').classList.contains('OwO-out') && document.getElementById('OwO-container').classList.length === 1))
-			toggleOwO();
+		closeOwO();
 	}
 
 	/**
