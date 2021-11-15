@@ -48,3 +48,6 @@
 | --------------------- | --------- | ----------------- |
 | https://g.imouto.tech | 674232327 | youranreus@qq.com |
 
+### License 许可证
+Open sourced under GPL-3.0 License.
+
