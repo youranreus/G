@@ -314,27 +314,29 @@ let ajaxComment = () =>{
 	commentForm.onsubmit = function() {
 		commentData = commentForm.serialize();
 		beforeSendComment();
-		Ajax.post(commentForm.getAttribute('action'), commentData, (result)=>{
-			let newComment = document.createElement('div');
-			newComment.innerHTML = result;
-			if(newComment.getElementsByTagName('title').length > 0 && newComment.getElementsByTagName('title')[0].innerText === document.title)
-			{
-				afterSendComment(true);
-				TypechoComment.cancelReply();
-				document.querySelector('#comments').removeChild(document.querySelector('.comment-list'));
-				document.querySelector('#comments').appendChild(newComment.querySelector('.comment-list'));
-				replyTo = '';
-			}
-			else
-			{
-				afterSendComment(false);
+		Ajax.post(commentForm.getAttribute('action'), commentData, 
+			(result)=>{
+				let newComment = document.createElement('div');
+				newComment.innerHTML = result;
+				if(newComment.getElementsByTagName('title').length > 0 && newComment.getElementsByTagName('title')[0].innerText === document.title)
+				{
+					afterSendComment(true);
+					TypechoComment.cancelReply();
+					document.querySelector('#comments').removeChild(document.querySelector('.comment-list'));
+					document.querySelector('#comments').appendChild(newComment.querySelector('.comment-list'));
+					replyTo = '';
+				}
+				else
+				{
+					afterSendComment(false);
+					showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
+				}
+			}, 
+			(error) => {
+				let newComment = document.createElement('div');
+				newComment.innerHTML = error;
 				showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
-			}
-		}, (error) => {
-			let newComment = document.createElement('div');
-			newComment.innerHTML = error;
-			showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
-		});
+			});
 		return false;
 	};
 }
