@@ -116,10 +116,8 @@ let Ajax = {
 			resolve(success);
 		}).catch(error => {
 			reject(error);
-		})
-        
+		});
     },
-
     post: function(url,data,resolve,reject){
 		new Promise((rs,rj)=>{
 			let xhr=new XMLHttpRequest();

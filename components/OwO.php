@@ -4,6 +4,7 @@
             <div id="meme-selector">
                 <span onclick="slideOwO('tieba')">贴吧</span>
                 <span onclick="slideOwO('goutou')">狗头</span>
+                <span onclick="slideOwO('yuanshen')">原神</span>
             </div>
             <span id="toggleOwO" onclick="toggleOwO()">收起</span>
         </div>
@@ -96,6 +97,32 @@
                 <li class="OwO-item" onclick="Smilies.grin('@(chaiquanbugaoxin)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/chaiquanbugaoxin.png" /></li>
                 <li class="OwO-item" onclick="Smilies.grin('@(chaiquanzaijian)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/chaiquanzaijian.png" /></li>
                 <li class="OwO-item" onclick="Smilies.grin('@(chaiquanku)');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/chaiquanku.png" /></li>
+            </ul>
+            <h4 id="yuanshen">原神</h4>
+            <ul class="meme-section">
+                <li class="OwO-item" onclick="Smilies.grin('::ys:安详::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/安详.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:不要啊::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/不要啊.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:交给我吧::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/交给我吧.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:你真幽默::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/你真幽默.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:出货吧::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/出货吧.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:吃惊::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/吃惊.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:咕咕咕::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/咕咕咕.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:哼哼::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/哼哼.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:唔::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/唔.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:大哭::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/大哭.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:小事一桩::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/小事一桩.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:干得漂亮::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/干得漂亮.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:干杯::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/干杯.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:愤怒::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/愤怒.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:拜托::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/拜托.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:救救我::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/救救我.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:睡着了::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/睡着了.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:给我走开::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/给我走开.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:警觉::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/警觉.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:该吃饭了::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/该吃饭了.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:请投币::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/请投币.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:问号::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/问号.png" /></li>
+                <li class="OwO-item" onclick="Smilies.grin('::ys:黑线::');"><img src="https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/ys/黑线.png" /></li>
             </ul>
         </div>
     </div>
