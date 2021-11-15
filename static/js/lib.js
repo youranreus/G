@@ -99,7 +99,7 @@ function collapseSection(element) {
   }
 
 let Ajax = {
-    get: function(url,callback){
+    get: function(url,resolve,reject){
 		new Promise((rs, rj)=> {
 			let xhr=new XMLHttpRequest();
 			xhr.open('GET',url,true);
@@ -113,9 +113,9 @@ let Ajax = {
 			}
 			xhr.send();
 		}).then(success => {
-			callback(success);
+			resolve(success);
 		}).catch(error => {
-			console.log('error', error);
+			reject(error);
 		})
         
     },
