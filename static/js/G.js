@@ -240,7 +240,7 @@ let toggleOwO = () => {
  */
 let closeOwO = () => {
 	if(document.getElementById('OwO-container').classList.contains('OwO-in') || (!document.getElementById('OwO-container').classList.contains('OwO-out') && document.getElementById('OwO-container').classList.length === 1))
-			toggleOwO();
+		toggleOwO();
 };
 
 /**

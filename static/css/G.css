@@ -1515,6 +1515,7 @@ span#toggleOwO {
 
 /* Toolbar */
 #toolbar {
+	z-index: 999;
 	position: fixed;
 	bottom: 1.5rem;
 	right: 1.5rem;
