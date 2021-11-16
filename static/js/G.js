@@ -6,7 +6,9 @@ let makePrismLineNum = () => {
 	if (ele.length > 0)
 		for (let element of ele)
 			element.className = element.className + " line-numbers";
-	Prism.highlightAll();
+	if (typeof Prism !== 'undefined') {
+		Prism.highlightAll(true, null);
+	};
 };
 
 /**
@@ -389,7 +391,6 @@ let TocInit = () => {
  * 页面初始化
  */
 let pageInit = () => {
-	makePrismLineNum();
 	let images = document.querySelectorAll('.PAP-content img');
 	images.forEach(img=>{
 		if(!img.classList.contains('bq')) {
@@ -404,6 +405,7 @@ let pageInit = () => {
 	TocInit();
 	if(document.getElementById('comment_form') !== null)
 		ajaxComment();
+	makePrismLineNum();
 };
 
 /**
@@ -461,9 +463,9 @@ window.onload = function () {
 		else
 			video.style.height = photo.offsetWidth + 'px';
 	}
-	pageInit();
 	autoDarkMode();
 	toolbarInit();
+	pageInit();
 };
 
 /**
