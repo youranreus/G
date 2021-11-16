@@ -21,7 +21,7 @@
         <?php echo G::setCSSValues(); ?>
     </style>
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.2327">
-    <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {echo 'alternate';} ?>" href="<?php echo G::staticUrl('static/css/dark.css'); ?>?v=3.227" title="dark">
+    <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {echo 'alternate';} ?>" href="<?php echo G::staticUrl('static/css/dark.css'); ?>?v=3.228" title="dark">
     
     <style>
         /* 设置自定义背景[颜色/图片] */
