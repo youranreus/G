@@ -154,3 +154,7 @@ table {
 #sliderbar-photo div {
     background: RGBA(0, 0, 0, 0.7);
 }
+
+.lightbox-wrap {
+	background: RGBA(0, 0, 0, 0.99);
+}
