@@ -2,7 +2,8 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 require_once("shortcode.php");
 
-class G {
+class G
+{
 
     /**
      * 主题版本号
@@ -17,22 +18,22 @@ class G {
      * @var array
      */
     public static $config = [
-        'favicon'=>'',
-        'cdn'=>'',
-        'background'=>'',
-        'themeColor'=>'',
-        'headerColor'=>'',
-        'themeRadius'=>'',
-        'themeShadow'=>'',
-        'autoBanner'=>'',
-        'defaultBanner'=>'',
-        'buildYear'=>'',
-        'icp'=>'',
-        'defaultArticlePath'=>'',
-        'enableIndexPage'=>'',
-        'advanceSetting'=>'',
-        'footerLOGO'=>'',
-        'enableUPYUNLOGO'=>'',
+        'favicon' => '',
+        'cdn' => '',
+        'background' => '',
+        'themeColor' => '',
+        'headerColor' => '',
+        'themeRadius' => '',
+        'themeShadow' => '',
+        'autoBanner' => '',
+        'defaultBanner' => '',
+        'buildYear' => '',
+        'icp' => '',
+        'defaultArticlePath' => '',
+        'enableIndexPage' => '',
+        'advanceSetting' => '',
+        'footerLOGO' => '',
+        'enableUPYUNLOGO' => '',
     ];
 
     public static $advanceConfig = [];
@@ -49,51 +50,34 @@ class G {
         //读取配置内容
         $options = Helper::options();
         $keys = array_keys(self::$config);
-        foreach ($keys as $key) 
-            if(!empty($options->{$key}))
+        foreach ($keys as $key)
+            if (!empty($options->{$key}))
                 self::$config[$key] = $options->{$key};
-        if(self::$config['advanceSetting']!='')
-        {
-            $advanceConfig = explode("\n",self::$config['advanceSetting']);
-            foreach($advanceConfig as $item)
-                if($item != '')
-                    self::$advanceConfig[explode("=",$item)[0]] = explode("=",$item)[1];
+        if (self::$config['advanceSetting'] != '') {
+            $advanceConfig = explode("\n", self::$config['advanceSetting']);
+            foreach ($advanceConfig as $item)
+                if ($item != '')
+                    self::$advanceConfig[explode("=", $item)[0]] = explode("=", $item)[1];
         }
-        self::$themeUrl = Helper::options()->themeUrl.'/';
-    }
-
-    /**
-     * 获取静态资源路径
-     *
-     * @param String $path
-     * @return void
-     */
-    public static function staticUrl($path)
-    {
-        if(self::$config['cdn'] == 'local' || self::$config['cdn'] == '')
-            return self::$themeUrl.$path;
-        else if (self::$config['cdn'] == 'jsdelivr')
-            return 'https://cdn.jsdelivr.net/gh/youranreus/G/'.$path;
-        else
-            return self::$config['cdn'].$path;
+        self::$themeUrl = Helper::options()->themeUrl . '/';
     }
 
     /**
      * 获取背景信息
      * regex source: https://daringfireball.net/2010/07/improved_regex_for_matching_urls
      *
-     * @return void
+     * @return string
      */
     public static function getBackground()
     {
         $background = "background";
-        if(self::$config['background'] == '')
-            return $background.": #fff;";
-        
+        if (self::$config['background'] == '')
+            return $background . ": #fff;";
+
         $regex = '@(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))@';
-        if(preg_match($regex, self::$config['background']) == 0)
-            return ($background.": ".self::$config['background'].";");
-        return $background."-image: url(".self::$config['background'].");";
+        if (preg_match($regex, self::$config['background']) == 0)
+            return ($background . ": " . self::$config['background'] . ";");
+        return $background . "-image: url(" . self::$config['background'] . ");";
     }
 
     /**
@@ -104,28 +88,28 @@ class G {
     public static function setCSSValues()
     {
         $result = "html {
-            --theme-color: ".self::$config["themeColor"].";
-            --header-color: ".self::$config["headerColor"].";
-            --theme-radius: ".self::$config["themeRadius"].";
-            --theme-shadow: ".self::getBoxShadow(self::$config["themeShadow"]).";
+            --theme-color: " . self::$config["themeColor"] . ";
+            --header-color: " . self::$config["headerColor"] . ";
+            --theme-radius: " . self::$config["themeRadius"] . ";
+            --theme-shadow: " . self::getBoxShadow(self::$config["themeShadow"]) . ";
         ";
-        if(isset(self::$advanceConfig['customAnimationInDuration']))
-            $result .= "    --theme-animation-in-duration: ".self::$advanceConfig['customAnimationInDuration'].";\n        ";
-        if(isset(self::$advanceConfig['customAnimationOutDuration']))
-            $result .= "    --theme-animation-out-duration: ".self::$advanceConfig['customAnimationOutDuration'].";\n    ";
-        if(isset(self::$advanceConfig['customHeaderOffsetX']))
-            $result .= "    --theme-header-offset-x: ".self::$advanceConfig['customHeaderOffsetX'].";\n    ";
-        if(isset(self::$advanceConfig['customHeaderOffsetY']))
-            $result .= "    --theme-header-offset-y: ".self::$advanceConfig['customHeaderOffsetY'].";\n    ";
+        if (isset(self::$advanceConfig['customAnimationInDuration']))
+            $result .= "    --theme-animation-in-duration: " . self::$advanceConfig['customAnimationInDuration'] . ";\n        ";
+        if (isset(self::$advanceConfig['customAnimationOutDuration']))
+            $result .= "    --theme-animation-out-duration: " . self::$advanceConfig['customAnimationOutDuration'] . ";\n    ";
+        if (isset(self::$advanceConfig['customHeaderOffsetX']))
+            $result .= "    --theme-header-offset-x: " . self::$advanceConfig['customHeaderOffsetX'] . ";\n    ";
+        if (isset(self::$advanceConfig['customHeaderOffsetY']))
+            $result .= "    --theme-header-offset-y: " . self::$advanceConfig['customHeaderOffsetY'] . ";\n    ";
         $result .= "    }\n";
         return $result;
     }
-    
+
     /**
      * 根据配置返回阴影值
      *
      * @param int $config
-     * @return void
+     * @return string
      */
     public static function getBoxShadow($config)
     {
@@ -143,16 +127,16 @@ class G {
         $img = array();
         $banner = $post->fields->imgurl;
         $mirageBanner = $post->fields->thumb;
-        
-        if(isset($banner) && $banner != '')
-            return str_replace("{random}",(string)rand(1000,9999), $post->fields->imgurl);
-        if(isset($mirageBanner) && $mirageBanner != '')
-            return str_replace("{random}",(string)rand(1000,9999), $mirageBanner);
-        if(self::$config['defaultBanner'] != '')
-            return str_replace("{random}",(string)rand(1000,9999), self::$config['defaultBanner']);
-        if(self::$config['autoBanner'] == 0)
+
+        if (isset($banner) && $banner != '')
+            return str_replace("{random}", (string)rand(1000, 9999), $post->fields->imgurl);
+        if (isset($mirageBanner) && $mirageBanner != '')
+            return str_replace("{random}", (string)rand(1000, 9999), $mirageBanner);
+        if (self::$config['defaultBanner'] != '')
+            return str_replace("{random}", (string)rand(1000, 9999), self::$config['defaultBanner']);
+        if (self::$config['autoBanner'] == 0)
             return 'none';
-        
+
         preg_match_all("/<img.*?src=\"(.*?)\".*?\/?>/i", $post->content, $img);
         if (count($img) > 0 && count($img[0]) > 0)
             return $img[1][0];
@@ -171,10 +155,10 @@ class G {
         $img = array();
         $banner = $post->fields->imgurl;
         $mirageBanner = $post->fields->banner;
-        
-        if(isset($banner) && $banner != '')
+
+        if (isset($banner) && $banner != '')
             return $post->fields->imgurl;
-        else if(isset($mirageBanner) && $mirageBanner != '')
+        else if (isset($mirageBanner) && $mirageBanner != '')
             return $mirageBanner;
         return 'none';
     }
@@ -186,9 +170,9 @@ class G {
      */
     public static function getICP()
     {
-        if(Helper::options()->icp != '')
+        if (Helper::options()->icp != '')
             return Helper::options()->icp;
-        if(isset(self::$advanceConfig["customICP"]))
+        if (isset(self::$advanceConfig["customICP"]))
             return self::$advanceConfig["customICP"];
         return '还没有备案噢';
     }
@@ -200,7 +184,7 @@ class G {
      */
     public static function getSponsorText()
     {
-        if(isset(self::$advanceConfig["customSponsorText"]))
+        if (isset(self::$advanceConfig["customSponsorText"]))
             return self::$advanceConfig["customSponsorText"];
         return "支持 ☕";
     }
@@ -213,10 +197,10 @@ class G {
     public static function getArticlePath()
     {
         $path = Helper::options()->siteUrl;
-        if(substr($path, -1) == '/')
-            $path = $path.self::$config["defaultArticlePath"];
+        if (substr($path, -1) == '/')
+            $path = $path . self::$config["defaultArticlePath"];
         else
-            $path = $path.'/'.self::$config["defaultArticlePath"];
+            $path = $path . '/' . self::$config["defaultArticlePath"];
         return $path;
     }
 
@@ -227,36 +211,33 @@ class G {
      */
     public static function getFooterLogos()
     {
-        if(self::$config['enableUPYUNLOGO'] == 1)
-            $logos = '<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="'.self::staticUrl('static/img/upyun.png').'"/></a>';
+        if (self::$config['enableUPYUNLOGO'] == 1)
+            $logos = '<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="' . self::staticUrl('static/img/upyun.png') . '"/></a>';
         else
             $logos = '';
         $imgs = explode(',', self::$config["footerLOGO"]);
-        foreach($imgs as $img)
-            if($img != '')
-                $logos = $logos.'<img src="'.$img.'" />';
+        foreach ($imgs as $img)
+            if ($img != '')
+                $logos = $logos . '<img src="' . $img . '" />';
         return $logos;
     }
 
     /**
-     * 获取语义化日期
+     * 获取静态资源路径
      *
-     * @param string $date
+     * @param String $path
      * @return string
      */
-    public static function getSemanticDate($date) 
+    public static function staticUrl($path)
     {
-        $now = time();
-        $sub = $now - $date;
-
-        if($sub < 60)
-            return $sub."秒前";
-        else if($sub < 3600)
-            return (int)($sub/60)."分钟前";
-        else if($sub < 86400)
-            return (int)($sub/3600)."小时前";
+        if (self::$config['cdn'] == 'local' || self::$config['cdn'] == '')
+            return self::$themeUrl . $path;
+        else if (self::$config['cdn'] == 'jsdelivr')
+            return 'https://cdn.jsdelivr.net/gh/youranreus/G@v' . self::$version . '/' . $path;
+        else if (self::$config['cdn'] == 'sourcestorage')
+            return 'https://source.ahdark.com/typecho/theme/G-theme/' . self::$version . '/' . $path;
         else
-            return (int)($sub/86400)."天前";
+            return self::$config['cdn'] . $path;
     }
 
     /**
@@ -268,7 +249,28 @@ class G {
      */
     public static function getModifiedDate($modified, $created)
     {
-        return $modified == $created ? "还没有修改过" : "最后修改于".self::getSemanticDate($modified);
+        return $modified == $created ? "还没有修改过" : "最后修改于" . self::getSemanticDate($modified);
+    }
+
+    /**
+     * 获取语义化日期
+     *
+     * @param string $date
+     * @return string
+     */
+    public static function getSemanticDate($date)
+    {
+        $now = time();
+        $sub = $now - $date;
+
+        if ($sub < 60)
+            return $sub . "秒前";
+        else if ($sub < 3600)
+            return (int)($sub / 60) . "分钟前";
+        else if ($sub < 86400)
+            return (int)($sub / 3600) . "小时前";
+        else
+            return (int)($sub / 86400) . "天前";
     }
 
     /**
@@ -292,9 +294,9 @@ class G {
     public static function analyzeMeme($content)
     {
         //@(xx)格式表情
-        $result = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/$1.png" class="bq">',$content);
+        $result = preg_replace('#@\((.*?)\)#', '<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/$1.png" class="bq">', $content);
         //mirage格式表情 （原神，小黄脸）
-        $result = preg_replace('/\:\:(.*?)\:(.*?)\:\:/','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">',$result);
+        $result = preg_replace('/::(.*?):(.*?)::/', '<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">', $result);
         return $result;
     }
 
@@ -304,8 +306,9 @@ class G {
      * @param object $archive
      * @return string
      */
-    public static function Comment_hash_fix($archive){
-        $header = "<script type=\"text/javascript\">
+    public static function Comment_hash_fix($archive)
+    {
+        return "<script type=\"text/javascript\">
         (function () {
             window.TypechoComment = {
                 dom : function (id) {
@@ -346,7 +349,7 @@ class G {
                     return false;
                 },
                 cancelReply : function () {
-                    var response = this.dom('{$archive->respondId}'),
+                    var response = this.dom('$archive->respondId'),
                     holder = this.dom('comment-form-place-holder'), input = this.dom('comment-parent');
                     if (null != input) {
                         input.parentNode.removeChild(input);
@@ -362,7 +365,6 @@ class G {
         })();
         </script>
         ";
-        return $header;
     }
 
     /**
@@ -377,26 +379,23 @@ class G {
         $db = Typecho_Db::get();
         $prefix = $db->getPrefix();
 
-        if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents'))))
-        {
+        if (!array_key_exists('views', $db->fetchRow($db->select()->from('table.contents')))) {
             $db->query('ALTER TABLE `' . $prefix . 'contents` ADD `views` INT(10) DEFAULT 0;');
             return 0;
         }
 
         $row = $db->fetchRow($db->select('views')->from('table.contents')->where('cid = ?', $cid));
 
-        if ($archive->is('single'))
-        {
+        if ($archive->is('single')) {
             $views = Typecho_Cookie::get('extend_contents_views');
 
-            if(empty($views))
+            if (empty($views))
                 $views = array();
             else
                 $views = explode(',', $views);
 
-            if(!in_array($cid,$views))
-            {
-                $db->query($db->update('table.contents')->rows(array('views' => (int) $row['views'] + 1))->where('cid = ?', $cid));
+            if (!in_array($cid, $views)) {
+                $db->query($db->update('table.contents')->rows(array('views' => (int)$row['views'] + 1))->where('cid = ?', $cid));
                 array_push($views, $cid);
                 $views = implode(',', $views);
                 Typecho_Cookie::set('extend_contents_views', $views); //记录查看cookie
@@ -412,14 +411,14 @@ class G {
      * @param int $cid
      * @return array
      */
-    public static function agreeNum($cid) 
+    public static function agreeNum($cid)
     {
         $db = Typecho_Db::get();
         $prefix = $db->getPrefix();
-    
+
         if (!array_key_exists('agree', $db->fetchRow($db->select()->from('table.contents'))))
             $db->query('ALTER TABLE `' . $prefix . 'contents` ADD `agree` INT(10) NOT NULL DEFAULT 0;');
-    
+
         $agree = $db->fetchRow($db->select('table.contents.agree')->from('table.contents')->where('cid = ?', $cid));
         $AgreeRecording = Typecho_Cookie::get('typechoAgreeRecording');
         if (empty($AgreeRecording))
@@ -427,7 +426,7 @@ class G {
 
         return array(
             'agree' => $agree['agree'],
-            'recording' => in_array($cid, json_decode(Typecho_Cookie::get('typechoAgreeRecording'))) ? true : false
+            'recording' => in_array($cid, json_decode(Typecho_Cookie::get('typechoAgreeRecording')))
         );
     }
 
@@ -438,23 +437,22 @@ class G {
      * @param int $cid
      * @return int
      */
-    public static function agree($cid) 
+    public static function agree($cid)
     {
         $db = Typecho_Db::get();
         $agree = $db->fetchRow($db->select('table.contents.agree')->from('table.contents')->where('cid = ?', $cid));
-    
+
         $agreeRecording = Typecho_Cookie::get('typechoAgreeRecording');
         if (empty($agreeRecording))
             Typecho_Cookie::set('typechoAgreeRecording', json_encode(array($cid)));
-        else 
-        {
+        else {
             $agreeRecording = json_decode($agreeRecording);
             if (in_array($cid, $agreeRecording))
                 return $agree['agree'];
             array_push($agreeRecording, $cid);
             Typecho_Cookie::set('typechoAgreeRecording', json_encode($agreeRecording));
         }
-    
+
         $db->query($db->update('table.contents')->rows(array('agree' => (int)$agree['agree'] + 1))->where('cid = ?', $cid));
         $agree = $db->fetchRow($db->select('table.contents.agree')->from('table.contents')->where('cid = ?', $cid));
         return $agree['agree'];
@@ -470,33 +468,29 @@ class G {
     {
         $db = Typecho_Db::get();
         $result = $db->fetchAll($db->select()->from('table.contents')
-            ->where('status = ?','publish')
+            ->where('status = ?', 'publish')
             ->where('type = ?', 'post')
-            ->where('cid = ?',$id)
+            ->where('cid = ?', $id)
         );
-        if($result){
-            $i=1;
-            foreach($result as $val){
+        if ($result) {
+            $i = 1;
+            foreach ($result as $val) {
                 $val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
-                $post_title = htmlspecialchars($val['title']);
-                return $post_title;
+                return htmlspecialchars($val['title']);
             }
-        }
-        else{
+        } else {
             $result = $db->fetchAll($db->select()->from('table.contents')
-                ->where('status = ?','publish')
+                ->where('status = ?', 'publish')
                 ->where('type = ?', 'page')
-                ->where('cid = ?',$id)
+                ->where('cid = ?', $id)
             );
-            if($result){
-                $i=1;
-                foreach($result as $val){
+            if ($result) {
+                $i = 1;
+                foreach ($result as $val) {
                     $val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
-                    $post_title = htmlspecialchars($val['title']);
-                    return $post_title;
+                    return htmlspecialchars($val['title']);
                 }
-            }
-            else 
+            } else
                 return '标题获取失败';
         }
     }
