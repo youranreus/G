@@ -28,13 +28,13 @@
         <?php $this->need('components/sidebar.php'); ?>
         <?php $this->footer(); ?>
         
-        <script src="<?php echo G::staticUrl('static/js/pjax.min.js'); ?>?v=3.10012"></script>
-        <script src="<?php echo G::staticUrl('static/js/smoothscroll.js'); ?>?v=3.215"></script>
-        <script src="<?php echo G::staticUrl('static/js/toastify.min.js'); ?>?v=3.211"></script>
-        <script src="<?php echo G::staticUrl('static/js/tocbot.min.js'); ?>?v=3.211"></script>
-        <script src="<?php echo G::staticUrl('static/js/lib.js'); ?>?v=3.10018"></script>
-        <script src="<?php echo G::staticUrl('static/js/prism.js'); ?>?v=1.03" data-manual></script>
-        <script src="<?php echo G::staticUrl('static/js/G.js'); ?>?v=3.241"></script>
+        <script src="<?php echo G::staticUrl('assets/js/pjax.min.js'); ?>?v=3.10012"></script>
+        <script src="<?php echo G::staticUrl('assets/js/smoothscroll.js'); ?>?v=3.215"></script>
+        <script src="<?php echo G::staticUrl('assets/js/toastify.min.js'); ?>?v=3.211"></script>
+        <script src="<?php echo G::staticUrl('assets/js/tocbot.min.js'); ?>?v=3.211"></script>
+        <script src="<?php echo G::staticUrl('assets/js/lib.js'); ?>?v=3.10018"></script>
+        <script src="<?php echo G::staticUrl('assets/js/prism.js'); ?>?v=1.03" data-manual></script>
+        <script src="<?php echo G::staticUrl('assets/js/G.js'); ?>?v=3.241"></script>
         <script>
             <?php $this->options->customFooterJS(); ?>
         </script>

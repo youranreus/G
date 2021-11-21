@@ -228,7 +228,7 @@ class G {
     public static function getFooterLogos()
     {
         if(self::$config['enableUPYUNLOGO'] == 1)
-            $logos = '<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="'.self::staticUrl('static/img/upyun.png').'"/></a>';
+            $logos = '<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="'.self::staticUrl('assets/img/upyun.png').'"/></a>';
         else
             $logos = '';
         $imgs = explode(',', self::$config["footerLOGO"]);
