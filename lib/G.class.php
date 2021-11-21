@@ -295,6 +295,12 @@ class G {
         $result = preg_replace('#\@\((.*?)\)#','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/$1.png" class="bq">',$content);
         //mirage格式表情 （原神，小黄脸）
         $result = preg_replace('/\:\:(.*?)\:(.*?)\:\:/','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">',$result);
+        $result = preg_replace_callback('#\#\((.*?)\)#',function($matches) {
+            $emotionText = substr(substr($matches[0], 0, -1), 2);
+            $url = "<img class='bq' src='https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/aru/".urlencode($emotionText).".png'/>";
+            $url = preg_replace('/%/', '', $url);
+            return $url;
+        }, $result);
         return $result;
     }
 
