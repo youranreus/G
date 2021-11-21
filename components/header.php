@@ -1,4 +1,5 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+$minInfix = defined('__TYPECHO_DEBUG__') && __TYPECHO_DEBUG__ == true ? ".min" : ""; ?>
 <!DOCTYPE HTML>
 <html lang="zh">
 <head>
@@ -6,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//source.ahdark.com">
     <link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">
     <link href="<?php $this->options->favicon(); ?>" rel="icon">
     <link rel='dns-prefetch' href='//s.w.org'>
@@ -23,7 +25,7 @@
     <link rel="stylesheet" href="<?php echo G::staticUrl('assets/css/G.css'); ?>?v=3.2327">
     <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {
         echo 'alternate';
-    } ?>" href="<?php echo G::staticUrl('assets/css/dark.css'); ?>?v=3.227" title="dark">
+    } ?>" href="<?php echo G::staticUrl("assets/css/dark$minInfix.css"); ?>?v=3.227" title="dark">
 
     <style>
         /* 设置自定义背景[颜色/图片] */

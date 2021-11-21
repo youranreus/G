@@ -440,7 +440,7 @@ window.onload = function () {
         scrollRestoration: true
     });
 
-    if (document.getElementById("sliderbar-video") != undefined) {
+    if (document.getElementById("sliderbar-video") !== undefined) {
         let photo = document.getElementById("sliderbar-photo");
         let video = document.getElementById("sliderbar-video");
         photo.style.height = document.querySelector('#categoryList').offsetHeight + 'px';
@@ -488,11 +488,11 @@ document.addEventListener('pjax:complete', () => {
     if (typeof Prism !== 'undefined') {
         Prism.highlightAll(true, null);
     }
-    ;
+
     if (typeof (loadMeting) === "function") {
         loadMeting();
     }
-    ;
+
     pageInit();
     doLazyload();
 });
