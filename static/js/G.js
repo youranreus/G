@@ -280,14 +280,14 @@ let ajaxComment = () =>{
 		document.querySelectorAll(".comment-reply a").forEach(reply=>{
 			reply.onclick = function() {
 				replyTo = reply.parentNode.parentNode.parentNode.parentNode.id;
-				console.log('回复绑定成功，当前回复id为', replyTo);
+				//console.log('回复绑定成功，当前回复id为', replyTo);
 				return TypechoComment.reply(replyTo, parseInt(replyTo.slice(8)));
 			};
 		});
 		document.querySelectorAll(".cancel-comment-reply a").forEach((cancel) => {
 			cancel.onclick = () => {
 				replyTo = '';
-				console.log('取消绑定，当前回复id重置为', replyTo);
+				//console.log('取消绑定，当前回复id重置为', replyTo);
 				return TypechoComment.cancelReply();
 			};
 		});
