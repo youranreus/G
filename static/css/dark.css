@@ -50,6 +50,10 @@ a.next {
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+table {
+	color: var(--theme-text-main);
+}
+
 .page-navigator li a {
     border: 1px solid #555;
 }
@@ -148,4 +152,8 @@ a.next {
 
 #sliderbar-photo div {
     background: RGBA(0, 0, 0, 0.7);
+}
+
+.lightbox-wrap {
+	background: RGBA(0, 0, 0, 0.99);
 }

@@ -75,5 +75,3 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
             <img src="<?php $this->options->headerBackground(); ?>" alt="<?php $this->options->title(); ?>" id="header-background">
         <?php endif; ?>
     </header>
-
-    

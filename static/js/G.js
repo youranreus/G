@@ -207,12 +207,11 @@ let autoDarkMode = () => {
  * toolbar按钮赋能
  */
 let toolbarInit = () => {
-    document.querySelector('#gototop').onclick = function () {
-        console.log('yo');
-        window.scroll({top: 0, left: 0, behavior: 'smooth'});
-    };
-    document.querySelector('#darkmode').onclick = darkModeToggle;
-    document.querySelector("#sidebar-btn").onclick = toggleSidebar;
+	document.querySelector('#gototop').onclick = function(){
+		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+	};
+	document.querySelector('#darkmode').onclick = darkModeToggle;
+	document.querySelector("#sidebar-btn").onclick = toggleSidebar;
 };
 
 /**
@@ -266,72 +265,75 @@ let slideOwO = (id) => {
 /**
  * ajax评论
  */
-let ajaxComment = () => {
-    let replyTo = '',
-        commentForm = document.querySelector("#comment_form");
-    let bindButton = () => {
-        document.querySelectorAll(".comment-reply a").forEach(reply => {
-            reply.onclick = function () {
-                replyTo = reply.parentNode.parentNode.parentNode.parentNode.id;
-                console.log('回复绑定成功，当前回复id为', replyTo);
-                return TypechoComment.reply(replyTo, parseInt(replyTo.slice(8)));
-            };
-        });
-        document.querySelectorAll(".cancel-comment-reply a").forEach((cancel) => {
-            cancel.onclick = () => {
-                replyTo = '';
-                console.log('取消绑定，当前回复id重置为', replyTo);
-                return TypechoComment.cancelReply();
-            };
-        });
-    };
-    bindButton();
+let ajaxComment = () =>{
+	let replyTo = '',
+		commentForm = document.querySelector("#comment_form");
+	let bindButton = () => {
+		document.querySelectorAll(".comment-reply a").forEach(reply=>{
+			reply.onclick = function() {
+				replyTo = reply.parentNode.parentNode.parentNode.parentNode.id;
+				//console.log('回复绑定成功，当前回复id为', replyTo);
+				return TypechoComment.reply(replyTo, parseInt(replyTo.slice(8)));
+			};
+		});
+		document.querySelectorAll(".cancel-comment-reply a").forEach((cancel) => {
+			cancel.onclick = () => {
+				replyTo = '';
+				//console.log('取消绑定，当前回复id重置为', replyTo);
+				return TypechoComment.cancelReply();
+			};
+		});
+	};
+	bindButton();
 
-    /**
-     * 发送前的处理
-     */
-    function beforeSendComment() {
-        closeOwO();
-    }
+	/**
+	 * 发送前的处理
+	 */
+	function beforeSendComment() {
+		closeOwO();
+	}
 
-    /**
-     * 发送后的处理
-     * @param {boolean} status
-     */
-    function afterSendComment(status) {
-        if (status) {
-            document.getElementById("comments-textarea").value = '';
-            replyTo = '';
-            showToast('发送成功');
-        }
-        bindButton();
-    }
+	/**
+	 * 发送后的处理
+	 * @param {boolean} status
+	 */
+	function afterSendComment(status) {
+		if (status) {
+			document.getElementById("comments-textarea").value = '';
+			replyTo = '';
+			showToast('发送成功');
+		}
+		bindButton();
+	}
 
-    commentForm.onsubmit = function () {
-        commentData = commentForm.serialize();
-        beforeSendComment();
-        Ajax.post(commentForm.getAttribute('action'), commentData,
-            (result) => {
-                let newComment = document.createElement('div');
-                newComment.innerHTML = result;
-                if (newComment.getElementsByTagName('title').length > 0 && newComment.getElementsByTagName('title')[0].innerText === document.title) {
-                    afterSendComment(true);
-                    TypechoComment.cancelReply();
-                    document.querySelector('#comments').removeChild(document.querySelector('.comment-list'));
-                    document.querySelector('#comments').appendChild(newComment.querySelector('.comment-list'));
-                    replyTo = '';
-                } else {
-                    afterSendComment(false);
-                    showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
-                }
-            },
-            (error) => {
-                let newComment = document.createElement('div');
-                newComment.innerHTML = error;
-                showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
-            });
-        return false;
-    };
+	commentForm.onsubmit = function() {
+		commentData = commentForm.serialize();
+		beforeSendComment();
+		Ajax.post(commentForm.getAttribute('action'), commentData)
+			.then((result)=>{
+				let newComment = document.createElement('div');
+				newComment.innerHTML = result;
+				if(newComment.getElementsByTagName('title').length > 0 && newComment.getElementsByTagName('title')[0].innerText === document.title)
+				{
+					afterSendComment(true);
+					TypechoComment.cancelReply();
+					document.querySelector('#comments').removeChild(document.querySelector('.comment-list'));
+					document.querySelector('#comments').appendChild(newComment.querySelector('.comment-list'));
+					replyTo = '';
+				}
+				else
+				{
+					afterSendComment(false);
+					showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
+				}
+			})
+			.catch((error) => {
+				let newComment = document.createElement('div');
+				newComment.innerHTML = error;
+				showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
+			});
+		return false;
+	};
 }
 
 /**
@@ -413,21 +415,23 @@ let doLazyload = () => {
 };
 
 let sendLike = () => {
-    let btn = document.querySelector('#agree-btn');
-    btn.style.disabled = true;
-    Ajax.post(btn.dataset.url, 'agree=' + btn.dataset.cid, (res) => {
-        let re = /\d/;
-        if (re.test(res)) {
-            let counter = btn.childNodes[3];
-            if (parseInt(res) == parseInt(counter.innerHTML))
-                showToast('已经点过赞咯');
-            else
-                showToast('点赞成功');
-            counter.innerHTML = res;
-            counter.parentNode.childNodes[1].innerHTML = '😍';
-        } else
-            showToast('出了点小问题');
-    });
+	let btn = document.querySelector('#agree-btn');
+	btn.style.disabled = true;
+	Ajax.post(btn.dataset.url, 'agree='+btn.dataset.cid)
+		.then((res) => {
+			let re = /\d/;
+			if (re.test(res)) {
+				let counter = btn.childNodes[3];
+				if(parseInt(res) == parseInt(counter.innerHTML))
+					showToast('已经点过赞咯');
+				else
+					showToast('点赞成功');
+				counter.innerHTML = res;
+				counter.parentNode.childNodes[1].innerHTML = '😍';
+			}
+			else
+				showToast('出了点小问题');
+		});
 }
 
 window.onload = function () {

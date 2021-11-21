@@ -99,44 +99,36 @@ function expandSection(element) {
 }
 
 let Ajax = {
-    get: function (url, resolve, reject) {
-        new Promise((rs, rj) => {
-            let xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200 || xhr.status == 304)
-                        rs(xhr.responseText);
-                    else
-                        rj(xhr.responseText);
-                }
-            }
-            xhr.send();
-        }).then(success => {
-            resolve(success);
-        }).catch(error => {
-            reject(error);
-        });
+    get: function(url){
+		new Promise((rs, rj)=> {
+			let xhr=new XMLHttpRequest();
+			xhr.open('GET',url,true);
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4){
+					if(xhr.status==200 || xhr.status==304)
+						rs(xhr.responseText);
+					else
+						rj(xhr.responseText);
+				}
+			}
+			xhr.send();
+		});
     },
-    post: function (url, data, resolve, reject) {
-        new Promise((rs, rj) => {
-            let xhr = new XMLHttpRequest();
-            xhr.open('POST', url, true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4) {
-                    if (xhr.status == 200 || xhr.status == 304)
-                        rs(xhr.responseText);
-                    else
-                        rj(xhr.responseText);
-                }
-            }
-            xhr.send(data);
-        }).then(success => {
-            resolve(success);
-        }).catch(error => {
-            reject(error);
-        });
+    post: function(url, data){
+		return new Promise((rs,rj)=>{
+			let xhr=new XMLHttpRequest();
+			xhr.open('POST',url,true);
+			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			xhr.onreadystatechange = function(){
+				if (xhr.readyState == 4){
+					if (xhr.status == 200 || xhr.status == 304)
+						rs(xhr.responseText);
+					else
+						rj(xhr.responseText);
+				}
+			}
+			xhr.send(data);
+		});
     }
 }
 
