@@ -1,150 +1,149 @@
 html {
-	--theme-text-main: rgba(249, 249, 249, 0.8);
-	--theme-bg-main: #2c2a2a;
-	--theme-text-strong: RGB(204, 53, 54);
-	--theme-text-code: #dd4a68;
-	--theme-bg-sub: RGBA(244, 245, 245, 1);
-	--theme-text-blockq-bg: #383737;
-	--theme-text-blockq: #878c93;
-	--theme-table-th-bg: #f8f8f8;
-	--theme-table-td-bg: #fff;
-	--theme-table-td-bg-even: #f8f8f8;
-	--theme-table-tr-border: #ccc;
-	--theme-table-td-border: #ddd;
-	--theme-banner-bg: #343232;
-	--theme-banner-title: #fff;
-	--theme-pap-text-main: rgba(249, 249, 249, 0.8);
-	--header-color: #2c2a2a;
+    --theme-text-main: rgba(249, 249, 249, 0.8);
+    --theme-bg-main: #2c2a2a;
+    --theme-text-strong: RGB(204, 53, 54);
+    --theme-text-code: #dd4a68;
+    --theme-bg-sub: RGBA(244, 245, 245, 1);
+    --theme-text-blockq-bg: #383737;
+    --theme-text-blockq: #878c93;
+    --theme-table-th-bg: #f8f8f8;
+    --theme-table-td-bg: #fff;
+    --theme-table-td-bg-even: #f8f8f8;
+    --theme-table-tr-border: #ccc;
+    --theme-table-td-border: #ddd;
+    --theme-banner-bg: #343232;
+    --theme-banner-title: #fff;
+    --theme-pap-text-main: rgba(249, 249, 249, 0.8);
+    --header-color: #2c2a2a;
 }
 
 .article-banner-wrap {
-	display: none;
+    display: none;
 }
 
 #dark-cover {
-	position: fixed;
-	background: RGBA(0, 0, 0, 0.8);
-	width: 100vw;
-	height: 100vh;
-	top: 0;
-	left: 0;
-	z-index: -1;
+    position: fixed;
+    background: RGBA(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .article-title a,
 .article-title {
-	color: #fff;
+    color: #fff;
 }
 
 .article-data span {
-	color: var(--theme-text-main);
+    color: var(--theme-text-main);
 }
 
 .article-banner {
-	display: none;
+    display: none;
 }
 
 a.prev,
 a.next {
-	background: rgba(22, 22, 26, 0.99);
-	border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(22, 22, 26, 0.99);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .page-navigator li a {
-	border: 1px solid #555;
+    border: 1px solid #555;
 }
 
 #post-footer-tag p a,
 #tag-cloud li a {
-	background-color: #403e3e;
-	color: #f0f0f0;
+    background-color: #403e3e;
+    color: #f0f0f0;
 }
 
 #comments-textarea,
 #comments-textarea-wrap,
 .comments-Input input {
-	background: #343232;
-	color: var(--theme-text-main);
+    background: #343232;
+    color: var(--theme-text-main);
 }
 
 #comments-form input.submit {
-	background: #2e2f34;
+    background: #2e2f34;
 }
 
 .collapse-title {
-	background: rgb(64, 62, 62);
+    background: rgb(64, 62, 62);
 }
 
 .collapse-box {
-	border: 1px solid #555;
+    border: 1px solid #555;
 }
 
 .shortcode-warn {
-	background: #3e3536;
-	color: var(--theme-text-main);
-	opacity: 0.6;
+    background: #3e3536;
+    color: var(--theme-text-main);
+    opacity: 0.6;
 }
 
 .shortcode-notice {
-	background: #37373a;
-	color: var(--theme-text-main);
-	opacity: 0.6;
+    background: #37373a;
+    color: var(--theme-text-main);
+    opacity: 0.6;
 }
 
 .link-item-content h4 {
-	color: var(--theme-text-main);
+    color: var(--theme-text-main);
 }
 
 .link-item-content p {
-	-webkit-text-stroke: 2px var(--theme-text-main);
+    -webkit-text-stroke: 2px var(--theme-text-main);
 }
 
 .archives a {
-	color: rgb(240, 240, 240);
+    color: rgb(240, 240, 240);
 }
 
 .archives a:hover {
-	background: rgb(64, 62, 62);
+    background: rgb(64, 62, 62);
 }
 
 .archives a .time {
-	color: rgb(204, 204, 204);
+    color: rgb(204, 204, 204);
 }
 
 #lyrics p:nth-child(even),
 #lyrics p span {
-	color: rgb(204, 204, 204);
+    color: rgb(204, 204, 204);
 }
 
 .toolbar-btn {
-	border: 1px solid #555;
+    border: 1px solid #555;
 }
 
 .ArtinArt {
-	background: #383737;
+    background: #383737;
 }
 
 .ArtinArt h5 a {
-	color: var(--theme-text-main);
+    color: var(--theme-text-main);
 }
 
 .ArtinArt h5 a:hover {
-	color: var(--theme-text-main) !important;
+    color: var(--theme-text-main) !important;
 }
 
 .post-toolbar-btn {
-	background-color: #403e3e;
+    background-color: #403e3e;
 }
 
 .PAP-content hr {
-	background: #2c2a2a
-		repeating-linear-gradient(
-			-45deg,
-			#bcbcbc,
-			#bcbcbc 0.25rem,
-			transparent 0.25rem,
-			transparent 0.5rem
-		);
+    background: #2c2a2a repeating-linear-gradient(
+            -45deg,
+            #bcbcbc,
+            #bcbcbc 0.25rem,
+            transparent 0.25rem,
+            transparent 0.5rem
+    );
 }
 
 #sliderbar-photo div {

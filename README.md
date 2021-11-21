@@ -41,8 +41,6 @@
 - 各种小动画
 - 长期维护
 
-
-
 总之，欢迎下载体验~
 
 | 主题文档              | 主题QQ群  | 反馈邮箱          |
@@ -50,5 +48,6 @@
 | https://g.imouto.tech | 674232327 | youranreus@qq.com |
 
 ### License 许可证
+
 Open sourced under GPL-3.0 License.
 

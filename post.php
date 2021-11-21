@@ -1,18 +1,20 @@
-<?php 
-    if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-    if (isset($_POST['agree'])) {
-		if ($_POST['agree'] == $this->cid)
-				exit(G::agree($this->cid));
-		exit('error');
-	}
-    $agree = $this->hidden?array('agree' => 0, 'recording' => true):  G::agreeNum($this->cid);
-    $this->need('components/header.php');
+<?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+if (isset($_POST['agree'])) {
+    if ($_POST['agree'] == $this->cid)
+        exit(G::agree($this->cid));
+    exit('error');
+}
+$agree = $this->hidden ? array('agree' => 0, 'recording' => true) : G::agreeNum($this->cid);
+$this->need('components/header.php');
 ?>
 
 <div id="post" class="PAP" role="main">
     <article itemscope itemtype="http://schema.org/BlogPosting">
-        <div id="post-banner" class="PAP-banner <?php $img = G::getArticleFieldsBanner($this); if($img != 'none') echo 'PAP-IMG-Banner'; ?>">
-            <?php $img = G::getArticleFieldsBanner($this); if($img != 'none'): ?>
+        <div id="post-banner" class="PAP-banner <?php $img = G::getArticleFieldsBanner($this);
+        if ($img != 'none') echo 'PAP-IMG-Banner'; ?>">
+            <?php $img = G::getArticleFieldsBanner($this);
+            if ($img != 'none'): ?>
                 <div class="PAP-banner-background" style="background-image: url('<?php echo $img; ?>');"></div>
                 <div class="PAP-banner-mask"></div>
             <?php endif; ?>
@@ -25,15 +27,15 @@
             <?php echo G::analyzeContent($this->content); ?>
         </div>
         <div id="post-toolbar">
-            <a id="agree-btn" onclick="sendLike()" class="<?php echo $agree['recording']?'agreed':''; ?> post-toolbar-btn" data-cid="<?php echo $this->cid; ?>" data-url="<?php $this->permalink(); ?>">
+            <a id="agree-btn" onclick="sendLike()" class="<?php echo $agree['recording'] ? 'agreed' : ''; ?> post-toolbar-btn" data-cid="<?php echo $this->cid; ?>" data-url="<?php $this->permalink(); ?>">
                 <span class="agree-icon">👍</span>
                 <span class="agree-num"><?php echo $agree['agree']; ?></span>
             </a>
-            <?php if($this->options->sponsorIMG != ''): ?>
+            <?php if ($this->options->sponsorIMG != ''): ?>
                 <span class="post-toolbar-btn" onclick="sponsorToggle()"><?php echo G::getSponsorText(); ?></span>
             <?php endif; ?>
         </div>
-        <?php if($this->options->sponsorIMG != ''): ?>
+        <?php if ($this->options->sponsorIMG != ''): ?>
             <div id="post-sponsor" data-collapsed="true">
                 <img src="<?php $this->options->sponsorIMG(); ?>" alt="<?php echo G::getSponsorText(); ?>"/>
             </div>
