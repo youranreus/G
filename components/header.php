@@ -22,10 +22,10 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
         /* 输出自定义主题色 */
         <?php echo G::setCSSValues(); ?>
     </style>
-    <link rel="stylesheet" href="<?php echo G::staticUrl('assets/css/G.css'); ?>?v=3.2327">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.2327">
     <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {
         echo 'alternate';
-    } ?>" href="<?php echo G::staticUrl("assets/css/dark$minInfix.css"); ?>?v=3.227" title="dark">
+    } ?>" href="<?php echo G::staticUrl("static/css/dark$minInfix.css"); ?>?v=3.227" title="dark">
 
     <style>
         /* 设置自定义背景[颜色/图片] */
@@ -36,7 +36,7 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
         <?php $this->options->customCSS(); ?>
     </style>
     <?php $this->header(); ?>
-    <script src="<?php echo G::staticUrl('assets/js/DPlayer.min.js'); ?>"></script>
+    <script src="<?php echo G::staticUrl('static/js/DPlayer.min.js'); ?>"></script>
     <script>
         <?php $this->options->customHeaderJS(); ?>
     </script>
