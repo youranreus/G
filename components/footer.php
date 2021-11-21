@@ -1,5 +1,5 @@
 <?php if (!defined("__TYPECHO_ROOT_DIR__")) exit;
-$minInfix = defined('__TYPECHO_DEBUG__') && __TYPECHO_DEBUG__ == true ? ".min" : ""; ?>
+$minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" : ""; ?>
 
 <footer>
     <div id="footer-content">
