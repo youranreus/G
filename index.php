@@ -16,8 +16,8 @@ $this->need('components/header.php');
         <?php $this->need('components/article.php'); ?>
     </div>
     <div id="articles-switch" class="clear">
-        <?php $this->pageLink('更多 >','next'); ?>
-        <?php $this->pageLink('< 返回','prev'); ?>
+        <?php $this->pageLink('更多 >', 'next'); ?>
+        <?php $this->pageLink('< 返回', 'prev'); ?>
     </div>
 </div>
 <?php $this->need('components/footer.php'); ?>

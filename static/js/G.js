@@ -2,13 +2,13 @@
  * 为prism代码块初始化行号插件
  */
 let makePrismLineNum = () => {
-	let ele = document.getElementsByTagName("pre");
-	if (ele.length > 0)
-		for (let element of ele)
-			element.className = element.className + " line-numbers";
-	if (typeof Prism !== 'undefined') {
-		Prism.highlightAll(true, null);
-	};
+    let ele = document.getElementsByTagName("pre");
+    if (ele.length > 0)
+        for (let element of ele)
+            element.className = element.className + " line-numbers";
+    if (typeof Prism !== 'undefined') {
+        Prism.highlightAll(true, null);
+    }
 };
 
 /**
@@ -19,10 +19,10 @@ let makePrismLineNum = () => {
  * @param {string} origin 目标属性
  */
 let preLazy = (ele, attribute, origin, instead = "") => {
-	for (let element of ele) {
-		element.setAttribute(origin, element.getAttribute(attribute));
-		element.setAttribute(attribute, instead);
-	}
+    for (let element of ele) {
+        element.setAttribute(origin, element.getAttribute(attribute));
+        element.setAttribute(attribute, instead);
+    }
 };
 
 /**
@@ -32,42 +32,42 @@ let preLazy = (ele, attribute, origin, instead = "") => {
  * @param {object} observe IntersectionObserver
  */
 let lazyBanner = (element, observe) => {
-	let data_src = element.target.getAttribute("origin");
-	new Promise((rs, rj) => {
-		let image = new Image();
-		image.onload = function () {
-			rs(data_src.slice(22, -2));
-		};
-		image.src = data_src.slice(22, -2);
-	}).then((success) => {
-		element.target.setAttribute(
-			"style",
-			data_src + "visibility: visible;animation: banner-show 1s;"
-		);
-		observe.unobserve(element.target);
-	});
+    let data_src = element.target.getAttribute("origin");
+    new Promise((rs, rj) => {
+        let image = new Image();
+        image.onload = function () {
+            rs(data_src.slice(22, -2));
+        };
+        image.src = data_src.slice(22, -2);
+    }).then((success) => {
+        element.target.setAttribute(
+            "style",
+            data_src + "visibility: visible;animation: banner-show 1s;"
+        );
+        observe.unobserve(element.target);
+    });
 };
 
 /**
  * 图片懒加载
- * 
+ *
  * @param {object} element 目标元素
  * @param {object} observe IntersectionObserver
  */
 let lazyPic = (element, observe) => {
-	new Promise((rs, rj) => {
-		let image = new Image();
-		image.onload = function () {
-			rs(image.src);
-		};
-		image.src = element.target.getAttribute("origin");
-	}).then((success) => {
-		element.target.setAttribute("src", success);
-		addClass(element.target, 'lazyload-done');
-		observe.unobserve(element.target);
-	}).catch((error)=>{
-		console.log("图片加载失败", error);
-	});
+    new Promise((rs, rj) => {
+        let image = new Image();
+        image.onload = function () {
+            rs(image.src);
+        };
+        image.src = element.target.getAttribute("origin");
+    }).then((success) => {
+        element.target.setAttribute("src", success);
+        addClass(element.target, 'lazyload-done');
+        observe.unobserve(element.target);
+    }).catch((error) => {
+        console.log("图片加载失败", error);
+    });
 };
 
 /**
@@ -77,60 +77,54 @@ let lazyPic = (element, observe) => {
  * @param {function} fn 处理函数
  */
 let lazyload = (ele, fn) => {
-	if (ele.length > 0) {
-		const observe = new IntersectionObserver((entries) => {
-			for (let element of entries)
-				if (element.isIntersecting) fn(element, observe);
-		});
+    if (ele.length > 0) {
+        const observe = new IntersectionObserver((entries) => {
+            for (let element of entries)
+                if (element.isIntersecting) fn(element, observe);
+        });
 
-		for (let item of ele) {
-			observe.observe(item);
-		}
-	}
+        for (let item of ele) {
+            observe.observe(item);
+        }
+    }
 };
 
 /**
  * 折叠开关控制器
- * 
+ *
  * @param {object} target 元素
  */
-let collapseController = (target) =>{
-	if(target.parentNode.getAttribute('data-collapsed') == "true")
-	{
-		expandSection(target.parentNode.children[1]);
-		target.parentNode.setAttribute('data-collapsed', 'false');
-	}
-	else
-	{
-		target.parentNode.setAttribute('data-collapsed', 'true');
-		target.parentNode.children[1].setAttribute('style','height: auto;');
-		collapseSection(target.parentNode.children[1]);
-	}
-		
+let collapseController = (target) => {
+    if (target.parentNode.getAttribute('data-collapsed') == "true") {
+        expandSection(target.parentNode.children[1]);
+        target.parentNode.setAttribute('data-collapsed', 'false');
+    } else {
+        target.parentNode.setAttribute('data-collapsed', 'true');
+        target.parentNode.children[1].setAttribute('style', 'height: auto;');
+        collapseSection(target.parentNode.children[1]);
+    }
+
 };
 
 /**
  * 赞助开关
  */
 let sponsorToggle = () => {
-	let item = document.querySelector('#post-sponsor');
-	if(item.dataset.collapsed == "true")
-	{
-		expandSection(item);
-		item.dataset.collapsed = "false";
-	}
-	else
-	{
-		item.dataset.collapsed = "true";
-		item.setAttribute('style', 'height: auto;');
-		collapseSection(item);
-	}
+    let item = document.querySelector('#post-sponsor');
+    if (item.dataset.collapsed == "true") {
+        expandSection(item);
+        item.dataset.collapsed = "false";
+    } else {
+        item.dataset.collapsed = "true";
+        item.setAttribute('style', 'height: auto;');
+        collapseSection(item);
+    }
 }
 
 /**
  * 灯箱
- * 
- * @param {object} target 
+ *
+ * @param {object} target
  */
 let lightbox = (target) => {
     let wrap = document.createElement('div');
@@ -142,12 +136,12 @@ let lightbox = (target) => {
 
 /**
  * 灯箱关闭
- * 
- * @param {object} target 
+ *
+ * @param {object} target
  */
 let closeLightbox = (target) => {
     target.setAttribute('style', 'animation: opacity-out .2s;opacity: 0;');
-    setTimeout(()=>{
+    setTimeout(() => {
         document.body.removeChild(target);
     }, 200);
 }
@@ -156,58 +150,57 @@ let closeLightbox = (target) => {
  * 生成相册
  */
 let makeGallery = () => {
-	let base = 50;
-	let galleries = document.getElementsByClassName('photos');
-	for(let gallery of galleries)
-		for(let pic of gallery.children)
-		{
-			let img = new Image();
-			img.src = pic.children[0].children[0].getAttribute('src');
-			img.onload = function () {
-				let w = img.width;
-				let h = img.width;
-				pic.setAttribute('style','width: ' + w * base / h + 'px;flex-grow: ' + w * base / h);
-				pic.children[0].setAttribute('style', 'padding-top: ' + h / w * 100 + '%');
-			};
-		}
+    let base = 50;
+    let galleries = document.getElementsByClassName('photos');
+    for (let gallery of galleries)
+        for (let pic of gallery.children) {
+            let img = new Image();
+            img.src = pic.children[0].children[0].getAttribute('src');
+            img.onload = function () {
+                let w = img.width;
+                let h = img.width;
+                pic.setAttribute('style', 'width: ' + w * base / h + 'px;flex-grow: ' + w * base / h);
+                pic.children[0].setAttribute('style', 'padding-top: ' + h / w * 100 + '%');
+            };
+        }
 }
 
 /**
  * 夜间模式开关
  */
 let darkModeToggle = () => {
-	let night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-	if (night === '0') {
-		document.querySelector('link[title="dark"]').disabled = true;
-		document.querySelector('link[title="dark"]').disabled = false;
-		document.cookie = "night=1;path=/";
-	} else {
-		document.querySelector('link[title="dark"]').disabled = true;
-		document.cookie = "night=0;path=/";
-	}
+    let night = document.cookie.replace(/(?:^|.*;\s*)night\s*\=\s*([^;]*).*$|^.*$/, "$1") || '0';
+    if (night === '0') {
+        document.querySelector('link[title="dark"]').disabled = true;
+        document.querySelector('link[title="dark"]').disabled = false;
+        document.cookie = "night=1;path=/";
+    } else {
+        document.querySelector('link[title="dark"]').disabled = true;
+        document.cookie = "night=0;path=/";
+    }
 };
 
 /**
  * 自动夜间模式判断
  */
 let autoDarkMode = () => {
-	if (document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === '') {
-		if (new Date().getHours() > 22 || new Date().getHours() < 6) {
-			document.querySelector('link[title="dark"]').disabled = true;
-			document.querySelector('link[title="dark"]').disabled = false;
-			document.cookie = "night=1;path=/";
-		} else {
-			document.cookie = "night=0;path=/";
-		}
-	} else {
-		let night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-		if (night === '0') {
-			document.querySelector('link[title="dark"]').disabled = true;
-		} else if (night === '1') {
-			document.querySelector('link[title="dark"]').disabled = true;
-			document.querySelector('link[title="dark"]').disabled = false;
-		}
-	}
+    if (document.cookie.replace(/(?:^|.*;\s*)night\s*=\s*([^;]*).*$|^.*$/, "$1") === '') {
+        if (new Date().getHours() > 22 || new Date().getHours() < 6) {
+            document.querySelector('link[title="dark"]').disabled = true;
+            document.querySelector('link[title="dark"]').disabled = false;
+            document.cookie = "night=1;path=/";
+        } else {
+            document.cookie = "night=0;path=/";
+        }
+    } else {
+        let night = document.cookie.replace(/(?:^|.*;\s*)night\s*\=\s*([^;]*).*$|^.*$/, "$1") || '0';
+        if (night === '0') {
+            document.querySelector('link[title="dark"]').disabled = true;
+        } else if (night === '1') {
+            document.querySelector('link[title="dark"]').disabled = true;
+            document.querySelector('link[title="dark"]').disabled = false;
+        }
+    }
 }
 
 /**
@@ -225,49 +218,48 @@ let toolbarInit = () => {
  * 表情控件开关
  */
 let toggleOwO = () => {
-	let OwOContainer = document.querySelector('#OwO-container');
-	if(!OwOContainer.classList.contains('OwO-in') && !OwOContainer.classList.contains('OwO-out'))
-		OwOContainer.classList.add('OwO-in');
-	else
-	{
-		OwOContainer.classList.toggle('OwO-in');
-		OwOContainer.classList.toggle('OwO-out');
-	}
+    let OwOContainer = document.querySelector('#OwO-container');
+    if (!OwOContainer.classList.contains('OwO-in') && !OwOContainer.classList.contains('OwO-out'))
+        OwOContainer.classList.add('OwO-in');
+    else {
+        OwOContainer.classList.toggle('OwO-in');
+        OwOContainer.classList.toggle('OwO-out');
+    }
 };
 
 /**
  * 关闭OwO
  */
 let closeOwO = () => {
-	if(document.getElementById('OwO-container').classList.contains('OwO-in') || (!document.getElementById('OwO-container').classList.contains('OwO-out') && document.getElementById('OwO-container').classList.length === 1))
-		toggleOwO();
+    if (document.getElementById('OwO-container').classList.contains('OwO-in') || (!document.getElementById('OwO-container').classList.contains('OwO-out') && document.getElementById('OwO-container').classList.length === 1))
+        toggleOwO();
 };
 
 /**
  * 目录开关
  */
 let toggleToc = () => {
-	document.getElementById('toc').classList.toggle('toc-show');
-	document.getElementById('main').classList.toggle('toc-show-main');
+    document.getElementById('toc').classList.toggle('toc-show');
+    document.getElementById('main').classList.toggle('toc-show-main');
 };
 
 /**
  * 侧边栏开关
  */
 let toggleSidebar = () => {
-	document.getElementById('sliderbar').classList.toggle('move-left');
-	document.getElementById('sliderbar').classList.toggle('move-right');
-	if(document.getElementById('sliderbar-cover').style.display == 'block')
-		document.getElementById('sliderbar-cover').style.display = 'none';
-	else
-		document.getElementById('sliderbar-cover').style.display = 'block';
+    document.getElementById('sliderbar').classList.toggle('move-left');
+    document.getElementById('sliderbar').classList.toggle('move-right');
+    if (document.getElementById('sliderbar-cover').style.display == 'block')
+        document.getElementById('sliderbar-cover').style.display = 'none';
+    else
+        document.getElementById('sliderbar-cover').style.display = 'block';
 };
 
 /**
  * 滑动OwO
  */
 let slideOwO = (id) => {
-	document.querySelector('#' + id).scrollIntoView({ behavior: 'smooth' });
+    document.querySelector('#' + id).scrollIntoView({behavior: 'smooth'});
 };
 
 /**
@@ -348,15 +340,15 @@ let ajaxComment = () =>{
  * 表情配置
  */
 Smilies = {
-    dom: function(id) {
+    dom: function (id) {
         return document.querySelector(id);
     },
-    grin: function(tag) {
+    grin: function (tag) {
         tag = ' ' + tag + ' ';
         myField = this.dom("#comments-textarea");
         document.selection ? (myField.focus(), sel = document.selection.createRange(), sel.text = tag, myField.focus()) : this.insertTag(tag);
     },
-    insertTag: function(tag) {
+    insertTag: function (tag) {
         myField = Smilies.dom("#comments-textarea");
         myField.selectionStart || myField.selectionStart === "0" ? (startPos = myField.selectionStart, endPos = myField.selectionEnd, cursorPos = startPos, myField.value = myField.value.substring(0, startPos) + tag + myField.value.substring(endPos, myField.value.length), cursorPos += tag.length, myField.focus(), myField.selectionStart = cursorPos, myField.selectionEnd = cursorPos) : (myField.value += tag, myField.focus());
     }
@@ -366,61 +358,60 @@ Smilies = {
  * 目录初始化
  */
 let TocInit = () => {
-	let titles = document.querySelectorAll('.PAP-content h1, .PAP-content h2, .PAP-content h3');
-	if(titles.length > 0)
-	{
-		titles.forEach(title=>{
-			title.onclick = () => {
-				toggleToc();
-			}
-			title.id = title.innerHTML;
-		});
-		tocbot.init({
-			tocSelector: '#toc-content',
-			contentSelector: '.PAP-content',
-			headingSelector: 'h1, h2, h3',
-			hasInnerContainers: true,
-			headingsOffset: 40,
-			scrollSmoothOffset: -40
-		});
-	}
+    let titles = document.querySelectorAll('.PAP-content h1, .PAP-content h2, .PAP-content h3');
+    if (titles.length > 0) {
+        titles.forEach(title => {
+            title.onclick = () => {
+                toggleToc();
+            }
+            title.id = title.innerHTML;
+        });
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '.PAP-content',
+            headingSelector: 'h1, h2, h3',
+            hasInnerContainers: true,
+            headingsOffset: 40,
+            scrollSmoothOffset: -40
+        });
+    }
 };
 
 /**
  * 页面初始化
  */
 let pageInit = () => {
-	let images = document.querySelectorAll('.PAP-content img');
-	images.forEach(img=>{
-		if(!img.classList.contains('bq')) {
-			img.setAttribute("onclick", "lightbox(this)");
-			let info = document.createElement('span');
-			info.innerText = img.getAttribute('title');
-			info.classList.add('imageinfo');
-			img.after(info);
-		}
-	});
-	makeGallery();
-	TocInit();
-	if(document.getElementById('comment_form') !== null)
-		ajaxComment();
-	makePrismLineNum();
+    let images = document.querySelectorAll('.PAP-content img');
+    images.forEach(img => {
+        if (!img.classList.contains('bq')) {
+            img.setAttribute("onclick", "lightbox(this)");
+            let info = document.createElement('span');
+            info.innerText = img.getAttribute('title');
+            info.classList.add('imageinfo');
+            img.after(info);
+        }
+    });
+    makeGallery();
+    TocInit();
+    if (document.getElementById('comment_form') !== null)
+        ajaxComment();
+    makePrismLineNum();
 };
 
 /**
  * lazyload加载
  */
 let doLazyload = () => {
-	let banners = document.getElementsByClassName("article-banner");
-	let pics = document.querySelectorAll("img:not(img#header-background,img#profile-avatar)");
-	preLazy(banners, "style", "origin");
-	preLazy(pics, "src", "origin", "https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading2.gif");
-	lazyload(banners, function (element, observe) {
-		lazyBanner(element, observe);
-	});
-	lazyload(pics, function (element, observe) {
-		lazyPic(element, observe);
-	});
+    let banners = document.getElementsByClassName("article-banner");
+    let pics = document.querySelectorAll("img:not(img#header-background,img#profile-avatar)");
+    preLazy(banners, "style", "origin");
+    preLazy(pics, "src", "origin", "https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading2.gif");
+    lazyload(banners, function (element, observe) {
+        lazyBanner(element, observe);
+    });
+    lazyload(pics, function (element, observe) {
+        lazyPic(element, observe);
+    });
 };
 
 let sendLike = () => {
@@ -444,76 +435,76 @@ let sendLike = () => {
 }
 
 window.onload = function () {
-	console.log("G.js onload");
-	let pjax = new Pjax({
-		elements: "a:not(a[target='_blank'], a[no-pjax])", // default is "a[href], form[action]"
-		selectors: ["#main", "title"],
-		timeout: 10000,
-    	cacheBust: false,
-    	scrollRestoration: true
-	});
+    console.log("G.js onload");
+    let pjax = new Pjax({
+        elements: "a:not(a[target='_blank'], a[no-pjax])", // default is "a[href], form[action]"
+        selectors: ["#main", "title"],
+        timeout: 10000,
+        cacheBust: false,
+        scrollRestoration: true
+    });
 
-	if(document.getElementById("sliderbar-video") != undefined)
-	{
-		let photo = document.getElementById("sliderbar-photo");
-		let video = document.getElementById("sliderbar-video");
-		photo.style.height = document.querySelector('#categoryList').offsetHeight + 'px';
-		if(photo.offsetHeight >=photo.offsetWidth)
-			video.style.height = photo.offsetHeight + 'px';
-		else
-			video.style.height = photo.offsetWidth + 'px';
-	}
-	autoDarkMode();
-	toolbarInit();
-	pageInit();
+    if (document.getElementById("sliderbar-video") !== undefined) {
+        let photo = document.getElementById("sliderbar-photo");
+        let video = document.getElementById("sliderbar-video");
+        photo.style.height = document.querySelector('#categoryList').offsetHeight + 'px';
+        if (photo.offsetHeight >= photo.offsetWidth)
+            video.style.height = photo.offsetHeight + 'px';
+        else
+            video.style.height = photo.offsetWidth + 'px';
+    }
+    autoDarkMode();
+    toolbarInit();
+    pageInit();
 };
 
 /**
  * pjax发送回调
  */
 document.addEventListener('pjax:send', () => {
-	if (typeof aplayers !== 'undefined') {
-		for (let i = 0; i < aplayers.length; i++) {
-			try {
-				aplayers[i].destroy();
-			} catch (e) {
-				console.log(e);
-			}
-		}
-	}
-	tocbot.destroy();
-	if(document.getElementById('main').classList.contains('toc-show-main'))
-		toggleToc();
-	window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-	let main = document.querySelector('#container') || document.querySelector('.PAP') || document.querySelector('#lyrics');
-	if(main)
-	{
-		main.setAttribute('style','animation: opacity-out var(--theme-animation-out-duration, 1s) ease;opacity: 0;');
-		let duration  = parseFloat(getComputedStyle(main).getPropertyValue('--theme-animation-out-duration'))*1000;
-		setTimeout(function(){
-			main.style.opacity = '0';
-		}, duration);
-	}
+    if (typeof aplayers !== 'undefined') {
+        for (let i = 0; i < aplayers.length; i++) {
+            try {
+                aplayers[i].destroy();
+            } catch (e) {
+                console.log(e);
+            }
+        }
+    }
+    tocbot.destroy();
+    if (document.getElementById('main').classList.contains('toc-show-main'))
+        toggleToc();
+    window.scroll({top: 0, left: 0, behavior: 'smooth'});
+    let main = document.querySelector('#container') || document.querySelector('.PAP') || document.querySelector('#lyrics');
+    if (main) {
+        main.setAttribute('style', 'animation: opacity-out var(--theme-animation-out-duration, 1s) ease;opacity: 0;');
+        let duration = parseFloat(getComputedStyle(main).getPropertyValue('--theme-animation-out-duration')) * 1000;
+        setTimeout(function () {
+            main.style.opacity = '0';
+        }, duration);
+    }
 });
 
 /**
  * pjax完成回调
  */
 document.addEventListener('pjax:complete', () => {
-	if (typeof Prism !== 'undefined') {
-		Prism.highlightAll(true, null);
-	};
-	if (typeof (loadMeting) === "function") {
-		loadMeting();
-	};
-	pageInit();
-	doLazyload();
+    if (typeof Prism !== 'undefined') {
+        Prism.highlightAll(true, null);
+    }
+
+    if (typeof (loadMeting) === "function") {
+        loadMeting();
+    }
+
+    pageInit();
+    doLazyload();
 });
 
 window.ready(function () {
-	doLazyload();
+    doLazyload();
 });
 
-window.onbeforeunload = function() {
-	
+window.onbeforeunload = function () {
+
 };
