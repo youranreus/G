@@ -233,7 +233,9 @@ class G
         if (self::$config['cdn'] == 'local' || self::$config['cdn'] == '')
             return self::$themeUrl . $path;
         else if (self::$config['cdn'] == 'jsdelivr')
-            return 'https://cdn.jsdelivr.net/gh/youranreus/G/' . $path;
+            return 'https://cdn.jsdelivr.net/gh/youranreus/G@v' . self::$version . '/' . $path;
+        else if (self::$config['cdn'] == 'sourcestorage')
+            return 'https://source.ahdark.com/typecho/theme/G-theme/' . self::$version . '/' . $path;
         else
             return self::$config['cdn'] . $path;
     }
