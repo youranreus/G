@@ -99,7 +99,7 @@ function collapseSection(element) {
   }
 
 let Ajax = {
-    get: function(url,resolve,reject){
+    get: function(url){
 		new Promise((rs, rj)=> {
 			let xhr=new XMLHttpRequest();
 			xhr.open('GET',url,true);
@@ -112,14 +112,10 @@ let Ajax = {
 				}
 			}
 			xhr.send();
-		}).then(success => {
-			resolve(success);
-		}).catch(error => {
-			reject(error);
 		});
     },
-    post: function(url,data,resolve,reject){
-		new Promise((rs,rj)=>{
+    post: function(url, data){
+		return new Promise((rs,rj)=>{
 			let xhr=new XMLHttpRequest();
 			xhr.open('POST',url,true);
 			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
@@ -132,10 +128,6 @@ let Ajax = {
 				}
 			}
 			xhr.send(data);
-		}).then(success => {
-			resolve(success);
-		}).catch(error=>{
-			reject(error);
 		});
     }
 }

@@ -317,8 +317,8 @@ let ajaxComment = () =>{
 	commentForm.onsubmit = function() {
 		commentData = commentForm.serialize();
 		beforeSendComment();
-		Ajax.post(commentForm.getAttribute('action'), commentData, 
-			(result)=>{
+		Ajax.post(commentForm.getAttribute('action'), commentData)
+			.then((result)=>{
 				let newComment = document.createElement('div');
 				newComment.innerHTML = result;
 				if(newComment.getElementsByTagName('title').length > 0 && newComment.getElementsByTagName('title')[0].innerText === document.title)
@@ -334,8 +334,8 @@ let ajaxComment = () =>{
 					afterSendComment(false);
 					showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
 				}
-			}, 
-			(error) => {
+			})
+			.catch((error) => {
 				let newComment = document.createElement('div');
 				newComment.innerHTML = error;
 				showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
@@ -426,20 +426,21 @@ let doLazyload = () => {
 let sendLike = () => {
 	let btn = document.querySelector('#agree-btn');
 	btn.style.disabled = true;
-	Ajax.post(btn.dataset.url, 'agree='+btn.dataset.cid, (res) => {
-		let re = /\d/;
-		if (re.test(res)) {
-			let counter = btn.childNodes[3];
-			if(parseInt(res) == parseInt(counter.innerHTML))
-				showToast('已经点过赞咯');
+	Ajax.post(btn.dataset.url, 'agree='+btn.dataset.cid)
+		.then((res) => {
+			let re = /\d/;
+			if (re.test(res)) {
+				let counter = btn.childNodes[3];
+				if(parseInt(res) == parseInt(counter.innerHTML))
+					showToast('已经点过赞咯');
+				else
+					showToast('点赞成功');
+				counter.innerHTML = res;
+				counter.parentNode.childNodes[1].innerHTML = '😍';
+			}
 			else
-				showToast('点赞成功');
-			counter.innerHTML = res;
-			counter.parentNode.childNodes[1].innerHTML = '😍';
-		}
-		else
-			showToast('出了点小问题');
-	});
+				showToast('出了点小问题');
+		});
 }
 
 window.onload = function () {
