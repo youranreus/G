@@ -6,11 +6,11 @@ html {
     --theme-bg-sub: RGBA(244, 245, 245, 1);
     --theme-text-blockq-bg: #383737;
     --theme-text-blockq: #878c93;
-    --theme-table-th-bg: #f8f8f8;
-    --theme-table-td-bg: #fff;
-    --theme-table-td-bg-even: #f8f8f8;
-    --theme-table-tr-border: #ccc;
-    --theme-table-td-border: #ddd;
+	--theme-table-th-bg: #383737;
+	--theme-table-td-bg: #2c2a2a;
+	--theme-table-td-bg-even: #383737;
+	--theme-table-tr-border: #2c2a2a;
+	--theme-table-td-border: #403E3E;
     --theme-banner-bg: #343232;
     --theme-banner-title: #fff;
     --theme-pap-text-main: rgba(249, 249, 249, 0.8);
