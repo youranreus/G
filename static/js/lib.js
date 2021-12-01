@@ -100,7 +100,7 @@ function expandSection(element) {
 
 let Ajax = {
     get: function(url){
-		new Promise((rs, rj)=> {
+		return new Promise((rs, rj)=> {
 			let xhr=new XMLHttpRequest();
 			xhr.open('GET',url,true);
 			xhr.onreadystatechange=function(){
