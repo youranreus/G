@@ -297,7 +297,7 @@ class G
         $result = preg_replace('#@\((.*?)\)#', '<img src="'.G::staticUrl('static/img/bq/paopao').'/$1.png" class="bq" />', $content);
         //mirage格式表情 （原神，小黄脸）
         $result = preg_replace_callback('/\:\:(.*?)\:(.*?)\:\:/',function($matches){
-            return '<img src="'.self::staticUrl('static/img/bq/'.$matches[1].'/'.$matches[2]).'.png" class="bq" />';
+            return '<img src="'.self::staticUrl('static/img/bq/'.$matches[1].'/'.urlencode($matches[2])).'.png" class="bq" />';
         },$result);
         $result = preg_replace_callback('#\#\((.*?)\)#',function($matches) {
             $emotionText = substr(substr($matches[0], 0, -1), 2);
