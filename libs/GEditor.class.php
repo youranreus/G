@@ -1,5 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+require_once("G.class.php");
 
 
 class GEditor
@@ -22,7 +23,7 @@ class GEditor
      */
     public static function addButton()
     {
-        echo '  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.7/G/CSS/OwO.min.css?v=2" rel="stylesheet" />';
+        echo '  <link rel="stylesheet" href="'.G::staticUrl('static/css/Admin/OwO.min.css').'" rel="stylesheet" />';
 
         echo '
         <style>
