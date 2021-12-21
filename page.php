@@ -17,7 +17,7 @@ $this->need('components/header.php');
             </div>
         </div>
         <div id="page-content" class="PAP-content" itemprop="articleBody">
-            <?php $this->content(); ?>
+            <?php echo G::analyzeContent($this->content); ?>
         </div>
     </article>
 </div>

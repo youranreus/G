@@ -396,6 +396,15 @@ let pageInit = () => {
     if (document.getElementById('comment_form') !== null)
         ajaxComment();
     makePrismLineNum();
+    if (window.G_CONFIG.katex && document.querySelector('.PAP-content')) {
+		renderMathInElement(document.querySelector('.PAP-content'), {
+			delimiters: [
+				{left: '$$', right: '$$', display: true},
+				{left: '$', right: '$', display: false}
+			],
+			throwOnError: true
+		});
+	}
 };
 
 /**

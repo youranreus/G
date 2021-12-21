@@ -10,7 +10,7 @@ class G
      *
      * @var string
      */
-    public static $version = "3.2.6";
+    public static $version = "3.2.7";
 
     /**
      * 主题配置
@@ -294,9 +294,12 @@ class G
     public static function analyzeMeme($content)
     {
         //@(xx)格式表情
-        $result = preg_replace('#@\((.*?)\)#', '<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/G/IMG/bq/$1.png" class="bq">', $content);
+        $result = preg_replace('#@\((.*?)\)#', '<img src="'.G::staticUrl('static/img/bq/paopao').'/$1.png" class="bq" />', $content);
         //mirage格式表情 （原神，小黄脸）
-        $result = preg_replace('/\:\:(.*?)\:(.*?)\:\:/','<img src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.8/W/bq/$1/$2.png" class="bq">',$result);
+        $result = preg_replace_callback('/\:\:(.*?)\:(.*?)\:\:/',function($matches){
+            $img = preg_replace('/%/', '', urlencode($matches[2]));
+            return '<img src="'.self::staticUrl('static/img/bq/'.$matches[1].'/'.$img).'.png" class="bq" />';
+        },$result);
         $result = preg_replace_callback('#\#\((.*?)\)#',function($matches) {
             $emotionText = substr(substr($matches[0], 0, -1), 2);
             $url = "<img class='bq bq-aru' src='https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/aru/".urlencode($emotionText).".png'/>";
@@ -304,6 +307,18 @@ class G
             return $url;
         }, $result);
         return $result;
+    }
+
+    /**
+     * 获取表情包url
+     *
+     * @param String $path
+     * @param String $name
+     * @return String
+     */
+    public static function MemeUrl($path, $name) 
+    {
+        return self::staticUrl($path.preg_replace('/%/', '', urlencode($name)));
     }
 
     /**

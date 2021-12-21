@@ -30,12 +30,16 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
 <?php $this->footer(); ?>
 
 <script src="<?php echo G::staticUrl("static/js/pjax.min.js"); ?>?v=3.10012"></script>
+<?php if($this->options->enableKatex == 1): ?>
+    <script src="<?php echo G::staticUrl("static/js/katex.min.js"); ?>"></script>
+    <script src="<?php echo G::staticUrl("static/js/auto-render.min.js"); ?>"></script>
+<?php endif; ?>
 <script src="<?php echo G::staticUrl("static/js/smoothscroll$minInfix.js"); ?>?v=3.215"></script>
 <script src="<?php echo G::staticUrl("static/js/toastify.min.js"); ?>?v=3.211"></script>
 <script src="<?php echo G::staticUrl("static/js/tocbot.min.js"); ?>?v=3.211"></script>
 <script src="<?php echo G::staticUrl("static/js/lib$minInfix.js"); ?>?v=3.10018"></script>
 <script src="<?php echo G::staticUrl("static/js/prism.js"); ?>?v=1.03" data-manual></script>
-<script src="<?php echo G::staticUrl("static/js/G$minInfix.js"); ?>?v=3.241"></script>
+<script src="<?php echo G::staticUrl("static/js/G$minInfix.js"); ?>?v=3.2.7"></script>
 <script>
     <?php $this->options->customFooterJS(); ?>
 </script>
