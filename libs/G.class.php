@@ -297,7 +297,8 @@ class G
         $result = preg_replace('#@\((.*?)\)#', '<img src="'.G::staticUrl('static/img/bq/paopao').'/$1.png" class="bq" />', $content);
         //mirage格式表情 （原神，小黄脸）
         $result = preg_replace_callback('/\:\:(.*?)\:(.*?)\:\:/',function($matches){
-            return '<img src="'.self::staticUrl('static/img/bq/'.$matches[1].'/'.urlencode($matches[2])).'.png" class="bq" />';
+            $img = preg_replace('/%/', '', urlencode($matches[2]));
+            return '<img src="'.self::staticUrl('static/img/bq/'.$matches[1].'/'.$img).'.png" class="bq" />';
         },$result);
         $result = preg_replace_callback('#\#\((.*?)\)#',function($matches) {
             $emotionText = substr(substr($matches[0], 0, -1), 2);
@@ -306,6 +307,18 @@ class G
             return $url;
         }, $result);
         return $result;
+    }
+
+    /**
+     * 获取表情包url
+     *
+     * @param String $path
+     * @param String $name
+     * @return String
+     */
+    public static function MemeUrl($path, $name) 
+    {
+        return self::staticUrl($path.preg_replace('/%/', '', urlencode($name)));
     }
 
     /**
