@@ -22,6 +22,10 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
         /* 输出自定义主题色 */
         <?php echo G::setCSSValues(); ?>
     </style>
+
+    <?php if($this->options->enableKatex == 1): ?>
+        <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/katex.min.css'); ?>">
+    <?php endif; ?>
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.2327">
     <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {
         echo 'alternate';
@@ -39,6 +43,10 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
     <script src="<?php echo G::staticUrl('static/js/DPlayer.min.js'); ?>"></script>
     <script>
         <?php $this->options->customHeaderJS(); ?>
+        
+        window.G_CONFIG = {
+            katex: <?php echo $this->options->enableKatex == 1 ? 'true' : 'false' ?>
+        };
     </script>
 </head>
 <body>

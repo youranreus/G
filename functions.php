@@ -83,6 +83,12 @@ function themeConfig($form)
     ), '1', _t('是否开启主题阴影'), _t('默认开启'));
     $form->addInput($themeShadow);
 
+    $enableKatex = new Typecho_Widget_Helper_Form_Element_Radio('enableKatex', array(
+        '1' => _t('开启'),
+        '0' => _t('关闭')
+    ), '0', _t('是否开启Katex数学公式解析'), _t('默认关闭'));
+    $form->addInput($enableKatex);
+
     $autoBanner = new Typecho_Widget_Helper_Form_Element_Radio('autoBanner', array(
         '1' => _t('开启'),
         '0' => _t('关闭')
