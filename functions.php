@@ -23,7 +23,7 @@ function themeConfig($form)
     $buildYear = new Typecho_Widget_Helper_Form_Element_Text('buildYear', null, date('Y'), _t('建站年份'), _t('什么时候开始建站的呀'));
     $form->addInput($buildYear);
 
-    $cdn = new Typecho_Widget_Helper_Form_Element_Text('cdn', null, null, _t('是否开启静态资源cdn加速'), _t('填写加速域名或者jsdelivr或者sourcestorage，留空则使用本地文件'));
+    $cdn = new Typecho_Widget_Helper_Form_Element_Text('cdn', null, null, _t('是否开启静态资源cdn加速'), _t("填写加速域名或者jsdelivr或者sourcestorage，留空则使用本地文件</br>注意: 新版本刚刚发布时，可能CDN不会及时更新"));
     $form->addInput($cdn);
 
     $icp = new Typecho_Widget_Helper_Form_Element_Text('icp', null, null, _t('ICP备案号'), _t('没有可以不填哟'));
