@@ -4,7 +4,7 @@
  *
  * @package G
  * @author 季悠然
- * @version 3.2.7
+ * @version 3.2.7R
  * @link https://季悠然.space
  */
 

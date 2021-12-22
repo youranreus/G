@@ -1,5 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+require_once("G.class.php");
 
 
 class GEditor
@@ -22,7 +23,7 @@ class GEditor
      */
     public static function addButton()
     {
-        echo '  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.7/G/CSS/OwO.min.css?v=2" rel="stylesheet" />';
+        echo '  <link rel="stylesheet" href="'.G::staticUrl('static/css/Admin/OwO.min.css').'" rel="stylesheet" />';
 
         echo '
         <style>
@@ -49,9 +50,18 @@ class GEditor
                 display:inline-block;
             }
         </style>
+        <script>
+            window.G_CONFIG = {
+                bqb: {
+                    ys: "'.G::staticUrl('static/img/bq/ys/').'",
+                    xhl: "'.G::staticUrl('static/img/bq/xiaohuanglian/').'",
+                    paopao: "'.G::staticUrl('static/img/bq/paopao/').'"
+                }
+            };
+        </script>
         ';
 
-        echo '<script src="https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.8/G/JS/editor.js"></script>';
+        echo '<script src="'.G::staticUrl('static/js/editor.js').'"></script>';
     }
 
     public static function wordCounter()
