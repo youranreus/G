@@ -4,20 +4,12 @@
  *
  * @package custom
  */
-$this->need('components/header.php');
 ?>
 
-    <div class="PAP">
-        <div class="PAP-content">
-            <?php $this->content(); ?>
-        </div>
-    </div>
+<div style="display: flex;height: 100vh;justify-content: center; align-items: center;">
+    <h2 style="opacity: 0.3; font-weight: 200;font-size: 2.5rem">跳转中...</h2>
+</div>
 
-    <script type="text/javascript"> 
-        setTimeout(window.location.href= '<?php echo $this->fields->redirectURL ;?>',<?php echo $this->fields->redirectSecond ;?>)
-    </script>
-
-<?php if ($this->fields->enableComment == 1): ?>
-    <?php $this->need('components/comments.php'); ?>
-<?php endif; ?>
-<?php $this->need('components/footer.php'); ?>
+<script type="text/javascript"> 
+    setTimeout(()=>{window.location.href= '<?php echo $this->fields->redirectURL ;?>'},<?php echo $this->fields->redirectSecond ;?>)
+</script>
