@@ -324,13 +324,15 @@ let ajaxComment = () =>{
 				else
 				{
 					afterSendComment(false);
-					showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
+                    let msg = newComment.querySelector('.container') ? newComment.querySelector('.container').innerHTML : newComment.childNodes[0].childNodes[0].childNodes[0].innerText;
+                    showToast('评论失败，' +  msg.replaceAll('<br>', ''));
 				}
 			})
 			.catch((error) => {
 				let newComment = document.createElement('div');
 				newComment.innerHTML = error;
-				showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
+                let msg = newComment.querySelector('.container') ? newComment.querySelector('.container').innerHTML : newComment.childNodes[0].childNodes[0].childNodes[0].innerText;
+                showToast('评论失败，' + msg.replaceAll('<br>', ''));
 			});
 		return false;
 	};
