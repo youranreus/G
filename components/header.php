@@ -45,7 +45,8 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
         <?php $this->options->customHeaderJS(); ?>
         
         window.G_CONFIG = {
-            katex: <?php echo $this->options->enableKatex == 1 ? 'true' : 'false' ?>
+            katex: <?php echo $this->options->enableKatex == 1 ? 'true' : 'false' ?>,
+            imgUrl: "<?php echo G::staticUrl('static/img/'); ?>"
         };
     </script>
 </head>
