@@ -324,13 +324,15 @@ let ajaxComment = () =>{
 				else
 				{
 					afterSendComment(false);
-					showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
+                    let msg = newComment.querySelector('.container') ? newComment.querySelector('.container').innerHTML : newComment.childNodes[0].childNodes[0].childNodes[0].innerText;
+                    showToast('评论失败，' +  msg.replaceAll('<br>', ''));
 				}
 			})
 			.catch((error) => {
 				let newComment = document.createElement('div');
 				newComment.innerHTML = error;
-				showToast('评论失败，' + newComment.querySelector('.container').innerHTML);
+                let msg = newComment.querySelector('.container') ? newComment.querySelector('.container').innerHTML : newComment.childNodes[0].childNodes[0].childNodes[0].innerText;
+                showToast('评论失败，' + msg.replaceAll('<br>', ''));
 			});
 		return false;
 	};
@@ -414,7 +416,7 @@ let doLazyload = () => {
     let banners = document.getElementsByClassName("article-banner");
     let pics = document.querySelectorAll("img:not(img#header-background,img#profile-avatar)");
     preLazy(banners, "style", "origin");
-    preLazy(pics, "src", "origin", "https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading2.gif");
+    preLazy(pics, "src", "origin", window.G_CONFIG.imgUrl + "loading2.gif");
     lazyload(banners, function (element, observe) {
         lazyBanner(element, observe);
     });
@@ -443,32 +445,32 @@ let sendLike = () => {
 		});
 }
 
-window.onload = function () {
-    console.log("G.js onload");
-    let pjax = new Pjax({
-        elements: "a:not(a[target='_blank'], a[no-pjax])", // default is "a[href], form[action]"
-        selectors: ["#main", "title"],
-        timeout: 10000,
-        cacheBust: false,
-        scrollRestoration: true
-    });
+// window.onload = function () {
+//     console.log("G.js onload");
+//     let pjax = new Pjax({
+//         elements: "a:not(a[target='_blank'], a[no-pjax])", // default is "a[href], form[action]"
+//         selectors: ["#main", "title"],
+//         timeout: 10000,
+//         cacheBust: false,
+//         scrollRestoration: true
+//     });
 
-    if (document.getElementById("sliderbar-video") !== undefined && document.getElementById("sliderbar-video") !== null) {
-        let photo = document.getElementById("sliderbar-photo");
-        let video = document.getElementById("sliderbar-video");
-        photo.style.height = document.querySelector('#categoryList').offsetHeight + 'px';
-        if (photo.offsetHeight >= photo.offsetWidth)
-            video.style.height = photo.offsetHeight + 'px';
-        else
-            video.style.height = photo.offsetWidth + 'px';
-    }
-    else if (document.getElementById("sliderbar-photo")!== undefined && document.getElementById("sliderbar-photo") !== null){
-        document.getElementById("sliderbar-photo").style.height = document.querySelector('#categoryList').offsetHeight + 'px';
-    }
-    autoDarkMode();
-    toolbarInit();
-    pageInit();
-};
+//     if (document.getElementById("sliderbar-video") !== undefined && document.getElementById("sliderbar-video") !== null) {
+//         let photo = document.getElementById("sliderbar-photo");
+//         let video = document.getElementById("sliderbar-video");
+//         photo.style.height = document.querySelector('#categoryList').offsetHeight + 'px';
+//         if (photo.offsetHeight >= photo.offsetWidth)
+//             video.style.height = photo.offsetHeight + 'px';
+//         else
+//             video.style.height = photo.offsetWidth + 'px';
+//     }
+//     else if (document.getElementById("sliderbar-photo")!== undefined && document.getElementById("sliderbar-photo") !== null){
+//         document.getElementById("sliderbar-photo").style.height = document.querySelector('#categoryList').offsetHeight + 'px';
+//     }
+//     autoDarkMode();
+//     toolbarInit();
+//     pageInit();
+// };
 
 /**
  * pjax发送回调
@@ -515,6 +517,30 @@ document.addEventListener('pjax:complete', () => {
 
 window.ready(function () {
     doLazyload();
+    console.log("G.js ready");
+    let pjax = new Pjax({
+        elements: "a:not(a[target='_blank'], a[no-pjax])", // default is "a[href], form[action]"
+        selectors: ["#main", "title"],
+        timeout: 10000,
+        cacheBust: false,
+        scrollRestoration: true
+    });
+
+    if (document.getElementById("sliderbar-video") !== undefined && document.getElementById("sliderbar-video") !== null) {
+        let photo = document.getElementById("sliderbar-photo");
+        let video = document.getElementById("sliderbar-video");
+        photo.style.height = document.querySelector('#categoryList').offsetHeight + 'px';
+        if (photo.offsetHeight >= photo.offsetWidth)
+            video.style.height = photo.offsetHeight + 'px';
+        else
+            video.style.height = photo.offsetWidth + 'px';
+    }
+    else if (document.getElementById("sliderbar-photo")!== undefined && document.getElementById("sliderbar-photo") !== null){
+        document.getElementById("sliderbar-photo").style.height = document.querySelector('#categoryList').offsetHeight + 'px';
+    }
+    autoDarkMode();
+    toolbarInit();
+    pageInit();
 });
 
 window.onbeforeunload = function () {
