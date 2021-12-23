@@ -46,5 +46,7 @@ $this->need('components/header.php');
         <?php endif; ?>
     </div>
 
-
+<?php if ($this->fields->enableComment == 1): ?>
+    <?php $this->need('components/comments.php'); ?>
+<?php endif; ?>
 <?php $this->need('components/footer.php'); ?>
