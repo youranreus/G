@@ -29,6 +29,9 @@ function themeConfig($form)
     $icp = new Typecho_Widget_Helper_Form_Element_Text('icp', null, null, _t('ICP备案号'), _t('没有可以不填哟'));
     $form->addInput($icp);
 
+    $icpUrl = new Typecho_Widget_Helper_Form_Element_Text('icpUrl', null, 'https://beian.miit.gov.cn', _t('备案号指向链接'), _t('默认指向工信部'));
+    $form->addInput($icpUrl);
+
     $background = new Typecho_Widget_Helper_Form_Element_Text('background', null, null, _t('背景图片'), _t('可填颜色代码或者图片url'));
     $form->addInput($background);
 

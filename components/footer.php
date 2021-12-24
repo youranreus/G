@@ -18,7 +18,7 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
         </nav>
     </div>
     <p id="footer-meta" class="clear">
-        <span class="left"><a class="icp" href="//beian.miit.gov.cn" rel="noopener noreferrer"><?php echo G::getICP(); ?></a></span>
+        <span class="left"><a class="icp" href="<?php $this->options->icpUrl(); ?>" rel="noopener noreferrer"><?php echo G::getICP(); ?></a></span>
         <span class="right"><?php echo $this->options->buildYear . " - " . date("Y"); ?> &copy <?php $this->options->title(); ?></span>
     </p>
 </footer>
