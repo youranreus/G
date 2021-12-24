@@ -26,10 +26,10 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
     <?php if($this->options->enableKatex == 1): ?>
         <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/katex.min.css'); ?>">
     <?php endif; ?>
-    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.2327">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.2337">
     <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {
         echo 'alternate';
-    } ?>" href="<?php echo G::staticUrl("static/css/dark$minInfix.css"); ?>?v=3.227" title="dark">
+    } ?>" href="<?php echo G::staticUrl("static/css/dark$minInfix.css"); ?>?v=3.228" title="dark">
 
     <style>
         /* 设置自定义背景[颜色/图片] */
