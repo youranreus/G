@@ -48,6 +48,10 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
             katex: <?php echo $this->options->enableKatex == 1 ? 'true' : 'false' ?>,
             imgUrl: "<?php echo G::staticUrl('static/img/'); ?>"
         };
+
+        function custom_callback() {
+            <?php echo $this->options->customPjaxCallback; ?>
+        }
     </script>
 </head>
 <body>

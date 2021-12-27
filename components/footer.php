@@ -29,11 +29,6 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
 <?php $this->need("components/sidebar.php"); ?>
 <?php $this->footer(); ?>
 
-<script>
-    function custom_callback() {
-        <?php echo $this->options->customPjaxCallback; ?>
-    }
-</script>
 <script src="<?php echo G::staticUrl("static/js/pjax.min.js"); ?>?v=3.10012"></script>
 <?php if($this->options->enableKatex == 1): ?>
     <script src="<?php echo G::staticUrl("static/js/katex.min.js"); ?>"></script>
