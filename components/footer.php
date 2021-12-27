@@ -29,6 +29,11 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
 <?php $this->need("components/sidebar.php"); ?>
 <?php $this->footer(); ?>
 
+<script>
+    function custom_callback() {
+        <?php echo $this->options->customPjaxCallback; ?>
+    }
+</script>
 <script src="<?php echo G::staticUrl("static/js/pjax.min.js"); ?>?v=3.10012"></script>
 <?php if($this->options->enableKatex == 1): ?>
     <script src="<?php echo G::staticUrl("static/js/katex.min.js"); ?>"></script>
@@ -39,7 +44,7 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
 <script src="<?php echo G::staticUrl("static/js/tocbot.min.js"); ?>?v=3.211"></script>
 <script src="<?php echo G::staticUrl("static/js/lib$minInfix.js"); ?>?v=3.10018"></script>
 <script src="<?php echo G::staticUrl("static/js/prism.js"); ?>?v=1.03" data-manual></script>
-<script src="<?php echo G::staticUrl("static/js/G$minInfix.js"); ?>?v=3.2.7.3"></script>
+<script src="<?php echo G::staticUrl("static/js/G$minInfix.js"); ?>?v=3.2.8.2"></script>
 <script>
     <?php $this->options->customFooterJS(); ?>
 </script>

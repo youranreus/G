@@ -407,6 +407,7 @@ let pageInit = () => {
 			throwOnError: true
 		});
 	}
+    custom_callback();
 };
 
 /**

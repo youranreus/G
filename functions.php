@@ -123,6 +123,9 @@ function themeConfig($form)
     $customFooterJS = new Typecho_Widget_Helper_Form_Element_Textarea('customFooterJS', null, null, _t('自定义底部JS'), _t('body结束前'));
     $form->addInput($customFooterJS);
 
+    $customPjaxCallback = new Typecho_Widget_Helper_Form_Element_Textarea('customPjaxCallback', null, null, _t('自定义Pjax回调函数'), _t('如果你不知道这个是啥，留着就好'));
+    $form->addInput($customPjaxCallback);
+
     $advanceSetting = new Typecho_Widget_Helper_Form_Element_Textarea('advanceSetting', null, null, _t('高级设置'), _t('看着就很高级'));
     $form->addInput($advanceSetting);
 
