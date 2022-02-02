@@ -18,7 +18,7 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
         </nav>
     </div>
     <p id="footer-meta" class="clear">
-        <span class="left"><a class="icp" href="//beian.miit.gov.cn" rel="noopener noreferrer"><?php echo G::getICP(); ?></a></span>
+        <span class="left"><a class="icp" href="<?php $this->options->icpUrl(); ?>" rel="noopener noreferrer"><?php echo G::getICP(); ?></a></span>
         <span class="right"><?php echo $this->options->buildYear . " - " . date("Y"); ?> &copy <?php $this->options->title(); ?></span>
     </p>
 </footer>
@@ -39,7 +39,7 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
 <script src="<?php echo G::staticUrl("static/js/tocbot.min.js"); ?>?v=3.211"></script>
 <script src="<?php echo G::staticUrl("static/js/lib$minInfix.js"); ?>?v=3.10018"></script>
 <script src="<?php echo G::staticUrl("static/js/prism.js"); ?>?v=1.03" data-manual></script>
-<script src="<?php echo G::staticUrl("static/js/G$minInfix.js"); ?>?v=3.2.7.3"></script>
+<script src="<?php echo G::staticUrl("static/js/G$minInfix.js"); ?>?v=3.2.8.2"></script>
 <script>
     <?php $this->options->customFooterJS(); ?>
 </script>

@@ -185,144 +185,144 @@
             <h4 id="yuanshen">原神</h4>
             <ul class="meme-section">
                 <li class="OwO-item" onclick="Smilies.grin('::ys:安详::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '安详.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '安详.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:不要啊::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '不要啊.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '不要啊.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:交给我吧::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '交给我吧.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '交给我吧.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:你真幽默::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '你真幽默.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '你真幽默.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:出货吧::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '出货吧.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '出货吧.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:吃惊::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '吃惊.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '吃惊.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:咕咕咕::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '咕咕咕.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '咕咕咕.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:哼哼::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '哼哼.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '哼哼.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:唔::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '唔.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '唔.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:大哭::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '大哭.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '大哭.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:小事一桩::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '小事一桩.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '小事一桩.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:干得漂亮::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '干得漂亮.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '干得漂亮.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:干杯::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '干杯.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '干杯.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:愤怒::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '愤怒.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '愤怒.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:拜托::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '拜托.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '拜托.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:救救我::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '救救我.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '救救我.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:睡着了::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '睡着了.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '睡着了.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:给我走开::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '给我走开.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '给我走开.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:警觉::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '警觉.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '警觉.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:该吃饭了::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '该吃饭了.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '该吃饭了.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:请投币::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '请投币.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '请投币.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:问号::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '问号.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '问号.png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::ys:黑线::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '黑线.png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/ys/', '黑线.png'); ?>"/></li>
             </ul>
             <h4 id="xhl">小黄脸</h4>
             <ul class="meme-section">
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[doge]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[doge].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[doge].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[偷笑]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[偷笑].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[偷笑].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[傲娇]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[傲娇].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[傲娇].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[冷]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[冷].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[冷].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[吃瓜]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[吃瓜].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[吃瓜].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[吐]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[吐].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[吐].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[吓]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[吓].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[吓].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[呆]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[呆].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[呆].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[响指]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[响指].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[响指].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[喜极而泣]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[喜极而泣].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[喜极而泣].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[喜欢]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[喜欢].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[喜欢].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[嘘声]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[嘘声].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[嘘声].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[囧]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[囧].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[囧].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[大哭]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[大哭].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[大哭].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[大笑]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[大笑].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[大笑].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[奸笑]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[奸笑].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[奸笑].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[妙啊]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[妙啊].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[妙啊].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[委屈]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[委屈].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[委屈].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[嫌弃]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[嫌弃].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[嫌弃].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[害羞]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[害羞].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[害羞].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[尴尬]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[尴尬].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[尴尬].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[微笑]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[微笑].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[微笑].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[惊喜]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[惊喜].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[惊喜].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[惊讶]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[惊讶].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[惊讶].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[打call]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[打call].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[打call].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[抠鼻]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[抠鼻].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[抠鼻].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[捂脸]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[捂脸].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[捂脸].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[支持]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[支持].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[支持].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[无语]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[无语].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[无语].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[滑稽]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[滑稽].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[滑稽].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[灵魂出窍]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[灵魂出窍].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[灵魂出窍].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[点赞]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[点赞].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[点赞].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[爱心]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[爱心].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[爱心].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[生气]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[生气].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[生气].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[生病]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[生病].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[生病].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[画风突变]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[画风突变].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[画风突变].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[疼]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[疼].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[疼].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[福]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[福].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[福].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[福到了]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[福到了].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[福到了].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[笑哭]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[笑哭].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[笑哭].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[调皮]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[调皮].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[调皮].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[酸了]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[酸了].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[酸了].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[锦鲤]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[锦鲤].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[锦鲤].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[阴险]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[阴险].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[阴险].png'); ?>"/></li>
                 <li class="OwO-item" onclick="Smilies.grin('::xiaohuanglian:[黑洞]::');">
-                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[黑洞].png', true); ?>"/></li>
+                    <img src="<?php echo G::MemeUrl('static/img/bq/xiaohuanglian/', '[黑洞].png'); ?>"/></li>
             </ul>
         </div>
     </div>

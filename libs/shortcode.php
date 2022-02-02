@@ -71,7 +71,7 @@ function shortcode_dplayer($atts, $content = '')
     return "
     <div id='dplayer-" . $args["id"] . "' class='dp'></div>
     <script>
-        let dplayer" . $args["id"] . " = new DPlayer({
+        var dplayer" . $args["id"] . " = new DPlayer({
         container: document.getElementById('dplayer-" . $args["id"] . "'),
         preload:'auto',
         autoplay: false,

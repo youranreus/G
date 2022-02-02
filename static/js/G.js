@@ -324,14 +324,14 @@ let ajaxComment = () =>{
 				else
 				{
 					afterSendComment(false);
-                    let msg = newComment.querySelector('.container') ? newComment.querySelector('.container').innerHTML : newComment.childNodes[0].childNodes[0].childNodes[0].innerText;
-                    showToast('评论失败，' +  msg.replaceAll('<br>', ''));
+                    let msg = newComment.querySelector('.container') ? newComment.querySelector('.container').innerText : newComment.childNodes[0].childNodes[0].childNodes[0].innerText;
+                    showToast('评论失败，' +  msg);
 				}
 			})
 			.catch((error) => {
 				let newComment = document.createElement('div');
 				newComment.innerHTML = error;
-                let msg = newComment.querySelector('.container') ? newComment.querySelector('.container').innerHTML : newComment.childNodes[0].childNodes[0].childNodes[0].innerText;
+                let msg = newComment.querySelector('.container') ? newComment.querySelector('.container').innerText : newComment.childNodes[0].childNodes[0].childNodes[0].innerText;
                 showToast('评论失败，' + msg.replaceAll('<br>', ''));
 			});
 		return false;
@@ -407,6 +407,7 @@ let pageInit = () => {
 			throwOnError: true
 		});
 	}
+    custom_callback();
 };
 
 /**
@@ -414,7 +415,7 @@ let pageInit = () => {
  */
 let doLazyload = () => {
     let banners = document.getElementsByClassName("article-banner");
-    let pics = document.querySelectorAll("img:not(img#header-background,img#profile-avatar)");
+    let pics = document.querySelectorAll("img:not(#header-background):not(#profile-avatar)");
     preLazy(banners, "style", "origin");
     preLazy(pics, "src", "origin", window.G_CONFIG.imgUrl + "loading2.gif");
     lazyload(banners, function (element, observe) {
@@ -444,33 +445,6 @@ let sendLike = () => {
 				showToast('出了点小问题');
 		});
 }
-
-// window.onload = function () {
-//     console.log("G.js onload");
-//     let pjax = new Pjax({
-//         elements: "a:not(a[target='_blank'], a[no-pjax])", // default is "a[href], form[action]"
-//         selectors: ["#main", "title"],
-//         timeout: 10000,
-//         cacheBust: false,
-//         scrollRestoration: true
-//     });
-
-//     if (document.getElementById("sliderbar-video") !== undefined && document.getElementById("sliderbar-video") !== null) {
-//         let photo = document.getElementById("sliderbar-photo");
-//         let video = document.getElementById("sliderbar-video");
-//         photo.style.height = document.querySelector('#categoryList').offsetHeight + 'px';
-//         if (photo.offsetHeight >= photo.offsetWidth)
-//             video.style.height = photo.offsetHeight + 'px';
-//         else
-//             video.style.height = photo.offsetWidth + 'px';
-//     }
-//     else if (document.getElementById("sliderbar-photo")!== undefined && document.getElementById("sliderbar-photo") !== null){
-//         document.getElementById("sliderbar-photo").style.height = document.querySelector('#categoryList').offsetHeight + 'px';
-//     }
-//     autoDarkMode();
-//     toolbarInit();
-//     pageInit();
-// };
 
 /**
  * pjax发送回调
@@ -519,7 +493,7 @@ window.ready(function () {
     doLazyload();
     console.log("G.js ready");
     let pjax = new Pjax({
-        elements: "a:not(a[target='_blank'], a[no-pjax])", // default is "a[href], form[action]"
+        elements: "a:not([target='_blank']):not([no-pjax])", // default is "a[href], form[action]"
         selectors: ["#main", "title"],
         timeout: 10000,
         cacheBust: false,
