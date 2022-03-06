@@ -13,7 +13,7 @@ $this->need('components/header.php');
                 <div class="PAP-banner-mask"></div>
             <?php endif; ?>
             <div>
-                <h2 itemprop="name headline"><?php $this->title() ?></h2>
+                <h1 itemprop="name headline"><?php $this->title() ?></h1>
             </div>
         </div>
         <div id="page-content" class="PAP-content" itemprop="articleBody">

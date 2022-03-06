@@ -17,7 +17,7 @@ $this->need('components/header.php');
                     <div class="PAP-banner-mask"></div>
                 <?php endif; ?>
                 <div>
-                    <h2 itemprop="name headline"><?php $this->title() ?></h2>
+                    <h1 itemprop="name headline"><?php $this->title() ?></h1>
                 </div>
             </div>
             <div class="post-content PAP-content" itemprop="articleBody">
