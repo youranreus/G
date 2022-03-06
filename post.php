@@ -19,7 +19,7 @@ $this->need('components/header.php');
                 <div class="PAP-banner-mask"></div>
             <?php endif; ?>
             <div>
-                <h2 itemprop="name headline"><?php $this->title() ?></h2>
+                <h1 itemprop="name headline"><?php $this->title() ?></h1>
                 <p><?php echo G::getSemanticDate($this->created); ?> · <?php $this->category(' · '); ?> · <?php echo G::getPostView($this); ?>次阅读</p>
             </div>
         </div>
