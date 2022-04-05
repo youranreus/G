@@ -925,7 +925,7 @@ h3.archive-title {
   div {
     width: 100%;
 
-    h2 {
+    h1 {
       font-size: 2rem;
       color: @color_7;
       font-weight: 200;
@@ -956,12 +956,12 @@ h3.archive-title {
       left: 1.5rem;
     }
 
-    h2 {
+    h1 {
       opacity: 0.85;
       font-size: 1.5rem;
     }
 
-    h2,
+    h1,
     p,
     p a {
       text-align: left;
@@ -1564,6 +1564,87 @@ pre[class*='language-'] {
 
 .link-item-m-content {
   display: none;
+}
+
+.friends {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+    width: 40%;
+    margin: 10px;
+    border-radius: 15px;
+    position: relative;
+    display: inline-block;
+    list-style-type: none;
+    width: 40%;
+    margin: 10px 10px 20px;
+    height: 60px;
+    border-radius: 0;
+    padding-left: 10px;
+    border-left: 2px solid var(--theme-table-td-border);
+
+    .link-item-content-old {
+      float: left;
+      padding: 0 10px 10px 20px;
+      text-align: left;
+      width: calc(100% - 90px);
+    
+      h3 {
+        margin: 0 0 5px;
+        font-size: 16px;
+        color: @color_3;
+      }
+    
+      span {
+        display: block;
+        margin: 0 0 5px;
+        color: @color_3;
+        opacity: .6;
+        font-size: 13px;
+    
+        &::before {
+          content: '#';
+          color: @color_3;
+        }
+      }
+    
+      p {
+        margin: 0 0 5px;
+        font-size: 13px;
+        color: @color_3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        -webkit-text-stroke: unset;
+        opacity: .6;
+        position: relative;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    img {
+      height: 60px;
+      width: 60px;
+      border-radius: 100rem;
+      float: left;
+    }
+  }
 }
 
 #comments-form {
@@ -2248,7 +2329,7 @@ span#toggleOwO {
     height: 13.5rem;
 
     div {
-      h2 {
+      h1 {
         font-size: 1.2rem;
       }
     }
@@ -2318,6 +2399,14 @@ span#toggleOwO {
     display: none;
   }
 
+  .friends li {
+    width: 100%;
+
+    .link-item-content-old {
+      width: calc(100% - 150px);
+    }
+  }
+
   .link-item-m-content {
     display: flex;
     align-items: center;
@@ -2347,5 +2436,10 @@ span#toggleOwO {
     input {
       width: 26%;
     }
+  }
+
+  #toolbar {
+    bottom: 10rem;
+    right: .5rem;
   }
 }

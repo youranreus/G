@@ -1,6 +1,6 @@
 <?php
 /**
- * 友情链接
+ * 友情链接_旧
  *
  * @package custom
  */
@@ -23,27 +23,24 @@ $this->need('components/header.php');
             <div class="post-content PAP-content" itemprop="articleBody">
                 <?php echo G::analyzeContent($this->content); ?>
             </div>
+            <div class="friends">
+				<?php if (isset($this->options->plugins['activated']['Links'])) : ?>
+					<?php Links_Plugin::output("
+					<li class='clear'>
+						<a href='{url}' target='_blank'></a>
+						<img src='{image}' alt='{name}'/>
+						<div class='link-item-content-old'>
+							<h3>{name}</h3>
+							<span>{sort}</span>
+							<p>{description}</p>
+						</div>
+					</li>
+					", 0); ?>
+				<?php else: ?>
+					<p>请启用Link插件</p>
+				<?php endif; ?>
+		    </div>
         </article>
-    </div>
-
-    <div id="link-list">
-        <?php if (isset($this->options->plugins['activated']['Links'])) : ?>
-            <?php
-            Links_Plugin::output('
-				<a target="_blank" href="{url}" class="link-wrap">
-					<div class="link-item">
-						<img src="{image}" alt="{name}"/>
-						<div class="link-item-content">
-							<h4>{name}</h4>
-							<p>{sort}</p>
-						</div>
-						<div class="link-item-m-content">
-							<span>{name}</span>
-						</div>
-					</div>
-				</a>', 0);
-            ?>
-        <?php endif; ?>
     </div>
 
 <?php if ($this->fields->enableComment == 1): ?>
