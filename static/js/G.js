@@ -307,7 +307,7 @@ let ajaxComment = () =>{
 	}
 
 	commentForm.onsubmit = function() {
-		commentData = commentForm.serialize();
+		commentData = objSerialize(commentForm);
 		beforeSendComment();
 		Ajax.post(commentForm.getAttribute('action'), commentData)
 			.then((result)=>{

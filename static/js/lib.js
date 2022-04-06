@@ -150,7 +150,7 @@ let showToast = (text) => {
  * 表单序列化
  * @returns {string}
  */
-Object.prototype.serialize = function () {
+let objSerialize = function (form) {
     let res = [],
         current = null,
         i,
@@ -158,8 +158,7 @@ Object.prototype.serialize = function () {
         k,
         optionLen,
         option,
-        optionValue,
-        form = this;
+        optionValue
     for (i = 0, len = form.elements.length; i < len; i++) {
         current = form.elements[i];
         if (current.disabled) continue;
