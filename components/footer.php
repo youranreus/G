@@ -1,5 +1,6 @@
 <?php if (!defined("__TYPECHO_ROOT_DIR__")) exit;
-$minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" : ""; ?>
+$minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" : "";
+$devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$version : time(); ?>
 
 <footer>
     <div id="footer-content">
@@ -37,9 +38,9 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
 <script src="<?php echo G::staticUrl("static/js/smoothscroll$minInfix.js"); ?>?v=3.215"></script>
 <script src="<?php echo G::staticUrl("static/js/toastify.min.js"); ?>?v=3.211"></script>
 <script src="<?php echo G::staticUrl("static/js/tocbot.min.js"); ?>?v=3.211"></script>
-<script src="<?php echo G::staticUrl("static/js/lib$minInfix.js"); ?>?v=3.10019"></script>
+<script src="<?php echo G::staticUrl("static/js/lib$minInfix.js?v=$devTag"); ?>"></script>
 <script src="<?php echo G::staticUrl("static/js/prism.js"); ?>?v=1.03" data-manual></script>
-<script src="<?php echo G::staticUrl("static/js/G$minInfix.js"); ?>?v=3.2.8.4"></script>
+<script src="<?php echo G::staticUrl("static/js/G$minInfix.js?v=$devTag"); ?>"></script>
 <script>
     <?php $this->options->customFooterJS(); ?>
 </script>

@@ -26,14 +26,14 @@
         </div>
     </div>
 
-    <div class="clear">
-        <div class="sliderbar-content" id="categoryList" style="<?php if ($this->options->profilePhoto == ''): ?>width: 100%;<?php endif; ?>">
+    <div id="widgets" class="clear">
+        <div class="widget" id="categoryList" style="<?php if ($this->options->profilePhoto == ''): ?>width: 100%;<?php endif; ?>">
             <div class="category-content">
                 <?php $this->widget('Widget_Metas_Category_List')->parse('<li><a onclick="toggleSidebar()" href="{permalink}">{name}</a></li>'); ?>
             </div>
         </div>
         <?php if ($this->options->profilePhoto != ''): ?>
-            <div class="sliderbar-content" id="sliderbar-photo" style="background-image:url(<?php echo $this->options->profilePhoto; ?>)">
+            <div class="widget" id="sliderbar-photo" style="background-image:url(<?php echo $this->options->profilePhoto; ?>)">
                 <?php if ($this->options->profileVideo != ''): ?>
                     <video id="sliderbar-video" loop muted autoplay src="<?php echo $this->options->profileVideo; ?>" poster="<?php echo $this->options->profilePhoto; ?>"></video>
                 <?php endif; ?>

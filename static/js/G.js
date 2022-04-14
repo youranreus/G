@@ -500,18 +500,6 @@ window.ready(function () {
         scrollRestoration: true
     });
 
-    if (document.getElementById("sliderbar-video") !== undefined && document.getElementById("sliderbar-video") !== null) {
-        let photo = document.getElementById("sliderbar-photo");
-        let video = document.getElementById("sliderbar-video");
-        photo.style.height = document.querySelector('#categoryList').offsetHeight + 'px';
-        if (photo.offsetHeight >= photo.offsetWidth)
-            video.style.height = photo.offsetHeight + 'px';
-        else
-            video.style.height = photo.offsetWidth + 'px';
-    }
-    else if (document.getElementById("sliderbar-photo")!== undefined && document.getElementById("sliderbar-photo") !== null){
-        document.getElementById("sliderbar-photo").style.height = document.querySelector('#categoryList').offsetHeight + 'px';
-    }
     autoDarkMode();
     toolbarInit();
     pageInit();
