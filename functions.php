@@ -114,6 +114,9 @@ function themeConfig($form)
     $defaultArticlePath = new Typecho_Widget_Helper_Form_Element_Text('defaultArticlePath', null, 'index.php/blog', _t('默认头部文章路径'), _t('前面不需要加/'));
     $form->addInput($defaultArticlePath);
 
+    $customWidgets = new Typecho_Widget_Helper_Form_Element_Textarea('customWidgets', null, null, _t('侧边栏小组件配置'), _t(''));
+    $form->addInput($customWidgets);
+
     $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', null, null, _t('自定义CSS'), _t(''));
     $form->addInput($customCSS);
 

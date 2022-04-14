@@ -2102,6 +2102,10 @@ span#toggleOwO {
 }
 
 #widgets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
   .widget {
     margin: 10px 0;
     background: var(--theme-bg-main);
@@ -2113,17 +2117,15 @@ span#toggleOwO {
     width: 7rem;
     height: 7rem;
 
-    float: left;
-
-    &:nth-of-type(2n) {
-      margin-left: .5rem;
-    }
-    &:nth-of-type(2n + 1) {
-      margin-right: .5rem;
+    &.large {
+      width: 15rem;
+      height: 15rem;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 
-  #sliderbar-photo {
+  .widget-photo {
     background-repeat: no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
@@ -2156,11 +2158,13 @@ span#toggleOwO {
     }
   }
   
-  #sliderbar-video {
+  .widget-video {
     position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
-  #categoryList {
+  .category-list {
     .category-content {
       display: flex;
       flex-wrap: wrap;
