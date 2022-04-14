@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div id="widgets" class="clear">
+    <div id="widgets">
         <?php 
             $widgets = json_decode($this->options->customWidgets)->widgets;
             foreach($widgets as $w)
