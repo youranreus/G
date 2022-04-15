@@ -150,7 +150,7 @@ table {
     );
 }
 
-#sliderbar-photo div {
+#widgets .widget-photo div {
     background: RGBA(0, 0, 0, 0.7);
 }
 

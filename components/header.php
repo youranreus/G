@@ -1,5 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-$minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" : ""; ?>
+$minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" : "";
+$devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$version : time(); ?>
 <!DOCTYPE HTML>
 <html lang="zh">
 <head>
@@ -26,10 +27,10 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
     <?php if($this->options->enableKatex == 1): ?>
         <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/katex.min.css'); ?>">
     <?php endif; ?>
-    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=3.3340">
+    <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=<?php echo $devTag; ?>">
     <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {
         echo 'alternate';
-    } ?>" href="<?php echo G::staticUrl("static/css/dark$minInfix.css"); ?>?v=3.228" title="dark">
+    } ?>" href="<?php echo G::staticUrl("static/css/dark$minInfix.css?v=$devTag"); ?>" title="dark">
 
     <style>
         /* 设置自定义背景[颜色/图片] */
@@ -81,6 +82,9 @@ $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" 
                             ><?php $pages->title(); ?></a>
                         <?php endif; ?>
                     <?php endwhile; ?>
+                    <?php if ($this->options->enableHeaderSearch): ?>
+                        <a href="#" class="search-form-input">搜索</a>
+                    <?php endif; ?>
                 </nav>
             </div>
         </div>

@@ -307,7 +307,7 @@ let ajaxComment = () =>{
 	}
 
 	commentForm.onsubmit = function() {
-		commentData = commentForm.serialize();
+		commentData = objSerialize(commentForm);
 		beforeSendComment();
 		Ajax.post(commentForm.getAttribute('action'), commentData)
 			.then((result)=>{
@@ -489,10 +489,22 @@ document.addEventListener('pjax:complete', () => {
     doLazyload();
 });
 
+/**
+ * Exsearch回调
+ * 
+ * @param {*} item event target
+ */
+function ExSearchCall(item) {
+    if(item && item.length) {
+        document.querySelector('.ins-close').click()
+        pjax.loadUrl(item[0].dataset.url)
+    }
+}
+
 window.ready(function () {
     doLazyload();
     console.log("G.js ready");
-    let pjax = new Pjax({
+    window.pjax = new Pjax({
         elements: "a:not([target='_blank']):not([no-pjax])", // default is "a[href], form[action]"
         selectors: ["#main", "title"],
         timeout: 10000,
@@ -500,18 +512,6 @@ window.ready(function () {
         scrollRestoration: true
     });
 
-    if (document.getElementById("sliderbar-video") !== undefined && document.getElementById("sliderbar-video") !== null) {
-        let photo = document.getElementById("sliderbar-photo");
-        let video = document.getElementById("sliderbar-video");
-        photo.style.height = document.querySelector('#categoryList').offsetHeight + 'px';
-        if (photo.offsetHeight >= photo.offsetWidth)
-            video.style.height = photo.offsetHeight + 'px';
-        else
-            video.style.height = photo.offsetWidth + 'px';
-    }
-    else if (document.getElementById("sliderbar-photo")!== undefined && document.getElementById("sliderbar-photo") !== null){
-        document.getElementById("sliderbar-photo").style.height = document.querySelector('#categoryList').offsetHeight + 'px';
-    }
     autoDarkMode();
     toolbarInit();
     pageInit();
