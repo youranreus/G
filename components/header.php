@@ -82,6 +82,9 @@ $devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$versi
                             ><?php $pages->title(); ?></a>
                         <?php endif; ?>
                     <?php endwhile; ?>
+                    <?php if ($this->options->enableHeaderSearch): ?>
+                        <a href="#" class="search-form-input">搜索</a>
+                    <?php endif; ?>
                 </nav>
             </div>
         </div>

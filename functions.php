@@ -104,6 +104,12 @@ function themeConfig($form)
     ), '0', _t('是否使用独立页面作首页'), _t('默认不使用'));
     $form->addInput($enableIndexPage);
 
+    $enableHeaderSearch = new Typecho_Widget_Helper_Form_Element_Radio('enableHeaderSearch', array(
+        '1' => _t('开启'),
+        '0' => _t('关闭')
+    ), '0', _t('是否在头部添加搜索开关'), _t('默认不打开,需要配合exsearch插件使用'));
+    $form->addInput($enableHeaderSearch);
+
     $articleStyle = new Typecho_Widget_Helper_Form_Element_Radio('articleStyle', array(
         '2' => _t('大图'),
         '1' => _t('单列'),
