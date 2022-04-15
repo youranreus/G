@@ -489,10 +489,22 @@ document.addEventListener('pjax:complete', () => {
     doLazyload();
 });
 
+/**
+ * Exsearch回调
+ * 
+ * @param {*} item event target
+ */
+function ExSearchCall(item) {
+    if(item && item.length) {
+        document.querySelector('.ins-close').click()
+        pjax.loadUrl(item[0].dataset.url)
+    }
+}
+
 window.ready(function () {
     doLazyload();
     console.log("G.js ready");
-    let pjax = new Pjax({
+    window.pjax = new Pjax({
         elements: "a:not([target='_blank']):not([no-pjax])", // default is "a[href], form[action]"
         selectors: ["#main", "title"],
         timeout: 10000,
