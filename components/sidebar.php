@@ -31,9 +31,9 @@
             if($this->options->customWidgets != '') 
             {
                 $widgets = json_decode($this->options->customWidgets);
-                if (isset($widgets->widgets))
+                if (is_array($widgets))
                 {
-                    foreach($widgets->widgets as $w)
+                    foreach($widgets as $w)
                     {
                         if($w->type == "photo")
                         {
