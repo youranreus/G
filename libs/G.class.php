@@ -71,6 +71,7 @@ class G
     public static function getBackground()
     {
         $background = "background";
+        $regex = '@(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))@';
         if (self::$config['background'] == '')
             return $background . ": #fff;";
         else if (self::$config['background'] == 'bing')
@@ -78,9 +79,7 @@ class G
             $bingP = json_decode(file_get_contents('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1'));
             return $background . "-image: url(https://cn.bing.com" . $bingP->{'images'}[0]->{'url'} . ");";
         }
-
-        $regex = '@(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))@';
-        if (preg_match($regex, self::$config['background']) == 0)
+        else if (preg_match($regex, self::$config['background']) == 0)
             return ($background . ": " . self::$config['background'] . ";");
         return $background . "-image: url(" . self::$config['background'] . ");";
     }
