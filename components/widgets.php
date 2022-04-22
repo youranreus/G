@@ -39,6 +39,24 @@
                     </div>
                     ';
                 }
+                else if ($w->type == 'hitokoto')
+                {
+                    $c = '';
+                    $cs = explode(',', $w->cate);
+                    foreach($cs as $_)
+                        $c = $c.'&c='.$_;
+                    
+                    $hitokoto = json_decode(file_get_contents('https://v1.hitokoto.cn?encode=json'.$c));
+
+                    echo '
+                    <div class="widget widget-hitokoto">
+                        <div>
+                            <p>'. $hitokoto->hitokoto .'</p>
+                            <span>'. $hitokoto->from_who .'</span>
+                        </div>
+                    </div>
+                    ';
+                }
             }
         }
         else
