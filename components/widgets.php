@@ -57,6 +57,16 @@
                     </div>
                     ';
                 }
+                else if ($w->type == 'like')
+                {
+                    echo '
+                    <div class="widget widget-hitokoto">
+                        <div>
+                            '.G::DYLM('query').'
+                        </div>
+                    </div>
+                    ';
+                }
             }
         }
         else

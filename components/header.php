@@ -1,6 +1,13 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+<?php 
+if (!defined('__TYPECHO_ROOT_DIR__')) 
+    exit;
 $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" : "";
-$devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$version : time(); ?>
+$devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$version : time(); 
+
+if (isset($_POST['DYLM'])) {
+    exit(G::DYLM('add'));
+}
+?>
 <!DOCTYPE HTML>
 <html lang="zh">
 <head>

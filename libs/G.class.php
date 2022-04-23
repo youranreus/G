@@ -519,4 +519,34 @@ class G
                 return '标题获取失败';
         }
     }
+
+    /**
+     * 点赞小组件
+     *
+     * @param string $action
+     * @return string
+     */
+    public static function DYLM($action)
+    {
+        $db = Typecho_Db::get();
+        $data = $db->fetchRow($db->select()->from('table.options')->where('name = ?', 'G:likes'));
+
+        if($data == NULL) {
+            $insert = $db->insert('table.options')->rows(['name'=> 'G:likes', "user"=> '0', "value" => "0"]);
+            $db->query($insert);
+            $data = $db->fetchRow($db->select()->from('table.options')->where('name = ?', 'G:likes'));
+        }
+
+        if($action == 'query')
+        {
+            return (int)$data['value'];
+        }
+        else if ($action == 'add')
+        {
+            $update = $db->update('table.options')->rows(["value"=> ((int)$data['value']) + 1])->where('name = ?', 'G:likes');
+            return $db->query($update) == 1 ? 'success' : 'error';
+        }
+
+        return 'error param';
+    }
 }
