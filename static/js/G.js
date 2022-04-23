@@ -426,6 +426,9 @@ let doLazyload = () => {
     });
 };
 
+/**
+ * 文章点赞
+ */
 let sendLike = () => {
 	let btn = document.querySelector('#agree-btn');
 	btn.style.disabled = true;
@@ -445,6 +448,22 @@ let sendLike = () => {
 				showToast('出了点小问题');
 		});
 }
+
+/**
+ * 点赞小组件
+ */
+let DYLM = debounce((url) => {
+    let cnt = document.querySelector('#DoYouLikeMe p span')
+    Ajax.post(url, 'DYLM=add')
+        .then(res => {
+            if(res === 'success') {
+                cnt.innerText = parseInt(cnt.innerText) + 1
+                showToast('感谢喜欢~')
+            } else {
+                showToast(res)
+            }
+        })
+}, 1000);
 
 /**
  * pjax发送回调

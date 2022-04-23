@@ -60,10 +60,10 @@
                 else if ($w->type == 'like')
                 {
                     echo '
-                    <div class="widget widget-hitokoto">
-                        <div>
-                            '.G::DYLM('query').'
-                        </div>
+                    <div class="widget large" id="DoYouLikeMe" onclick="DYLM(\''.$this->options->siteUrl.'\')">
+                        <p>
+                        ❤  <span>'.G::DYLM('query').'</span>
+                        </p>
                     </div>
                     ';
                 }
