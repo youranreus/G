@@ -206,3 +206,15 @@ function debounce(fn, time) {
         }, time)
     }
 }
+
+function throttle(fn, time) {
+    let timeout
+    return function () {
+        if (!timeout) {
+            timeout = setTimeout(() => {
+                fn.apply(this, arguments)
+                timeout = null
+            }, time)
+        }
+    }
+}

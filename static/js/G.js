@@ -452,7 +452,7 @@ let sendLike = () => {
 /**
  * 点赞小组件
  */
-let DYLM = debounce((url) => {
+let DYLM = throttle((url) => {
     let cnt = document.querySelector('#DoYouLikeMe p span')
     Ajax.post(url, 'DYLM=add')
         .then(res => {
