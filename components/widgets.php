@@ -60,7 +60,7 @@
                 else if ($w->type == 'like')
                 {
                     echo '
-                    <div class="widget large" id="DoYouLikeMe" onclick="DYLM(\''.$this->options->siteUrl.'\')">
+                    <div class="widget large '.($w->size == 'large' ? 'large' : 'normal').'" id="DoYouLikeMe" onclick="DYLM(\''.$this->options->siteUrl.'\')">
                         <p>
                         ❤  <span>'.G::DYLM('query').'</span>
                         </p>
