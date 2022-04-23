@@ -42,7 +42,14 @@ if (isset($_POST['DYLM'])) {
     <style>
         /* 设置自定义背景[颜色/图片] */
         html::before {
-        <?php echo G::getBackground(); ?>
+            <?php echo G::getBackground(); ?>
+            <?php if ($this->options->repeatBackground): ?>
+            background-repeat: repeat;
+            -webkit-background-size: unset;
+            -o-background-size: unset;
+            background-size: unset;
+            background-position: top left;
+            <?php endif; ?>
         }
 
         <?php $this->options->customCSS(); ?>
