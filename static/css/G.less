@@ -2219,6 +2219,49 @@ span#toggleOwO {
       opacity: 0.5;
     }
   }
+
+  #DoYouLikeMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color .2s ease;
+
+    &.normal {
+      width: 7rem;
+      height: 7rem;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    &.large {
+      width: 15rem;
+      height: 5rem;
+
+      p {
+        font-size: 2rem;
+      }
+    }
+
+    &:hover {
+      background-color: #f8312f;
+
+      p {
+        color: #fff;
+      }
+    }
+
+    p{
+      color: #f8312f;
+      transition: color .2s ease;
+
+      span {
+        transition: color .2s ease;
+      }
+    }
+  }
 }
 
 .profile-content {
