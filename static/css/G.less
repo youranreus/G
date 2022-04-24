@@ -2335,6 +2335,71 @@ span#toggleOwO {
       }
     }
   }
+
+  .widget-random-post {
+    height: auto;
+    width: 15rem;
+
+    h3 {
+      margin: 20px 10px 10px;
+      letter-spacing: .3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+
+      &::before, &::after {
+        content: '-';
+        opacity: 0.6;
+        position: relative;
+      }
+
+      &::before {
+        left: -5px;
+      }
+
+      &::after {
+        left: 5px;
+      }
+    }
+
+    .item {
+      box-sizing: border-box;
+      padding: 10px;
+      cursor: pointer;
+      transition: color 0s;
+      display: flex;
+
+      h4 {
+        font-size: 0.875rem;
+        margin: 0;
+        transition: color 0s;
+        font-weight: 400;
+        width: calc(10rem - 10px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: var(--theme-pap-text-main);
+      }
+
+      span {
+        width: calc(5rem - 10px);
+        opacity: .6;
+        font-size: 0.625rem;
+        float: right;
+        transition: color 0s;
+        text-align: right;
+        line-height: 0.875rem;
+        color: var(--theme-pap-text-main);
+      }
+
+      &:hover {
+        background-color: var(--theme-color);
+        span, h4 {
+          color: #fff;
+        }
+      }
+    }
+  }
 }
 
 .profile-content {

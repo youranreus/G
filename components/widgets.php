@@ -68,8 +68,8 @@
                         echo '<div class="widget widget-recent-comment">';
                         $len = $w->len ?? 5;
                         $obj = $this->widget('Widget_Comments_Recent', 'ignoreAuthor=true');
-                        if($obj->have()){
-                            while($obj->next() && $len){
+                        if($obj->have()) {
+                            while($obj->next() && $len) {
                                 echo '
                                 <div class="recent-comment-item">
                                     <img class="avatar" src="https://sdn.geekzu.org/avatar/'.md5($obj->mail).'?s=60" alt="'.$obj->author.'" title="'.$obj->author.'">
@@ -86,10 +86,26 @@
                                     </div>
                                 </div>
                                 ';
+
                                 $len--;
                             }
-                        }else{
-                            echo '无最新回复';
+                        } 
+                        else echo '无最新回复';
+
+                        echo '</div>';
+                        break;
+                    case 'randomPost':
+                        $data = G::randomArticle($w->len);
+                        echo '<div class="widget widget-random-post">';
+                        echo '  <h3>随机文章</h3>';
+                        foreach($data as $item) {
+                            echo '
+                            <a href="'.$item["permalink"].'">
+                                <div class="item">
+                                    <h4>'.$item["title"].'</h4><span>'.G::getSemanticDate($item['created']).'</span>
+                                </div>
+                            </a>
+                            ';
                         }
 
                         echo '</div>';

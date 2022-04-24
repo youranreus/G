@@ -549,4 +549,27 @@ class G
 
         return 'error param';
     }
+
+    /**
+     * 随机文章
+     *
+     * @param integer $limit
+     * @return array
+     */
+    public static function randomArticle($limit = 5)
+    {
+        $db = Typecho_Db::get();
+        $sql = $db->select()->from('table.contents')
+                ->where('status = ?','publish')
+                ->where('type = ?', 'post')
+                ->where('created <= unix_timestamp(now())', 'post')
+                ->limit($limit)
+                ->order('RAND()');
+
+        $result = $db->fetchAll($sql);
+        for($i = 0; $i < $limit; $i++)
+            $result[$i] =  Typecho_Widget::widget('Widget_Abstract_Contents')->filter($result[$i]);
+
+        return $result;
+    }
 }
