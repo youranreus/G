@@ -1,3 +1,5 @@
+// out: G.css
+
 @charset "UTF-8";
 @import 'normalize.css?v=3.2.1';
 @import 'prism.css?v=3.2.1';
@@ -2200,6 +2202,7 @@ span#toggleOwO {
     width: 15rem;
     height: auto;
     padding: .75rem;
+    user-select: none;
 
     p {
       font-family: 'Times New Roman', Times, serif;
@@ -2259,6 +2262,66 @@ span#toggleOwO {
 
       span {
         transition: color .2s ease;
+      }
+    }
+  }
+
+  .widget-recent-comment {
+    background: RGBA(255,255,255, 0);
+    box-shadow: none;
+    height: auto;
+    width: 15rem;
+    border-radius: 0;
+    overflow: visible;
+
+    .recent-comment-item {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      
+      margin-bottom: .5rem;
+      
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 10000rem;
+      }
+  
+      .recent-comment-content {
+        box-sizing: border-box;
+        width: calc(15rem - 50px);
+        background: var(--theme-bg-main);
+        color: var(--theme-pap-text-main);
+        box-shadow: var(--theme-shadow);
+        border-radius: 15px;
+        padding: 10px;
+
+        .meta {
+          overflow: hidden;
+
+          span {
+            font-size: 0.625rem;
+            opacity: .6;
+          }
+
+          span:first-child {
+            float: left;
+          }
+
+          span:last-child {
+            float: right;
+          }
+        }
+
+        .meta:last-child {
+          margin-top: .5rem;
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.825rem;
+          line-height: 1.8;
+        }
       }
     }
   }

@@ -6,19 +6,29 @@
         {
             foreach($widgets as $w)
             {
-                if($w->type == "photo")
+                switch ($w->type)
                 {
-                    echo '
-                        <div class="widget widget-photo '.($w->size == 'large' ? 'large' : '').'" style="background-image:url('.$w->url.')">
-                            <div>
-                                <p>'.$w->desc.'</p>
+                    case 'photo':
+                        echo '
+                            <div class="widget widget-photo '.($w->size == 'large' ? 'large' : '').'" style="background-image:url('.$w->url.')">
+                                <div>
+                                    <p>'.$w->desc.'</p>
+                                </div>
                             </div>
-                        </div>
-                    ';
-                }
-                else if ($w->type == "cate")
-                {
-                    echo '
+                        ';
+                        break;
+                    case 'video':
+                        echo '
+                            <div class="widget widget-photo '.($w->size == 'large' ? 'large' : '').'">
+                                <video class="widget-video" loop muted autoplay src="'.$w->url.'"></video>
+                                <div>
+                                    <p>'.$w->desc.'</p>
+                                </div>
+                            </div>
+                        ';
+                        break;
+                    case 'cate':
+                        echo '
                         <div class="widget category-list '.($w->size == 'large' ? 'large' : '').'">
                             <div class="category-content">
                                 <li><a onclick="toggleSidebar()" href="'.$w->content[0]->url.'">'.$w->content[0]->name.'</a></li>
@@ -26,46 +36,66 @@
                                 <li><a onclick="toggleSidebar()" href="'.$w->content[2]->url.'">'.$w->content[2]->name.'</a></li>
                             </div>
                         </div>
-                    ';
-                }
-                else if ($w->type == "video")
-                {
-                    echo '
-                    <div class="widget widget-photo '.($w->size == 'large' ? 'large' : '').'">
-                        <video class="widget-video" loop muted autoplay src="'.$w->url.'"></video>
-                        <div>
-                            <p>'.$w->desc.'</p>
-                        </div>
-                    </div>
-                    ';
-                }
-                else if ($w->type == 'hitokoto')
-                {
-                    $c = '';
-                    $cs = explode(',', $w->cate);
-                    foreach($cs as $_)
-                        $c = $c.'&c='.$_;
-                    
-                    $hitokoto = json_decode(file_get_contents('https://v1.hitokoto.cn?encode=json'.$c));
+                        ';
+                        break;
+                    case 'hitokoto':
+                        $c = '';
+                        $cs = explode(',', $w->cate);
+                        foreach($cs as $_)
+                            $c = $c.'&c='.$_;
+                        
+                        $hitokoto = json_decode(file_get_contents('https://v1.hitokoto.cn?encode=json'.$c));
 
-                    echo '
-                    <div class="widget widget-hitokoto">
-                        <div>
-                            <p>'. $hitokoto->hitokoto .'</p>
-                            <span>'. $hitokoto->from_who .'</span>
+                        echo '
+                        <div class="widget widget-hitokoto">
+                            <div>
+                                <p>'. $hitokoto->hitokoto .'</p>
+                                <span>'. $hitokoto->from_who .'</span>
+                            </div>
                         </div>
-                    </div>
-                    ';
-                }
-                else if ($w->type == 'like')
-                {
-                    echo '
-                    <div class="widget large '.($w->size == 'large' ? 'large' : 'normal').'" id="DoYouLikeMe" onclick="DYLM(\''.$this->options->siteUrl.'\')">
-                        <p>
-                        ❤  <span>'.G::DYLM('query').'</span>
-                        </p>
-                    </div>
-                    ';
+                        ';
+                        break;
+                    case 'like':
+                        echo '
+                        <div class="widget '.($w->size == 'large' ? 'large' : 'normal').'" id="DoYouLikeMe" onclick="DYLM(\''.$this->options->siteUrl.'\')">
+                            <p>
+                            ❤  <span>'.G::DYLM('query').'</span>
+                            </p>
+                        </div>
+                        ';
+                        break;
+                    case 'comments':
+                        echo '<div class="widget widget-recent-comment">';
+                        $len = $w->len ?? 5;
+                        $obj = $this->widget('Widget_Comments_Recent', 'ignoreAuthor=true');
+                        if($obj->have()){
+                            while($obj->next() && $len){
+                                echo '
+                                <div class="recent-comment-item">
+                                    <img class="avatar" src="https://sdn.geekzu.org/avatar/'.md5($obj->mail).'?s=60" alt="'.$obj->author.'" title="'.$obj->author.'">
+                                    <div class="recent-comment-content">
+                                        <div class="meta">
+                                            <span>'.$obj->author.'</span>
+                                            <span>'.G::getSemanticDate($obj->created).'</span>
+                                        </div>
+                                        <p>'.G::analyzeMeme($obj->text).'</p>
+                                        <div class="meta">
+                                            <span></span>
+                                            <span>《'.G::getTitleByID($obj->cid).'》</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                ';
+                                $len--;
+                            }
+                        }else{
+                            echo '无最新回复';
+                        }
+
+                        echo '</div>';
+                        break;
+                    default:
+                        break;
                 }
             }
         }
