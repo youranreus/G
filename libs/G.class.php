@@ -10,7 +10,7 @@ class G
      *
      * @var string
      */
-    public static $version = "3.3.2";
+    public static $version = "3.3.3";
 
     /**
      * 主题配置
@@ -71,11 +71,15 @@ class G
     public static function getBackground()
     {
         $background = "background";
+        $regex = '@(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))@';
         if (self::$config['background'] == '')
             return $background . ": #fff;";
-
-        $regex = '@(?i)\b((?:[a-z][\w-]+:(?:/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:\'".,<>?«»“”‘’]))@';
-        if (preg_match($regex, self::$config['background']) == 0)
+        else if (self::$config['background'] == 'bing')
+        {
+            $bingP = json_decode(file_get_contents('https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1'));
+            return $background . "-image: url(https://cn.bing.com" . $bingP->{'images'}[0]->{'url'} . ");";
+        }
+        else if (preg_match($regex, self::$config['background']) == 0)
             return ($background . ": " . self::$config['background'] . ";");
         return $background . "-image: url(" . self::$config['background'] . ");";
     }
@@ -514,5 +518,75 @@ class G
             } else
                 return '标题获取失败';
         }
+    }
+
+    /**
+     * 点赞小组件
+     *
+     * @param string $action
+     * @return string
+     */
+    public static function DYLM($action)
+    {
+        $db = Typecho_Db::get();
+        $data = $db->fetchRow($db->select()->from('table.options')->where('name = ?', 'G:likes'));
+
+        if($data == NULL) {
+            $insert = $db->insert('table.options')->rows(['name'=> 'G:likes', "user"=> '0', "value" => "0"]);
+            $db->query($insert);
+            $data = $db->fetchRow($db->select()->from('table.options')->where('name = ?', 'G:likes'));
+        }
+
+        if($action == 'query')
+        {
+            return (int)$data['value'];
+        }
+        else if ($action == 'add')
+        {
+            $update = $db->update('table.options')->rows(["value"=> ((int)$data['value']) + 1])->where('name = ?', 'G:likes');
+            return $db->query($update) == 1 ? 'success' : 'error';
+        }
+
+        return 'error param';
+    }
+
+    /**
+     * 随机文章
+     *
+     * @param integer $limit
+     * @return array
+     */
+    public static function randomArticle($limit = 5)
+    {
+        $db = Typecho_Db::get();
+        $sql = $db->select()->from('table.contents')
+                ->where('status = ?','publish')
+                ->where('type = ?', 'post')
+                ->where('created <= unix_timestamp(now())', 'post')
+                ->limit($limit)
+                ->order('RAND()');
+
+        $result = $db->fetchAll($sql);
+        for($i = 0; $i < $limit; $i++)
+            $result[$i] =  Typecho_Widget::widget('Widget_Abstract_Contents')->filter($result[$i]);
+
+        return $result;
+    }
+    
+    /**
+     * 通过cid获取文章信息
+     *
+     * @param string|integer $cid
+     * @return array
+     */
+    public static function getArticleInfo($cid)
+    {
+        $db = Typecho_Db::get();
+        $select = $db->select()->from('table.contents')
+                               ->where('status = ?', 'publish')
+                               ->where('type = ?', 'post')
+                               ->where('cid = ?', $cid);
+
+        return Typecho_Widget::widget('Widget_Abstract_Contents')->filter($db->fetchRow($select));
     }
 }

@@ -196,3 +196,25 @@ let objSerialize = function (form) {
     }
     return res.join("&");
 }
+
+function debounce(fn, time) {
+    let timer
+    return function() {
+        if(timer) clearTimeout(timer)
+        timer = setTimeout(() => {
+            fn.call(this, ...arguments)
+        }, time)
+    }
+}
+
+function throttle(fn, time) {
+    let timeout
+    return function () {
+        if (!timeout) {
+            timeout = setTimeout(() => {
+                fn.apply(this, arguments)
+                timeout = null
+            }, time)
+        }
+    }
+}

@@ -1,3 +1,5 @@
+// out: G.css
+
 @charset "UTF-8";
 @import 'normalize.css?v=3.2.1';
 @import 'prism.css?v=3.2.1';
@@ -2192,6 +2194,214 @@ span#toggleOwO {
         list-style-type: none;
         text-align: center;
         cursor: pointer;
+      }
+    }
+  }
+
+  .widget-hitokoto {
+    width: 15rem;
+    height: auto;
+    padding: .75rem;
+    user-select: none;
+
+    p {
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 600;
+      font-size: .875rem;
+      font-style: italic;
+      text-indent: 1.75rem;
+      line-height: 1.77;
+      margin: 0;
+      opacity: 0.7;
+    }
+
+    span {
+      display: block;
+      text-align: right;
+      font-size: 0.625rem;
+      opacity: 0.5;
+    }
+  }
+
+  #DoYouLikeMe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color .2s ease;
+
+    &.normal {
+      width: 7rem;
+      height: 7rem;
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
+    &.large {
+      width: 15rem;
+      height: 5rem;
+
+      p {
+        font-size: 2rem;
+      }
+    }
+
+    &:hover {
+      background-color: #f8312f;
+
+      p {
+        color: #fff;
+      }
+    }
+
+    p{
+      color: #f8312f;
+      transition: color .2s ease;
+
+      span {
+        transition: color .2s ease;
+      }
+    }
+  }
+
+  .widget-recent-comment {
+    background: RGBA(255,255,255, 0);
+    box-shadow: none;
+    height: auto;
+    width: 15rem;
+    border-radius: 0;
+    overflow: visible;
+
+    .recent-comment-item {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      
+      margin-bottom: .5rem;
+      
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 10000rem;
+      }
+  
+      .recent-comment-content {
+        box-sizing: border-box;
+        width: calc(15rem - 50px);
+        background: var(--theme-bg-main);
+        color: var(--theme-pap-text-main);
+        box-shadow: var(--theme-shadow);
+        border-radius: 15px;
+        padding: 10px;
+        transition: transform .2s;
+
+        .meta {
+          overflow: hidden;
+
+          span {
+            font-size: 0.625rem;
+            opacity: .6;
+          }
+
+          span:first-child {
+            float: left;
+          }
+
+          span:last-child {
+            float: right;
+          }
+        }
+
+        &:last-child {
+          margin-top: .5rem;
+
+          span:last-child {
+            display: block;
+            text-align: right;
+            width: 80%;
+            font-style: italic;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+          }
+        }
+
+        &:active {
+          transform: scale(0.99);
+        }
+
+        p {
+          margin: 0;
+          font-size: 0.825rem;
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+
+  .widget-random-post {
+    height: auto;
+    width: 15rem;
+
+    h3 {
+      margin: 20px 10px 10px;
+      letter-spacing: .3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+
+      &::before, &::after {
+        content: '-';
+        opacity: 0.6;
+        position: relative;
+      }
+
+      &::before {
+        left: -5px;
+      }
+
+      &::after {
+        left: 5px;
+      }
+    }
+
+    .item {
+      box-sizing: border-box;
+      padding: 10px;
+      cursor: pointer;
+      transition: color 0s;
+      display: flex;
+
+      h4 {
+        font-size: 0.875rem;
+        margin: 0;
+        transition: color 0s;
+        font-weight: 400;
+        width: calc(10rem - 10px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: var(--theme-pap-text-main);
+      }
+
+      span {
+        width: calc(5rem - 10px);
+        opacity: .6;
+        font-size: 0.625rem;
+        float: right;
+        transition: color 0s;
+        text-align: right;
+        line-height: 0.875rem;
+        color: var(--theme-pap-text-main);
+      }
+
+      &:hover {
+        background-color: var(--theme-color);
+        span, h4 {
+          color: #fff;
+        }
       }
     }
   }

@@ -35,6 +35,12 @@ function themeConfig($form)
     $background = new Typecho_Widget_Helper_Form_Element_Text('background', null, null, _t('背景图片'), _t('可填颜色代码或者图片url'));
     $form->addInput($background);
 
+    $repeatBackground = new Typecho_Widget_Helper_Form_Element_Radio('repeatBackground', array(
+        '1' => _t('开启'),
+        '0' => _t('关闭')
+    ), '0', _t('重复元素背景图片'), _t('默认关闭'));
+    $form->addInput($repeatBackground);
+
     $themeColor = new Typecho_Widget_Helper_Form_Element_Text('themeColor', null, '#07F', _t('主题色'), _t('一般在链接、按钮的颜色中体现'));
     $form->addInput($themeColor);
 

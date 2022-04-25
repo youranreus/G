@@ -1,6 +1,13 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+<?php 
+if (!defined('__TYPECHO_ROOT_DIR__')) 
+    exit;
 $minInfix = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? ".min" : "";
-$devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$version : time(); ?>
+$devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$version : time(); 
+
+if (isset($_POST['DYLM'])) {
+    exit(G::DYLM('add'));
+}
+?>
 <!DOCTYPE HTML>
 <html lang="zh">
 <head>
@@ -35,7 +42,14 @@ $devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$versi
     <style>
         /* 设置自定义背景[颜色/图片] */
         html::before {
-        <?php echo G::getBackground(); ?>
+            <?php echo G::getBackground(); ?>
+            <?php if ($this->options->repeatBackground): ?>
+            background-repeat: repeat;
+            -webkit-background-size: unset;
+            -o-background-size: unset;
+            background-size: unset;
+            background-position: top left;
+            <?php endif; ?>
         }
 
         <?php $this->options->customCSS(); ?>
