@@ -572,4 +572,21 @@ class G
 
         return $result;
     }
+    
+    /**
+     * 通过cid获取文章信息
+     *
+     * @param string|integer $cid
+     * @return array
+     */
+    public static function getArticleInfo($cid)
+    {
+        $db = Typecho_Db::get();
+        $select = $db->select()->from('table.contents')
+                               ->where('status = ?', 'publish')
+                               ->where('type = ?', 'post')
+                               ->where('cid = ?', $cid);
+
+        return Typecho_Widget::widget('Widget_Abstract_Contents')->filter($db->fetchRow($select));
+    }
 }

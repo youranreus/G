@@ -73,17 +73,19 @@
                                 echo '
                                 <div class="recent-comment-item">
                                     <img class="avatar" src="https://sdn.geekzu.org/avatar/'.md5($obj->mail).'?s=60" alt="'.$obj->author.'" title="'.$obj->author.'">
-                                    <div class="recent-comment-content">
-                                        <div class="meta">
-                                            <span>'.$obj->author.'</span>
-                                            <span>'.G::getSemanticDate($obj->created).'</span>
+                                    <a href="'.G::getArticleInfo($obj->cid)["permalink"].'">
+                                        <div class="recent-comment-content">
+                                            <div class="meta">
+                                                <span>'.$obj->author.'</span>
+                                                <span>'.G::getSemanticDate($obj->created).'</span>
+                                            </div>
+                                            <p>'.G::analyzeMeme($obj->text).'</p>
+                                            <div class="meta">
+                                                <span></span>
+                                                <span>《'.G::getTitleByID($obj->cid).'》</span>
+                                            </div>
                                         </div>
-                                        <p>'.G::analyzeMeme($obj->text).'</p>
-                                        <div class="meta">
-                                            <span></span>
-                                            <span>《'.G::getTitleByID($obj->cid).'》</span>
-                                        </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 ';
 

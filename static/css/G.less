@@ -2295,6 +2295,7 @@ span#toggleOwO {
         box-shadow: var(--theme-shadow);
         border-radius: 15px;
         padding: 10px;
+        transition: transform .2s;
 
         .meta {
           overflow: hidden;
@@ -2313,7 +2314,7 @@ span#toggleOwO {
           }
         }
 
-        .meta:last-child {
+        &:last-child {
           margin-top: .5rem;
 
           span:last-child {
@@ -2325,6 +2326,10 @@ span#toggleOwO {
             text-overflow:ellipsis;
             white-space: nowrap;
           }
+        }
+
+        &:active {
+          transform: scale(0.99);
         }
 
         p {
