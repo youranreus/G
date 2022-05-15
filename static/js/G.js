@@ -407,6 +407,8 @@ let pageInit = () => {
 			throwOnError: true
 		});
 	}
+    if (window.G_CONFIG.defaultOpenTOC && document.querySelector('.PAP-content'))
+		toggleToc()
     custom_callback();
 };
 

@@ -80,6 +80,12 @@ function themeConfig($form)
     $headerBackground = new Typecho_Widget_Helper_Form_Element_Text('headerBackground', null, null, _t('头部背景图'), _t('填写后会在站点头部添加一个半透明的背景图'));
     $form->addInput($headerBackground);
 
+    $enableDefaultTOC = new Typecho_Widget_Helper_Form_Element_Radio('enableDefaultTOC', array(
+        '1' => _t('开启'),
+        '0' => _t('关闭')
+    ), '0', _t('文章目录是否默认开启'), _t('默认否'));
+    $form->addInput($enableDefaultTOC);
+
     $enableUPYUNLOGO = new Typecho_Widget_Helper_Form_Element_Radio('enableUPYUNLOGO', array(
         '1' => _t('开启'),
         '0' => _t('关闭')
