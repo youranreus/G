@@ -530,6 +530,8 @@ document.addEventListener("pjax:send", () => {
 		}
 	}
 	tocbot.destroy();
+    if(document.getElementById("spotlight"))
+        Spotlight.close();
 	if (document.getElementById("main").classList.contains("toc-show-main"))
 		toggleToc();
 	window.scroll({ top: 0, left: 0, behavior: "smooth" });
