@@ -240,6 +240,10 @@ class G
             return 'https://cdn.jsdelivr.net/gh/youranreus/G@v' . self::$version . '/' . $path;
         else if (self::$config['cdn'] == 'sourcestorage')
             return 'https://source.ahdark.com/typecho/theme/G-theme/' . self::$version . '/' . $path;
+        else if (self::$config['cdn'] == 'jsdfastly')
+            return 'https://fastly.jsdelivr.net/gh/youranreus/G@v' . self::$version . '/' . $path;
+        else if (self::$config['cdn'] == 'jsdgcore')
+            return 'https://gcore.jsdelivr.net/gh/youranreus/G@v' . self::$version . '/' . $path;
         else
             return self::$config['cdn'] . $path;
     }
