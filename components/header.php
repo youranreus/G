@@ -34,6 +34,7 @@ if (isset($_POST['DYLM'])) {
     <?php if($this->options->enableKatex == 1): ?>
         <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/katex.min.css'); ?>">
     <?php endif; ?>
+    <link rel="preload" href="<?php echo G::staticUrl('static/js/spotlight.bundle.js'); ?>" as="script">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=<?php echo $devTag; ?>">
     <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {
         echo 'alternate';
@@ -61,8 +62,7 @@ if (isset($_POST['DYLM'])) {
         
         window.G_CONFIG = {
             katex: <?php echo $this->options->enableKatex == 1 ? 'true' : 'false' ?>,
-            imgUrl: "<?php echo G::staticUrl('static/img/'); ?>",
-            defaultOpenTOC: <?php echo $this->options->enableDefaultTOC == 1 ? 'true' : 'false' ?>
+            imgUrl: "<?php echo G::staticUrl('static/img/'); ?>"
         };
 
         function custom_callback() {
