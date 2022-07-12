@@ -35,6 +35,7 @@ $devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$versi
     <script src="<?php echo G::staticUrl("static/js/katex.min.js"); ?>"></script>
     <script src="<?php echo G::staticUrl("static/js/auto-render.min.js"); ?>"></script>
 <?php endif; ?>
+<script src="<?php echo G::staticUrl('static/js/spotlight.bundle.js'); ?>?v=3" defer></script>
 <script src="<?php echo G::staticUrl("static/js/smoothscroll$minInfix.js"); ?>?v=3.215"></script>
 <script src="<?php echo G::staticUrl("static/js/toastify.min.js"); ?>?v=3.211"></script>
 <script src="<?php echo G::staticUrl("static/js/tocbot.min.js"); ?>?v=3.211"></script>
