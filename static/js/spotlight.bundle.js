@@ -260,8 +260,8 @@
 			m(Ma);
 			pb(!0);
 			T && l(Ua, 0 < screen.availHeight - window.innerHeight);
-			history.pushState({ spl: 1 }, "");
-			history.pushState({ spl: 2 }, "");
+			//history.pushState({ spl: 1 }, "");
+			//history.pushState({ spl: 2 }, "");
 			m(p, !0);
 			d(K, "hide-scrollbars", !0);
 			d(p, "show", !0);
