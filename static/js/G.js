@@ -64,17 +64,7 @@ let lazyPic = (element, observe) => {
 	})
 		.then((success) => {
             element.target.setAttribute("src", success);
-			if (element.target.classList.contains("bq")) {
-				addClass(element.target, "lazyload-done");
-			} else {
-				const wrapper = document.createElement("div");
-				wrapper.dataset.src = success;
-				element.target.after(wrapper);
-				wrapper.appendChild(element.target);
-				addClass(element.target, "lazyload-done");
-				addClass(wrapper, "spotlight");
-			}
-
+			addClass(element.target, "lazyload-done");
 			observe.unobserve(element.target);
 		})
 		.catch((error) => {
@@ -450,6 +440,8 @@ let pageInit = () => {
 	images.forEach((img) => {
 		if (!img.classList.contains("bq")) {
 			//img.setAttribute("onclick", "lightbox(this)");
+            img.dataset.src = img.getAttribute("origin");
+            img.classList.add("spotlight");
 			let info = document.createElement("span");
 			info.innerText = img.getAttribute("title");
 			info.classList.add("imageinfo");
@@ -574,8 +566,8 @@ document.addEventListener("pjax:complete", () => {
 		loadMeting();
 	}
 
+    doLazyload();
 	pageInit();
-	doLazyload();
 });
 
 /**
