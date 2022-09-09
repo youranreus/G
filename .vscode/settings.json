@@ -9,7 +9,7 @@
         "commands": [
             {
                 "match": "\\.js$",
-                "cmd": "uglifyjs ${file} -o ${fileDirname}/${fileBasenameNoExt}.min.js --source-map"
+                "cmd": "uglifyjs ${file} -o ${fileDirname}/${fileBasenameNoExt}.min.js"
             },
         ]
     }
