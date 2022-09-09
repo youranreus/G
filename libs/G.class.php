@@ -216,13 +216,13 @@ class G
     public static function getFooterLogos()
     {
         if (self::$config['enableUPYUNLOGO'] == 1)
-            $logos = '<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="' . self::staticUrl('static/img/upyun.png') . '"/></a>';
+            $logos = '<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img alt="upyun" src="' . self::staticUrl('static/img/upyun.png') . '"/></a>';
         else
             $logos = '';
         $imgs = explode(',', self::$config["footerLOGO"]);
         foreach ($imgs as $img)
             if ($img != '')
-                $logos = $logos . '<img src="' . $img . '" />';
+                $logos = $logos . '<img alt="logo" src="' . $img . '" />';
         return $logos;
     }
 
@@ -302,15 +302,15 @@ class G
     public static function analyzeMeme($content)
     {
         //@(xx)格式表情
-        $result = preg_replace('#@\((.*?)\)#', '<img src="'.G::staticUrl('static/img/bq/paopao').'/$1.png" class="bq" />', $content);
+        $result = preg_replace('#@\((.*?)\)#', '<img alt="$1" src="'.G::staticUrl('static/img/bq/paopao').'/$1.png" class="bq" />', $content);
         //mirage格式表情 （原神，小黄脸）
         $result = preg_replace_callback('/\:\:(.*?)\:(.*?)\:\:/',function($matches){
             $img = preg_replace('/%/', '', urlencode($matches[2]));
-            return '<img src="'.self::staticUrl('static/img/bq/'.$matches[1].'/'.$img).'.png" class="bq" />';
+            return '<img alt="'.$matches[2].'" src="'.self::staticUrl('static/img/bq/'.$matches[1].'/'.$img).'.png" class="bq" />';
         },$result);
         $result = preg_replace_callback('#\#\((.*?)\)#',function($matches) {
             $emotionText = substr(substr($matches[0], 0, -1), 2);
-            $url = "<img class='bq bq-aru' src='https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/aru/".urlencode($emotionText).".png'/>";
+            $url = "<img class='bq bq-aru' alt='".$emotionText."' src='https://cdn.jsdelivr.net/gh/youranreus/R/W/bq/aru/".urlencode($emotionText).".png'/>";
             $url = preg_replace('/%/', '', $url);
             return $url;
         }, $result);

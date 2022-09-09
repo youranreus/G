@@ -13,7 +13,7 @@ if (isset($_POST['DYLM'])) {
 <head>
     <meta charset="<?php $this->options->charset(); ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="//source.ahdark.com">
     <link rel="icon" type="image/png" href="<?php $this->options->favicon(); ?>">
