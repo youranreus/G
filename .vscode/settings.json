@@ -1,0 +1,16 @@
+{
+	"less.compile": {
+		"compress": true,
+		"sourceMap": true,
+		"out": "${workspace}/static/css/",
+		"ieCompat": true
+    },
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.js$",
+                "cmd": "uglifyjs ${file} -o ${fileDirname}/${fileBasenameNoExt}.min.js"
+            },
+        ]
+    }
+}
