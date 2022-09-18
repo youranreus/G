@@ -34,6 +34,7 @@ class G
         'advanceSetting' => '',
         'footerLOGO' => '',
         'enableUPYUNLOGO' => '',
+        'enableDefaultTOC' => ''
     ];
 
     public static $advanceConfig = [];

@@ -429,6 +429,9 @@ let TocInit = () => {
 			headingsOffset: 40,
 			scrollSmoothOffset: -40,
 		});
+
+		if (window.G_CONFIG.autoTOC && document.body.clientWidth > 830)
+			toggleToc();
 	}
 };
 

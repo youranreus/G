@@ -62,7 +62,8 @@ if (isset($_POST['DYLM'])) {
         
         window.G_CONFIG = {
             katex: <?php echo $this->options->enableKatex == 1 ? 'true' : 'false' ?>,
-            imgUrl: "<?php echo G::staticUrl('static/img/'); ?>"
+            imgUrl: "<?php echo G::staticUrl('static/img/'); ?>",
+            autoTOC: <?php echo G::$config["enableDefaultTOC"] == 1 ? 'true' : 'false' ?>,
         };
 
         function custom_callback() {
