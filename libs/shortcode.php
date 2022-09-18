@@ -38,7 +38,7 @@ add_shortcode('art', 'shortcode_jump_button');
 
 function shortcode_notice($atts, $content = '')
 {
-    return "<div class='shortcode-notice'>" . $content . "</div>";
+    return "<div class='shortcode-notice'>" . G::analyzeContent($content) . "</div>";
 }
 
 add_shortcode('notice', 'shortcode_notice');
@@ -46,7 +46,7 @@ add_shortcode('notice', 'shortcode_notice');
 
 function shortcode_warn($atts, $content = '')
 {
-    return "<div class='shortcode-warn'>" . $content . "</div>";
+    return "<div class='shortcode-warn'>" . G::analyzeContent($content) . "</div>";
 }
 
 add_shortcode('warn', 'shortcode_warn');
@@ -60,6 +60,16 @@ function shortcode_tag($atts, $content = '')
 }
 
 add_shortcode('tag', 'shortcode_tag');
+
+function shortcode_download($atts, $content = '')
+{
+    $args = shortcode_atts(array(
+        'url' => ''
+    ), $atts);
+    return "<div class='shortcode-download'><a target='_blank' href='".$args["url"]."'>" . $content . "</a></div>";
+}
+
+add_shortcode('dl', 'shortcode_download');
 
 function shortcode_dplayer($atts, $content = '')
 {
