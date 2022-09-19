@@ -11,6 +11,10 @@
                 "match": "\\.js$",
                 "cmd": "uglifyjs ${file} -o ${fileDirname}/${fileBasenameNoExt}.min.js"
             },
+            {
+                "match": "\\.css$",
+                "cmd": "uglifycss ${file} --output ${fileDirname}/${fileBasenameNoExt}.min.css"
+            },
         ]
     }
 }
