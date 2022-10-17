@@ -173,9 +173,11 @@ let imageinfo = () => {
 
 	if (enableLazyload) {
 		$("#post-header,.card-cover").each(function () {
-			$(this).addClass("lazyload");
-			$(this).attr('data-original', $(this).css("background-image").slice(5, -2));
-			$(this).css('background-image', `url(${window.G_CONFIG.theme_url}/IMG/loading-banner.gif)`);
+			if ($(this).attr("style") !== 'background-image:url()') {
+				$(this).addClass("lazyload");
+				$(this).attr('data-original', $(this).css("background-image").slice(5, -2));
+				$(this).css('background-image', `url(${window.G_CONFIG.theme_url}/IMG/loading-banner.gif)`);
+			}
 		});
 	}
 }
