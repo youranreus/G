@@ -58,7 +58,7 @@
               <h5 aligen="center">'.getTitleByID($obj->cid).'</h5>
             </div>
               <div class="left">
-                <img src="https://sdn.geekzu.org/avatar/'.md5($obj->mail).'" alt="'.$obj->author.'"/>
+                <img src="https://gravatar.loli.top/avatar/'.md5($obj->mail).'" alt="'.$obj->author.'"/>
               </div>
               <div class="right">
                 <h5>'.$obj->author.'<span>'.date('Y-m-d',$obj->created).'</span></h5>
