@@ -39,6 +39,10 @@
                 html: false
             }
         }
+
+        window.G_CONFIG = {
+            theme_url: '<?php $this->options->themeUrl(); ?>',
+        }
     </script>
     <style>
         <?php if ($this->options->IndexStyle == 1): ?>

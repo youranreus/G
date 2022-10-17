@@ -162,7 +162,7 @@ let imageinfo = () => {
 			if (enableLazyload) {
 				$(this).addClass("lazyload");
 				$(this).attr('data-original', $(this).attr("src"));
-				$(this).attr('src', 'https://cdn.jsdelivr.net/gh/youranreus/R@v1.1.5/G/IMG/loading2.gif');
+				$(this).attr('src', window.G_CONFIG.theme_url + '/IMG/loading2.gif');
 			}
 
 			if (!$(this).is("div.photos figure div img")) {
@@ -171,11 +171,13 @@ let imageinfo = () => {
 		});
 	});
 
-	$("#post-header,.card-cover").each(function () {
-		$(this).addClass("lazyload");
-		$(this).attr('data-original', $(this).css("background-image").slice(5, -2));
-		$(this).css('background-image', 'url(https://cdn.jsdelivr.net/gh/youranreus/R@v1.2.6/G/IMG/loading-banner.gif)');
-	});
+	if (enableLazyload) {
+		$("#post-header,.card-cover").each(function () {
+			$(this).addClass("lazyload");
+			$(this).attr('data-original', $(this).css("background-image").slice(5, -2));
+			$(this).css('background-image', `url(${window.G_CONFIG.theme_url}/IMG/loading-banner.gif)`);
+		});
+	}
 }
 
 //网站运行时间
