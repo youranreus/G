@@ -173,7 +173,6 @@ let imageinfo = () => {
 
 	if (enableLazyload) {
 		$("#post-header,.card-cover").each(function () {
-			console.log($(this).attr("style"))
 			if ($(this).attr("style") !== 'background-image:url()') {
 				$(this).addClass("lazyload");
 				$(this).attr('data-original', $(this).css("background-image").slice(5, -2));
