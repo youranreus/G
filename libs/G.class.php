@@ -320,6 +320,21 @@ class G
     }
 
     /**
+     * 输出文章概要
+     *
+     * @param string $content
+     * @param Integer $limit
+     * @return string
+     */
+    public static function excerpt($content, $limit)
+    {
+        $result = mb_substr($content, 0, $limit);
+        $result = self::analyzeMeme($result);
+        $result = preg_replace('/\[[^\]]*\]/', '', $result);
+        return $result;
+    }
+
+    /**
      * 获取表情包url
      *
      * @param String $path
