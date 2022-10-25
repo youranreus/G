@@ -10,7 +10,7 @@ class G
      *
      * @var string
      */
-    public static $version = "3.3.4";
+    public static $version = "3.3.6";
 
     /**
      * 主题配置
@@ -34,7 +34,8 @@ class G
         'advanceSetting' => '',
         'footerLOGO' => '',
         'enableUPYUNLOGO' => '',
-        'enableDefaultTOC' => ''
+        'enableDefaultTOC' => '',
+        'autoNightSpan' => ''
     ];
 
     public static $advanceConfig = [];
@@ -315,6 +316,21 @@ class G
             $url = preg_replace('/%/', '', $url);
             return $url;
         }, $result);
+        return $result;
+    }
+
+    /**
+     * 输出文章概要
+     *
+     * @param string $content
+     * @param Integer $limit
+     * @return string
+     */
+    public static function excerpt($content, $limit)
+    {
+        $result = mb_substr($content, 0, $limit);
+        $result = self::analyzeMeme($result);
+        $result = preg_replace('/\[[^\]]*\]/', '', $result);
         return $result;
     }
 

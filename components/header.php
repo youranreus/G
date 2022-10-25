@@ -36,9 +36,7 @@ if (isset($_POST['DYLM'])) {
     <?php endif; ?>
     <link rel="preload" href="<?php echo G::staticUrl('static/js/spotlight.bundle.js'); ?>" as="script">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=<?php echo $devTag; ?>">
-    <link rel="stylesheet <?php if (!isset($_COOKIE['night']) || $_COOKIE['night'] != '1') {
-        echo 'alternate';
-    } ?>" href="<?php echo G::staticUrl("static/css/dark$minInfix.css?v=$devTag"); ?>" title="dark">
+    <link rel="stylesheet" href="<?php echo G::staticUrl("static/css/dark$minInfix.css?v=$devTag"); ?>" title="dark">
 
     <style>
         /* 设置自定义背景[颜色/图片] */
@@ -64,6 +62,7 @@ if (isset($_POST['DYLM'])) {
             katex: <?php echo $this->options->enableKatex == 1 ? 'true' : 'false' ?>,
             imgUrl: "<?php echo G::staticUrl('static/img/'); ?>",
             autoTOC: <?php echo G::$config["enableDefaultTOC"] == 1 ? 'true' : 'false' ?>,
+            nightSpan: "<?php echo G::$config["autoNightSpan"]; ?>"
         };
 
         function custom_callback() {

@@ -179,47 +179,18 @@ let makeGallery = () => {
  * 夜间模式开关
  */
 let darkModeToggle = () => {
-	let night =
-		document.cookie.replace(/(?:^|.*;\s*)night\s*\=\s*([^;]*).*$|^.*$/, "$1") ||
-		"0";
-	if (night === "0") {
-		document.querySelector('link[title="dark"]').disabled = true;
-		document.querySelector('link[title="dark"]').disabled = false;
-		document.cookie = "night=1;path=/";
-	} else {
-		document.querySelector('link[title="dark"]').disabled = true;
-		document.cookie = "night=0;path=/";
-	}
+	document.querySelector('link[title="dark"]').disabled = !document.querySelector('link[title="dark"]').disabled;
 };
 
 /**
  * 自动夜间模式判断
  */
 let autoDarkMode = () => {
-	if (
-		document.cookie.replace(/(?:^|.*;\s*)night\s*=\s*([^;]*).*$|^.*$/, "$1") ===
-		""
-	) {
-		if (new Date().getHours() > 22 || new Date().getHours() < 6) {
-			document.querySelector('link[title="dark"]').disabled = true;
-			document.querySelector('link[title="dark"]').disabled = false;
-			document.cookie = "night=1;path=/";
-		} else {
-			document.cookie = "night=0;path=/";
-		}
-	} else {
-		let night =
-			document.cookie.replace(
-				/(?:^|.*;\s*)night\s*\=\s*([^;]*).*$|^.*$/,
-				"$1"
-			) || "0";
-		if (night === "0") {
-			document.querySelector('link[title="dark"]').disabled = true;
-		} else if (night === "1") {
-			document.querySelector('link[title="dark"]').disabled = true;
-			document.querySelector('link[title="dark"]').disabled = false;
-		}
-	}
+	const [start, end] = window.G_CONFIG.nightSpan.split('-');
+	if (new Date().getHours() >= parseInt(start) || new Date().getHours() < parseInt(end)) 
+		document.querySelector('link[title="dark"]').disabled = false;
+	else 
+		document.querySelector('link[title="dark"]').disabled = true;
 };
 
 /**
