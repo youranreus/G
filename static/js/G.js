@@ -196,11 +196,12 @@ let darkModeToggle = () => {
  * 自动夜间模式判断
  */
 let autoDarkMode = () => {
+	const [start, end] = window.G_CONFIG.nightSpan.split('-');
 	if (
 		document.cookie.replace(/(?:^|.*;\s*)night\s*=\s*([^;]*).*$|^.*$/, "$1") ===
 		""
 	) {
-		if (new Date().getHours() > 22 || new Date().getHours() < 6) {
+		if (new Date().getHours() > parseInt(start) || new Date().getHours() < parseInt(end)) {
 			document.querySelector('link[title="dark"]').disabled = true;
 			document.querySelector('link[title="dark"]').disabled = false;
 			document.cookie = "night=1;path=/";

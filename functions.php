@@ -80,6 +80,9 @@ function themeConfig($form)
     $headerBackground = new Typecho_Widget_Helper_Form_Element_Text('headerBackground', null, null, _t('头部背景图'), _t('填写后会在站点头部添加一个半透明的背景图'));
     $form->addInput($headerBackground);
 
+    $autoNightSpan = new Typecho_Widget_Helper_Form_Element_Text('autoNightSpan', null, '23-6', _t('自动夜间模式时间段'), _t('24小时制，当前晚上x点到第二天早上y点视为夜间，需要自动开启夜间模式，例: 23-6'));
+    $form->addInput($autoNightSpan);
+
     $enableDefaultTOC = new Typecho_Widget_Helper_Form_Element_Radio('enableDefaultTOC', array(
         '1' => _t('开启'),
         '0' => _t('关闭')
