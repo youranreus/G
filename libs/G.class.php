@@ -331,7 +331,7 @@ class G
         $result = mb_substr($content, 0, $limit);
         $result = self::analyzeMeme($result);
         $result = preg_replace('/\[[^\]]*\]/', '', $result);
-        return $result;
+        return strip_tags($result);
     }
 
     /**
