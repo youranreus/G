@@ -10,7 +10,7 @@ class G
      *
      * @var string
      */
-    public static $version = "3.3.6";
+    public static $version = "3.3.7";
 
     /**
      * 主题配置
@@ -331,7 +331,7 @@ class G
         $result = mb_substr($content, 0, $limit);
         $result = self::analyzeMeme($result);
         $result = preg_replace('/\[[^\]]*\]/', '', $result);
-        return $result;
+        return strip_tags($result);
     }
 
     /**

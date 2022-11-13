@@ -16,7 +16,7 @@
     <?php while ($this->next()): ?>
         <div class="article-item" style="width: 100%;">
             <h2 class="article-title"><a href="<?php $this->permalink(); ?>"><?php $this->title() ?></a></h2>
-            <p><?php echo G::excerpt($this->excerpt, 50); ?></p>
+            <p><?php $this->excerpt(50); ?></p>
             <div class="article-data">
                 <span><?php $this->category(); ?></span>
                 <span><?php $this->date('Y-m-d'); ?></span>
