@@ -34,7 +34,6 @@ if (isset($_POST['DYLM'])) {
     <?php if($this->options->enableKatex == 1): ?>
         <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/katex.min.css'); ?>">
     <?php endif; ?>
-    <link rel="preload" href="<?php echo G::staticUrl('static/js/spotlight.bundle.js'); ?>" as="script">
     <link rel="stylesheet" href="<?php echo G::staticUrl('static/css/G.css'); ?>?v=<?php echo $devTag; ?>">
     <link rel="stylesheet alternate" href="<?php echo G::staticUrl("static/css/dark$minInfix.css?v=$devTag"); ?>" title="dark" disabled>
 
