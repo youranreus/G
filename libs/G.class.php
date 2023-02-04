@@ -10,7 +10,7 @@ class G
      *
      * @var string
      */
-    public static $version = "3.3.7";
+    public static $version = "3.3.8";
 
     /**
      * 主题配置
