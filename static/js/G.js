@@ -6,6 +6,13 @@ let makePrismLineNum = () => {
 	if (ele.length > 0)
 		for (let element of ele)
 			element.className = element.className + " line-numbers";
+	
+	// 适配c++
+	// 真的是吐了，把+号塞类名里，就这样吧
+	document.querySelectorAll('code[class="c++"]')?.forEach((cpp) => {
+		cpp.className = 'lang-cpp';
+	})
+
 	if (typeof Prism !== "undefined") {
 		Prism.highlightAll(true, null);
 	}
