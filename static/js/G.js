@@ -194,7 +194,7 @@ let darkModeToggle = () => {
  */
 let autoDarkMode = () => {
 	const [start, end] = window.G_CONFIG.nightSpan.split('-');
-	if (new Date().getHours() >= parseInt(start) || new Date().getHours() < parseInt(end)) 
+	if ((new Date().getHours() >= parseInt(start) || new Date().getHours() < parseInt(end)) || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) 
 		document.querySelector('link[title="dark"]').disabled = false;
 	else 
 		document.querySelector('link[title="dark"]').disabled = true;
