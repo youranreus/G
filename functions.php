@@ -248,9 +248,10 @@ function themeConfig($form)
         <div id="backup">
             <form class="protected Data-backup" action="?'.G::$themeBackup.'" method="post">
                 <h4>数据备份</h4>
+                <p style="opacity: 0.5">'.($hasBackup ? '当前已有备份' : '当前暂无备份').'，你可以选择</p>
                 <input type="submit" name="type" class="btn btn-s" value="'.($hasBackup ? '更新备份' : '创建备份').'" />&nbsp;&nbsp;
                 '.($hasBackup ? '<input type="submit" name="type" class="btn btn-s" value="恢复备份" />&nbsp;&nbsp;' : '').'
-                <input type="submit" name="type" class="btn btn-s" value="删除备份" />
+                '.($hasBackup ? '<input type="submit" name="type" class="btn btn-s" value="删除备份" />' : '').'
             </form>
         </div>
     ';
