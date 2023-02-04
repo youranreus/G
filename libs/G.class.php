@@ -42,6 +42,8 @@ class G
 
     public static $themeUrl = '';
 
+    public static $themeBackup = 'Gbf';
+
     /**
      * 初始化
      *
