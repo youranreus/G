@@ -6,7 +6,7 @@
         {
             foreach($widgets as $w)
             {
-                switch ($w->type)
+                switch ($w->type ?? $w->name)
                 {
                     case 'photo':
                         echo '
