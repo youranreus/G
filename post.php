@@ -2,7 +2,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 if (isset($_POST['agree'])) {
     if ($_POST['agree'] == $this->cid)
-        exit(G::agree($this->cid));
+        exit((string)G::agree($this->cid));
     exit('error');
 }
 $agree = $this->hidden ? array('agree' => 0, 'recording' => true) : G::agreeNum($this->cid);
