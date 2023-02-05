@@ -194,7 +194,16 @@ let darkModeToggle = () => {
  */
 let autoDarkMode = () => {
 	const [start, end] = window.G_CONFIG.nightSpan.split('-');
-	if ((new Date().getHours() >= parseInt(start) || new Date().getHours() < parseInt(end)) || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) 
+	const nightMode = window.G_CONFIG.nightMode;
+	const nightModeMap = {
+		'3': window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches,
+		'2': new Date().getHours() >= parseInt(start) || new Date().getHours() < parseInt(end),
+		'1': (new Date().getHours() >= parseInt(start) || new Date().getHours() < parseInt(end)) || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches),
+	};
+
+	if (nightMode === '0' || !Object.keys(nightModeMap).includes(nightMode)) return;
+
+	if (nightModeMap[nightMode])
 		document.querySelector('link[title="dark"]').disabled = false;
 	else 
 		document.querySelector('link[title="dark"]').disabled = true;

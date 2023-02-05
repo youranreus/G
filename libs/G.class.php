@@ -35,7 +35,8 @@ class G
         'footerLOGO' => '',
         'enableUPYUNLOGO' => '',
         'enableDefaultTOC' => '',
-        'autoNightSpan' => ''
+        'autoNightSpan' => '',
+        'autoNightMode' => '',
     ];
 
     public static $advanceConfig = [];

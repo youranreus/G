@@ -185,6 +185,14 @@ function themeConfig($form)
     $autoNightSpan = new Typecho_Widget_Helper_Form_Element_Text('autoNightSpan', null, '23-6', _t('自动夜间模式时间段'), _t('24小时制，当前晚上x点到第二天早上y点视为夜间，需要自动开启夜间模式，例: 23-6'));
     $form->addInput($autoNightSpan);
 
+    $autoNightMode = new Typecho_Widget_Helper_Form_Element_Radio('autoNightMode', array(
+        '3' => _t('跟随系统'),
+        '2' => _t('自定义时间段'),
+        '1' => _t('同时开启'),
+        '0' => _t('关闭')
+    ), '3', _t('自动夜间模式控制模式'), _t('默认为跟随系统'));
+    $form->addInput($autoNightMode);
+
     $enableDefaultTOC = new Typecho_Widget_Helper_Form_Element_Radio('enableDefaultTOC', array(
         '1' => _t('开启'),
         '0' => _t('关闭')

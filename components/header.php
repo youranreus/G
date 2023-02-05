@@ -61,7 +61,8 @@ if (isset($_POST['DYLM'])) {
             katex: <?php echo $this->options->enableKatex == 1 ? 'true' : 'false' ?>,
             imgUrl: "<?php echo G::staticUrl('static/img/'); ?>",
             autoTOC: <?php echo G::$config["enableDefaultTOC"] == 1 ? 'true' : 'false' ?>,
-            nightSpan: "<?php echo G::$config["autoNightSpan"]; ?>"
+            nightSpan: "<?php echo G::$config["autoNightSpan"]; ?>",
+            nightMode: "<?php echo G::$config["autoNightMode"]; ?>",
         };
 
         function custom_callback() {
