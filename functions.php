@@ -45,9 +45,7 @@ function makeBackup($db, $hasBackup) {
     
     $rows = $db->query($query);
     
-    return $rows 
-        ? ['msg' => $hasBackup ? '备份已经成功更新' : '备份成功', 'refresh' => true]
-        : ['msg' => '备份失败', 'refresh' => false];
+    return ['msg' => $hasBackup ? '备份已经成功更新' : '备份成功', 'refresh' => true];
 }
 
 /**
@@ -61,9 +59,7 @@ function restoreBackup($db, $hasBackup) {
     $update = $db->update('table.options')->rows(array('value' => $backupConfig))->where('name = ?', 'theme:G');
     $updateRows = $db->query($update);
 
-    return $updateRows
-        ? ['msg' => '恢复成功', 'refresh' => true]
-        : ['msg' => '恢复失败', 'refresh' => false];
+    return ['msg' => '恢复成功', 'refresh' => true];
 }
 
 /**
@@ -76,9 +72,46 @@ function deleteBackup($db, $hasBackup) {
     $delete = $db->delete('table.options')->where('name = ?', 'theme:'.G::$themeBackup);
     $deletedRows = $db->query($delete);
     
-    return $deletedRows
-        ? ['msg' => '删除成功', 'refresh' => true]
-        : ['msg' => '删除失败', 'refresh' => false];
+    return ['msg' => '删除成功', 'refresh' => true];
+}
+
+/**
+ * 备份主方法
+ */
+function backup() {
+    $db = Typecho_Db::get();
+    $hasBackup = hasBackup($db);
+    if (isset($_POST['type'])) {
+        $result = [];
+        switch($_POST['type']) {
+            case '创建备份':
+            case '更新备份':
+                $result = makeBackup($db, $hasBackup);
+                break;
+            case '恢复备份':
+                $result = restoreBackup($db, $hasBackup);
+                break;
+            case '删除备份':
+                $result = deleteBackup($db, $hasBackup);
+                break;
+            default:
+                $result = ["msg" => "", "refresh" => false];
+                break;
+        }
+        if ($result["msg"])
+            backupNotice($result["msg"], $result["refresh"]);
+    }
+    echo '
+        <div id="backup">
+            <form class="protected Data-backup" action="?'.G::$themeBackup.'" method="post">
+                <h4>数据备份</h4>
+                <p style="opacity: 0.5">'.($hasBackup ? '当前已有备份' : '当前暂无备份').'，你可以选择</p>
+                <input type="submit" name="type" class="btn btn-s" value="'.($hasBackup ? '更新备份' : '创建备份').'" />&nbsp;&nbsp;
+                '.($hasBackup ? '<input type="submit" name="type" class="btn btn-s" value="恢复备份" />&nbsp;&nbsp;' : '').'
+                '.($hasBackup ? '<input type="submit" name="type" class="btn btn-s" value="删除备份" />' : '').'
+            </form>
+        </div>
+    ';
 }
 
 function themeConfig($form)
@@ -152,6 +185,14 @@ function themeConfig($form)
     $autoNightSpan = new Typecho_Widget_Helper_Form_Element_Text('autoNightSpan', null, '23-6', _t('自动夜间模式时间段'), _t('24小时制，当前晚上x点到第二天早上y点视为夜间，需要自动开启夜间模式，例: 23-6'));
     $form->addInput($autoNightSpan);
 
+    $autoNightMode = new Typecho_Widget_Helper_Form_Element_Radio('autoNightMode', array(
+        '3' => _t('跟随系统'),
+        '2' => _t('自定义时间段'),
+        '1' => _t('同时开启'),
+        '0' => _t('关闭')
+    ), '3', _t('自动夜间模式控制模式'), _t('默认为跟随系统'));
+    $form->addInput($autoNightMode);
+
     $enableDefaultTOC = new Typecho_Widget_Helper_Form_Element_Radio('enableDefaultTOC', array(
         '1' => _t('开启'),
         '0' => _t('关闭')
@@ -222,39 +263,7 @@ function themeConfig($form)
     $advanceSetting = new Typecho_Widget_Helper_Form_Element_Textarea('advanceSetting', null, null, _t('高级设置'), _t('看着就很高级'));
     $form->addInput($advanceSetting);
 
-    $db = Typecho_Db::get();
-    $hasBackup = hasBackup($db);
-    if (isset($_POST['type'])) {
-        $result = [];
-        switch($_POST['type']) {
-            case '创建备份':
-            case '更新备份':
-                $result = makeBackup($db, $hasBackup);
-                break;
-            case '恢复备份':
-                $result = restoreBackup($db, $hasBackup);
-                break;
-            case '删除备份':
-                $result = deleteBackup($db, $hasBackup);
-                break;
-            default:
-                $result = ["msg" => "", "refresh" => false];
-                break;
-        }
-        if ($result["msg"])
-            backupNotice($result["msg"], $result["refresh"]);
-    }
-    echo '
-        <div id="backup">
-            <form class="protected Data-backup" action="?'.G::$themeBackup.'" method="post">
-                <h4>数据备份</h4>
-                <p style="opacity: 0.5">'.($hasBackup ? '当前已有备份' : '当前暂无备份').'，你可以选择</p>
-                <input type="submit" name="type" class="btn btn-s" value="'.($hasBackup ? '更新备份' : '创建备份').'" />&nbsp;&nbsp;
-                '.($hasBackup ? '<input type="submit" name="type" class="btn btn-s" value="恢复备份" />&nbsp;&nbsp;' : '').'
-                '.($hasBackup ? '<input type="submit" name="type" class="btn btn-s" value="删除备份" />' : '').'
-            </form>
-        </div>
-    ';
+    backup();
 }
 
 

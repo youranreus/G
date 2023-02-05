@@ -4,8 +4,8 @@
  *
  * @package G
  * @author 季悠然
- * @version 3.3.8
- * @link https://季悠然.space
+ * @version 3.3.9
+ * @link https://mitsuha.space
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;

@@ -10,7 +10,7 @@ class G
      *
      * @var string
      */
-    public static $version = "3.3.8";
+    public static $version = "3.3.9";
 
     /**
      * 主题配置
@@ -35,7 +35,8 @@ class G
         'footerLOGO' => '',
         'enableUPYUNLOGO' => '',
         'enableDefaultTOC' => '',
-        'autoNightSpan' => ''
+        'autoNightSpan' => '',
+        'autoNightMode' => '',
     ];
 
     public static $advanceConfig = [];
