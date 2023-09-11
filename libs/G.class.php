@@ -29,6 +29,7 @@ class G
         'defaultBanner' => '',
         'buildYear' => '',
         'icp' => '',
+        'beian' => '',
         'defaultArticlePath' => '',
         'enableIndexPage' => '',
         'advanceSetting' => '',
@@ -185,6 +186,22 @@ class G
             return self::$advanceConfig["customICP"];
         return '还没有备案噢';
     }
+
+    /**
+     * 获取公安备案号
+     *
+     * @return String
+     */
+    public static function getBeiAn()
+    {
+        if (Helper::options()->beian != '')
+            return Helper::options()->beian;
+        if (isset(self::$advanceConfig["customBeiAn"]))
+            return self::$advanceConfig["customBeiAn"];
+        return '还没有备案噢';
+    }
+
+
 
     /**
      * 获取赞助按钮文字
