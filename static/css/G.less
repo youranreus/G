@@ -8,8 +8,11 @@
 @import 'toastify.css?v=3.20005';
 
 @font-face {
-  font-family: 'Jetbrains Mono';
-  src: url(../font/JB.ttf) format('truetype');
+  // font-family: 'Jetbrains Mono';
+  // src: url(../font/JB.ttf) format('truetype');
+  font-family: 'PingFangSC-Thin';
+  src: url(../font/苹方黑体-纤细-简.ttf), 
+       url(../font/JB.ttf) format('truetype');
 }
 
 @color_1: var(--theme-color, #07F);
@@ -37,8 +40,8 @@
 @color_23: transparent;
 @color_24: RGBA(28, 31, 35, 1);
 @color_25: #9A9A9A;
-@font_family_1: 'Jetbrains Mono', 'Monaco', 'Courier New', 'Consolas', serif;
-@font_family_2: 'STHeiti Light', 'Microsoft YaHei', 'SimHei', 'Microsoft JhengHei', 'Microsoft YaHei', 'Mirages Custom', 'Merriweather', 'Open Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'Segoe UI Emoji', 'Segoe UI Symbol', Helvetica, Arial, sans-serif;
+@font_family_1: 'PingFangSC-Thin', 'Jetbrains Mono', 'Monaco', 'Courier New', 'Consolas', serif;
+@font_family_2: 'PingFangSC-Thin', 'STHeiti Light', 'Microsoft YaHei', 'SimHei', 'Microsoft JhengHei', 'Microsoft YaHei', 'Mirages Custom', 'Merriweather', 'Open Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft Yahei', 'WenQuanYi Micro Hei', 'Segoe UI Emoji', 'Segoe UI Symbol', Helvetica, Arial, sans-serif;
 @background_color_1: gray;
 @background_color_2: #B3B3B3;
 @background_color_3: #696969;
@@ -54,6 +57,7 @@
 
 * {
   transition: color 0.2s, background 0.2s;
+  font-family: @font_family_1;
 }
 
 html {
@@ -341,6 +345,7 @@ img {
 
 a {
   text-decoration: none;
+  font-size: smaller;
 
   &:link {
     color: @color_1;
@@ -351,9 +356,31 @@ a {
   }
 }
 
-a.icp {
-  color: @color_2;
+p.recordcode {
+  height: 30px;
+  font-size: smaller;
 }
+
+a.icp {
+  display: inline-block;
+  font-size: 12px;
+  color: @color_2;
+  height: 20px;
+}
+
+a.icon-police {
+  vertical-align: middle;
+}
+
+a.beian {
+  line-height: 30px;
+}
+
+span.right {
+  font-size: smaller;
+  line-height: 30px;
+}
+
 
 .clear {
   display: block;
@@ -1471,7 +1498,8 @@ pre[class*='language-'] {
 
   > * {
     color: @color_18;
-    font-family: @font_family_2 !important;
+    // font-family: @font_family_2 !important;
+    font-family: "PingFangSC-Thin" !important;
   }
 }
 
@@ -2206,7 +2234,8 @@ span#toggleOwO {
     user-select: none;
 
     p {
-      font-family: 'Times New Roman', Times, serif;
+      // font-family: 'Times New Roman', Times, serif;
+      font-family: "PingFangSC-Thin";
       font-weight: 600;
       font-size: .875rem;
       font-style: italic;
@@ -2616,6 +2645,7 @@ span#toggleOwO {
     }
   }
 
+
   footer {
     padding: 15px 25px 25px 25px;
   }
@@ -2682,3 +2712,4 @@ span#toggleOwO {
     right: .5rem;
   }
 }
+
