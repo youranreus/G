@@ -38,7 +38,12 @@ function threadedComments($comments, $options)
                 <div class="comment-content">
                     <div class="comment-meta">
                         <span><?php $comments->author(); ?></span>
-                        <span><?php echo G::getSemanticDate($comments->created); ?></span>
+                        
+                        <?php if ($comments->status == 'waiting') { ?>
+                            <span><?php $options->commentStatus(); ?></span>
+                        <?php } else { ?>
+                            <span><?php echo G::getSemanticDate($comments->created); ?></span>
+                        <?php }?>
                     </div>
                     <?php echo G::analyzeMeme($comments->content); ?>
                 </div>

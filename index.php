@@ -4,7 +4,7 @@
  *
  * @package G
  * @author 季悠然
- * @version 3.3.9
+ * @version 3.4.0
  * @link https://mitsuha.space
  */
 
