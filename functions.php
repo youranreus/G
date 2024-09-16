@@ -134,6 +134,12 @@ function themeConfig($form)
     $icpUrl = new Typecho_Widget_Helper_Form_Element_Text('icpUrl', null, 'https://beian.miit.gov.cn', _t('备案号指向链接'), _t('默认指向工信部'));
     $form->addInput($icpUrl);
 
+    $beian = new Typecho_Widget_Helper_Form_Element_Text('beian', null, null, _t('公安备案号'), _t('没有可以不填哟'));
+    $form->addInput($beian);
+
+    $beianUrl = new Typecho_Widget_Helper_Form_Element_Text('beianUrl', null, 'http://www.beian.gov.cn', _t('公安备案号指向链接'), _t('默认指向公安部'));
+    $form->addInput($beianUrl);
+
     $background = new Typecho_Widget_Helper_Form_Element_Text('background', null, null, _t('背景图片'), _t('可填颜色代码或者图片url'));
     $form->addInput($background);
 
