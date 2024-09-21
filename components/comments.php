@@ -1,6 +1,10 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__'))
     exit;
+
+if (G::$config["commentType"] != '1')
+    return;
+
 $GLOBALS['theme_url'] = $this->options->themeUrl;
 $header = G::Comment_hash_fix($this);
 echo $header;

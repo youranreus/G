@@ -37,6 +37,7 @@ class G
         'enableDefaultTOC' => '',
         'autoNightSpan' => '',
         'autoNightMode' => '',
+        'commentType' => '',
     ];
 
     public static $advanceConfig = [];
