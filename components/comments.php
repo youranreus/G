@@ -1,6 +1,10 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__'))
     exit;
+
+if (G::$config["commentType"] != '1')
+    return;
+
 $GLOBALS['theme_url'] = $this->options->themeUrl;
 $header = G::Comment_hash_fix($this);
 echo $header;
@@ -72,8 +76,8 @@ function threadedComments($comments, $options)
                     <?php else: ?>
                         <!-- 要求输入名字、邮箱、网址 -->
                         <div class="comments-Input">
-                            <input type="text" name="author" class="text" size="35" value="<?php $this->remember('author'); ?>" placeholder="🙌用户名"/>
-                            <input type="text" name="mail" class="text" size="35" value="<?php $this->remember('mail'); ?>" placeholder="📫邮箱"/>
+                            <input type="text" name="author" class="text" size="35" value="<?php $this->remember('author'); ?>" placeholder="🙌用户名*"/>
+                            <input type="text" name="mail" class="text" size="35" value="<?php $this->remember('mail'); ?>" placeholder="📫邮箱*"/>
                             <input type="text" name="url" class="text" size="35" value="<?php $this->remember('url'); ?>" placeholder="🔗博客链接"/>
                             <input type="hidden" name="receiveMail" id="receiveMail" value="yes"/>
                         </div>

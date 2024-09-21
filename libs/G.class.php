@@ -10,7 +10,7 @@ class G
      *
      * @var string
      */
-    public static $version = "3.4.0";
+    public static $version = "3.4.1";
 
     /**
      * 主题配置
@@ -37,6 +37,7 @@ class G
         'enableDefaultTOC' => '',
         'autoNightSpan' => '',
         'autoNightMode' => '',
+        'commentType' => '',
     ];
 
     public static $advanceConfig = [];
