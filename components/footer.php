@@ -19,8 +19,16 @@ $devTag = !defined('__TYPECHO_DEBUG__') || __TYPECHO_DEBUG__ != true ? G::$versi
         </nav>
     </div>
     <p id="footer-meta" class="clear">
-        <span class="left"><a class="icp" href="<?php $this->options->icpUrl(); ?>" rel="noopener noreferrer"><?php echo G::getICP(); ?></a></span>
-        <span class="right"><?php echo $this->options->buildYear . " - " . date("Y"); ?> &copy <?php $this->options->title(); ?></span>
+        
+        <span class="left">
+            <a class="icp" href="<?php $this->options->icpUrl(); ?>" rel="noopener noreferrer"><?php echo G::getICP(); ?></a>
+            <br>
+            <p class="recordcode">
+                <a class="icon-police"><img src="/usr/themes/G-master/static/img/jinghui.png" /></a>
+                <a class="beian" href="<?php $this->options->beianUrl(); ?>" rel="noopener noreferrer"><?php echo G::getBeiAn(); ?></a>
+                <span class="right"><?php echo $this->options->buildYear . " - " . date("Y"); ?> &copy <?php $this->options->title(); ?></span>
+            </p>
+        </span>
     </p>
 </footer>
 </div>
