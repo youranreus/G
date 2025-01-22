@@ -79,7 +79,11 @@ if (isset($_POST['DYLM'])) {
         </div>
         <div id="header-content">
             <div id="header-content-left">
-                <p><?php $this->options->description(); ?></p>
+                <p><?php
+                    $descriptions = explode(",", $this->options->description);
+                    $randomDescription = $descriptions[array_rand($descriptions)];
+                    echo $randomDescription;?>
+                </p>
             </div>
             <div id="header-content-right">
                 <nav>
