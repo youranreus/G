@@ -61,6 +61,15 @@ function threadedComments($comments, $options)
     </li>
 <?php } ?>
 
+<?php 
+function displayComments($comments) {
+    if ($comments->have()):
+        $comments->listComments();
+        $comments->pageNav('<span>👈</span>', '<span>👉</span>');
+    endif;
+}
+?>
+
 <?php $placeholders = [
     "💡 新奇的點子等著被你發現！",
     "🌟 你的一句話可能改變一切哦～",
@@ -101,6 +110,9 @@ $randomPlaceholder = $placeholders[array_rand($placeholders)];
 <?php $this->comments()->to($comments); ?>
 <div id="comments">
     <?php if ($this->allow('comment')): ?>
+        <?php if ($this->fields->comment_forward): ?>
+            <?php displayComments($comments); ?>
+        <?php endif; ?>
         <div id="<?php $this->respondId(); ?>">
             <div id="comments-form">
                 <h3>评论</h3>
@@ -131,9 +143,7 @@ $randomPlaceholder = $placeholders[array_rand($placeholders)];
             </div>
         </div>
     <?php endif; ?>
-
-    <?php if ($comments->have()): ?>
-        <?php $comments->listComments(); ?>
-        <?php $comments->pageNav('<span>👈</span>', '<span>👉</span>'); ?>
+    <?php if (!$this->fields->comment_forward): ?>
+            <?php displayComments($comments); ?>
     <?php endif; ?>
 </div>
