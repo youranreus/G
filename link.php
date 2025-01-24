@@ -6,11 +6,7 @@
  */
 $this->need('components/header.php');
 ?>
-    <style> 
-        .link-item img { 
-            border-radius: 100%;
-        }
-    </style>
+
     <div class="PAP" id="link">
         <article itemscope itemtype="http://schema.org/BlogPosting">
             <div id="post-banner" class="PAP-banner <?php $img = G::getArticleFieldsBanner($this);
