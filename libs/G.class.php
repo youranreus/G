@@ -584,16 +584,22 @@ class G
     public static function randomArticle($limit = 5)
     {
         $db = Typecho_Db::get();
+        $adapterName = $db->getAdapterName();
+        if($adapterName == 'pgsql' || $adapterName == 'Pdo_Pgsql' || $adapterName == 'Pdo_SQLite' || $adapterName == 'SQLite'){
+            $order_by = 'RANDOM()';
+        }else{
+            $order_by = 'RAND()';
+        }
         $sql = $db->select()->from('table.contents')
-                ->where('status = ?','publish')
-                ->where('type = ?', 'post')
-                ->where('created <= unix_timestamp(now())', 'post')
-                ->limit($limit)
-                ->order('RAND()');
+            ->where('status = ?','publish')
+            ->where('table.contents.created <= ?', time())
+            ->where('type = ?', 'post')
+            ->limit($limit)
+            ->order($order_by);
 
         $result = $db->fetchAll($sql);
         for($i = 0; $i < $limit; $i++)
-            $result[$i] =  Typecho_Widget::widget('Widget_Abstract_Contents')->filter($result[$i]);
+            $result[$i] = self::getArticleInfo($result[$i]['cid']);
 
         return $result;
     }

@@ -102,9 +102,9 @@
                         echo '  <h3>随机文章</h3>';
                         foreach($data as $item) {
                             echo '
-                            <a href="'.$item["permalink"].'">
+                            <a href="'.$item->permalink.'">
                                 <div class="item">
-                                    <h4>'.$item["title"].'</h4><span>'.G::getSemanticDate($item['created']).'</span>
+                                    <h4>'.$item->title.'</h4><span>'.G::getSemanticDate($item->created).'</span>
                                 </div>
                             </a>
                             ';
