@@ -73,7 +73,7 @@
                                 echo '
                                 <div class="recent-comment-item">
                                     <img class="avatar" src="https://sdn.geekzu.org/avatar/'.md5($obj->mail).'?s=60" alt="'.$obj->author.'" title="'.$obj->author.'">
-                                    <a href="'.G::getArticleInfo($obj->cid)["permalink"].'">
+                                    <a href="'.G::getArticleInfo($obj->cid)->permalink.'">
                                         <div class="recent-comment-content">
                                             <div class="meta">
                                                 <span>'.$obj->author.'</span>

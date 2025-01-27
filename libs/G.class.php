@@ -606,12 +606,6 @@ class G
      */
     public static function getArticleInfo($cid)
     {
-        $db = Typecho_Db::get();
-        $select = $db->select()->from('table.contents')
-                               ->where('status = ?', 'publish')
-                               ->where('type = ?', 'post')
-                               ->where('cid = ?', $cid);
-
-        return Typecho_Widget::widget('Widget_Abstract_Contents')->filter($db->fetchRow($select));
+        return Helper::widgetById('Contents', $cid);
     }
 }
