@@ -470,7 +470,7 @@ let doLazyload = () => {
     'img:not(#header-background):not(#profile-avatar)'
   )
   preLazy(banners, 'style', 'origin')
-  preLazy(pics, 'src', 'origin', window.G_CONFIG.imgUrl + 'loading2.gif')
+  preLazy(pics, 'src', 'origin', window.G_CONFIG.imgUrl + 'loading.gif')
   lazyload(banners, function (element, observe) {
     lazyBanner(element, observe)
   })
