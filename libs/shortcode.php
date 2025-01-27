@@ -13,20 +13,19 @@ function shortcode_jump_button($atts, $content = '')
         ->where('cid = ?', $content)
     );
     if ($result) {
-        $i = 1;
         foreach ($result as $val) {
-            $val = Typecho_Widget::widget('Widget_Abstract_Contents')->push($val);
-            $post_title = htmlspecialchars($val['title']);
-            $post_permalink = $val['permalink'];
-            $post_date = $val['created'];
-            $post_cid = $val['cid'];
+            $val = Helper::widgetById('Contents', $content);
+            $post_title = htmlspecialchars($val->title);
+            $post_permalink = $val->permalink;
+            $post_date = $val->created;
+            $post_cid = $val->cid;
             $post_date = date('Y-m-d', $post_date);
             return '
-      <div class="ArtinArt">
-                <h5><a href="' . $post_permalink . '">' . $post_title . '</a></h5>
-                <p class="clear"><span style="float:left">ID:' . $post_cid . '</span><span style="float:right">' . $post_date . '</span></p>
-      </div>
-      ';
+                <div class="ArtinArt">
+                    <h5><a href="' . $post_permalink . '">' . $post_title . '</a></h5>
+                    <p class="clear"><span style="float:left">ID:' . $post_cid . '</span><span style="float:right">' . $post_date . '</span></p>
+                </div>
+            ';
         }
     } else {
         return '<span>id无效QAQ</span>';
