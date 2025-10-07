@@ -81,13 +81,15 @@ if (isset($_POST['DYLM'])) {
             <div id="header-content-left">
                 <p><?php
                     $desc = $this->options->description;
-                    // 可以使用 "|||" 或 "||" 來分隔多個描述
-                    if (strpos($desc, '|||') !== false) {
-                        $descriptions = explode('|||', $desc);
-                    } elseif (strpos($desc, '||') !== false) {
-                        $descriptions = explode('||', $desc);
+                    $descriptions = array();
+                    if (!empty($desc)) {
+                        if (strpos($desc, '||') !== false) {
+                            $descriptions = explode('||', $desc);
+                        } else {
+                            $descriptions = array($desc);
+                        }   
                     }
-                    $descriptions = array_filter(array_map('trim', $descriptions));
+                    $descriptions = is_array($descriptions) ? array_filter(array_map('trim', $descriptions)) : array();
                     if (!empty($descriptions)) {
                         echo $descriptions[array_rand($descriptions)];
                     }
