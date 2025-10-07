@@ -67,7 +67,7 @@
                     case 'comments':
                         echo '<div class="widget widget-recent-comment">';
                         $len = $w->len ?? 5;
-                        $obj = $this->widget('Widget_Comments_Recent', 'ignoreAuthor=true');
+                        $obj = $this->widget('Widget_Comments_Recent');
                         if($obj->have()) {
                             while($obj->next() && $len) {
                                 echo '
