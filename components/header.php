@@ -80,10 +80,18 @@ if (isset($_POST['DYLM'])) {
         <div id="header-content">
             <div id="header-content-left">
                 <p><?php
-                    $descriptions = explode(",", $this->options->description);
-                    $randomDescription = $descriptions[array_rand($descriptions)];
-                    echo $randomDescription;?>
-                </p>
+                    $desc = $this->options->description;
+                    // 可以使用 "|||" 或 "||" 來分隔多個描述
+                    if (strpos($desc, '|||') !== false) {
+                        $descriptions = explode('|||', $desc);
+                    } elseif (strpos($desc, '||') !== false) {
+                        $descriptions = explode('||', $desc);
+                    }
+                    $descriptions = array_filter(array_map('trim', $descriptions));
+                    if (!empty($descriptions)) {
+                        echo $descriptions[array_rand($descriptions)];
+                    }
+                ?></p>
             </div>
             <div id="header-content-right">
                 <nav>
