@@ -99,7 +99,7 @@
                     case 'randomPost':
                         $data = G::randomArticle($w->len);
                         echo '<div class="widget widget-random-post">';
-                        echo '  <h3>随机文章</h3>';
+                        echo '  <h3>初见</h3>';
                         foreach($data as $item) {
                             echo '
                             <a href="'.$item->permalink.'">

@@ -12,11 +12,11 @@
                 <?php Typecho_Widget::widget('Widget_Stat')->to($stat); ?>
                 <div class="articles">
                     <p><?php $stat->publishedPostsNum() ?></p>
-                    <span>文章数</span>
+                    <span>文章</span>
                 </div>
                 <div class="reviews">
                     <p><?php $stat->publishedCommentsNum() ?></p>
-                    <span>评论数</span>
+                    <span>评论</span>
                 </div>
                 <div class="cats">
                     <p><?php $stat->categoriesNum() ?></p>
