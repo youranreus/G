@@ -35,7 +35,7 @@ $this->need('components/header.php');
 						<img src="{image}" alt="{name}"/>
 						<div class="link-item-content">
 							<h4>{name}</h4>
-							<p>{sort}</p>
+							<p>{description}</p>
 						</div>
 						<div class="link-item-m-content">
 							<span>{name}</span>
