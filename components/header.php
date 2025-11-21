@@ -80,10 +80,20 @@ if (isset($_POST['DYLM'])) {
         <div id="header-content">
             <div id="header-content-left">
                 <p><?php
-                    $descriptions = explode(",", $this->options->description);
-                    $randomDescription = $descriptions[array_rand($descriptions)];
-                    echo $randomDescription;?>
-                </p>
+                    $desc = $this->options->description;
+                    $descriptions = array();
+                    if (!empty($desc)) {
+                        if (strpos($desc, '||') !== false) {
+                            $descriptions = explode('||', $desc);
+                        } else {
+                            $descriptions = array($desc);
+                        }   
+                    }
+                    $descriptions = is_array($descriptions) ? array_filter(array_map('trim', $descriptions)) : array();
+                    if (!empty($descriptions)) {
+                        echo $descriptions[array_rand($descriptions)];
+                    }
+                ?></p>
             </div>
             <div id="header-content-right">
                 <nav>

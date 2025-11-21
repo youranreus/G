@@ -310,7 +310,8 @@ class G
         //@(xx)格式表情
         $result = preg_replace('#@\((.*?)\)#', '<img alt="$1" src="'.G::staticUrl('static/img/bq/paopao').'/$1.png" class="bq" />', $content);
         //mirage格式表情 （原神，小黄脸）
-        $result = preg_replace_callback('/\:\:(.*?)\:(.*?)\:\:/',function($matches){
+        // 修改：category 和 name 都不能包含冒號
+        $result = preg_replace_callback('/(?<![a-zA-Z0-9_])\:\:([^:]+?)\:([^:]+?)\:\:(?![a-zA-Z0-9_])/',function($matches){
             $img = preg_replace('/%/', '', urlencode($matches[2]));
             return '<img alt="'.$matches[2].'" src="'.self::staticUrl('static/img/bq/'.$matches[1].'/'.$img).'.png" class="bq" />';
         },$result);
